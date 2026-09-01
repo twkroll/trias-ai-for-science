@@ -114,6 +114,46 @@ D004 muss revidiert werden, wenn sich zeigt, dass die projektinternen Begriffe �
 
 ---
 
+## D005 — Minimal-Spezifikation des Drei-Körper-Demonstrators
+
+**Datum:** 2026-09-01  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
+
+### Entscheidung
+
+Der erste Demonstrator wird bewusst klein und nichtchaotisch gehalten. Verwendet wird die planare gleichmassige Figure-eight-Choreographie des Newtonschen Drei-Körper-Problems in dimensionslosen Einheiten.
+
+Verglichen werden drei numerische Rollen:
+
+1. DOP853 als provisorisch hochgenaue adaptive Referenz;
+2. fester klassischer RK4 als Baseline;
+3. Velocity-Verlet/Leapfrog als symplektischer strukturerhaltender Kontrast.
+
+Es werden zwei wissenschaftliche Use Cases getrennt:
+
+- **U1:** kurzfristige Trajektoriengenauigkeit;
+- **U2:** langfristige Strukturerhaltung.
+
+### Mitakzeptierte Konsequenzen
+
+1. Der Demonstrator soll nicht lediglich zeigen, dass Solver verschiedene Fehler besitzen.
+2. Die Bewertung eines Solvers muss an einen expliziten wissenschaftlichen Use Case gebunden werden.
+3. Die Referenz wird nicht als exakte Ground Truth behandelt.
+4. Schrittweiten-/Verfeinerungschecks und Ressourcenmessung sind verpflichtend.
+5. Ein chaotischer Fall, ML, Sundman-Auswertung und große Anfangsdatenfamilien sind aus v0.1 ausgeschlossen.
+6. Ein negatives Ergebnis für den Eigenständigkeitsanspruch der Trias ist ausdrücklich zulässig.
+
+### Erfolgskriterium
+
+Ein positiver Befund erfordert mindestens eine robuste Änderung oder Schärfung der wissenschaftlichen Interpretation durch die Trias-Perspektive, nicht bloß zusätzliche numerische Metriken.
+
+### Revisionsbedingung
+
+D005 wird revidiert, wenn die Figure-eight-Konfiguration den vorgesehenen epistemischen Kontrast nicht tragen kann oder wenn technische Referenz-/Validierungsprobleme die Interpretation dominieren.
+
+---
+
 ## Nächste offene Entscheidung
 
-**Minimal-Spezifikation des Drei-Körper-Demonstrators:** Zielsystem, wissenschaftliche Frage, Anfangsdaten, Solver, Metriken, Referenzlogik und Erfolgskriterium so klein wie möglich festlegen, bevor Implementierung beginnt.
+**Implementation Contract v0.1:** Exakte Anfangsdaten, nominelle Periodenskala, Zeiträume, Referenztoleranzen, Schrittweitenfamilie, Metrikdefinitionen, Tests und Ausgabeartefakte vor Codebeginn einfrieren.

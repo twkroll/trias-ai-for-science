@@ -13,38 +13,47 @@ Ziel dieser Phase ist ein belastbares Claim-and-Scope-Memo, das die spätere Lit
 
 Die Trias wird zunächst als methodologisches Audit-Framework untersucht. Es wird keine universale ontologische Dreiteilung der Wissenschaft behauptet.
 
-Der mögliche Originalitätsbeitrag liegt in der **expliziten Audit-Struktur**, nicht in der Behauptung, Berechnung oder Simulation seien bisher philosophisch übersehen worden.
-
 ### C02 — Synthetisches Zielsystem
 **Status:** ACCEPTED — D002
 
-- Der Realitäts-Pol bezeichnet im Audit die Rolle des Zielsystems.
-- Im Drei-Körper-Demonstrator kann diese Rolle durch ein explizit konstruiertes **synthetisches Zielsystem** übernommen werden.
-- Die Unterscheidung zwischen Zielsystem, Theorie und Berechnung ist funktional/methodologisch und nicht notwendig ontologisch.
-- **Synthetisches Zielsystem** ist der bevorzugte technische Begriff; **synthetische Modellwelt** kann erläuternd verwendet werden.
-- **Synthetische Realität** wird nicht als technischer Kernbegriff verwendet.
+Der Realitäts-Pol wird funktional als Zielsystemrolle behandelt. Im Drei-Körper-Fall wird ein explizit konstruiertes **synthetisches Zielsystem** verwendet; die Trennung der Pole ist methodologisch und nicht notwendig ontologisch.
 
 ### C03 — Sundmans Reihenlösung und praktische Traktabilität
 **Status:** ACCEPTED — D003
 
-- Sundman wird als Fall einer konvergenten Reihenrepräsentation in regularisierter Variable unter den Voraussetzungen des klassischen Theorems behandelt.
-- Die Aussage „Sundmans Reihe konvergiert nicht“ ist ausgeschlossen.
-- Der methodologisch zentrale Befund lautet: **formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.**
-- Langsame Reihen-Konvergenz, numerische Stabilität und wissenschaftliche Nutzbarkeit werden nicht vermischt.
-- Sundman ist ein Leitbeispiel, aber kein alleiniger Beweis für die Trias.
+Der akzeptierte methodologische Befund lautet: **formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.** Sundmans Reihe wird nicht als divergent und ihre langsame Konvergenz nicht als numerische Instabilität beschrieben.
+
+### C04 — Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ wissenschaftliche Nutzbarkeit
+**Status:** ACCEPTED — D004
+
+- Reihenkonvergenz und numerische Verfahrenskonvergenz werden getrennt.
+- Operative rechnerische Machbarkeit ist problem-, genauigkeits-, ressourcen- und zweckrelativ.
+- Wissenschaftliche Nutzbarkeit ist zweckrelativ und nicht auf Punktfehler reduzierbar.
+- Systemsensitivität/Chaos wird von algorithmischer Stabilität getrennt.
+- Die Lösungsleiter bleibt bestehen; C04-Kategorien sind querliegende Prüfdimensionen.
+- Verification & Validation wird als bestehender Vergleichsrahmen anerkannt.
 
 ## Aktuelle Aufgabe
 
-### C04 — Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ wissenschaftliche Nutzbarkeit
-**Status:** NEXT
+### Minimal-Spezifikation des Drei-Körper-Demonstrators
+**Status:** IN PROGRESS
 
-Die vier Kategorien sollen so präzise definiert werden, dass sie später im Trias-Audit und im Minimaldemonstrator operationalisiert werden können.
+Vor jeder Implementierung sind exakt festzulegen:
 
-## Demonstrator
+1. synthetisches Zielsystem,
+2. wissenschaftliche Leitfrage,
+3. minimale Anfangsbedingungsfamilie,
+4. Referenz- und Vergleichssolver,
+5. Metriken,
+6. Trennung von Systemsensitivität und numerischem Fehler,
+7. Ressourcenmessung,
+8. Erfolgskriterium für diagnostischen Mehrwert der Trias.
 
-**Status:** NOT STARTED BY DESIGN
+## Noch nicht gestartet
 
-Es wird noch kein großer Implementierungsschritt begonnen. Der Demonstrator wird erst spezifiziert, nachdem die begrifflichen und evidenziellen Voraussetzungen hinreichend stabil sind.
+- C05: Implementierungswahl kann epistemisch relevante Profile erzeugen.
+- C06: Trias-Audit liefert zusätzliche Fehlerzuordnung/Validierungsfragen.
+- ML-Modul.
 
 ## Arbeitsregel
 

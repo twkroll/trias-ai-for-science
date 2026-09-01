@@ -39,22 +39,38 @@ Die Zuordnung des konkret instanziierten Newtonschen Drei-Körper-Systems zum Re
 
 ### Aktueller Status
 
-**PENDING DECISION.** Begrifflich anschlussfähig; Terminologie und methodologische Rolle noch nicht akzeptiert.
+**ACCEPTED AS WORKING BASIS — D002.** Begrifflich anschlussfähig; die konkrete Trias-Rolle bleibt eine revidierbare methodologische Setzung.
 
 ---
 
 ## E03 — Evidenz für C03
 
-**Claim:** Sundmans Lösung konvergiert unter genau zu bestimmenden Bedingungen, ist aber für praktische Bahnberechnung aufgrund der Konvergenzgeschwindigkeit nicht traktabel.
+**Claim:** Sundmans klassisches Resultat liefert unter der Voraussetzung nichtverschwindenden Gesamtdrehimpulses nach Regularisierung und Zeittransformation eine global konvergente Potenzreihendarstellung in einer Hilfsvariablen; die Darstellung ist wegen extrem langsamer praktischer Konvergenz für gewöhnliche Bahnberechnung ungeeignet.
 
-### Benötigte Evidenz
+### Gefundene Evidenz
 
-- Sundman (1912) als Primärquelle,
-- historisch-mathematische Fachsekundärquelle,
-- genaue Bedingungen und Ausschlüsse,
-- präzise Form dessen, was „praktisch unbrauchbar“ bzw. „zu langsam“ bedeutet,
-- klare Trennung von Konvergenz, Traktabilität und numerischer Stabilität.
+- **Sundman, Mémoire sur le problème des trois corps, Acta Mathematica 36, 105–179.** Primärquelle des klassischen Resultats; bibliographische Datierung wird in Datenbanken teils 1912, teils 1913 geführt.
+- **Belorizky (1930).** Praktische Untersuchung der Sundman-Methode; nennt die Bedingungen der Konstruktion und zeigt am speziellen Fall die extreme Zahl benötigter Reihenterme.
+- **Henkel (2001).** Historisch-philosophische Darstellung; betont, dass entgegen einer verbreiteten Verkürzung eine analytische Lösung im präzisen Sinn einer konvergenten Reihenrepräsentation existiert.
+- **Chenciner/Scholarpedia und Encyclopedia of Mathematics.** Moderne mathematische Zusammenfassungen: binäre Kollisionen werden regularisiert; bei nichtverschwindendem Gesamtdrehimpuls ist die totale Kollision ausgeschlossen; die Reihen sind wegen extrem langsamer Konvergenz praktisch nicht brauchbar.
+- **Q. D. Wang / moderne mathematische Einordnung.** Formuliert Sundmans Theorem über Analytizität in einer neuen Zeitvariablen und globale Abdeckung reeller Zeit unter der klassischen Nichtnull-Drehimpuls-Bedingung.
+
+### Noch zu kontrollieren
+
+- endgültige bibliographische Jahresangabe für das Mémoire,
+- exakte Form der Nichtnull-Drehimpuls-Bedingung in der zitierten Fassung,
+- ob quantitative Angaben zur benötigten Termzahl im Paper verwendet werden; falls ja, direkte Rekonstruktion aus Belorizky statt sekundärer Wiederholung.
 
 ### Aktueller Status
 
-**NOT STARTED.**
+**PENDING REVIEW.** Der qualitative Kern ist gut gestützt: Sundman ist ein Konvergenz-, nicht ein Divergenzbeispiel; die praktische Ineffizienz ist separat zu behandeln.
+
+---
+
+## E04 — Evidenz für C04
+
+**Claim:** mathematische Konvergenz, rechnerische Machbarkeit, numerische Stabilität und wissenschaftliche Nutzbarkeit sind verschiedene Bewertungsebenen.
+
+### Aktueller Status
+
+**NOT STARTED.** Abhängig von Entscheidung zu C03.

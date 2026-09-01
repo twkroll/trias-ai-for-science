@@ -1,13 +1,15 @@
 # C02 — Synthetisches Zielsystem als Realitäts-Pol
 
-**Status:** PENDING REVIEW  
-**Evidenzstatus:** begrifflich gut anschlussfähig; konkrete Trias-Rolle ist methodologische Setzung
+**Status:** ACCEPTED  
+**Evidenzstatus:** begrifflich gut anschlussfähig; konkrete Trias-Rolle ist methodologische Setzung  
+**Entscheidung:** D002  
+**Akzeptiert:** 2026-09-01 durch `GO`
 
-## Vorgeschlagene Claim-Fassung
+## Akzeptierte Claim-Fassung
 
 > Der Realitäts-Pol der Trias muss nicht ausschließlich ein theorieunabhängiges empirisches Objekt bezeichnen. Für kontrollierte Computational-Science-Fallstudien kann ein explizit konstruiertes synthetisches Zielsystem diese methodologische Rolle übernehmen. Im Drei-Körper-Demonstrator ist dies eine festgelegte Instanziierung der idealisierten Newtonschen Dynamik. Obwohl dieses Zielsystem durch theoretische Annahmen konstituiert wird, ist es von seinen konkreten rechnerischen Repräsentationen zu unterscheiden. Die Unterscheidung ist dabei funktional und methodologisch, nicht notwendig ontologisch.
 
-## Vorgeschlagene Terminologie
+## Akzeptierte Terminologie
 
 Bevorzugt:
 
@@ -15,7 +17,7 @@ Bevorzugt:
 - **synthetische Modellwelt** als erläuternde Bezeichnung,
 - **Realität** bleibt die Bezeichnung des ersten Pols der Trias.
 
-Nicht als technischer Kernbegriff empfohlen:
+Nicht als technischer Kernbegriff verwendet:
 
 - **synthetische Realität**.
 
@@ -78,14 +80,10 @@ Das Projekt behauptet nicht:
 3. Prüfung, ob hypothetische, konstruierte oder mathematische Targets in einschlägigen Ansätzen zugelassen werden.
 4. Eigene Begründung, warum die Trennung von Zielsystem und Rechenrealisierung im Drei-Körper-Fall diagnostische Arbeit leistet.
 
-## Entscheidungsoption
+## Revisionsbedingung
 
-`GO` akzeptiert:
+Der Claim muss revidiert werden, falls sich die funktionale Trennung von Theorie und synthetischem Zielsystem im Drei-Körper-Fall als diagnostisch leer erweist oder die spätere Literaturprüfung zeigt, dass die verwendete Target-Terminologie die intendierte Rolle nicht trägt.
 
-1. die vorgeschlagene Claim-Fassung,
-2. die funktionale statt notwendigerweise ontologische Trennung der Pole,
-3. „synthetisches Zielsystem“ als bevorzugten technischen Begriff,
-4. „synthetische Modellwelt“ als erläuternde Bezeichnung,
-5. den Verzicht auf „synthetische Realität“ als technischen Kernbegriff.
+## Nächster abhängiger Schritt
 
-Nach `GO` ist der nächste abhängige Schritt C03: Sundman.
+C03: präzise historische und mathematische Prüfung von Sundmans Reihenlösung.

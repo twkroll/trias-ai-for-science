@@ -31,8 +31,30 @@ D001 muss abgeschwächt oder aufgegeben werden, wenn die Trias im Leitfall ledig
 
 ---
 
-## D002 — Claim 2: synthetisches Zielsystem
+## D002 — Claim 2: synthetisches Zielsystem als Realitäts-Pol
 
-**Status:** PENDING
+**Datum:** 2026-09-01  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
 
-Noch keine Entscheidung. Aktueller Vorschlag siehe [`claims/claim_02.md`](claims/claim_02.md).
+### Entscheidung
+
+Der Realitäts-Pol der Trias muss nicht ausschließlich ein theorieunabhängiges empirisches Objekt bezeichnen. Für kontrollierte Computational-Science-Fallstudien kann ein explizit konstruiertes synthetisches Zielsystem diese methodologische Rolle übernehmen. Im Drei-Körper-Demonstrator ist dies eine festgelegte Instanziierung der idealisierten Newtonschen Dynamik. Obwohl dieses Zielsystem durch theoretische Annahmen konstituiert wird, ist es von seinen konkreten rechnerischen Repräsentationen zu unterscheiden. Die Unterscheidung ist funktional und methodologisch, nicht notwendig ontologisch.
+
+### Mitakzeptierte Konsequenzen
+
+1. Die drei Pole werden als analytisch bzw. methodologisch unterscheidbare Rollen behandelt; ontologische Unabhängigkeit wird nicht vorausgesetzt.
+2. **Synthetisches Zielsystem** ist der bevorzugte technische Begriff im Drei-Körper-Fall.
+3. **Synthetische Modellwelt** kann erläuternd verwendet werden.
+4. **Synthetische Realität** wird nicht als technischer Kernbegriff verwendet.
+5. Das synthetische Zielsystem ist von jeder konkreten numerischen oder gelernten Repräsentation zu unterscheiden.
+
+### Revisionsbedingung
+
+D002 muss revidiert werden, falls die funktionale Trennung von Theorie und synthetischem Zielsystem im Leitfall keine diagnostische Arbeit leistet oder die spätere Literaturprüfung zeigt, dass die verwendete Target-Terminologie die intendierte Rolle nicht trägt.
+
+---
+
+## Nächste offene Entscheidung
+
+**C03 — Sundman:** Exakte Prüfung dessen, was mathematisch, historisch und hinsichtlich praktischer Berechenbarkeit über Sundmans Reihenlösung behauptet werden darf.

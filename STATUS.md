@@ -4,36 +4,38 @@
 
 **Week 1 — Claim and Scope**
 
-Ziel dieser Phase ist ein belastbares Claim-and-Scope-Memo, das die spätere Literaturrecherche und den computational case study steuert.
+Ziel dieser Phase ist ein belastbares Claim-and-Scope-Memo, das die spätere Literaturrecherche und den Computational Case Study steuert.
 
 ## Akzeptierte Entscheidungen
 
 ### C01 — Diagnostischer Mehrwert der Trias
-**Status:** ACCEPTED
+**Status:** ACCEPTED — D001
 
 Die Trias wird zunächst als methodologisches Audit-Framework untersucht. Es wird keine universale ontologische Dreiteilung der Wissenschaft behauptet.
 
 Der mögliche Originalitätsbeitrag liegt in der **expliziten Audit-Struktur**, nicht in der Behauptung, Berechnung oder Simulation seien bisher philosophisch übersehen worden.
 
-## Aktuell offene Entscheidung
-
 ### C02 — Synthetisches Zielsystem
-**Status:** PENDING REVIEW
-
-Vorschlag:
+**Status:** ACCEPTED — D002
 
 - Der Realitäts-Pol bezeichnet im Audit die Rolle des Zielsystems.
 - Im Drei-Körper-Demonstrator kann diese Rolle durch ein explizit konstruiertes **synthetisches Zielsystem** übernommen werden.
 - Die Unterscheidung zwischen Zielsystem, Theorie und Berechnung ist funktional/methodologisch und nicht notwendig ontologisch.
-- „synthetisches Zielsystem“ wird als technischer Begriff gegenüber „synthetische Realität“ bevorzugt.
+- **Synthetisches Zielsystem** ist der bevorzugte technische Begriff; **synthetische Modellwelt** kann erläuternd verwendet werden.
+- **Synthetische Realität** wird nicht als technischer Kernbegriff verwendet.
 
-Die vollständige Fassung steht in [`claims/claim_02.md`](claims/claim_02.md).
+## Aktuelle Aufgabe
+
+### C03 — Sundmans Reihenlösung und praktische Traktabilität
+**Status:** IN PROGRESS
+
+Zu prüfen ist exakt, was historisch und mathematisch über Sundmans Lösung behauptet werden darf, insbesondere die Trennung von mathematischer Konvergenz und praktischer Auswertbarkeit.
 
 ## Nächster abhängiger Schritt
 
-Wenn C02 akzeptiert wird:
+Nach Entscheidung zu C03:
 
-**C03 — Sundman:** Exakte Prüfung dessen, was mathematisch, historisch und hinsichtlich praktischer Berechenbarkeit über Sundmans Reihenlösung behauptet werden darf.
+**C04 — Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ wissenschaftliche Nutzbarkeit.**
 
 ## Demonstrator
 

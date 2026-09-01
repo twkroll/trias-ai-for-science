@@ -84,6 +84,36 @@ D003 wird enger gefasst, falls die Primärquellenprüfung zeigt, dass Konvergenz
 
 ---
 
+## D004 — Claim 4: Evaluationsdimensionen der operativen Verfügbarkeit
+
+**Datum:** 2026-09-01  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
+
+### Entscheidung
+
+C04 wird in drei Teilclaims gegliedert:
+
+**C04a:** Mathematische Konvergenz, operative rechnerische Machbarkeit, numerische Stabilität und wissenschaftliche Nutzbarkeit beantworten unterschiedliche Bewertungsfragen und dürfen nicht gleichgesetzt werden.
+
+**C04b:** Wissenschaftliche Nutzbarkeit ist zweckrelativ. Sie hängt vom intendierten wissenschaftlichen Gebrauch, den erforderlichen Genauigkeits- und Strukturkriterien sowie von Validierungs- und Unsicherheitsevidenz ab.
+
+**C04c:** Sensitivität des Zielproblems bzw. der Dynamik ist von algorithmischer numerischer Stabilität zu unterscheiden. Chaotische oder sensitive Dynamik darf nicht ohne weitere Analyse als schlechte Numerik interpretiert werden.
+
+### Mitakzeptierte Konsequenzen
+
+1. Reihenkonvergenz und numerische Verfahrenskonvergenz werden terminologisch getrennt.
+2. **Operative rechnerische Machbarkeit** wird als projektinterne, problem-, genauigkeits-, ressourcen- und zweckrelative Kategorie verwendet.
+3. Wissenschaftliche Nutzbarkeit wird nicht auf eine einzelne Fehler- oder Genauigkeitsmetrik reduziert.
+4. Die bestehende Lösungsleiter bleibt erhalten; Konvergenz, Machbarkeit, Stabilität und Systemsensitivität werden als querliegende Prüfdimensionen behandelt.
+5. Verification & Validation wird ausdrücklich als bestehender Vergleichsrahmen anerkannt. Ein Mehrwert der Trias gegenüber V&V ist noch nicht gezeigt und muss später durch C06 geprüft werden.
+
+### Revisionsbedingung
+
+D004 muss revidiert werden, wenn sich zeigt, dass die projektinternen Begriffe „operative rechnerische Machbarkeit“ oder „wissenschaftliche Nutzbarkeit“ keinen zusätzlichen diagnostischen Nutzen besitzen oder nicht hinreichend operationalisierbar sind.
+
+---
+
 ## Nächste offene Entscheidung
 
-**C04 — Begriffsleiter:** mathematische Konvergenz, rechnerische Machbarkeit, numerische Stabilität und wissenschaftliche Nutzbarkeit präzise trennen und auditierbar definieren.
+**Minimal-Spezifikation des Drei-Körper-Demonstrators:** Zielsystem, wissenschaftliche Frage, Anfangsdaten, Solver, Metriken, Referenzlogik und Erfolgskriterium so klein wie möglich festlegen, bevor Implementierung beginnt.

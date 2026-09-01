@@ -5,8 +5,8 @@ Das Register enthält die wissenschaftlich relevanten Claims des Projekts in Abh
 | ID | Kurzbezeichnung | Status | Evidenzstatus | Entscheidung |
 |---|---|---|---|---|
 | C01 | Diagnostischer Mehrwert der Trias | ACCEPTED | Plausibel; endgültige Prüfung durch Literatur + Demonstrator ausstehend | D001 |
-| C02 | Synthetisches Zielsystem als Realitäts-Pol | PENDING REVIEW | Begrifflich gut anschlussfähig; konkrete Trias-Rolle ist methodologische Setzung | — |
-| C03 | Sundmans konvergente Reihenlösung und praktische Traktabilität | NOT STARTED | Zu verifizieren | — |
+| C02 | Synthetisches Zielsystem als Realitäts-Pol | ACCEPTED | Begrifflich gut anschlussfähig; konkrete Trias-Rolle ist methodologische Setzung | D002 |
+| C03 | Sundmans konvergente Reihenlösung und praktische Traktabilität | IN PROGRESS | Historisch/mathematisch zu verifizieren | — |
 | C04 | Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ wissenschaftliche Nutzbarkeit | NOT STARTED | Zu strukturieren | — |
 | C05 | Implementierungswahl kann epistemisch relevante Profile erzeugen | NOT STARTED | Literatur + Demonstrator erforderlich | — |
 | C06 | Trias-Audit liefert zusätzliche Fehlerzuordnung/Validierungsfragen | NOT STARTED | Haupttest des Projekts | — |

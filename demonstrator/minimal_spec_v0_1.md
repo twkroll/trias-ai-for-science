@@ -1,8 +1,8 @@
 # Minimal Demonstrator Specification v0.1
 
-**Status:** PENDING REVIEW  
-**Purpose:** kleinstmöglicher rechnerischer Test, ob die Trias mehr leistet als ein eindimensionaler Solververgleich  
-**No implementation before acceptance.**
+**Status:** ACCEPTED  
+**Accepted by:** GO  
+**Purpose:** kleinstmöglicher rechnerischer Test, ob die Trias mehr leistet als ein eindimensionaler Solververgleich
 
 ## DMO-01 — Wissenschaftliche Leitfrage
 
@@ -12,7 +12,7 @@ Der Demonstrator soll **nicht** zeigen, dass numerische Verfahren unterschiedlic
 
 ## DMO-02 — Synthetisches Zielsystem
 
-Empfohlen wird zunächst die planare gleichmassige Figure-eight-Lösung des Newtonschen Drei-Körper-Problems in dimensionslosen Einheiten (`G = 1`, `m_1=m_2=m_3=1`).
+Akzeptiert ist zunächst die planare gleichmassige Figure-eight-Lösung des Newtonschen Drei-Körper-Problems in dimensionslosen Einheiten (`G = 1`, `m_1=m_2=m_3=1`).
 
 Begründung:
 
@@ -20,13 +20,9 @@ Begründung:
 - periodisch und strukturell reich genug für Langzeitvergleiche;
 - kein chaotisches Regime als primäre Konfundierung;
 - erlaubt die Trennung von algorithmischem Fehler und dynamischer Sensitivität;
-- bekannte Anfangsdaten können später quellengeprüft übernommen werden.
-
-Die exakten Anfangsdaten und die Periodendauer werden erst nach Quellenprüfung eingefroren.
+- bekannte Anfangsdaten werden im nachfolgenden Implementation Contract quellengeprüft eingefroren.
 
 ## DMO-03 — Zwei wissenschaftliche Gebrauchsfragen
-
-Um Zweckrelativität testbar zu machen, werden zwei minimale Use Cases unterschieden:
 
 ### U1 — Kurzfristige Trajektorienfrage
 
@@ -85,8 +81,6 @@ Ein sensitiver oder chaotischer zweiter Fall wird nur ergänzt, wenn der regulä
 
 ## DMO-08 — Vergleichslogik
 
-Der Demonstrator erzeugt zwei Ebenen der Auswertung:
-
 ### Baseline-Auswertung
 
 - Trajektorienfehler;
@@ -131,8 +125,6 @@ Nicht Bestandteil der ersten Implementierung:
 - relativistische Korrekturen;
 - Kollisionsregularisierung.
 
-## Entscheidungsempfehlung
+## Nächste Abhängigkeit
 
-Akzeptiere v0.1 als Minimaldesign mit **Figure-eight + DOP853 + RK4 + symplektischem Kontrast + zwei Use Cases**.
-
-Nach Akzeptanz folgt noch keine große Implementierung. Der nächste Schritt ist ein **Implementation Contract**: exakte Anfangsdaten, Zeithorizont, Toleranzen, Schrittweiten, Ausgabedateien und Tests werden eingefroren.
+Nach Akzeptanz folgt ein **Implementation Contract v0.1**: exakte Anfangsdaten, Zeithorizont, Toleranzen, Schrittweiten, Metrikdefinitionen, Ausgabedateien und Tests werden eingefroren, bevor Code geschrieben wird.

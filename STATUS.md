@@ -2,64 +2,57 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / Demonstrator Freeze**
+**Week 1 — Claim and Scope / First Implementation Skeleton**
 
-Ziel dieser Phase ist ein belastbares Claim-and-Scope-Memo plus eine minimal eingefrorene Spezifikation, bevor Implementierung beginnt.
+Ziel dieser Phase ist ein belastbares Claim-and-Scope-Fundament plus ein minimaler, getesteter Demonstrator-Skeleton, bevor der vollständige wissenschaftliche Lauf interpretiert wird.
 
 ## Akzeptierte Entscheidungen
 
-### C01 — Diagnostischer Mehrwert der Trias
-**Status:** ACCEPTED — D001
-
-Die Trias wird zunächst als methodologisches Audit-Framework untersucht. Es wird keine universale ontologische Dreiteilung der Wissenschaft behauptet.
-
-### C02 — Synthetisches Zielsystem
-**Status:** ACCEPTED — D002
-
-Der Realitäts-Pol wird funktional als Zielsystemrolle behandelt. Im Drei-Körper-Fall wird ein explizit konstruiertes **synthetisches Zielsystem** verwendet; die Trennung der Pole ist methodologisch und nicht notwendig ontologisch.
-
-### C03 — Sundmans Reihenlösung und praktische Traktabilität
-**Status:** ACCEPTED — D003
-
-Der akzeptierte methodologische Befund lautet: **formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.**
-
-### C04 — Evaluationsdimensionen operativer Verfügbarkeit
-**Status:** ACCEPTED — D004
-
-Reihenkonvergenz, numerische Verfahrenskonvergenz, operative Machbarkeit, numerische Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden nicht vermischt. Verification & Validation bleibt ein expliziter Vergleichsrahmen.
-
-### Minimal Demonstrator Specification v0.1
-**Status:** ACCEPTED — D005
-
-Akzeptierter Scope:
-
-- planare gleichmassige Figure-eight-Choreographie;
-- DOP853 als provisorisch hochgenaue Referenz;
-- fester RK4 als Baseline;
-- Velocity-Verlet/Leapfrog als symplektischer Kontrast;
-- U1 = kurzfristige Trajektorienfrage;
-- U2 = langfristige Strukturfrage;
-- kein ML und kein chaotischer Fall in v0.1;
-- positiver wie negativer Befund zur Trias ist zulässig.
+- **C01 / D001:** Trias als methodologisches Audit-Framework; diagnostischer Mehrwert ist die zentrale Hypothese.
+- **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol; keine notwendige ontologische Trennung der Pole.
+- **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation; formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.
+- **C04 / D004:** Konvergenz, operative Machbarkeit, numerische Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt; V&V bleibt Vergleichsrahmen.
+- **Minimal Demonstrator / D005:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, mit U1 und U2 und ohne ML/chaotischen Fall.
+- **Implementation Contract / D006:** exakte v0.1-Konfiguration, Referenzlogik, Schrittweiten, Metriken, Gates und Artefakte eingefroren.
 
 ## Aktuelle Aufgabe
 
-### Implementation Contract v0.1
-**Status:** PENDING REVIEW
+### Code Skeleton v0.1
+**Status:** READY FOR REVIEW
 
-Zu akzeptieren sind vor Codebeginn die exakten Anfangsdaten, Zeiträume, Referenztoleranzen, Schrittweitenfamilie, Metrikdefinitionen, Referenz-Gates, Tests und Ausgabeartefakte.
+Implementiert sind:
 
-Siehe [`demonstrator/implementation_contract_v0_1.md`](demonstrator/implementation_contract_v0_1.md).
+- Figure-eight-Konfiguration;
+- gemeinsame Newtonsche Dynamik und Invarianten;
+- expliziter RK4 und Velocity-Verlet;
+- DOP853 primary/tight reference;
+- Positions-, Energie-, Drehimpuls-, Ressourcen- und Refinementmetriken;
+- reproduzierbarer Experiment-Runner;
+- regelbasierter `trias_audit.md`;
+- Unit-/Smoke-Tests und Quick-Run-Modus.
 
-## Danach
+Lokale Vorprüfung vor dem Repository-Write:
 
-Nach Akzeptanz des Implementation Contract wird ausschließlich ein minimaler getesteter Code-Skeleton umgesetzt. C05 und C06 werden erst anhand der erzeugten Resultate bewertet.
+```text
+pytest -q
+4 passed
+```
 
-## Noch nicht gestartet
+Ein Quick-Pipeline-Run erzeugte erfolgreich alle vertraglich geforderten Artefakttypen. Quick-Werte gelten ausdrücklich nicht als Evidenz für C05/C06.
 
-- C05: Implementierungswahl kann epistemisch relevante Profile erzeugen.
-- C06: Trias-Audit liefert zusätzliche Fehlerzuordnung/Validierungsfragen.
+Details: [`demonstrator/code_skeleton_status_v0_1.md`](demonstrator/code_skeleton_status_v0_1.md).
+
+## Noch nicht wissenschaftlich ausgeführt/entschieden
+
+- vollständiger U2-Lauf über 100 nominelle Perioden mit allen fünf Refinements;
+- wissenschaftliche Prüfung aller Reference-/Refinement-Gates;
+- C05: Implementierungswahl kann epistemisch relevante Profile erzeugen;
+- C06: Trias-Audit liefert zusätzliche Fehlerzuordnung/Validierungsfragen;
 - ML-Modul.
+
+## Nächste Abhängigkeit
+
+Nach Review und Akzeptanz des Code Skeleton v0.1 wird der eingefrorene vollständige v0.1-Lauf ausgeführt. Erst danach werden Resultate interpretiert und C05 zur Entscheidung vorgelegt.
 
 ## Arbeitsregel
 

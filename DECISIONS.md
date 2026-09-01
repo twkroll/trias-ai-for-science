@@ -154,6 +154,40 @@ D005 wird revidiert, wenn die Figure-eight-Konfiguration den vorgesehenen episte
 
 ---
 
-## Nächste offene Entscheidung
+## D006 — Implementation Contract v0.1
 
-**Implementation Contract v0.1:** Exakte Anfangsdaten, nominelle Periodenskala, Zeiträume, Referenztoleranzen, Schrittweitenfamilie, Metrikdefinitionen, Tests und Ausgabeartefakte vor Codebeginn einfrieren.
+**Datum:** 2026-09-01  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
+
+### Entscheidung
+
+Der technische Contract des Minimaldemonstrators wird eingefroren. Er umfasst insbesondere:
+
+- die publizierten gerundeten Figure-eight-Anfangsdaten und `T_pub = 6.32591398` als nominelle Periodenskala;
+- U1 = eine nominelle Periode und U2 = 100 nominelle Perioden;
+- DOP853 als primäre und engere Referenz mit `(rtol, atol) = (1e-12, 1e-14)` bzw. `(1e-13, 1e-15)`;
+- feste RK4- und Velocity-Verlet-Implementierungen;
+- `h = T_pub/n` für `n={50,100,200,400,800}`;
+- Positions-, Energie-, Drehimpuls-, Refinement- und Ressourcendiagnostik;
+- explizite Referenz-Gates und wissenschaftliche Mindesttests;
+- maschinenlesbare Ergebnisartefakte und einen regelbasierten Trias-Audit;
+- den Ausschluss von ML, chaotischen Fällen, Sundman-Auswertung, höherer Präzision und weiterem Scope in v0.1.
+
+### Mitakzeptierte Konsequenzen
+
+1. Die publizierten Anfangsdaten werden nicht nachträglich so angepasst, dass perfekte Periodizität entsteht.
+2. Die DOP853-Referenz wird nicht als exakte Ground Truth bezeichnet.
+3. Langzeit-Positionsfehler allein darf U2 nicht ranken.
+4. Solververgleiche müssen Use Case und Evaluationskriterium nennen.
+5. C05/C06 werden erst nach bestandenen Referenz- und Refinement-Gates interpretiert.
+
+### Revisionsbedingung
+
+D006 wird nur geändert, wenn die Implementierung einen technischen Widerspruch oder eine nicht tragfähige Referenz-/Metrikdefinition offenlegt. Änderungen werden als neue Entscheidung dokumentiert und nicht stillschweigend vorgenommen.
+
+---
+
+## Aktuelle Aufgabe
+
+**Code Skeleton v0.1:** den eingefrorenen Contract minimal implementieren, testen und vor dem vollständigen wissenschaftlichen Lauf erneut reviewen.

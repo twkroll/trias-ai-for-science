@@ -55,6 +55,35 @@ D002 muss revidiert werden, falls die funktionale Trennung von Theorie und synth
 
 ---
 
+## D003 — Claim 3: Sundmans Reihenlösung und operative Traktabilität
+
+**Datum:** 2026-09-01  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
+
+### Entscheidung
+
+Claim 3 wird in einen mathematisch-historischen und einen methodologischen Teil getrennt.
+
+**C03a:** Sundmans klassisches Resultat wird als global konvergente Potenzreihendarstellung in einer regularisierten Hilfsvariablen unter den Voraussetzungen des Sundman-Theorems behandelt. Die spätere Paperfassung muss die genaue Rolle des Gesamtdrehimpulses, der binären Kollisionsregularisierung, totaler Dreifachkollisionen und der globalen Zeitabdeckung direkt belegen.
+
+**C03b:** Der methodologisch relevante Punkt ist nicht fehlende mathematische Konvergenz, sondern die extrem geringe praktische Konvergenzgeschwindigkeit. Der akzeptierte Projektbefund lautet daher: **formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.**
+
+### Mitakzeptierte Konsequenzen
+
+1. Die Aussage „Sundmans Reihe konvergiert nicht“ ist für das Projekt gesperrt.
+2. „Sundman löste das allgemeine Drei-Körper-Problem analytisch“ wird nur mit genauer Qualifikation verwendet.
+3. Langsame Reihen-Konvergenz wird nicht mit numerischer Instabilität gleichgesetzt.
+4. Die praktische Schwierigkeit der Sundman-Reihe wird nicht einfach auf Chaos zurückgeführt.
+5. Sundman ist ein Leitbeispiel für die Lösungsleiter, aber kein alleiniger Beweis für die Trias.
+6. Spektakuläre quantitative Angaben zur nötigen Termzahl werden nur nach direkter Quellenprüfung verwendet.
+
+### Revisionsbedingung
+
+D003 wird enger gefasst, falls die Primärquellenprüfung zeigt, dass Konvergenz-, Kollisions- oder Geltungsbedingungen zu stark formuliert wurden. Der methodologische Teil bleibt nur bestehen, wenn die praktische Ineffizienz der konvergenten Darstellung zuverlässig belegt ist.
+
+---
+
 ## Nächste offene Entscheidung
 
-**C03 — Sundman:** Exakte Prüfung dessen, was mathematisch, historisch und hinsichtlich praktischer Berechenbarkeit über Sundmans Reihenlösung behauptet werden darf.
+**C04 — Begriffsleiter:** mathematische Konvergenz, rechnerische Machbarkeit, numerische Stabilität und wissenschaftliche Nutzbarkeit präzise trennen und auditierbar definieren.

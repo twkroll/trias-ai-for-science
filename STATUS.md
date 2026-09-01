@@ -24,18 +24,21 @@ Der mögliche Originalitätsbeitrag liegt in der **expliziten Audit-Struktur**, 
 - **Synthetisches Zielsystem** ist der bevorzugte technische Begriff; **synthetische Modellwelt** kann erläuternd verwendet werden.
 - **Synthetische Realität** wird nicht als technischer Kernbegriff verwendet.
 
+### C03 — Sundmans Reihenlösung und praktische Traktabilität
+**Status:** ACCEPTED — D003
+
+- Sundman wird als Fall einer konvergenten Reihenrepräsentation in regularisierter Variable unter den Voraussetzungen des klassischen Theorems behandelt.
+- Die Aussage „Sundmans Reihe konvergiert nicht“ ist ausgeschlossen.
+- Der methodologisch zentrale Befund lautet: **formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.**
+- Langsame Reihen-Konvergenz, numerische Stabilität und wissenschaftliche Nutzbarkeit werden nicht vermischt.
+- Sundman ist ein Leitbeispiel, aber kein alleiniger Beweis für die Trias.
+
 ## Aktuelle Aufgabe
 
-### C03 — Sundmans Reihenlösung und praktische Traktabilität
-**Status:** IN PROGRESS
+### C04 — Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ wissenschaftliche Nutzbarkeit
+**Status:** NEXT
 
-Zu prüfen ist exakt, was historisch und mathematisch über Sundmans Lösung behauptet werden darf, insbesondere die Trennung von mathematischer Konvergenz und praktischer Auswertbarkeit.
-
-## Nächster abhängiger Schritt
-
-Nach Entscheidung zu C03:
-
-**C04 — Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ wissenschaftliche Nutzbarkeit.**
+Die vier Kategorien sollen so präzise definiert werden, dass sie später im Trias-Audit und im Minimaldemonstrator operationalisiert werden können.
 
 ## Demonstrator
 

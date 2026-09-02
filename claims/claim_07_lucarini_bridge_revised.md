@@ -1,10 +1,10 @@
 # C07-L-R — Directed Trias / Equation-Discovery Bridge
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED AS WORKING CLAIM — D016  
 **Stand:** 2026-09-02  
 **Depends on:** C06-R / D009, D015, `literature/c07_l_comparator_audit.md`
 
-## Vorgeschlagene moderate Claim-Fassung
+## Akzeptierte moderate Claim-Fassung
 
 > **C07-L-R:** Bei datengetriebener Equation Discovery ist die Güte eines inferierten Modells mehrdimensional: strukturelle Übereinstimmung der Gleichungen, dynamisch-statistische Adäquanz und physikalische Interpretierbarkeit sind nicht gleichzusetzen. Zhai, Lucarini und Lai liefern einen konkreten chaotischen Fall, in dem unterschiedliche Beobachtungs-/Rekonstruktionsbedingungen zu strukturell verschiedenen inferierten ODEs führen, während ausgewählte Langzeit- und Koopman-Eigenschaften ähnlich bleiben. Für die Trias dient dieser Befund nicht als neue Identifiability-Theorie, sondern als inverser Testfall für die Hypothese, dass wissenschaftliche Rechtfertigung die Provenance und Richtung der Transformation `target/observation -> data -> inference -> theory` explizit auditieren sollte.
 
@@ -64,8 +64,6 @@ Dieser Teil ist eine **Integrationshypothese**, kein etablierter Literaturbefund
 
 C07-L-Rc wird abgeschwächt oder gestrichen, wenn ein eigener inverser MVP und der anschließende Framework-Vergleich zeigen, dass die Directed-Trias-Darstellung keine zusätzliche Integrations-/Zuordnungsarbeit gegenüber einer Kombination aus System Identification, Identifiability/Observability und SciML/V&V/Provenance leistet.
 
-## Entscheidungsempfehlung
+## Entscheidung D016
 
-**ACCEPT C07-L-R als moderate Arbeitsfassung.**
-
-Bei GO wird die starke C07-L-Neuheitsfassung verworfen, C07-L-R als Arbeitsclaim akzeptiert und als nächste Abhängigkeit ein Minimal Inverse-Direction Demonstrator v0.1 spezifiziert. Der ML-v0.2-Full-Run bleibt bis zu dieser Entscheidung pausiert.
+Die starke C07-L-Neuheitsfassung ist verworfen. C07-L-R ist als moderate Arbeitsfassung akzeptiert. Als nächste Abhängigkeit wird `demonstrator/inverse_direction_spec_v0_1.md` geprüft. Der ML-v0.2-Full-Run bleibt bis zur späteren strategischen Entscheidung pausiert.

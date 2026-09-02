@@ -238,6 +238,34 @@ D008 muss abgeschwächt werden, falls unabhängige Reproduktion oder zusätzlich
 
 ---
 
+## D009 — Claim 6 revidiert: Integrations-/Provenance-Wert statt neuer V&V-Fragen
+
+**Datum:** 2026-09-02  
+**Status:** ACCEPTED IN REVISED FORM  
+**Akzeptiert durch:** GO
+
+### Verwarfene starke Fassung
+
+Nicht akzeptiert wird die Behauptung, der Trias-Audit erzeuge im reinen Figure-eight-Solverfall eindeutig neue numerische Fehlertypen, Validierungsfragen oder eine gegenüber etablierter numerischer Analysis/V&V grundsätzlich überlegene Diagnose.
+
+### Akzeptierte revidierte Fassung C06-R
+
+> Im gegenwärtigen Drei-Körper-Demonstrator erzeugt der Trias-Audit keine eindeutig neuen numerischen Validierungsfragen gegenüber etablierter numerischer Analysis und Verification & Validation. Sein derzeit belegbarer methodologischer Mehrwert liegt vielmehr in einer expliziten, durchgängigen Zuordnung von Annahmen, Transformationen und Rechtfertigungsanforderungen zu Zielsystem, Theorie, Berechnung und ihren Übergängen. Diese Integrationsleistung verbindet insbesondere formale bzw. analytische Verfügbarkeit mit operativer Berechnung und zweckrelativer wissenschaftlicher Nutzung. Ob diese Integrationsleistung einen hinreichend eigenständigen Beitrag für AI for Science darstellt, muss an einem Fall mit zusätzlicher daten- bzw. lernbasierter Ebene weiter geprüft werden.
+
+### Mitakzeptierte Konsequenzen
+
+1. Die Trias wird nicht als Ersatz für V&V positioniert.
+2. Der derzeitige Mehrwert wird als Integrations-, Mapping- und Provenance-Funktion beschrieben.
+3. Sundman + numerischer Demonstrator bilden einen gemeinsamen methodologischen Bogen, aber keinen alleinigen Originalitätsnachweis.
+4. Eine spätere ML-Erweiterung ist ein weiterer Test der Integrationshypothese und kein automatisch positiver Neuheitsbeleg.
+5. Falls etablierte Credibility-/Simulation-Study-Frameworks auch diesen Restmehrwert ohne relevante Differenz abdecken, muss C06-R weiter abgeschwächt werden.
+
+### Revisionsbedingung
+
+C06-R kann nur dann stärker werden, wenn ein AI-for-Science-Fall zeigt, dass die explizite Trennung von Zielsystem, Theorie, simulationsgenerierten Daten, gelerntem Modell und wissenschaftlichem Gebrauch eine konkrete Fehlzuordnung oder ungerechtfertigte Schlussfolgerung verhindert oder transparent lokalisiert.
+
+---
+
 ## Nächste offene Entscheidung
 
-**C06 — zusätzlicher diagnostischer Wert der Trias:** Die starke Fassung wird nach hartem Vergleich mit etablierter numerischer Analysis, V&V/Credibility und Simulationsphilosophie derzeit nicht empfohlen. Zur Entscheidung steht eine revidierte integrative Fassung C06-R.
+**Minimal ML / AI-for-Science Provenance Demonstrator v0.1:** genau eine zusätzliche daten-/lernbasierte Übersetzung einführen und prüfen, ob generatorrelative ML-Güte und zielsystemrelative wissenschaftliche Güte auseinanderfallen können. Noch keine Implementierung vor Akzeptanz der Spezifikation.

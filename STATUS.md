@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / C06 Originality Stress Test**
+**Week 1 — Claim and Scope / Minimal AI-for-Science Provenance Test**
 
-Das Claim-and-Scope-Fundament, der Minimaldemonstrator, der Implementation Contract und der getestete Code-Skeleton sind eingefroren. Der vollständige v0.1-Lauf wurde ausgeführt und C05 ist akzeptiert. Aktuell wird der mögliche zusätzliche diagnostische Wert der Trias gegen etablierte numerische Analysis, Verification & Validation und Simulationsphilosophie geprüft.
+Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator, der Implementation Contract, der Code-Skeleton und der vollständige v0.1-Lauf sind abgeschlossen. C05 ist akzeptiert. Der harte C06-Vergleich hat die starke Neuheitsbehauptung im reinen Solverfall nicht gestützt; C06-R ist als schwächere Integrations-/Provenance-Fassung akzeptiert.
 
 ## Akzeptierte Entscheidungen
 
@@ -16,35 +16,39 @@ Das Claim-and-Scope-Fundament, der Minimaldemonstrator, der Implementation Contr
 - **Implementation Contract / D006:** v0.1-Konfiguration, Referenzlogik, Schrittweiten, Metriken, Gates und Artefakte eingefroren.
 - **Code Skeleton / D007:** minimaler getesteter Skeleton als faithful implementation von D006 akzeptiert.
 - **C05 / D008:** unterschiedliche numerische Operationalisierungen können bei gleichem Zielsystem/Theorie verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen; Bewertung ist use-case-relativ.
+- **C06-R / D009:** die starke Aussage neuer numerischer Validierungsfragen wird verworfen. Der derzeit belegbare Trias-Mehrwert ist eine explizite integrative Zuordnung/Provenance über Zielsystem, Theorie, Berechnung und wissenschaftliche Nutzung.
 
-## Full Demonstrator v0.1
+## Ergebnis des reinen Solverfalls
 
-**Status:** COMPLETE
+Der Figure-eight-Demonstrator erfüllt die Referenz-/Refinement-Gates und stützt C05. Gleichzeitig lassen sich seine numerischen Befunde ohne Informationsverlust in Standard-Numerik/V&V/Credibility-Sprache ausdrücken. Daher ist die Trias **nicht** als Ersatz oder nachweislich überlegener Rahmen gegenüber V&V zu behandeln.
 
-Reference gates und U1-Refinement-Gates sind erfüllt. Der Hauptbefund ist ein mehrdimensionales Implementierungsprofil: RK4 ist im getesteten Bereich trajectory-genauer, während Velocity-Verlet deutlich geringeren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau zeigt. Daraus folgt keine globale Solver-Rangfolge.
+Details:
 
-Details: [`demonstrator/full_run_v0_1_results.md`](demonstrator/full_run_v0_1_results.md).
+- [`demonstrator/full_run_v0_1_results.md`](demonstrator/full_run_v0_1_results.md)
+- [`demonstrator/c06_comparison_v0_1.md`](demonstrator/c06_comparison_v0_1.md)
+- [`claims/claim_06.md`](claims/claim_06.md)
 
 ## Aktuelle Aufgabe
 
-### C06 — zusätzlicher diagnostischer Wert des Trias-Audits
-**Status:** IN PROGRESS / STRONG FORM UNDER PRESSURE
+### Minimal ML / AI-for-Science Provenance Demonstrator v0.1
+**Status:** PENDING REVIEW
 
-Der harte Vergleich wird mit denselben Demonstratorresultaten durchgeführt:
+Der nächste Test führt genau **eine** zusätzliche Übersetzungsebene ein:
 
-1. gewöhnliche numerische Analysis / Verification & Validation / Credibility Assessment;
-2. Trias-Audit mit Zielsystem, Theorie, Berechnung und Übergangskanten.
+`synthetisches Zielsystem / Theorie → numerischer Datengenerator → Trainingsdaten → gelerntes One-Step-Surrogat → Rollout / wissenschaftlicher Gebrauch`.
 
-Vorläufiger Befund: Die starke Form von C06 — dass die Trias im numerischen Figure-eight-Fall neue Fehler- oder Validierungsfragen erzeugt — ist derzeit nicht ausreichend gestützt. Etablierte V&V-/Credibility-Frameworks decken bereits Code/Solution Verification, intended use, uncertainty, sensitivity, model assumptions und Ergebnis-Credibility ab. Ein möglicher verbleibender Mehrwert liegt eher in der expliziten integrativen Zuordnung über Zielsystem–Theorie–Berechnung hinweg und in der Verbindung von analytischer Traktabilität (Sundman) mit operativer Umsetzung.
+Ziel ist nicht ML-Performance, sondern die kontrollierte Frage, ob gute generatorrelative ML-Metriken zu einer ungerechtfertigten Aussage über das Zielsystem führen können und ob die explizite Provenance-Zuordnung der Trias diese Herkunft transparent macht.
 
-Siehe [`claims/claim_06.md`](claims/claim_06.md) und [`demonstrator/c06_comparison_v0_1.md`](demonstrator/c06_comparison_v0_1.md).
+Siehe [`demonstrator/ml_epistemic_spec_v0_1.md`](demonstrator/ml_epistemic_spec_v0_1.md).
 
-## Nächste Entscheidung
+## Noch nicht akzeptiert / implementiert
 
-Zu entscheiden ist, ob C06 in einer **revidierten schwachen/integrativen Form** akzeptiert wird und die starke Neuheitsbehauptung verworfen wird.
-
-Falls diese Revision akzeptiert wird, ist der nächste sinnvolle Test eine minimale AI-for-Science-Erweiterung, weil der reine Solverfall den Neuheitsanspruch gegenüber etabliertem V&V nicht trägt.
+- konkrete ML-Spezifikation;
+- ML-Code oder Training;
+- neuer Claim zu Datenprovenance oder Surrogatgüte;
+- chaotische/generalization-heavy Benchmarks;
+- physik-informierte oder strukturerhaltende Netzwerkarchitekturen.
 
 ## Arbeitsregel
 
-`GO` im Forschungsdialog = aktuelle Empfehlung akzeptiert; Decision-/Status-/Claim-Dokumentation aktualisieren; anschließend zum nächsten abhängigen Schritt übergehen.
+`GO` im Forschungsdialog = aktuelle Empfehlung akzeptiert; Decision-/Status-/Spezifikationsdokumentation aktualisieren; anschließend zum nächsten abhängigen Schritt übergehen.

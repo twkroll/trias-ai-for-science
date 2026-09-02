@@ -1,6 +1,6 @@
 # Minimal Inverse-Direction Demonstrator v0.1
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED — D017  
 **Depends on:** D016  
 **Purpose:** minimaler kontrollierter Test der inversen Directed-Trias-Kette `target/observation -> data -> preprocessing -> inference -> theory`.
 
@@ -273,7 +273,7 @@ Die dritte Zeile ist nur dann eigene Demonstratorevidenz, wenn die vorregistrier
 
 ## 14. Nächster Schritt nach Akzeptanz
 
-Nach `GO` wird zunächst ein **Inverse-Direction Implementation Contract v0.1** erstellt. Dieser friert exakt ein:
+Der nach D017 ausgearbeitete **Inverse-Direction Implementation Contract v0.1** friert exakt ein:
 
 - Lorenz-Anfangsbedingung und Zeitfenster;
 - DOP853 reference/cross-check;
@@ -286,10 +286,10 @@ Nach `GO` wird zunächst ein **Inverse-Direction Implementation Contract v0.1** 
 - Resultatklassen und Gates;
 - erforderliche Artefakte.
 
-Erst ein weiteres GO erlaubt Code/Experiment.
+Vor dessen weiterem `GO` erfolgt keine Implementierung.
 
-## Entscheidungsempfehlung
+## Entscheidung
 
-**ACCEPT.**
+**ACCEPTED — D017.**
 
-Der vorgeschlagene MVP ist klein genug, um die neue inverse Kante isoliert zu testen, hält den Zhai–Lucarini–Lai-Fall als Inspiration sichtbar, vermeidet aber eine unnötige Vollreplikation und hält den pausierten ML-v0.2-Zweig vollständig reversibel verfügbar.
+Der MVP ist klein genug, um die neue inverse Kante isoliert zu testen, hält den Zhai–Lucarini–Lai-Fall als Inspiration sichtbar, vermeidet eine unnötige Vollreplikation und hält den pausierten ML-v0.2-Zweig vollständig reversibel verfügbar.

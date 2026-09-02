@@ -2,13 +2,13 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / ML Code Skeleton Review**
+**Week 1 — Claim and Scope / Frozen ML Full Run**
 
-Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator und der vollständige v0.1-Lauf sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeitigen Trias-Mehrwert auf Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Demonstrator ist als D010 und sein technischer ML Implementation Contract als D011 eingefroren.
+Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator und der vollständige numerische v0.1-Lauf sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeitigen Trias-Mehrwert auf Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Demonstrator ist als D010, sein ML Implementation Contract als D011 und der getestete ML Code Skeleton als D012 eingefroren.
 
 ## Akzeptierte Entscheidungen
 
-- **C01 / D001:** Trias als methodologisches Audit-Framework; diagnostischer Mehrwert ist die zentrale Hypothese.
+- **C01 / D001:** Trias als methodologisches Audit-Framework.
 - **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol.
 - **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation.
 - **C04 / D004:** Konvergenz, operative Machbarkeit, Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt.
@@ -17,47 +17,31 @@ Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator und der 
 - **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance.
 - **AFS-DMO / D010:** minimaler ML-Provenance-Test mit DOP853-vs.-coarse-RK4-Teacher und gepaarten Residual-MLPs akzeptiert.
 - **ML-IC / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen vor dem wissenschaftlichen ML-Run eingefroren.
+- **ML-SKEL / D012:** getesteter Dataset-/Training-/Rollout-Skeleton als faithful implementation von D011 akzeptiert.
 
-## ML Code Skeleton v0.1
+## Aktuelle Aufgabe
 
-**Status:** READY FOR REVIEW
+### Wissenschaftlicher ML Full Run v0.1
+**Status:** RUN NEXT / FROZEN
 
-Implementiert sind:
+Auszuführen sind unverändert:
 
-- paired-teacher Dataset-Erzeugung ab identischen Figure-eight-Inputs;
-- DOP853 primary/tight und ein coarse RK4-Schritt als Labelgeneratoren;
-- contiguous split und training-only Inputnormalisierung;
+- `N=1000` Figure-eight-Phaseninputs;
+- DOP853 primary/tight und coarse RK4 als gepaarte Teacher;
+- Seeds `{0,1,2}` mit bitgleicher Paarinitialisierung;
 - Residual-MLP `12-128-128-128-12`, `tanh`, float64 CPU;
-- bitgleich gepaarte Seeds und deterministischer Trainingspfad;
+- maximal 5000 Epochen, vorregistriertes Early Stopping;
 - One-Step own-teacher/common-reference Metriken;
-- quantitative Zerlegung `e_total=e_model+e_teacher`;
-- MU1/MU2-Rollout-Pipeline;
-- technischer `--smoke`-Modus.
+- Reference- und Learner-Resolvability-Gates;
+- Provenance-Fehlerzerlegung;
+- MU1 = 1 Periode, MU2 = 10 Perioden;
+- 3/3-Seed-Regel für robuste Hauptbefunde.
 
-Lokale technische Validierung vor Repository-Write:
+## Noch nicht entschieden
 
-```text
-pytest -q
-4 passed
-```
-
-Der Smoke Run (`N=60`, Seed 0, maximal 20 Epochen; ausdrücklich nicht wissenschaftlich) lief vollständig durch. Das Reference-Gate war erfüllt, die Initialisierung war bitgleich gepaart und die Provenance-Fehleridentität schloss bis ungefähr `3.6e-15`. Die ML-Güte des Smoke Runs wird nicht interpretiert.
-
-Details: [`demonstrator/ml_code_skeleton_status_v0_1.md`](demonstrator/ml_code_skeleton_status_v0_1.md).
-
-## Noch nicht wissenschaftlich ausgeführt/entschieden
-
-- eingefrorener ML Full Run mit `N=1000` und Seeds `{0,1,2}`;
-- Learner-Resolvability-Gate;
-- MU1/MU2 über alle sechs Modelle;
-- 3/3-Seed-Robustheit;
-- Full-Run-Ergebnisstatus;
-- starker Vergleich gegen etablierte ML-Provenance/Credibility-Frameworks;
-- neuer Claim zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte.
-
-## Nächste Abhängigkeit
-
-Review des ML Code Skeleton v0.1. Nach Akzeptanz werden fehlende reine Output-/Checkpoint-Protokollierungsdetails ergänzt, ohne wissenschaftliche Einstellungen zu ändern, und anschließend der eingefrorene wissenschaftliche ML Full Run ausgeführt.
+- Ergebnisstatus des ML Full Runs;
+- möglicher neuer Claim zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte;
+- Originalität gegenüber starken Standard-ML-Provenance-/Credibility-Frameworks.
 
 ## Arbeitsregel
 

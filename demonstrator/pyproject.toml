@@ -20,6 +20,7 @@ dev = ["pytest>=8"]
 [project.scripts]
 trias-demo = "trias_demo.experiment:main"
 trias-ml-demo = "trias_demo.ml_experiment:main"
+trias-ml-demo-v02 = "trias_demo.ml_experiment_v0_2:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

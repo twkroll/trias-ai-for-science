@@ -2,26 +2,35 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / ML Full Run v0.1 Review**
+**Claim and Scope / AI-for-Science Provenance v0.2 Contract Review**
 
-Das Claim-and-Scope-Fundament, der numerische Minimaldemonstrator und dessen Full Run sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeitigen Trias-Mehrwert auf Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Test, sein Contract und sein getesteter Skeleton sind als D010–D012 eingefroren. Der wissenschaftliche ML Full Run v0.1 wurde nun ausgeführt.
+Das Claim-and-Scope-Fundament, der numerische Minimaldemonstrator und dessen Full Run sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Test v0.1, sein technischer Contract und sein getesteter Skeleton sind als D010–D012 eingefroren. Der wissenschaftliche ML Full Run v0.1 wurde ausgeführt und als nicht entscheidungsfähig klassifiziert.
 
 ## Akzeptierte Entscheidungen
 
 - **C01 / D001:** Trias als methodologisches Audit-Framework.
 - **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol.
-- **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation.
+- **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation; formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.
 - **C04 / D004:** Konvergenz, operative Machbarkeit, Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt.
-- **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, implementiert und getestet.
+- **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, implementiert, getestet und vollständig ausgeführt.
 - **C05 / D008:** verschiedene numerische Operationalisierungen erzeugen use-case-relative Fehler-/Strukturprofile.
-- **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance.
+- **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance/Mapping.
 - **AFS-DMO / D010:** minimaler ML-Provenance-Test akzeptiert.
-- **ML-IC / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen eingefroren.
-- **ML-SKEL / D012:** getesteter ML-Skeleton akzeptiert.
+- **ML-IC v0.1 / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen eingefroren.
+- **ML-SKEL v0.1 / D012:** getesteter ML-Skeleton akzeptiert.
+- **ML v0.1 Review + v0.2 Direction / D013:** v0.1 endgültig als `INCONCLUSIVE_LEARNER_ERROR` akzeptiert; v0.2 repariert ausschließlich Signalauflösung durch phase-stratifizierten Blocksplit und gemeinsamen teacher-unabhängigen Target-Scaler.
+
+## Numerischer Demonstrator
+
+**Status:** COMPLETE.
+
+Der reine Solverfall zeigt ein mehrdimensionales Implementierungsprofil: RK4 ist im getesteten Bereich trajectory-genauer, Velocity-Verlet zeigt deutlich geringeren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau. Daraus folgt keine globale Solver-Rangfolge; wissenschaftliche Bewertung ist use-case-relativ.
+
+Der anschließende harte Vergleich mit Standard-Numerik/V&V/Credibility zeigte jedoch, dass diese Befunde dort bereits vollständig diagnostizierbar sind. Die Trias wird deshalb nicht als Ersatz oder nachweislich überlegener V&V-Rahmen positioniert.
 
 ## ML Full Run v0.1
 
-**Status:** COMPLETE — `INCONCLUSIVE_LEARNER_ERROR`
+**Status:** COMPLETE — `INCONCLUSIVE_LEARNER_ERROR`.
 
 ### Gates
 
@@ -33,24 +42,44 @@ Das Claim-and-Scope-Fundament, der numerische Minimaldemonstrator und dessen Ful
   - median own-teacher RMSE, ref-trained: `0.7187268`;
   - median own-teacher RMSE, rk4-trained: `0.7171894`.
 
-Damit ist der Lern-/Held-out-Phasenfehler ungefähr fünf Größenordnungen größer als die numerische Teacher-Differenz. D011 verbietet deshalb eine Provenance-Interpretation des Runs.
-
-Die exakte Fehlerzerlegung funktioniert technisch, aber der Teacher-Beitrag (`~2e-09` als mean squared vector term) wird von Modellfehlerbeiträgen von Ordnung `1–10` überdeckt. MU1/MU2 laufen formal ohne den Paarabstands-Abbruch, sind jedoch mit extrem großen Trajektorien-/Strukturfehlern und starker OOD-Akkumulation wissenschaftlich nicht als Teacher-Provenance-Evidenz interpretierbar.
+Der Lernfehler liegt damit ungefähr fünf Größenordnungen über der numerischen Teacher-Differenz. Die exakte Provenance-Zerlegung funktioniert technisch, doch der Modellfehler dominiert den Teacher-Beitrag. MU1/MU2 werden daher nicht als Teacher-Provenance-Evidenz interpretiert.
 
 Details: [`demonstrator/ml_full_run_v0_1_results.md`](demonstrator/ml_full_run_v0_1_results.md).
 
 ## C07
 
-**Status:** NOT ASSESSABLE FROM v0.1.
+**Status:** NOT ASSESSABLE.
 
-Der Kandidat zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte wird weder akzeptiert noch verworfen. Das Experiment ist wegen fehlender Learner-Resolvability nicht entscheidungsfähig.
+Der Kandidat
 
-Siehe [`claims/claim_07.md`](claims/claim_07.md).
+> Gute ML-Güte relativ zu simulationsgenerierten Trainingslabels rechtfertigt nicht automatisch eine gleich starke Aussage über das wissenschaftliche Zielsystem; die epistemische Bewertung eines Surrogats muss die Provenance des Datengenerators berücksichtigen.
 
-## Nächste Entscheidung
+wird aus v0.1 weder akzeptiert noch verworfen.
 
-Zu entscheiden ist, ob der v0.1-Status `INCONCLUSIVE_LEARNER_ERROR` als korrekte wissenschaftliche Schlussfolgerung akzeptiert wird und anschließend ein separat preregistrierter v0.2-Resolvability-Test entworfen werden soll. Innerhalb v0.1 findet kein Rescue-Sweep statt.
+## Aktuelle Aufgabe
+
+### ML Implementation Contract v0.2 — Resolvability Repair
+**Status:** PENDING REVIEW
+
+v0.2 behält Target, Teacher, `N=1000`, `Delta_t`, Architektur, Seeds und Optimierung bei. Geändert werden nur:
+
+1. ein deterministischer phase-stratifizierter Fünfer-Blocksplit mit weiterhin exakt 60/20/20 %, der alle Splits über die gesamte Figure-eight-Phase verteilt;
+2. ein gemeinsamer teacher-unabhängiger Target-Scaler, ausschließlich aus den Trainingstargets beider Teacher gemeinsam berechnet.
+
+Teacher-Provenance darf weiterhin nur interpretiert werden, wenn `G1–G3` bestanden sind, insbesondere
+
+```text
+median_seed(RMSE_own_teacher_test) < D_teacher_test.
+```
+
+Siehe [`demonstrator/ml_implementation_contract_v0_2.md`](demonstrator/ml_implementation_contract_v0_2.md).
+
+## Projektkommando `PDF`
+
+Im Forschungsdialog bedeutet die alleinige Nachricht **`PDF`**: Aus dem jeweils aktuellen Repository- und Entscheidungsstand wird ein neues ausführliches Kooperationsbriefing als PDF erzeugt. Es soll für eine promovierte Physikerin mit wissenschaftsphilosophischem Hintergrund verständlich und kritisch lesbar sein und nicht lediglich alte Briefingtexte erneut ausgeben. Details sind in `collaboration/PDF_WORKFLOW.md` festgelegt.
 
 ## Arbeitsregel
 
-`GO` im Forschungsdialog = aktuelle Empfehlung akzeptiert; Decision-/Status-/Spezifikationsdokumentation aktualisieren; anschließend zum nächsten abhängigen Schritt übergehen.
+`GO` = aktuelle wissenschaftliche Empfehlung akzeptieren, dokumentieren und zum nächsten abhängigen Schritt übergehen.
+
+`PDF` = aktuellen detaillierten Kooperationsstand neu synthetisieren und als PDF bereitstellen.

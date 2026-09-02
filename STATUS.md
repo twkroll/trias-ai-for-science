@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Directed Trias / Inverse-Direction Code Skeleton v0.1 Review**
+**Directed Trias / Inverse Scientific Full Run v0.1 Review**
 
-Der numerische Drei-Körper-Demonstrator ist abgeschlossen. C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Die Directed Trias ist als Arbeitsrevision akzeptiert. Der ML-v0.2-Full-Run bleibt strategisch pausiert. Aktuell wird die inverse Kette `target/observation -> data -> preprocessing -> inference -> theory` mit einem minimalen Lorenz/SINDy-Demonstrator geprüft.
+Der numerische Drei-Körper-Demonstrator ist abgeschlossen. C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Die Directed Trias ist als Arbeitsrevision akzeptiert. Der ML-v0.2-Full-Run bleibt strategisch pausiert. Der wissenschaftliche inverse Lorenz/SINDy-Full-Run wurde nun nach dem eingefrorenen D018-Contract ausgeführt.
 
 ## Akzeptierte Entscheidungen
 
@@ -16,6 +16,7 @@ Der numerische Drei-Körper-Demonstrator ist abgeschlossen. C06-R beschränkt de
 - **D016:** starke C07-L-Neuheitsfassung verworfen; C07-L-R als moderate Equation-Discovery-Bridge akzeptiert.
 - **D017:** Minimal Inverse-Direction Demonstrator v0.1 akzeptiert und eingefroren.
 - **D018:** Inverse-Direction Implementation Contract v0.1 akzeptiert und eingefroren.
+- **D019:** Inverse-Direction Code Skeleton v0.1 akzeptiert; wissenschaftlicher Full Run freigegeben.
 
 ## Directed Trias
 
@@ -26,7 +27,10 @@ Inverse: R -> C_obs -> D -> C_pre -> C_infer -> T_hat
 
 Die drei Pole bleiben funktionale Rollen; Daten sind Zwischenartefakte. Theoretische Identifizierbarkeit bleibt eine querliegende Auditdimension, keine neue Stufe der sechs-stufigen Lösungsleiter.
 
-## Inverser MVP
+## Wissenschaftlicher inverse Full Run v0.1
+
+**Status:** COMPLETE / PENDING SCIENTIFIC REVIEW  
+**Pre-registered classification:** `INFORMATIVE_NEGATIVE`
 
 Eingefrorener Full-Contract:
 
@@ -44,33 +48,49 @@ common 5-point derivative estimator
 common quadratic SINDy/STLSQ pipeline
 ```
 
-P0 muss vor jeder Provenance-Interpretation das Structural-Recovery-Gate bestehen. Structural equation fidelity und dynamical/statistical adequacy werden getrennt bewertet. Der spätere Comparator-Test gegen System Identification, Identifiability/Observability, SciML V&V und Workflow/Data Provenance bleibt verpflichtend.
-
-## Code Skeleton v0.1
-
-**Status: READY FOR REVIEW. Scientific full run: NOT EXECUTED.**
-
-Implementiert wurden:
-
-- Lorenz-Referenz, Missingness, Pairing/Mask-Hashes und Reconstruction;
-- 5-Punkt-Derivative Estimation;
-- feste quadratische Feature-Library und STLSQ;
-- Structural Metrics und held-out Vector-Field-NRMSE;
-- Forward-Integration inferierter ODEs;
-- Short-Horizon-Fehler, Langzeitstatistik, Korrelation und Wasserstein-Metriken;
-- Dynamic-validity- und operative-Äquivalenzfunktionen;
-- CLI `trias-inverse-demo`;
-- technische Tests und ein verkürzter, ausdrücklich nichtwissenschaftlicher Smoke Run.
-
-Lokale gezielte Tests:
+### Gates
 
 ```text
-6 passed
+G1 reference: PASS
+max normalized primary/tight gap [0,10] = 4.7727891186720604e-12
+
+G2 mask integrity: PASS for seeds {0,1,2}
+
+G3 P0 structural baseline: PASS
+precision = 1.0
+recall = 1.0
+spurious terms = 0
+missing true terms = 0
+max relative true-coefficient error = 5.295715025790404e-04
 ```
 
-Smoke-Pipeline: Reference-Gate und Mask-Integrität bestanden; P1/P2 verwendeten denselben Mask-Hash. Das P0-Full-Gate wurde im absichtlich verkürzten Smoke-Setup nicht erfüllt und wird ausdrücklich nicht wissenschaftlich interpretiert.
+### Structural result
 
-Details: [`demonstrator/inverse_direction_code_skeleton_status_v0_1.md`](demonstrator/inverse_direction_code_skeleton_status_v0_1.md).
+```text
+linear reconstruction: substantial structural perturbation in 1/3 seeds
+cubic reconstruction:  substantial structural perturbation in 0/3 seeds
+required for seed-consistency: >=2/3
+```
+
+Der einzige Supportwechsel tritt bei linearer Rekonstruktion, Seed 2, auf: ein zusätzlicher konstanter Term in `dz/dt` mit Koeffizient ungefähr `-0.0967611`. Dieses Modell besteht zugleich die eingefrorenen operativen Äquivalenzkriterien, bleibt aber ein 1/3-Einzelfall.
+
+### Dynamical/statistical result
+
+Alle sechs P1/P2-ODEs bleiben im 100-Zeiteinheiten-Test endlich und beschränkt. Fünf von sechs erfüllen sämtliche eingefrorenen operativen Äquivalenztoleranzen. Cubic seed 2 scheitert an finite-window Langzeit-Mittelwert-/Wasserstein-Gates trotz sehr kleinem Gleichungs-/Vector-Field-Fehler.
+
+Da kein Rekonstruktionspfad eine seed-konsistente strukturelle Perturbation in mindestens 2/3 Seeds zeigt, erzwingt D018 die Klassifikation:
+
+```text
+INFORMATIVE_NEGATIVE
+```
+
+Details: [`demonstrator/inverse_full_run_v0_1_results.md`](demonstrator/inverse_full_run_v0_1_results.md).
+
+## Wissenschaftliche Bedeutung
+
+Der eingefrorene Minimalfall reproduziert **nicht robust** den interessierenden Effekt `structural disagreement + dynamical similarity`. Der einzelne lineare Seed-2-Fall ist diagnostisch interessant, darf nach Vorregistrierung aber nicht als positiver Provenance-Fall gewertet werden.
+
+Das Ergebnis widerlegt weder Nichtidentifizierbarkeit noch die Befunde von Zhai–Lucarini–Lai. Es begrenzt ausschließlich die Evidenz des konkreten Minimaldesigns mit 20% zufälliger punktweiser Missingness und linearer/kubischer Rekonstruktion.
 
 ## ML v0.2
 
@@ -78,7 +98,15 @@ Details: [`demonstrator/inverse_direction_code_skeleton_status_v0_1.md`](demonst
 
 ## Nächste Entscheidung
 
-Zu entscheiden ist, ob der Inverse-Direction Code Skeleton v0.1 als faithful technische Umsetzung von D018 akzeptiert wird. Erst bei weiterem `GO` darf der wissenschaftliche inverse Full Run mit den eingefrorenen D018-Parametern ausgeführt werden.
+Zu entscheiden ist, ob `INFORMATIVE_NEGATIVE` als wissenschaftlicher Projektbefund akzeptiert wird. Empfehlung: **ACCEPT** und danach zuerst den verpflichtenden Comparator-Audit auf genau diesem negativen Resultat durchführen. Vor diesem Audit keine Änderung von Missingness, SINDy-Thresholds oder ML-v0.2.
+
+Erst danach wird entschieden zwischen:
+
+```text
+A. begründete Revision des inversen Demonstrators
+B. Resume des pausierten ML-v0.2-Branches
+C. weitere Abschwächung/Neupositionierung des Directed-Trias-Originalitätsclaims
+```
 
 ## Projektkommandos
 

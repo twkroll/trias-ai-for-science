@@ -1,10 +1,10 @@
 # Claim 06 — Revision 2 (C06-R2)
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED — D021  
 **Stand:** 2026-09-02  
 **Depends on:** D009, D015, D016, D020 and `literature/inverse_negative_result_comparator_audit_v0_1.md`
 
-## Vorgeschlagene Arbeitsfassung
+## Akzeptierte Arbeitsfassung
 
 > **C06-R2:** Die bisherigen Drei-Körper-, ML- und inversen Equation-Discovery-Fälle zeigen keine eigenständige neue Fehler-, Validierungs-, Provenance- oder Identifiability-Kategorie der Trias gegenüber starken etablierten Vergleichsrahmen. Der verbleibende mögliche Beitrag der Directed Trias ist eine kompakte fachübergreifende Synthese, die Forward- und Inverse-Transformationen zwischen Zielsystem, Theorie und operativer Vermittlung in einer gemeinsamen Audit-Sprache ordnet und sichtbar macht, auf welches epistemische Objekt sich eine konkrete Rechtfertigung bezieht. Diese Leistung ist als konzeptionelle Integrations- und Kommunikationsfunktion zu bewerten und nicht als neue mathematische oder technische Credibility-Theorie.
 
@@ -55,8 +55,6 @@ C06-R2 behauptet nicht:
 
 Wenn die geplante Paper-Ausarbeitung zeigt, dass selbst die fachübergreifende Synthese ohne Verlust vollständig durch einen einzelnen bestehenden Rahmen dargestellt werden kann und die Trias keine zusätzliche Verständlichkeits-, Vergleichs- oder Strukturierungsfunktion besitzt, sollte der Eigenbegriff `Trias` weiter zurückgenommen oder das Projekt als eigenständiges Paper beendet werden.
 
-## Entscheidungsempfehlung
+## Strategische Folge von D021
 
-**ACCEPT C06-R2 und pivot to paper-contribution boundary.**
-
-Nach GO keine neuen Experimente als Hauptpfad. Stattdessen: exakter Paper-Hauptclaim, Non-Claims, Comparator-Coverage-Matrix, Rolle der Demonstratoren und Zieljournal-/Paperformat-Entscheidung.
+Die experimentelle Mainline wird vorerst beendet. Als nächste Abhängigkeit wird `Paper Contribution Boundary + Outline v0.1` ausgearbeitet. Neue Experimente werden nicht als Versuch gestartet, einen stärkeren Trias-Novelty-Claim zu erzeugen.

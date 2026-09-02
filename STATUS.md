@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / Full Demonstrator v0.1 Review**
+**Week 1 — Claim and Scope / C06 Originality Stress Test**
 
-Das Claim-and-Scope-Fundament, der Minimaldemonstrator, der Implementation Contract und der getestete Code-Skeleton sind eingefroren. Der vollständige v0.1-Lauf wurde ausgeführt; aktuell wird C05 anhand dieser Ergebnisse bewertet.
+Das Claim-and-Scope-Fundament, der Minimaldemonstrator, der Implementation Contract und der getestete Code-Skeleton sind eingefroren. Der vollständige v0.1-Lauf wurde ausgeführt und C05 ist akzeptiert. Aktuell wird der mögliche zusätzliche diagnostische Wert der Trias gegen etablierte numerische Analysis, Verification & Validation und Simulationsphilosophie geprüft.
 
 ## Akzeptierte Entscheidungen
 
@@ -12,51 +12,38 @@ Das Claim-and-Scope-Fundament, der Minimaldemonstrator, der Implementation Contr
 - **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol; keine notwendige ontologische Trennung der Pole.
 - **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation; formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.
 - **C04 / D004:** Konvergenz, operative Machbarkeit, numerische Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt; V&V bleibt Vergleichsrahmen.
-- **Minimal Demonstrator / D005:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, mit U1 und U2 und ohne ML/chaotischen Fall.
+- **Minimal Demonstrator / D005:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, U1/U2, kein ML/chaotischer Fall in v0.1.
 - **Implementation Contract / D006:** v0.1-Konfiguration, Referenzlogik, Schrittweiten, Metriken, Gates und Artefakte eingefroren.
 - **Code Skeleton / D007:** minimaler getesteter Skeleton als faithful implementation von D006 akzeptiert.
+- **C05 / D008:** unterschiedliche numerische Operationalisierungen können bei gleichem Zielsystem/Theorie verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen; Bewertung ist use-case-relativ.
 
 ## Full Demonstrator v0.1
 
 **Status:** COMPLETE
 
-Der eingefrorene Lauf wurde für U1 und U2 sowie `n={50,100,200,400,800}` ausgeführt. Der monolithische Runner überschritt die verfügbare Tool-Walltime; deshalb wurde dieselbe unveränderte Rechnung deterministisch in Referenz- und Method/Refinement-Teilläufen ausgeführt und aggregiert.
-
-### Reference gates
-
-- U1 primary-vs-tight DOP853 max normalized position gap: `8.854e-12`.
-- U2 primary-vs-tight DOP853 max normalized position gap: `6.163e-08`.
-- Selbst der feinste interpretierte Fixed-Step-Trajektorienfehler liegt mehr als zwei Größenordnungen über dem jeweiligen Referenzgap.
-
-Die akzeptierte Referenzregel ist damit für die C05-Auswertung erfüllt.
-
-### Refinement
-
-- RK4 U1 observed endpoint orders: `4.74, 4.62, 4.46, 4.30`.
-- Verlet U1 observed endpoint orders: `1.75, 1.87, 1.97, 1.99`.
-
-### Hauptbefund
-
-Für U1 ist RK4 bei gleichem `n` klar trajectory-genauer. Für U2 entsteht dagegen ein mehrdimensionales Profil: RK4 bleibt trajectory-genauer und besitzt teils kleinere maximale Energiefehler-Amplituden, während Velocity-Verlet einen drastisch kleineren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau zeigt.
+Reference gates und U1-Refinement-Gates sind erfüllt. Der Hauptbefund ist ein mehrdimensionales Implementierungsprofil: RK4 ist im getesteten Bereich trajectory-genauer, während Velocity-Verlet deutlich geringeren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau zeigt. Daraus folgt keine globale Solver-Rangfolge.
 
 Details: [`demonstrator/full_run_v0_1_results.md`](demonstrator/full_run_v0_1_results.md).
 
-## Aktuelle Entscheidung
+## Aktuelle Aufgabe
 
-### C05 — Implementierungswahl kann wissenschaftlich relevante Profile erzeugen
-**Status:** PENDING REVIEW
+### C06 — zusätzlicher diagnostischer Wert des Trias-Audits
+**Status:** IN PROGRESS / STRONG FORM UNDER PRESSURE
 
-Empfohlene moderate Fassung:
+Der harte Vergleich wird mit denselben Demonstratorresultaten durchgeführt:
 
-> Bei identischem synthetischem Zielsystem, identischer Theorie und identischen Anfangsdaten können unterschiedliche numerische Operationalisierungen verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen. Welche Operationalisierung für eine wissenschaftliche Aufgabe vorzuziehen ist, kann deshalb vom spezifizierten wissenschaftlichen Gebrauch und den dafür relevanten theoretischen Strukturen abhängen und ist nicht notwendig durch eine einzelne globale Genauigkeitsmetrik bestimmt.
+1. gewöhnliche numerische Analysis / Verification & Validation / Credibility Assessment;
+2. Trias-Audit mit Zielsystem, Theorie, Berechnung und Übergangskanten.
 
-Siehe [`claims/claim_05.md`](claims/claim_05.md).
+Vorläufiger Befund: Die starke Form von C06 — dass die Trias im numerischen Figure-eight-Fall neue Fehler- oder Validierungsfragen erzeugt — ist derzeit nicht ausreichend gestützt. Etablierte V&V-/Credibility-Frameworks decken bereits Code/Solution Verification, intended use, uncertainty, sensitivity, model assumptions und Ergebnis-Credibility ab. Ein möglicher verbleibender Mehrwert liegt eher in der expliziten integrativen Zuordnung über Zielsystem–Theorie–Berechnung hinweg und in der Verbindung von analytischer Traktabilität (Sundman) mit operativer Umsetzung.
 
-## Danach
+Siehe [`claims/claim_06.md`](claims/claim_06.md) und [`demonstrator/c06_comparison_v0_1.md`](demonstrator/c06_comparison_v0_1.md).
 
-Nach Akzeptanz von C05 folgt **C06**: direkter Vergleich derselben Ergebnisse unter gewöhnlicher numerischer Analysis/V&V versus Trias-Audit. Erst dieser Schritt darf über den zusätzlichen diagnostischen Wert der Trias entscheiden.
+## Nächste Entscheidung
 
-ML bleibt weiterhin außerhalb des aktuellen Scope.
+Zu entscheiden ist, ob C06 in einer **revidierten schwachen/integrativen Form** akzeptiert wird und die starke Neuheitsbehauptung verworfen wird.
+
+Falls diese Revision akzeptiert wird, ist der nächste sinnvolle Test eine minimale AI-for-Science-Erweiterung, weil der reine Solverfall den Neuheitsanspruch gegenüber etabliertem V&V nicht trägt.
 
 ## Arbeitsregel
 

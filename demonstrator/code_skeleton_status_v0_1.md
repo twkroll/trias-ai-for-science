@@ -1,8 +1,9 @@
 # Code Skeleton Status v0.1
 
-**Status:** READY FOR REVIEW  
+**Status:** ACCEPTED — D007  
+**Akzeptiert durch:** GO  
 **Depends on:** D006 accepted Implementation Contract v0.1  
-**Scientific claims:** none yet; C05/C06 remain unassessed.
+**Scientific claims:** none accepted by this decision; C05/C06 require full-run interpretation.
 
 ## Implemented
 
@@ -20,72 +21,21 @@
 - deterministic output artifacts and rule-based `trias_audit.md`;
 - quick smoke mode and frozen full-run mode.
 
-## Local validation performed before repository write
-
-Environment used for the local validation:
-
-```text
-Python: container runtime
-NumPy: 2.3.5
-SciPy: 1.17.0
-Matplotlib: 3.10.8
-pytest: 9.0.2
-```
-
-Test command:
+## Validation before acceptance
 
 ```text
 python -m pytest -q
-```
-
-Result:
-
-```text
 4 passed
 ```
 
-Covered gates:
+Covered gates included initial center of mass, total linear momentum, total angular momentum, pair-force antisymmetry, finite U1 integrations, first refinement behavior and primary/tight DOP853 consistency.
 
-1. Figure-eight initial center of mass approximately zero;
-2. initial total linear momentum approximately zero;
-3. initial total angular momentum approximately zero;
-4. internal pair-force antisymmetry via vanishing net internal force;
-5. U1 RK4 and Verlet runs finite at `n=50,100`;
-6. U1 endpoint position error decreases from `n=50` to `n=100` for both methods;
-7. primary/tight DOP853 U1 reference discrepancy is small (`<1e-8` test bound).
+A quick pipeline smoke run generated all contract artifact types. Quick-mode numerical values were not used as evidence for C05/C06.
 
-## Quick pipeline smoke run
+## Accepted scope boundary
 
-Executed successfully with:
+D007 accepts the implementation skeleton as a faithful minimal realization of D006. It does not accept a solver ranking or a claim of added epistemic value for the Trias.
 
-```text
-python -m trias_demo.experiment --quick --output-dir run_quick
-```
+## Subsequent execution
 
-Quick mode generated all eight required artifact types:
-
-```text
-results/reference_check.json
-results/metrics.csv
-results/summary.json
-results/trias_audit.md
-figures/u1_trajectory_error.png
-figures/u2_energy_error.png
-figures/error_vs_cost.png
-figures/refinement_u1.png
-```
-
-Quick mode is not the frozen scientific experiment and its numerical values are not used as evidence for C05/C06.
-
-## Deliberately not yet claimed
-
-- full 100-period run validated;
-- all five frozen refinements valid over U2;
-- reference adequacy over U2;
-- textbook convergence orders over the full usable refinement range;
-- a scientific ranking between RK4 and Verlet;
-- diagnostic added value of the Trias.
-
-## Next dependency
-
-Review this skeleton. If accepted, execute the frozen full v0.1 experiment and evaluate the scientific gates before interpreting C05.
+After D007, the frozen full v0.1 experiment is executed over U1 and U2 with all five refinements. Scientific results are documented separately and C05 is reviewed only after the reference/refinement gates are checked.

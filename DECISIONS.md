@@ -188,6 +188,56 @@ D006 wird nur geändert, wenn die Implementierung einen technischen Widerspruch 
 
 ---
 
-## Aktuelle Aufgabe
+## D007 — Code Skeleton v0.1
 
-**Code Skeleton v0.1:** den eingefrorenen Contract minimal implementieren, testen und vor dem vollständigen wissenschaftlichen Lauf erneut reviewen.
+**Datum:** 2026-09-02  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
+
+### Entscheidung
+
+Der minimale getestete Code-Skeleton wird als faithful implementation des eingefrorenen Implementation Contract v0.1 akzeptiert. Der Skeleton umfasst gemeinsame Newtonsche Dynamik/Invarianten, expliziten RK4 und Velocity-Verlet, DOP853-Referenzpaare, die vereinbarten Metriken, einen reproduzierbaren Experiment-Runner, Tests und einen regelbasierten Audit-Output.
+
+### Mitakzeptierte Konsequenzen
+
+1. Der Quick-Run dient nur als Pipeline-Smoke-Test und nicht als wissenschaftliche Evidenz.
+2. Wissenschaftliche Claims C05/C06 dürfen erst nach dem vollständigen v0.1-Lauf interpretiert werden.
+3. Der Implementierungsumfang bleibt auf D006 begrenzt.
+
+### Revisionsbedingung
+
+D007 wird revidiert, falls der Full-Run einen Implementierungsfehler oder eine Verletzung des eingefrorenen Contracts offenlegt.
+
+---
+
+## D008 — Claim 5: use-case-relative Implementierungsprofile
+
+**Datum:** 2026-09-02  
+**Status:** ACCEPTED  
+**Akzeptiert durch:** GO
+
+### Entscheidung
+
+> Bei identischem synthetischem Zielsystem, identischer Theorie und identischen Anfangsdaten können unterschiedliche numerische Operationalisierungen verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen. Welche Operationalisierung für eine wissenschaftliche Aufgabe vorzuziehen ist, kann deshalb vom spezifizierten wissenschaftlichen Gebrauch und den dafür relevanten theoretischen Strukturen abhängen und ist nicht notwendig durch eine einzelne globale Genauigkeitsmetrik bestimmt.
+
+### Empirische Grundlage
+
+Der Full-v0.1-Lauf erfüllt die akzeptierten Referenz- und Refinement-Gates. RK4 ist im getesteten Bereich deutlich trajectory-genauer; Velocity-Verlet zeigt zugleich deutlich geringeren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau. Daraus folgt keine globale Solver-Rangfolge, sondern ein use-case-relatives Profil.
+
+### Mitakzeptierte Konsequenzen
+
+1. Velocity-Verlet wird nicht allgemein als besser als RK4 bezeichnet.
+2. Invariantenerhaltung wird nicht generell über Trajektoriengenauigkeit gestellt.
+3. Ein kleiner fitted Drift-Slope gilt nicht allein als Beweis numerischer Stabilität.
+4. C05 trägt keine Originalitätsbehauptung für die Trias gegenüber V&V.
+5. Der nächste Test ist ausdrücklich C06: Standard-Numerik/V&V versus Trias-Audit auf denselben Resultaten.
+
+### Revisionsbedingung
+
+D008 muss abgeschwächt werden, falls unabhängige Reproduktion oder zusätzliche Referenzprüfung zeigt, dass der beobachtete Profilkontrast ein Implementierungs- oder Referenzartefakt ist.
+
+---
+
+## Nächste offene Entscheidung
+
+**C06 — zusätzlicher diagnostischer Wert der Trias:** Die starke Fassung wird nach hartem Vergleich mit etablierter numerischer Analysis, V&V/Credibility und Simulationsphilosophie derzeit nicht empfohlen. Zur Entscheidung steht eine revidierte integrative Fassung C06-R.

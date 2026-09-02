@@ -12,8 +12,8 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | C05 | Implementierungswahl kann wissenschaftlich relevante Profile erzeugen | ACCEPTED | Full v0.1 run stützt moderate zweckrelative Fassung | D008 |
 | C06-R | Integrations-/Provenance-Wert des Trias-Audits | ACCEPTED | Starke Neuheitsform im Solverfall verworfen; schwache integrative Fassung bleibt prüfbar | D009 |
 | AFS-DMO | Minimaler ML/AI-for-Science-Provenance-Demonstrator | ACCEPTED | Testdesign für zusätzliche daten-/lernbasierte Übersetzung eingefroren | D010 |
-| ML-IC | ML Implementation Contract v0.1 | ACCEPTED | technische Vorregistrierung eingefroren; noch kein wissenschaftlicher ML-Run | D011 |
-| ML-SKEL | ML Dataset-/Training-Skeleton v0.1 | READY FOR REVIEW | lokale Tests 4/4; Smoke-Pipeline erfolgreich; wissenschaftliche Evidenz noch ausstehend | — |
+| ML-IC | ML Implementation Contract v0.1 | ACCEPTED | technische Vorregistrierung eingefroren | D011 |
+| ML-SKEL | ML Dataset-/Training-Skeleton v0.1 | ACCEPTED | lokale Tests 4/4 und Smoke-Pipeline erfolgreich; wissenschaftliche Evidenz folgt erst aus Full Run | D012 |
 | C07? | ML-Provenance-Claim-Kandidat | NOT STARTED | erst nach ML Full Run und erneutem Vergleich mit Standard-ML-Credibility bewertbar | — |
 
 ## Arbeitsregel
@@ -22,12 +22,12 @@ Ein Claim erhält den Status `ACCEPTED`, wenn die vorgeschlagene Arbeitsfassung 
 
 ## Aktueller Evidenzstand
 
-Der vollständige numerische v0.1-Demonstrator stützt C05. Der harte Vergleich gegen etablierte Numerik/V&V trägt keine starke Behauptung neuer numerischer Validierungsfragen; C06-R beschränkt den Mehrwert auf Integrations-/Provenance-Zuordnung.
+Der numerische Demonstrator stützt C05; der harte Vergleich gegen etablierte Numerik/V&V trägt keine starke Neuheitsbehauptung, weshalb C06-R auf Integrations-/Provenance-Zuordnung begrenzt bleibt. D010–D012 registrieren nun den minimalen ML-Provenance-Test, dessen technische Kontrolllogik und die getestete Implementierung vor dem wissenschaftlichen Full Run.
 
-D010 und D011 führen nun genau eine daten-/lernbasierte Übersetzung ein und registrieren deren technische Kontrolllogik vor dem Full Run. Der ML-Skeleton implementiert die gepaarte Teacher-Datengenerierung, das Residual-MLP, One-Step-Metriken, Provenance-Fehlerzerlegung und MU1/MU2-Pipeline. Die lokale Smoke-Prüfung ist rein technisch und wird nicht als wissenschaftliche Evidenz verwendet.
+Noch ist kein neuer ML-Claim akzeptiert. Zunächst müssen Reference-/Learner-Gates, One-Step-Ergebnisse, MU1/MU2 und Seed-Robustheit des eingefrorenen ML Full Runs geprüft werden.
 
 ## Abhängigkeitslogik
 
-C01 → C02 → C03 → C04 → D005 → D006 → D007 → Full v0.1 run → C05/D008 → C06-R/D009 → AFS-DMO/D010 → ML-IC/D011 → ML-SKEL review → ML Full Run → erneuter Originalitätstest → möglicher C07.
+C01 → C02 → C03 → C04 → D005 → D006 → D007 → Full numerical run → C05/D008 → C06-R/D009 → AFS-DMO/D010 → ML-IC/D011 → ML-SKEL/D012 → ML Full Run → erneuter Originalitätstest → möglicher C07.
 
 Die Reihenfolge kann revidiert werden, wenn die Evidenzprüfung eine frühere Annahme problematisch macht.

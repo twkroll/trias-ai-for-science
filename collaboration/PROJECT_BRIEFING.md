@@ -1,131 +1,274 @@
-# Projektbriefing: Trias — Realität, Theorie, Berechnung
+# Projektbriefing: Trias — Zielsystem, Theorie, Berechnung und AI-for-Science-Provenance
 
 **Zielgruppe:** promovierte Physikerin mit wissenschaftsphilosophischem Hintergrund  
 **Status:** internes Diskussions- und Einladungsdokument  
-**Projektphase:** Woche 1 — Claim and Scope  
-**Stand:** 2026-09-01
+**Stand:** 2026-09-02
 
-## 1. Worum es in dem Projekt geht
+## 1. Projektidee
 
-Das Projekt untersucht, ob die Trias **Realität — Theorie — Berechnung/Umsetzung** als methodologisches Audit-Framework für Computational Science und AI for Science einen eigenständigen diagnostischen Nutzen besitzt.
+Das Projekt untersucht, ob die explizite Trennung von **Zielsystem/Realität, theoretischer Beschreibung und Berechnung/Umsetzung** als methodologisches Audit-Framework für Computational Science und AI for Science einen eigenständigen diagnostischen Nutzen besitzt.
 
-Die Ausgangsidee ist bewusst moderat. Es wird **nicht** behauptet, Wissenschaft bestehe ontologisch aus drei klar getrennten Sphären, und ebenso wenig, dass die Wissenschaftsphilosophie die epistemische Rolle von Modellen, Simulationen oder Berechnung bislang übersehen habe. Der mögliche Beitrag liegt vielmehr darin, einschlägige Einsichten in ein explizites Audit-Schema zu überführen, das für konkrete computational-science-Ergebnisse getrennt fragt:
+Die Trias wird nicht als universale Ontologie verstanden. Der mögliche Beitrag liegt vielmehr in einer durchgängigen Provenance- und Rechtfertigungsstruktur: Für ein wissenschaftliches Resultat soll explizit sichtbar bleiben,
 
-1. Was wird über das Zielsystem vorausgesetzt?
-2. Was wird durch die Theorie tatsächlich lizenziert?
-3. Was entsteht erst durch die operative Umsetzung?
-4. Welche Annahmen oder Verluste treten an den Übergängen zwischen diesen Rollen auf?
+1. was am Zielsystem festgelegt oder vorausgesetzt wurde,
+2. was die Theorie tatsächlich lizenziert,
+3. welche Transformationen durch konkrete Berechnung, Diskretisierung, Datengenerierung oder ML hinzukommen,
+4. und welcher wissenschaftliche Gebrauch dadurch tatsächlich gerechtfertigt ist.
 
-Das **Newtonsche Drei-Körper-Problem** dient als primärer Leitfall. Es ist methodologisch attraktiv, weil die physikalisch-mathematische Struktur explizit festgelegt werden kann, während analytische Repräsentation, praktische Auswertbarkeit, numerische Approximation und wissenschaftliche Nutzbarkeit dennoch auseinanderfallen können.
+Das Newtonsche Drei-Körper-Problem dient als kontrollierter Leitfall. Es erlaubt, analytische Repräsentation, praktische Auswertbarkeit, numerische Operationalisierung und lernbasierte Surrogation voneinander zu trennen, ohne sofort empirische Messunsicherheit als zusätzliche Variable einzuführen.
 
-## 2. Der derzeit akzeptierte Kern
+## 2. Methodologischer Status der Trias
 
-### Claim 1 — diagnostischer Mehrwert
+Der erste akzeptierte Kernclaim ist bewusst moderat:
 
 > Im Drei-Körper-Fall kann die explizite Trennung von Zielsystem, theoretischer Beschreibung und operativer Umsetzung diagnostische Unterschiede sichtbar machen, die in einer bloßen Theorie–Experiment-Beschreibung unterbestimmt bleiben. Der beanspruchte Mehrwert besteht nicht darin, Berechnung erstmals als epistemisch relevante Praxis zu identifizieren, sondern darin, entsprechende Einsichten in ein explizites Audit-Schema zu überführen.
 
-Diese Aussage ist als Forschungsgrundlage akzeptiert, aber noch nicht endgültig bewiesen. Sie muss durch Literaturvergleich und Demonstrator bestätigt werden.
+Inzwischen hat der Demonstrator diesen Claim zugleich gestützt und eingeschränkt. Der reine Solverfall zeigt tatsächlich implementationsabhängige wissenschaftliche Profile; ein harter Vergleich mit etablierter numerischer Analysis, Verification & Validation und Credibility-Frameworks zeigt jedoch, dass die Trias dort keine eindeutig neuen numerischen Fehlertypen oder Validierungsfragen liefert.
 
-### Claim 2 — synthetisches Zielsystem
+Der aktuell verteidigungsfähige Mehrwert ist daher schwächer: **integrative Zuordnung, Mapping und epistemische Provenance** über mehrere Übergangsebenen hinweg.
 
-Der Realitäts-Pol wird im Audit funktional als Rolle des **Zielsystems** verstanden. Im Drei-Körper-Fall kann diese Rolle durch ein explizit konstruiertes **synthetisches Zielsystem** eingenommen werden: eine konkrete Instanziierung der idealisierten Newtonschen Dynamik mit festgelegtem Zustandsraum, Parametern und Anfangsbedingungen.
+## 3. Synthetisches Zielsystem
 
-Wichtig ist dabei:
+Der erste Pol der Trias wird funktional als **Zielsystem** verstanden. Im kontrollierten Drei-Körper-Fall ist dies ein synthetisches Zielsystem: eine konkrete Instanziierung der idealisierten Newtonschen Dynamik mit Zustandsraum, Massen, Anfangsdaten und betrachteter Zeitspanne.
 
-- Das Zielsystem ist durch Theorie mitkonstituiert.
-- Theorie und Zielsystem müssen deshalb nicht ontologisch unabhängig sein.
-- Sie erfüllen dennoch verschiedene Audit-Funktionen.
-- Eine numerisch erzeugte Trajektorie ist nicht mit diesem Zielsystem identisch, sondern eine konkrete operative Repräsentation bzw. Approximation.
+Projektintern kann dies schematisch als
 
-Der technische Begriff **„synthetisches Zielsystem“** wird gegenüber „synthetischer Realität“ bevorzugt; „synthetische Modellwelt“ kann erläuternd verwendet werden.
+```text
+S_syn = (X, F, theta, x0)
+```
 
-## 3. Warum gerade das Drei-Körper-Problem?
+notiert werden.
 
-Der Leitfall erlaubt eine ungewöhnlich kontrollierte Trennung verschiedener Ebenen, die im Wort „Lösung“ leicht zusammenfallen:
+Die Unterscheidung zwischen Theorie und Zielsystem ist funktional, nicht notwendig ontologisch. Das Zielsystem ist durch Theorie mitkonstituiert, bleibt aber von jeder konkreten numerischen oder gelernten Repräsentation zu unterscheiden. Eine berechnete Trajektorie ist nicht das Zielsystem selbst.
 
-1. Festlegung eines physikalischen oder synthetischen Systems,
-2. theoretische Gleichungen und Struktur,
-3. formale analytische Resultate,
-4. konvergente Reihendarstellungen,
-5. praktische Evaluierbarkeit dieser Darstellungen,
-6. numerische Integration,
-7. Vorhersage- und Validierungsfragen,
-8. optional später ein ML-Surrogat.
+## 4. Lösungsleiter und operative Verfügbarkeit
 
-Besonders wichtig ist Sundmans Reihenlösung. Der relevante Punkt soll gerade **nicht** lauten, dass die Reihe „nicht konvergiert“. Zu prüfen ist präzise, unter welchen Voraussetzungen eine global konvergente Darstellung in einer regularisierten Variablen existiert und warum diese dennoch für praktische Bahnberechnungen keine geeignete operative Lösung darstellt. Dieser historische und mathematische Claim ist die nächste offene Evidenzaufgabe des Projekts.
+Ein zentraler Gedanke des Projekts lautet, dass das Wort „Lösung“ mehrere nichtäquivalente Ebenen verdecken kann. Relevant sind unter anderem:
 
-## 4. Die drei Audit-Kanten
+- mathematische Existenz,
+- analytische Repräsentation,
+- mathematische Konvergenz,
+- operative rechnerische Machbarkeit,
+- numerische Simulation und Stabilität,
+- Vorhersage,
+- wissenschaftliche Nutzbarkeit.
 
-Der gegenwärtige Schwerpunkt liegt weniger auf den drei Substantiven als auf den Übergängen zwischen ihnen.
+C04 trennt insbesondere mathematische Konvergenz, operative Machbarkeit, numerische Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit. Diese Kategorien werden nicht als vollständig unabhängig verstanden, dürfen aber nicht gleichgesetzt werden.
 
-### Realität/Zielsystem ↔ Theorie
+Wissenschaftliche Nutzbarkeit ist zweckrelativ: Ein numerischer Output kann für eine kurzfristige Trajektorienfrage geeignet und für eine langfristige Strukturfrage unzureichend sein oder umgekehrt.
 
-Welche Eigenschaften des intendierten Systems sind tatsächlich durch die theoretische Modellierung festgelegt, und welche werden durch Idealisierung ausgeschlossen oder stillschweigend vorausgesetzt?
+## 5. Sundman als historisch-mathematischer Leitfall
 
-### Theorie ↔ Berechnung
+Sundmans klassisches Resultat ist für das Projekt gerade kein Beispiel fehlender Konvergenz. Unter den klassischen Voraussetzungen wird nach Regularisierung und geeigneter Zeittransformation eine global konvergente Reihenrepräsentation erhalten.
 
-Welche theoretischen Strukturen bleiben bei der Operationalisierung erhalten, welche werden nur approximiert und welche gehen verloren? Im Drei-Körper-Fall betrifft dies beispielsweise Erhaltungsgrößen, kontinuierliche Zeitstruktur und qualitative Hamiltonsche Eigenschaften.
+Der methodologische Punkt lautet:
 
-### Berechnung ↔ Realität/Zielsystem
+> **Formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.**
 
-Welche Evidenz rechtfertigt die Interpretation eines endlichen Rechenoutputs als verlässliche Aussage über das intendierte Zielsystem? Hier treten Solverwahl, Schrittweite, Präzision, Referenzkonstruktion, Robustheit und später gegebenenfalls Trainingsverteilung in den Vordergrund.
+Die Reihe ist mathematisch konvergent, aber für praktische Bahnberechnung extrem langsam. Daraus folgt nicht, dass sie numerisch instabil sei, und die praktische Ineffizienz wird nicht einfach auf Chaos zurückgeführt.
 
-## 5. Geplanter Minimaldemonstrator
+Sundman trägt den methodologischen Bogen, beweist die Trias aber nicht allein.
 
-Der Demonstrator soll ausdrücklich **kein neues Lösungsverfahren für das Drei-Körper-Problem** entwickeln und zunächst auch kein großes ML-Projekt werden.
+## 6. Numerischer Minimaldemonstrator
 
-Die kleinste geplante Version verwendet ein kollisionsfreies planares, dimensionsloses Drei-Körper-System und vergleicht:
+Als kontrollierte Zielinstanz wurde die planare equal-mass Figure-eight-Choreographie in dimensionslosen Einheiten gewählt. Verglichen wurden:
 
-- eine hochgenaue adaptive Integration als vorläufige Referenz,
-- eine einfache Fixed-Step-Baseline wie RK4,
-- ein strukturerhaltendes Verfahren, etwa aus der Klasse symplektischer Integratoren.
+- DOP853 als hochgenaue adaptive Referenz mit zusätzlicher engerer Cross-Check-Rechnung,
+- klassischer Fixed-Step-RK4,
+- Velocity-Verlet als symplektischer strukturerhaltender Kontrast.
 
-Gemessen werden zunächst nur Trajektorienabweichung, Energie- und Drehimpulsdrift, Schrittweitensensitivität und Laufzeit. Die Referenz selbst soll durch Toleranzvariation oder einen zweiten hochwertigen Solver kreuzgeprüft werden.
+Zwei Use Cases wurden getrennt:
 
-Der entscheidende Erfolgstest ist nicht, ob Solver unterschiedliche Fehler besitzen — das wäre trivial. Relevant wäre erst ein Fall, in dem die Trias eine **spezifischere wissenschaftliche Diagnose oder Validierungsanforderung** erzeugt als die bloße Feststellung eines numerischen Fehlers.
+- **U1:** kurzfristige Trajektoriengenauigkeit über eine nominelle Periode;
+- **U2:** langfristige Strukturdiagnostik über 100 nominelle Perioden.
 
-## 6. Was philosophisch offen ist
+Die Referenzunsicherheit wurde explizit überprüft und nicht als exakte Ground Truth behandelt.
 
-Mehrere Punkte sind ausdrücklich noch nicht entschieden:
+### Hauptresultat
 
-- Ist die Dreiteilung als Audit tatsächlich heuristisch produktiver als etablierte Begriffe aus Modell-, Simulations- und Fehlerphilosophie?
-- Ist „Realität“ als Name des ersten Pols sinnvoll, wenn im kontrollierten Leitfall ein theoriegeprägtes synthetisches Zielsystem untersucht wird?
-- Sind die drei Kanten methodologisch tragfähiger als die drei Pole selbst?
-- Wie stark muss ein Audit über existierende Reproduzierbarkeits-, Validierungs- und UQ-Schemata hinausgehen, um einen eigenständigen Beitrag zu leisten?
-- Was genau ist bei einem computational-science-Ergebnis die relevante epistemische Einheit: einzelne Trajektorie, qualitative Struktur, Invariantenerhaltung, Ensembleeigenschaft oder wissenschaftlicher Gebrauch?
+RK4 war im getesteten Bereich deutlich trajectory-genauer. Velocity-Verlet zeigte dagegen wesentlich geringeren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau. Gleichzeitig hatte RK4 teilweise kleinere maximale Energiefehleramplituden.
 
-Das Projekt ist so angelegt, dass ein negatives Ergebnis zulässig ist. Falls die Trias nur vorhandene Kategorien neu etikettiert, muss der zentrale Claim abgeschwächt oder aufgegeben werden.
+Daraus folgt keine globale Rangfolge. Das Resultat unterstützt den moderaten Claim C05:
 
-## 7. Wo eine wissenschaftsphilosophisch geschulte Physikerin besonders wichtig wäre
+> Verschiedene numerische Operationalisierungen können bei identischem Zielsystem und identischer Theorie verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen; welche Operationalisierung vorzuziehen ist, hängt vom spezifizierten wissenschaftlichen Gebrauch ab.
 
-Die gewünschte Rolle wäre nicht primär „zusätzliche Implementierung“, sondern kritische Mitentwicklung an der Physik–Philosophie-Schnittstelle. Besonders wertvoll wären Beiträge zu vier Punkten:
+## 7. Der entscheidende negative Originalitätstest
 
-1. **Begriffsprüfung:** Sind Zielsystem, Theorie, Modell, Simulation und Implementierung sauber genug getrennt, ohne künstliche Ontologien zu erzeugen?
-2. **Novelty-Stresstest:** Wo reproduziert die Trias bekannte Argumente aus Modell- und Simulationsphilosophie, und wo könnte tatsächlich ein auditierbarer Mehrwert entstehen?
-3. **Physikalische Relevanz:** Welche numerischen Unterschiede sind wissenschaftlich relevant und welche lediglich technisch? Welche Invarianten oder qualitativen Strukturen sollten im Leitfall Priorität besitzen?
-4. **Interpretation des Demonstrators:** Welche Schlussfolgerungen sind aus Solverunterschieden legitim, und wo würde das Projekt zu viel epistemische Bedeutung in normale numerische Analyse hineinlesen?
+Ein nachgeschalteter Vergleich fragte, ob die Trias diese Befunde besser diagnostiziert als etablierte numerische Analysis, V&V und Credibility Assessment.
 
-## 8. Sinnvoller Einstieg in die Zusammenarbeit
+Das Ergebnis war negativ für die starke Fassung. Code Verification, Solution Verification, intended use, uncertainty, sensitivity, model assumptions und Ergebnis-Credibility decken den Solverfall bereits sehr weitgehend ab.
 
-Für einen ersten kritischen Einstieg wäre keine vollständige Literaturrecherche nötig. Hilfreich wäre zunächst eine Bewertung der folgenden drei Fragen:
+Deshalb wurde C06 revidiert:
 
-**A.** Ist der moderate Claim 1 stark genug, um ein Paper zu tragen, ohne eine überzogene Originalitätsbehauptung zu machen?
+> Der Trias-Audit erzeugt im gegenwärtigen Drei-Körper-Demonstrator keine eindeutig neuen numerischen Validierungsfragen. Sein derzeit belegbarer Mehrwert liegt in einer expliziten durchgängigen Zuordnung von Annahmen, Transformationen und Rechtfertigungsanforderungen zu Zielsystem, Theorie, Berechnung und ihren Übergängen.
 
-**B.** Ist die funktionale Verwendung eines synthetischen Zielsystems als Realitäts-Pol begrifflich vertretbar, oder sollte die Trias terminologisch bereits jetzt verändert werden?
+Die Trias wird ausdrücklich **nicht als Ersatz für V&V** positioniert.
 
-**C.** Welche Art von Befund müsste der Drei-Körper-Demonstrator liefern, damit man wirklich von einem philosophisch-methodologischen Mehrwert und nicht bloß von bekannter numerischer Fehleranalyse sprechen kann?
+## 8. Warum anschließend AI for Science?
 
-Eine kritische Antwort auf diese drei Fragen wäre für die aktuelle Projektphase wertvoller als eine breite Mitarbeit an Details.
+Im reinen Solverfall besteht im Wesentlichen die Kette
 
-## 9. Nächste Projektabhängigkeiten
+```text
+Zielsystem/Theorie -> numerische Operationalisierung -> Output.
+```
 
-Aktuell sind C01 und C02 als Arbeitsgrundlage akzeptiert. Die nächste Aufgabe ist C03: die genaue historische und mathematische Prüfung von Sundmans Reihenlösung. Danach folgt die präzise begriffliche Trennung von mathematischer Konvergenz, rechnerischer Machbarkeit, numerischer Stabilität und wissenschaftlicher Nutzbarkeit. Erst danach wird der Minimaldemonstrator endgültig spezifiziert.
+Bei AI for Science kommen zusätzliche Übersetzungen hinzu:
 
-## 10. Leitidee in einem Satz
+```text
+Zielsystem/Theorie
+-> numerischer Datengenerator
+-> Trainingsdaten
+-> gelerntes Modell
+-> Rollout/Prediction
+-> wissenschaftlicher Schluss.
+```
 
-> Das Projekt fragt nicht, ob Berechnung „wichtig“ ist, sondern ob die explizite Auditierung von Zielsystem, Theorie, Implementierung und ihren Übergängen wissenschaftliche Begründungslücken sichtbar macht, die sonst leicht als bloße technische Details verschwinden.
+Damit wird eine neue Provenance-Frage kontrollierbar: Eine kleine Test-MSE kann zunächst nur zeigen, dass ein Modell einen numerischen Teacher gut reproduziert. Daraus folgt nicht automatisch, dass es das wissenschaftliche Zielsystem im gleichen Maß repräsentiert.
+
+## 9. ML-Provenance-Demonstrator v0.1
+
+Der erste ML-Test hielt das Figure-eight-Zielsystem fest und verwendete zwei Teacher:
+
+- DOP853 primary/tight als Reference teacher,
+- coarse RK4 mit genau einem Schritt `h=T_pub/50`.
+
+Beide Trainingsdatensätze verwendeten exakt dieselben Inputzustände; nur die Labels unterschieden sich. Gelernt wurde mit einem einfachen Residual-MLP `12-128-128-128-12`, drei gepaarten Seeds und bitgleicher Initialisierung innerhalb jedes Teacher-Paars.
+
+Ein wichtiger Bestandteil war die exakte Fehlerzerlegung
+
+```text
+e_total = e_model + e_teacher
+```
+
+mit
+
+```text
+e_model   = y_hat_rk4model - y_rk4
+e_teacher = y_rk4 - y_ref
+e_total   = y_hat_rk4model - y_ref.
+```
+
+Damit sollte eine gemeinsame Referenzabweichung quantitativ in Learner- und Datengeneratorbeitrag zerlegt werden.
+
+## 10. Ergebnis von ML v0.1: bewusst inconclusive
+
+Der Full Run bestand das Reference-Gate sehr deutlich:
+
+```text
+D_teacher_test ≈ 1.3035e-05
+D_ref_test     ≈ 5.83e-14
+```
+
+Die numerische Unsicherheit des Reference teachers war also nicht das Problem.
+
+Das vorregistrierte Learner-Resolvability-Gate scheiterte jedoch klar. Die medianen own-teacher Test-RMSEs lagen bei etwa
+
+```text
+ref-trained ≈ 0.7187
+rk4-trained ≈ 0.7172
+```
+
+und damit ungefähr fünf Größenordnungen über dem Teacher-Signal.
+
+Das Experiment wird daher korrekt als
+
+```text
+INCONCLUSIVE_LEARNER_ERROR
+```
+
+klassifiziert. Der mögliche ML-Provenance-Claim C07 wird weder akzeptiert noch verworfen.
+
+Methodologisch ist dies wichtig: Die vorregistrierten Gates verhinderten, dass kleine Differenzen zwischen Modellgruppen nachträglich als scheinbar interessanter Provenance-Effekt interpretiert wurden.
+
+## 11. Diagnose des v0.1-Fehlers
+
+Zwei Probleme dominierten:
+
+1. Der rohe Inkrement-Lernfehler blieb bereits im Training deutlich über der sehr kleinen RK4-vs.-DOP853-Teacher-Differenz.
+2. Der ursprüngliche zusammenhängende 60/20/20-Phasensplit machte aus dem vorgesehenen Provenance-Test teilweise eine starke Phasenextrapolationsaufgabe: Training auf den ersten 60 % der Orbitphase, Test auf einem späteren zusammenhängenden Bereich.
+
+MU1/MU2-Rollouts wurden deshalb nicht als Provenance-Evidenz interpretiert; sie zeigten vor allem Surrogat-/OOD-Fehlerakkumulation.
+
+## 12. v0.2 — Resolvability Repair
+
+D013 akzeptiert einen separat preregistrierten v0.2-Test. Er vergrößert nicht künstlich das Teacher-Signal und führt keinen Architektur-Sweep durch. Geändert werden nur zwei Punkte:
+
+### Phase-stratifizierter Blocksplit
+
+Die 1000 Phasenpunkte werden in 200 zusammenhängende Fünferblöcke geteilt. Ein deterministischer Fünferzyklus weist 60 % der Blöcke Training, 20 % Validation und 20 % Test zu. Damit decken alle Splits die gesamte Figure-eight-Phase ab, ohne einzelne benachbarte Punkte zufällig zu mischen.
+
+Der Test wird ausdrücklich als **same-orbit interpolation/provenance test** interpretiert, nicht als neue-Orbit-Generalisation.
+
+### Gemeinsamer Target-Scaler
+
+Die Trainingstargets beider Teacher werden gemeinsam und ausschließlich auf dem Trainingssplit skaliert. Beide Modelle verwenden denselben Target-Scaler. Alle wissenschaftlichen Metriken und die Provenance-Zerlegung werden nach Rücktransformation in Rohkoordinaten berechnet.
+
+Das entscheidende Gate bleibt:
+
+```text
+median_seed(RMSE_own_teacher_test) < D_teacher_test.
+```
+
+Scheitert auch v0.2 daran, wird nicht automatisch weitergetunt.
+
+## 13. Aktueller Originalitätsstatus
+
+Der gegenwärtige Stand rechtfertigt keine Behauptung, die Trias habe neue numerische oder ML-Credibility-Kategorien erfunden.
+
+Der interessante Restclaim ist vielmehr:
+
+- durchgängige Provenance über analytische, numerische, datenbasierte und lernbasierte Übergänge;
+- explizite Lokalisierung, an welchem Übergang eine Annahme, Approximation oder Rechtfertigung entsteht;
+- Verknüpfung von formaler Lösbarkeit, operativer Berechenbarkeit und zweckrelativer wissenschaftlicher Nutzung in einem gemeinsamen Audit.
+
+Ob diese Integrationsleistung gegenüber starken bestehenden V&V-, Credibility-, Dataset-Provenance- und Model-Documentation-Ansätzen hinreichend eigenständig ist, bleibt eine offene Forschungsfrage und soll nicht vorzeitig positiv beantwortet werden.
+
+## 14. Besonders offene philosophische Fragen
+
+- Ist „Realität“ als Name des ersten Pols noch sinnvoll, oder sollte die endgültige Terminologie stärker auf „Target/Zielsystem“ setzen?
+- Sind die Übergangskanten methodologisch wichtiger als die drei Pole?
+- Wann ist eine Integrationsleistung wissenschaftsphilosophisch eigenständig genug, wenn ihre Einzelkomponenten bereits in existierenden Frameworks vorkommen?
+- Was zählt als relevante epistemische Provenance in hybriden Simulation-ML-Ketten?
+- Wie lässt sich vermeiden, dass ein Audit lediglich zusätzliche Dokumentation produziert, ohne wissenschaftliche Schlussfolgerungen zu verändern?
+- Ist ein synthetischer Drei-Körper-Fall ausreichend, oder braucht der spätere Hauptbeitrag zusätzlich einen empirischeren AI-for-Science-Fall?
+
+## 15. Mögliche Rolle einer Kooperationspartnerin
+
+Besonders wertvoll wäre keine primäre Implementierungsrolle, sondern kritische Mitarbeit an:
+
+1. **Begriffsarchitektur:** Target, Theorie, Modell, Simulation, Daten, Surrogat und wissenschaftlicher Gebrauch sauber trennen, ohne künstliche Ontologien zu erzeugen.
+2. **Novelty-Stresstest:** Trias systematisch gegen V&V, Credibility, Simulation Philosophy, Model/Dataset Provenance und verwandte Frameworks halten.
+3. **Physikalische Relevanz:** entscheiden, welche numerischen/strukturellen Größen wissenschaftlich bedeutsam und welche bloß technische Diagnostik sind.
+4. **Interpretation negativer Resultate:** verhindern, dass inconclusive oder negative Tests nachträglich in eine positive Framework-Story umgedeutet werden.
+5. **Fallwahl nach v0.2:** beurteilen, ob der Drei-Körper-Fall weiterhin genügend epistemische Spannung trägt oder ein ergänzender empirischer AI-for-Science-Fall nötig wird.
+
+## 16. Nächste Abhängigkeit
+
+Aktuell steht der **ML Implementation Contract v0.2** zur Review. Erst nach Akzeptanz werden Codeänderungen, technische Tests und ein nichtwissenschaftlicher Smoke Run vorgenommen. Danach folgt erneut ein Review vor dem wissenschaftlichen Full Run.
+
+Die Abhängigkeitslogik ist derzeit:
+
+```text
+C01–C04
+-> numerischer Demonstrator
+-> C05
+-> harter C06-V&V-Vergleich
+-> C06-R
+-> ML-Provenance v0.1
+-> INCONCLUSIVE_LEARNER_ERROR
+-> D013 / v0.2 Resolvability Repair
+-> v0.2 Contract Review
+-> v0.2 Skeleton
+-> v0.2 Full Run
+-> erneuter Originalitätstest
+-> möglicher C07
+```
+
+## 17. Leitidee in einem Satz
+
+> Das Projekt fragt nicht, ob Berechnung oder AI „wichtig“ sind, sondern ob eine explizite Provenance von Zielsystem, Theorie, numerischer Operationalisierung, Daten, gelerntem Modell und wissenschaftlichem Gebrauch Rechtfertigungslücken sichtbar macht und Fehlzuordnungen verhindert, die in aggregierten Erfolgsmetriken leicht verschwinden.
 
 ---
 
 **Repository:** `trias-ai-for-science`  
-**Arbeitsmodus:** Claims werden einzeln ausgearbeitet, evidenziell geprüft, mit Revisionskriterien versehen und erst nach expliziter Entscheidung als aktuelle Forschungsgrundlage akzeptiert.
+**Arbeitsmodus:** Claims und Demonstratoren werden preregistriert, mit Gates und Revisionskriterien versehen und erst nach explizitem `GO` als aktuelle Forschungsgrundlage akzeptiert. Die Projektregel `PDF` erzeugt aus dem jeweils aktuellen Stand ein neues ausführliches Kooperationsbriefing.

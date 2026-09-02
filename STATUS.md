@@ -2,76 +2,109 @@
 
 ## Phase
 
-**Claim and Scope / AI-for-Science Provenance v0.2 Skeleton Review**
+**Claim and Scope / Directed Trias + inverse-identifiability bridge**
 
-Das Claim-and-Scope-Fundament, der numerische Minimaldemonstrator und dessen Full Run sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Der ML-Provenance-Test v0.1 ist abgeschlossen und als `INCONCLUSIVE_LEARNER_ERROR` akzeptiert. Die separat preregistrierte v0.2-Resolvability-Reparatur ist nun technisch implementiert und wartet auf Skeleton-Review.
+Das Claim-and-Scope-Fundament und der numerische Figure-eight-Demonstrator sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf Integrations-/Provenance-Funktion. ML v0.1 endete korrekt als `INCONCLUSIVE_LEARNER_ERROR`. Die v0.2-Resolvability-Reparatur ist als D014 akzeptiert und technisch implementiert, ihr wissenschaftlicher Full Run wird jedoch strategisch pausiert, während eine neue inverse Identifiability-/Equation-Discovery-Verbindung geprüft wird.
 
 ## Akzeptierte Entscheidungen
 
 - **C01 / D001:** Trias als methodologisches Audit-Framework.
 - **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol.
-- **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation; formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.
-- **C04 / D004:** Konvergenz, operative Machbarkeit, Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt.
-- **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, implementiert, getestet und vollständig ausgeführt.
+- **C03 / D003:** Sundman: formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.
+- **C04 / D004:** Konvergenz, Machbarkeit, Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt; die sechs-stufige Lösungsleiter bleibt erhalten.
+- **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet.
 - **C05 / D008:** verschiedene numerische Operationalisierungen erzeugen use-case-relative Fehler-/Strukturprofile.
 - **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance/Mapping.
-- **AFS-DMO / D010:** minimaler ML-Provenance-Test akzeptiert.
-- **ML-IC v0.1 / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen eingefroren.
-- **ML-SKEL v0.1 / D012:** getesteter ML-Skeleton akzeptiert.
-- **ML v0.1 Review + v0.2 Direction / D013:** v0.1 endgültig als `INCONCLUSIVE_LEARNER_ERROR` akzeptiert; C07 bleibt unentschieden; v0.2 repariert ausschließlich Signalauflösung.
-- **ML-IC v0.2 / D014:** phase-stratifizierter Fünferblock-Split und gemeinsamer teacher-unabhängiger Target-Scaler als einzige wissenschaftliche Änderungen gegenüber v0.1 akzeptiert und eingefroren.
+- **AFS-DMO / D010, ML-IC v0.1 / D011, ML-SKEL / D012:** minimaler ML-Provenance-Test vorregistriert und implementiert.
+- **D013:** ML v0.1 endgültig `INCONCLUSIVE_LEARNER_ERROR`; C07 bleibt unentschieden; v0.2 als separate Resolvability-Reparatur erlaubt.
+- **D014:** v0.2 ändert ausschließlich phase-stratifizierten Blocksplit und gemeinsamen teacher-unabhängigen Target-Scaler; alle übrigen wissenschaftlichen Einstellungen bleiben eingefroren.
 
-## Numerischer Demonstrator
+## Bestehende Evidenz
 
-**Status:** COMPLETE.
+### Forward-Richtung
 
-Der reine Solverfall zeigt ein mehrdimensionales Implementierungsprofil: RK4 ist im getesteten Bereich trajectory-genauer, Velocity-Verlet zeigt deutlich geringeren fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau. Daraus folgt keine globale Solver-Rangfolge; wissenschaftliche Bewertung ist use-case-relativ.
+Sundman und der Figure-eight-Solverfall stützen zwei verschiedene Nicht-Implikationen:
 
-Der anschließende harte Vergleich mit Standard-Numerik/V&V/Credibility zeigte, dass diese Befunde dort bereits vollständig diagnostizierbar sind. Die Trias wird deshalb nicht als Ersatz oder nachweislich überlegener V&V-Rahmen positioniert.
+```text
+analytische Verfügbarkeit not=> operative Verfügbarkeit
 
-## ML Full Run v0.1
+gleiche Theorie not=> gleiches operatives epistemisches Profil
+```
 
-**Status:** COMPLETE — `INCONCLUSIVE_LEARNER_ERROR`.
+Der Solverfall allein liefert jedoch keinen starken Originalitätsnachweis gegenüber Standard-Numerik/V&V.
 
-Reference separation und paired initialization bestanden; Learner resolvability scheiterte klar. Der Lernfehler lag ungefähr fünf Größenordnungen über der RK4-vs.-DOP853-Teacher-Differenz. C07 wird daher aus v0.1 weder akzeptiert noch verworfen.
+### ML v0.1
+
+Reference separation und paired initialization bestanden, Learner resolvability scheiterte klar. Der Lernfehler lag ungefähr fünf Größenordnungen über der RK4-vs.-DOP853-Teacher-Differenz. Deshalb wurde keine Provenance-Interpretation zugelassen.
 
 Details: [`demonstrator/ml_full_run_v0_1_results.md`](demonstrator/ml_full_run_v0_1_results.md).
 
-## ML v0.2 Code Skeleton
+## Neue theoretische Arbeitsrevision: Directed Trias
 
-**Status:** READY FOR REVIEW.
+Die drei Pole `Realität/Zielsystem — Theorie — Berechnung/Umsetzung` bleiben funktionale Audit-Rollen. Neu wird geprüft, ob der methodologische Kern besser als System **gerichteter, im Allgemeinen nichtinvertierbarer epistemischer Transformationen** formuliert werden kann.
 
-Implementiert wurden ausschließlich die in D014 zugelassenen Änderungen:
-
-1. `phase_block_split`: 200 zusammenhängende Fünferblöcke bei `N=1000`, deterministischer 3/1/1-Zyklus für exakt 600/200/200 Samples; kein Block wird über Splits geteilt;
-2. ein gemeinsamer Target-Scaler aus `delta_ref_train` und `delta_rk4_train`, identisch für beide Teacher-Modelle; alle wissenschaftlichen Metriken bleiben in rücktransformierten Rohkoordinaten.
-
-Die v0.1-Teachererzeugung und das bestehende Residual-MLP werden wiederverwendet. Neu sind die versionierten Module `ml_v0_2_data.py`, `ml_v0_2_model.py` und `ml_experiment_v0_2.py` sowie technische Tests.
-
-Lokale technische Prüfung:
+Forward:
 
 ```text
-pytest -q tests/test_ml_v0_2_skeleton.py
-3 passed
+T -> C_forward -> R_hat
 ```
 
-Nichtwissenschaftlicher Smoke Run (`N=100`, Seed 0, 30 Epochen) lief vollständig durch. G1 war auf allen Splits erfüllt, G2 war erfüllt, Target-Scale/Inverse-Scale schloss auf Rundungsniveau. Smoke-G3/G3a werden ausdrücklich nicht wissenschaftlich interpretiert.
+Inverse:
 
-Details: [`demonstrator/ml_v0_2_code_skeleton_status.md`](demonstrator/ml_v0_2_code_skeleton_status.md).
+```text
+R -> C_observation/preprocessing -> D -> C_inference -> T_hat
+```
 
-## C07
+Der `C`-Pol wird damit nicht nur als Forward-Solver verstanden, sondern als Familie operativer Vermittlungen: Observation/Datafication, Preprocessing/Imputation, Inference, Forward-Simulation, ML-Surrogat und Vergleich/Validation.
 
-**Status:** NOT ASSESSABLE.
+Details: [`theory/directed_trias_v0_1.md`](theory/directed_trias_v0_1.md).
 
-Der Kandidat zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte bleibt bis zu einem auflösbaren v0.2-Full-Run und anschließendem Vergleich mit starken Standard-ML-Provenance-/Credibility-Ansätzen offen.
+## Zhai–Lucarini–Lai-Bridge
 
-## Nächste Entscheidung
+Das Paper *Deficiency of equation-finding approach to data-driven modeling of dynamical systems* liefert einen Literaturfall für die inverse Richtung: unterschiedliche Missingness-/Rekonstruktionssituationen können zu stark unterschiedlichen inferierten Gleichungen führen, obwohl relevante chaotische Attraktor-, Lyapunov- und dominante Koopman-Eigenschaften ähnlich bleiben.
 
-Zu entscheiden ist, ob der ML-v0.2-Code-Skeleton als faithful implementation von D014 akzeptiert wird. Erst nach diesem GO darf der eingefrorene wissenschaftliche v0.2-Full-Run mit `N=1000`, Seeds `{0,1,2}` und dem unveränderten Full-Budget gestartet werden.
+Projektintern motiviert dies die neue Unterscheidung:
+
+```text
+operative/dynamische Äquivalenz not=> theoretische Identität
+```
+
+und einen neuen Claim-Kandidaten **C07-L**. Dieser ist noch nicht akzeptiert.
+
+Details:
+
+- [`claims/claim_07_lucarini_bridge.md`](claims/claim_07_lucarini_bridge.md)
+- [`literature/zhai_lucarini_lai_bridge_note.md`](literature/zhai_lucarini_lai_bridge_note.md)
+
+## Identifizierbarkeit und Lösungsleiter
+
+Theoretische Identifizierbarkeit wird **nicht** als siebte Stufe der Lösungsleiter eingeführt. Konsistent mit D004 wird sie als querliegende Auditdimension behandelt, gemeinsam mit Stabilität, Machbarkeit und Systemsensitivität.
+
+Vor jeder Novelty-Aussage muss C07-L gegen etablierte Literatur zu structural/practical identifiability, observability, equifinality und system identification geprüft werden.
+
+## Status ML v0.2
+
+**D014 bleibt ACCEPTED; Skeleton technisch READY. Scientific full run: PAUSED.**
+
+Die Pause widerruft keine frühere Entscheidung. Sie verhindert lediglich, dass wir den MLP-Zweig automatisch weiterrechnen, obwohl der neue inverse Identifiability-Fall möglicherweise einen stärkeren und direkter messbaren Test von C06-R bietet.
+
+## Aktuelle Aufgabe
+
+### C07-L Claim-to-Evidence + Comparator Audit
+**Status:** IN PROGRESS / NEXT DECISION
+
+Nächster Arbeitsschritt:
+
+1. jede Klausel von C07-L auf Zhai–Lucarini–Lai oder projektinterne Interpretation abbilden;
+2. structural identifiability, practical identifiability, observability und equifinality sauber von der neuen Bridge unterscheiden;
+3. prüfen, ob die Directed-Trias-Fassung gegenüber diesen etablierten Konzepten tatsächlich Integrationsarbeit leistet;
+4. erst danach eine moderate C07-L-Fassung zur `GO`-Entscheidung vorlegen;
+5. danach einen minimalen inverse-direction Demonstrator spezifizieren, zunächst vorzugsweise als Lorenz/SINDy-Replikation statt als Erweiterung des Drei-Körper-Systems;
+6. anschließend entscheiden, ob ML v0.2 fortgesetzt, sekundär gestellt oder ersetzt wird.
 
 ## Projektkommando `PDF`
 
-Im Forschungsdialog bedeutet die alleinige oder sinngemäße Nachricht **`PDF`**: Aus dem jeweils aktuellen Repository- und Entscheidungsstand wird ohne weitere Rückfrage ein neues ausführliches Kooperationsbriefing als PDF plus LaTeX-Quelle erzeugt. Details: `collaboration/PDF_WORKFLOW.md`.
+`PDF` erzeugt aus dem jeweils aktuellen Projektstand ein neues ausführliches Kooperationsbriefing als PDF plus LaTeX-Quelle. Die Directed-Trias-/C07-L-Revision wird ab jetzt automatisch berücksichtigt.
 
 ## Arbeitsregel
 

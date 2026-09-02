@@ -1,9 +1,10 @@
 # Minimal ML / AI-for-Science Provenance Demonstrator v0.1
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED — D010  
+**Accepted by:** GO  
 **Depends on:** D001–D009  
 **Purpose:** kleinstmöglicher Test der nach C06-R verbleibenden Integrations-/Provenance-Hypothese  
-**Rule:** noch keine Implementierung und kein Architektur-/Performance-Sweep vor Akzeptanz.
+**Rule:** noch keine Implementierung und kein Training vor Akzeptanz des ML Implementation Contract.
 
 ## ML-DMO-01 — Wissenschaftliche Leitfrage
 
@@ -264,9 +265,9 @@ Noch **nicht akzeptiert**:
 
 Ob dieser Satz im Projekt einen eigenständigen Trias-Beitrag oder nur etablierte Dataset-/Model-Credibility-Prinzipien ausdrückt, wird erst nach dem Experiment entschieden.
 
-## Entscheidungsempfehlung
+## Akzeptierte Entscheidung
 
-Akzeptiere den Minimal ML Epistemic Demonstrator v0.1 mit:
+D010 friert den Minimal ML / AI-for-Science Provenance Demonstrator v0.1 ein mit:
 
 - unverändertem Figure-eight-Zielsystem;
 - zwei Teachers `DOP853` und `RK4 h=T_pub/50`;
@@ -277,4 +278,6 @@ Akzeptiere den Minimal ML Epistemic Demonstrator v0.1 mit:
 - MU1 = 1 Periode und MU2 = 10 Perioden;
 - explizitem Baseline-ML-vs.-Trias-Provenance-Vergleich.
 
-Nach Akzeptanz folgt **noch kein Training**, sondern ein kleiner ML Implementation Contract mit exakten Netzwerk-, Split-, Optimierungs-, Normalisierungs-, Seed- und Gate-Definitionen.
+## Nächste Abhängigkeit
+
+Vor jedem Training wird ein **ML Implementation Contract v0.1** mit exakten Netzwerk-, Datengenerierungs-, Split-, Optimierungs-, Normalisierungs-, Seed-, Gate- und Artefaktdefinitionen akzeptiert.

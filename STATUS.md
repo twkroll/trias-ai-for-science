@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / Frozen ML Full Run**
+**Week 1 — Claim and Scope / ML Full Run v0.1 Review**
 
-Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator und der vollständige numerische v0.1-Lauf sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeitigen Trias-Mehrwert auf Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Demonstrator ist als D010, sein ML Implementation Contract als D011 und der getestete ML Code Skeleton als D012 eingefroren.
+Das Claim-and-Scope-Fundament, der numerische Minimaldemonstrator und dessen Full Run sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeitigen Trias-Mehrwert auf Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Test, sein Contract und sein getesteter Skeleton sind als D010–D012 eingefroren. Der wissenschaftliche ML Full Run v0.1 wurde nun ausgeführt.
 
 ## Akzeptierte Entscheidungen
 
@@ -15,33 +15,41 @@ Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator und der 
 - **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, implementiert und getestet.
 - **C05 / D008:** verschiedene numerische Operationalisierungen erzeugen use-case-relative Fehler-/Strukturprofile.
 - **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance.
-- **AFS-DMO / D010:** minimaler ML-Provenance-Test mit DOP853-vs.-coarse-RK4-Teacher und gepaarten Residual-MLPs akzeptiert.
-- **ML-IC / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen vor dem wissenschaftlichen ML-Run eingefroren.
-- **ML-SKEL / D012:** getesteter Dataset-/Training-/Rollout-Skeleton als faithful implementation von D011 akzeptiert.
+- **AFS-DMO / D010:** minimaler ML-Provenance-Test akzeptiert.
+- **ML-IC / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen eingefroren.
+- **ML-SKEL / D012:** getesteter ML-Skeleton akzeptiert.
 
-## Aktuelle Aufgabe
+## ML Full Run v0.1
 
-### Wissenschaftlicher ML Full Run v0.1
-**Status:** RUN NEXT / FROZEN
+**Status:** COMPLETE — `INCONCLUSIVE_LEARNER_ERROR`
 
-Auszuführen sind unverändert:
+### Gates
 
-- `N=1000` Figure-eight-Phaseninputs;
-- DOP853 primary/tight und coarse RK4 als gepaarte Teacher;
-- Seeds `{0,1,2}` mit bitgleicher Paarinitialisierung;
-- Residual-MLP `12-128-128-128-12`, `tanh`, float64 CPU;
-- maximal 5000 Epochen, vorregistriertes Early Stopping;
-- One-Step own-teacher/common-reference Metriken;
-- Reference- und Learner-Resolvability-Gates;
-- Provenance-Fehlerzerlegung;
-- MU1 = 1 Periode, MU2 = 10 Perioden;
-- 3/3-Seed-Regel für robuste Hauptbefunde.
+- Reference separation: **PASS**.
+  - test `D_teacher = 1.3035448186e-05`;
+  - test `D_ref = 5.8302465944e-14`.
+- Paired initialization: **PASS**, 3/3 Seeds.
+- Learner resolvability: **FAIL**.
+  - median own-teacher RMSE, ref-trained: `0.7187268`;
+  - median own-teacher RMSE, rk4-trained: `0.7171894`.
 
-## Noch nicht entschieden
+Damit ist der Lern-/Held-out-Phasenfehler ungefähr fünf Größenordnungen größer als die numerische Teacher-Differenz. D011 verbietet deshalb eine Provenance-Interpretation des Runs.
 
-- Ergebnisstatus des ML Full Runs;
-- möglicher neuer Claim zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte;
-- Originalität gegenüber starken Standard-ML-Provenance-/Credibility-Frameworks.
+Die exakte Fehlerzerlegung funktioniert technisch, aber der Teacher-Beitrag (`~2e-09` als mean squared vector term) wird von Modellfehlerbeiträgen von Ordnung `1–10` überdeckt. MU1/MU2 laufen formal ohne den Paarabstands-Abbruch, sind jedoch mit extrem großen Trajektorien-/Strukturfehlern und starker OOD-Akkumulation wissenschaftlich nicht als Teacher-Provenance-Evidenz interpretierbar.
+
+Details: [`demonstrator/ml_full_run_v0_1_results.md`](demonstrator/ml_full_run_v0_1_results.md).
+
+## C07
+
+**Status:** NOT ASSESSABLE FROM v0.1.
+
+Der Kandidat zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte wird weder akzeptiert noch verworfen. Das Experiment ist wegen fehlender Learner-Resolvability nicht entscheidungsfähig.
+
+Siehe [`claims/claim_07.md`](claims/claim_07.md).
+
+## Nächste Entscheidung
+
+Zu entscheiden ist, ob der v0.1-Status `INCONCLUSIVE_LEARNER_ERROR` als korrekte wissenschaftliche Schlussfolgerung akzeptiert wird und anschließend ein separat preregistrierter v0.2-Resolvability-Test entworfen werden soll. Innerhalb v0.1 findet kein Rescue-Sweep statt.
 
 ## Arbeitsregel
 

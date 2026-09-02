@@ -24,15 +24,16 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | C07-L-R | moderate Equation-Discovery-Bridge | ACCEPTED AS WORKING CLAIM | externer Zhai–Lucarini–Lai-Fall; Trias-Anteil Integrationshypothese | D016 |
 | INV-DMO-v0.1 | Minimal Inverse-Direction Demonstrator | ACCEPTED | Lorenz-63 + gepaarte Missingness/Reconstruction + feste SINDy-Pipeline | D017 |
 | INV-IC-v0.1 | Inverse-Direction Implementation Contract | ACCEPTED | Reference-, Mask-, Reconstruction-, Derivative-, SINDy-, Gate- und Äquivalenzparameter eingefroren | D018 |
-| INV-SKEL-v0.1 | Inverse-Direction Code Skeleton | READY FOR REVIEW | neue gezielte Tests: 6 passed; nichtwissenschaftlicher Smoke Run vollständig | — |
+| INV-SKEL-v0.1 | Inverse-Direction Code Skeleton | ACCEPTED | gezielte Tests 6 passed; Smoke Run nichtwissenschaftlich | D019 |
+| INV-RUN-v0.1 | Inverse scientific full run | COMPLETE / PENDING REVIEW | G1–G3 PASS; structural perturbation linear 1/3, cubic 0/3; pre-registered class `INFORMATIVE_NEGATIVE` | — |
 
 ## Aktueller Evidenzstand
 
 Der numerische Demonstrator stützt C05, nicht aber eine starke Originalitätsbehauptung gegenüber V&V. Der ML-v0.1-Zweig blieb wegen fehlender Learner-Resolvability unentschieden und v0.2 bleibt pausiert.
 
-D015–D016 verschieben den aktuellen Test auf die Directed Trias und die inverse Equation-Discovery-Kette. D017 friert den minimalen Lorenz/SINDy-Demonstrator ein; D018 friert dessen exakte technische Vorregistrierung ein.
+D015–D016 verschieben den aktuellen Test auf die Directed Trias und die inverse Equation-Discovery-Kette. D017 friert den minimalen Lorenz/SINDy-Demonstrator ein; D018 friert dessen exakte technische Vorregistrierung ein; D019 akzeptiert den getesteten Code-Skeleton.
 
-Der Code Skeleton implementiert inzwischen die technischen Kernbausteine von Referenzintegration über Missingness/Reconstruction, Derivative Estimation und STLSQ bis zu Structural Metrics sowie Forward-/Langzeitvalidierungsfunktionen. Gezielte lokale Tests ergeben `6 passed`. Ein absichtlich verkürzter Smoke Run bestätigt Reference-/Mask-/Pairing-Integrität; seine SINDy-Ergebnisse werden nicht wissenschaftlich interpretiert.
+Der wissenschaftliche inverse Full Run wurde mit den eingefrorenen D018-Einstellungen ausgeführt. Reference-, Mask- und P0-Baseline-Gates bestehen. Der lineare Rekonstruktionspfad zeigt nur in 1/3 Seeds eine substantielle Structural-Perturbation, der kubische in 0/3. Damit wird die vorregistrierte 2/3-Robustheit nicht erreicht. Die durch D018 determinierte Resultatklasse ist daher `INFORMATIVE_NEGATIVE`. Ein einzelner linearer Seed-2-Fall erzeugt einen zusätzlichen konstanten Term in `dz/dt` bei gleichzeitig bestandener operativer Äquivalenz; er bleibt nach Vorregistrierung explorativ.
 
 ## Abhängigkeitslogik
 
@@ -44,10 +45,10 @@ C01–C06-R
 -> D016 C07-L-R
 -> D017 inverse MVP spec
 -> D018 inverse implementation contract
--> INV-SKEL-v0.1 review
--> inverse scientific full run
--> comparator audit
--> decision: resume ML v0.2 vs secondary vs replace
+-> D019 inverse code skeleton
+-> inverse scientific full run: INFORMATIVE_NEGATIVE / pending review
+-> comparator audit on the negative result
+-> decision: revise inverse branch vs resume ML v0.2 vs weaken/reposition originality claim
 -> renewed originality test
 ```
 

@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import platform
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 import numpy as np
 import scipy
 import torch
@@ -23,6 +28,21 @@ from .reference import integrate_reference
 
 def _mse(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.mean((np.asarray(a) - np.asarray(b)) ** 2))
+
+
+def _write_json(path: Path, obj: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, indent=2), encoding="utf-8")
+
+
+def _write_csv(path: Path, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fields = sorted({key for row in rows for key in row}) if rows else ["status"]
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        if rows:
+            writer.writerows(rows)
 
 
 def _position_scale(x0: np.ndarray) -> float:
@@ -69,16 +89,16 @@ def _rollout_metrics(states, reference, x0, cfg, max_abs_standardized_input):
         np.sum(masses * np.linalg.norm(p0, axis=1) * np.linalg.norm(v0, axis=1))
     )
     pos_error = _position_error(states, reference[: len(states)], x0)
-    energies = np.array([total_energy(s, masses, cfg.G) for s in states])
-    angular = np.array([angular_momentum_z(s, masses) for s in states])
+    energies = np.array([total_energy(state, masses, cfg.G) for state in states])
+    angular = np.array([angular_momentum_z(state, masses) for state in states])
     return {
         "final_position_error": float(pos_error[-1]),
         "max_position_error": float(np.max(pos_error)),
         "final_energy_error": float((energies[-1] - H0) / abs(H0)),
         "max_abs_energy_error": float(np.max(np.abs((energies - H0) / abs(H0)))),
         "max_angular_momentum_error": float(np.max(np.abs(angular - L0) / L_scale)),
-        "min_pair_distance": float(min(minimum_pair_distance(s) for s in states)),
-        "max_radius_from_com": float(max(max_radius_from_com(s, masses) for s in states)),
+        "min_pair_distance": float(min(minimum_pair_distance(state) for state in states)),
+        "max_radius_from_com": float(max(max_radius_from_com(state, masses) for state in states)),
         "max_abs_standardized_input": max_abs_standardized_input,
     }
 
@@ -87,9 +107,9 @@ def _decomposition(y_hat, y_rk4, y_ref):
     e_model = y_hat - y_rk4
     e_teacher = y_rk4 - y_ref
     e_total = y_hat - y_ref
-    model_term = float(np.mean(np.sum(e_model**2, axis=1)))
-    teacher_term = float(np.mean(np.sum(e_teacher**2, axis=1)))
-    total_term = float(np.mean(np.sum(e_total**2, axis=1)))
+    model_term = float(np.mean(np.sum(e_model * e_model, axis=1)))
+    teacher_term = float(np.mean(np.sum(e_teacher * e_teacher, axis=1)))
+    total_term = float(np.mean(np.sum(e_total * e_total, axis=1)))
     cross_term = float(2.0 * np.mean(np.sum(e_model * e_teacher, axis=1)))
     return {
         "mean_sq_model_vec": model_term,
@@ -100,17 +120,82 @@ def _decomposition(y_hat, y_rk4, y_ref):
     }
 
 
+def _plots(figdir, dataset, one_step_rows, rollout_series, cfg):
+    figdir.mkdir(parents=True, exist_ok=True)
+    teacher_difference = np.sqrt(
+        np.mean((dataset.y_rk4 - dataset.y_ref) ** 2, axis=1)
+    )
+    fig, ax = plt.subplots()
+    ax.plot(dataset.phase_time / cfg.T_pub, teacher_difference)
+    ax.set_xlabel("phase / T_pub")
+    ax.set_ylabel("teacher RMSE per sample")
+    fig.tight_layout()
+    fig.savefig(figdir / "teacher_difference_by_phase.png", dpi=160)
+    plt.close(fig)
+
+    fig, ax = plt.subplots()
+    labels = [f"{row['teacher']}-s{row['seed']}" for row in one_step_rows]
+    x = np.arange(len(labels))
+    ax.bar(x, [row["rmse_own_teacher"] for row in one_step_rows], label="own teacher")
+    ax.scatter(x, [row["rmse_vs_ref"] for row in one_step_rows], label="vs ref")
+    ax.set_xticks(x, labels, rotation=45, ha="right")
+    ax.set_yscale("log")
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(figdir / "one_step_own_vs_ref.png", dpi=160)
+    plt.close(fig)
+
+    for use_case, filename in (
+        ("MU1", "mu1_rollout_position_error.png"),
+        ("MU2", "mu2_rollout_position_error.png"),
+    ):
+        fig, ax = plt.subplots()
+        for row in rollout_series:
+            if row["use_case"] == use_case:
+                ax.semilogy(
+                    np.arange(len(row["pos_error"])) / 50.0,
+                    row["pos_error"],
+                    label=f"{row['teacher']}-s{row['seed']}",
+                )
+        ax.set_xlabel("nominal periods")
+        ax.set_ylabel("normalized RMS position error")
+        ax.legend(fontsize=7)
+        fig.tight_layout()
+        fig.savefig(figdir / filename, dpi=160)
+        plt.close(fig)
+
+    fig, ax = plt.subplots()
+    for row in rollout_series:
+        if row["use_case"] == "MU2":
+            ax.plot(
+                np.arange(len(row["energy_error"])) / 50.0,
+                row["energy_error"],
+                label=f"{row['teacher']}-s{row['seed']}",
+            )
+    ax.set_xlabel("nominal periods")
+    ax.set_ylabel("relative energy error")
+    ax.legend(fontsize=7)
+    fig.tight_layout()
+    fig.savefig(figdir / "mu2_energy_error.png", dpi=160)
+    plt.close(fig)
+
+
 def run(output_dir: Path, smoke: bool = False) -> dict:
-    output_dir.mkdir(parents=True, exist_ok=True)
+    results_dir = output_dir / "results"
+    figures_dir = output_dir / "figures"
+    checkpoints_dir = output_dir / "checkpoints"
+    results_dir.mkdir(parents=True, exist_ok=True)
+    checkpoints_dir.mkdir(parents=True, exist_ok=True)
+
     n = 60 if smoke else 1000
     max_epochs = 20 if smoke else 5000
     patience = 5 if smoke else 500
     seeds = [0] if smoke else [0, 1, 2]
 
-    dataset = generate_dataset(n=n)
+    dataset = generate_dataset(n)
     mu, sigma = training_scaler(dataset)
     np.savez_compressed(
-        output_dir / "dataset.npz",
+        results_dir / "dataset.npz",
         phase_index=dataset.phase_index,
         phase_time=dataset.phase_time,
         x=dataset.x,
@@ -139,20 +224,24 @@ def run(output_dir: Path, smoke: bool = False) -> dict:
     ref_rollout = integrate_reference(
         x0, rollout_times, cfg.masses_array(), cfg.G, 1e-12, 1e-14
     ).states
+    tight_rollout = integrate_reference(
+        x0, rollout_times, cfg.masses_array(), cfg.G, 1e-13, 1e-15
+    ).states
 
     one_step_rows = []
+    training_rows = []
     rollout_rows = []
-    decompositions = []
+    paired_rows = []
+    rollout_series = []
     test_mask = dataset.split == "test"
 
     for seed in seeds:
         ref_model, rk4_model = paired_models(seed)
-        paired = all(
-            np.array_equal(a.detach().cpu().numpy(), b.detach().cpu().numpy())
+        initial_parameters_equal = all(
+            np.array_equal(a.detach().numpy(), b.detach().numpy())
             for a, b in zip(ref_model.parameters(), rk4_model.parameters())
         )
-
-        _, ref_epochs = train_model(
+        ref_history, ref_epochs = train_model(
             ref_model,
             dataset.x,
             dataset.delta_ref,
@@ -162,7 +251,7 @@ def run(output_dir: Path, smoke: bool = False) -> dict:
             max_epochs=max_epochs,
             patience=patience,
         )
-        _, rk4_epochs = train_model(
+        rk4_history, rk4_epochs = train_model(
             rk4_model,
             dataset.x,
             dataset.delta_rk4,
@@ -172,12 +261,27 @@ def run(output_dir: Path, smoke: bool = False) -> dict:
             max_epochs=max_epochs,
             patience=patience,
         )
+        torch.save(ref_model.state_dict(), checkpoints_dir / f"ref_seed{seed}.pt")
+        torch.save(rk4_model.state_dict(), checkpoints_dir / f"rk4_seed{seed}.pt")
+
+        for teacher, history in (("ref", ref_history), ("rk4", rk4_history)):
+            for epoch, (train_mse, validation_mse) in enumerate(history, start=1):
+                training_rows.append(
+                    {
+                        "seed": seed,
+                        "teacher": teacher,
+                        "epoch": epoch,
+                        "train_mse": float(train_mse),
+                        "validation_mse": float(validation_mse),
+                    }
+                )
 
         y_hat_ref = predict_next(ref_model, dataset.x[test_mask], mu, sigma)
         y_hat_rk4 = predict_next(rk4_model, dataset.x[test_mask], mu, sigma)
-        decompositions.append(
+        paired_rows.append(
             {
                 "seed": seed,
+                "paired_initialization": initial_parameters_equal,
                 **_decomposition(
                     y_hat_rk4,
                     dataset.y_rk4[test_mask],
@@ -186,20 +290,15 @@ def run(output_dir: Path, smoke: bool = False) -> dict:
             }
         )
 
-        for teacher, model, epochs, prediction in (
-            ("ref", ref_model, ref_epochs, y_hat_ref),
-            ("rk4", rk4_model, rk4_epochs, y_hat_rk4),
+        for teacher, model, epochs, prediction, own_teacher in (
+            ("ref", ref_model, ref_epochs, y_hat_ref, dataset.y_ref[test_mask]),
+            ("rk4", rk4_model, rk4_epochs, y_hat_rk4, dataset.y_rk4[test_mask]),
         ):
-            own_teacher = (
-                dataset.y_ref[test_mask]
-                if teacher == "ref"
-                else dataset.y_rk4[test_mask]
-            )
             one_step_rows.append(
                 {
                     "seed": seed,
                     "teacher": teacher,
-                    "paired_initialization": paired,
+                    "paired_initialization": initial_parameters_equal,
                     "epochs": epochs,
                     "rmse_own_teacher": rmse(prediction, own_teacher),
                     "rmse_vs_ref": rmse(prediction, dataset.y_ref[test_mask]),
@@ -232,14 +331,35 @@ def run(output_dir: Path, smoke: bool = False) -> dict:
                                 zmax,
                             )
                         )
+                        pos_error = _position_error(
+                            states, ref_rollout[: steps + 1], x0
+                        )
+                        energies = np.array(
+                            [total_energy(state, cfg.masses_array(), cfg.G) for state in states]
+                        )
+                        H0 = total_energy(x0, cfg.masses_array(), cfg.G)
+                        rollout_series.append(
+                            {
+                                "seed": seed,
+                                "teacher": teacher,
+                                "use_case": use_case,
+                                "pos_error": pos_error,
+                                "energy_error": (energies - H0) / abs(H0),
+                            }
+                        )
                     rollout_rows.append(record)
 
     test_metrics = split_metrics["test"]
     reference_gate = bool(
         test_metrics["D_ref"] <= 0.01 * test_metrics["D_teacher"]
     )
+    rollout_reference_max_position_gap = float(
+        np.max(_position_error(ref_rollout, tight_rollout, x0))
+    )
+
     if smoke:
         status = "SMOKE_ONLY"
+        learner_gate = None
     else:
         medians = {
             teacher: float(
@@ -263,31 +383,79 @@ def run(output_dir: Path, smoke: bool = False) -> dict:
         else:
             status = "READY_FOR_SCIENTIFIC_REVIEW"
 
+    environment = {
+        "python": platform.python_version(),
+        "numpy": np.__version__,
+        "scipy": scipy.__version__,
+        "torch": torch.__version__,
+    }
+    config = {
+        "smoke": smoke,
+        "N": n,
+        "seeds": seeds,
+        "max_epochs": max_epochs,
+        "patience": patience,
+        "delta_t": dt,
+        "architecture": [12, 128, 128, 128, 12],
+        "activation": "tanh",
+        "dtype": "float64",
+        "device": "cpu",
+    }
+
+    _write_json(results_dir / "config.json", config)
+    _write_json(
+        results_dir / "dataset_summary.json",
+        {
+            "N": n,
+            "split_counts": {
+                key: int(np.sum(dataset.split == key))
+                for key in ("train", "validation", "test")
+            },
+            "finite": bool(
+                np.all(np.isfinite(dataset.x))
+                and np.all(np.isfinite(dataset.y_ref))
+                and np.all(np.isfinite(dataset.y_rk4))
+            ),
+        },
+    )
+    _write_json(
+        results_dir / "teacher_metrics.json",
+        {
+            "splits": split_metrics,
+            "rollout_reference_max_position_gap": rollout_reference_max_position_gap,
+        },
+    )
+    _write_csv(results_dir / "training_metrics.csv", training_rows)
+    _write_csv(results_dir / "one_step_metrics.csv", one_step_rows)
+    _write_csv(results_dir / "rollout_metrics.csv", rollout_rows)
+    _write_csv(results_dir / "paired_provenance.csv", paired_rows)
+
     summary = {
         "status": status,
-        "smoke": smoke,
-        "n": n,
-        "split_metrics": split_metrics,
         "reference_gate": reference_gate,
-        "one_step_models": one_step_rows,
-        "provenance_decomposition": decompositions,
-        "rollouts": rollout_rows,
-        "environment": {
-            "python": platform.python_version(),
-            "numpy": np.__version__,
-            "scipy": scipy.__version__,
-            "torch": torch.__version__,
-        },
+        "learner_gate": learner_gate,
+        "split_metrics": split_metrics,
+        "rollout_reference_max_position_gap": rollout_reference_max_position_gap,
+        "environment": environment,
+        "smoke": smoke,
     }
-    (output_dir / "summary.json").write_text(
-        json.dumps(summary, indent=2), encoding="utf-8"
+    _write_json(results_dir / "summary.json", summary)
+    (results_dir / "trias_ml_audit.md").write_text(
+        f"# Trias ML audit v0.1\n\nStatus: `{status}`\n\n"
+        "This report records provenance structure only; scientific interpretation is deferred until the frozen full run is reviewed.\n\n"
+        f"Reference gate: `{reference_gate}`.\n",
+        encoding="utf-8",
     )
+
+    if not smoke:
+        _plots(figures_dir, dataset, one_step_rows, rollout_series, cfg)
+
     return summary
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output-dir", type=Path, default=Path("ml_run"))
+    parser.add_argument("--output-dir", type=Path, default=Path("ml_run_v0_1"))
     parser.add_argument("--smoke", action="store_true")
     args = parser.parse_args()
     run(args.output_dir, smoke=args.smoke)

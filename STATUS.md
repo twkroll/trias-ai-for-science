@@ -2,73 +2,62 @@
 
 ## Phase
 
-**Week 1 — Claim and Scope / ML Implementation Contract Review**
+**Week 1 — Claim and Scope / ML Code Skeleton Review**
 
-Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator, der Implementation Contract, der Code-Skeleton und der vollständige v0.1-Lauf sind abgeschlossen. C05 ist akzeptiert. Der harte C06-Vergleich hat die starke Neuheitsbehauptung im reinen Solverfall nicht gestützt; C06-R ist als schwächere Integrations-/Provenance-Fassung akzeptiert. Der minimale AI-for-Science-Provenance-Demonstrator ist nun als D010 eingefroren.
+Das Claim-and-Scope-Fundament, der reine numerische Minimaldemonstrator und der vollständige v0.1-Lauf sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeitigen Trias-Mehrwert auf Integrations-/Provenance-Funktion. Der minimale AI-for-Science-Provenance-Demonstrator ist als D010 und sein technischer ML Implementation Contract als D011 eingefroren.
 
 ## Akzeptierte Entscheidungen
 
 - **C01 / D001:** Trias als methodologisches Audit-Framework; diagnostischer Mehrwert ist die zentrale Hypothese.
-- **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol; keine notwendige ontologische Trennung der Pole.
-- **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation; formale analytische Verfügbarkeit impliziert nicht operative Verfügbarkeit.
-- **C04 / D004:** Konvergenz, operative Machbarkeit, numerische Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt; V&V bleibt Vergleichsrahmen.
-- **Minimal Demonstrator / D005:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, U1/U2, kein ML/chaotischer Fall in v0.1.
-- **Implementation Contract / D006:** v0.1-Konfiguration, Referenzlogik, Schrittweiten, Metriken, Gates und Artefakte eingefroren.
-- **Code Skeleton / D007:** minimaler getesteter Skeleton als faithful implementation von D006 akzeptiert.
-- **C05 / D008:** unterschiedliche numerische Operationalisierungen können bei gleichem Zielsystem/Theorie verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen; Bewertung ist use-case-relativ.
-- **C06-R / D009:** die starke Aussage neuer numerischer Validierungsfragen wird verworfen. Der derzeit belegbare Trias-Mehrwert ist eine explizite integrative Zuordnung/Provenance über Zielsystem, Theorie, Berechnung und wissenschaftliche Nutzung.
-- **AFS-DMO / D010:** minimaler ML-Provenance-Test mit unverändertem Figure-eight-Target, DOP853-vs.-coarse-RK4-Teacher, identischen Inputs, Residual-MLP, drei gepaarten Seeds und MU1/MU2 akzeptiert.
+- **C02 / D002:** synthetisches Zielsystem als funktionaler Realitäts-Pol.
+- **C03 / D003:** Sundman als konvergente, praktisch extrem ineffiziente Reihenrepräsentation.
+- **C04 / D004:** Konvergenz, operative Machbarkeit, Stabilität, Systemsensitivität und wissenschaftliche Nutzbarkeit werden getrennt.
+- **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, implementiert und getestet.
+- **C05 / D008:** verschiedene numerische Operationalisierungen erzeugen use-case-relative Fehler-/Strukturprofile.
+- **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance.
+- **AFS-DMO / D010:** minimaler ML-Provenance-Test mit DOP853-vs.-coarse-RK4-Teacher und gepaarten Residual-MLPs akzeptiert.
+- **ML-IC / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen vor dem wissenschaftlichen ML-Run eingefroren.
 
-## Ergebnis des reinen Solverfalls
+## ML Code Skeleton v0.1
 
-Der Figure-eight-Demonstrator erfüllt die Referenz-/Refinement-Gates und stützt C05. Gleichzeitig lassen sich seine numerischen Befunde ohne Informationsverlust in Standard-Numerik/V&V/Credibility-Sprache ausdrücken. Daher ist die Trias **nicht** als Ersatz oder nachweislich überlegener Rahmen gegenüber V&V zu behandeln.
+**Status:** READY FOR REVIEW
 
-Details:
+Implementiert sind:
 
-- [`demonstrator/full_run_v0_1_results.md`](demonstrator/full_run_v0_1_results.md)
-- [`demonstrator/c06_comparison_v0_1.md`](demonstrator/c06_comparison_v0_1.md)
-- [`claims/claim_06.md`](claims/claim_06.md)
-
-## Akzeptierter AI-for-Science-Test
-
-Der nächste Demonstrator führt genau eine zusätzliche Übersetzungsebene ein:
-
-`synthetisches Zielsystem / Theorie → numerischer Datengenerator → Trainingsdaten → gelerntes One-Step-Surrogat → Rollout / wissenschaftlicher Gebrauch`.
-
-Ziel ist nicht ML-Performance, sondern die kontrollierte Frage, ob gute generatorrelative ML-Metriken zu einer ungerechtfertigten Aussage über das Zielsystem führen können und ob die explizite Provenance-Zuordnung der Trias diese Herkunft transparent macht.
-
-Siehe [`demonstrator/ml_epistemic_spec_v0_1.md`](demonstrator/ml_epistemic_spec_v0_1.md).
-
-## Aktuelle Aufgabe
-
-### ML Implementation Contract v0.1
-**Status:** PENDING REVIEW
-
-Der Contract friert vor jedem Training exakt ein:
-
-- `1000` DOP853-generierte Startphasen und 60/20/20 contiguous split;
-- unabhängige one-step Teacher-Labels ab identischen gespeicherten Inputs;
-- DOP853 primary/tight versus exakt einen RK4-Schritt `h=T_pub/50`;
-- gemeinsame Inputnormalisierung ohne teacherabhängiges Target-Scaling;
+- paired-teacher Dataset-Erzeugung ab identischen Figure-eight-Inputs;
+- DOP853 primary/tight und ein coarse RK4-Schritt als Labelgeneratoren;
+- contiguous split und training-only Inputnormalisierung;
 - Residual-MLP `12-128-128-128-12`, `tanh`, float64 CPU;
-- Seeds `{0,1,2}` mit bitgleicher Initialisierung innerhalb jedes Paars;
-- Adam/full-batch, 5000 Epochen maximal und vorregistriertes Early Stopping;
-- Teacher-/Reference-Gates und ein Learner-Resolvability-Gate;
-- explizite Provenance-Fehlerzerlegung;
-- MU1/MU2-Rollouts und robuste 3/3-Seed-Regel für Hauptbefunde;
-- feste Ergebnisstatus und Artefakte;
-- kein Tuning bei negativem oder nichtinformativem Ausgang.
+- bitgleich gepaarte Seeds und deterministischer Trainingspfad;
+- One-Step own-teacher/common-reference Metriken;
+- quantitative Zerlegung `e_total=e_model+e_teacher`;
+- MU1/MU2-Rollout-Pipeline;
+- technischer `--smoke`-Modus.
 
-Siehe [`demonstrator/ml_implementation_contract_v0_1.md`](demonstrator/ml_implementation_contract_v0_1.md).
+Lokale technische Validierung vor Repository-Write:
 
-## Noch nicht implementiert / akzeptiert
+```text
+pytest -q
+4 passed
+```
 
-- ML-Dataset-/Training-Code;
-- ML-Skeleton;
-- Trainingsergebnisse;
-- neuer Claim zu Datenprovenance oder Surrogatgüte;
-- chaotische/generalization-heavy Benchmarks;
-- physik-informierte oder strukturerhaltende Netzwerkarchitekturen.
+Der Smoke Run (`N=60`, Seed 0, maximal 20 Epochen; ausdrücklich nicht wissenschaftlich) lief vollständig durch. Das Reference-Gate war erfüllt, die Initialisierung war bitgleich gepaart und die Provenance-Fehleridentität schloss bis ungefähr `3.6e-15`. Die ML-Güte des Smoke Runs wird nicht interpretiert.
+
+Details: [`demonstrator/ml_code_skeleton_status_v0_1.md`](demonstrator/ml_code_skeleton_status_v0_1.md).
+
+## Noch nicht wissenschaftlich ausgeführt/entschieden
+
+- eingefrorener ML Full Run mit `N=1000` und Seeds `{0,1,2}`;
+- Learner-Resolvability-Gate;
+- MU1/MU2 über alle sechs Modelle;
+- 3/3-Seed-Robustheit;
+- Full-Run-Ergebnisstatus;
+- starker Vergleich gegen etablierte ML-Provenance/Credibility-Frameworks;
+- neuer Claim zu simulationsgenerierten Labels und zielsystemrelativer Surrogatgüte.
+
+## Nächste Abhängigkeit
+
+Review des ML Code Skeleton v0.1. Nach Akzeptanz werden fehlende reine Output-/Checkpoint-Protokollierungsdetails ergänzt, ohne wissenschaftliche Einstellungen zu ändern, und anschließend der eingefrorene wissenschaftliche ML Full Run ausgeführt.
 
 ## Arbeitsregel
 

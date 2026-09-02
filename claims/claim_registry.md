@@ -12,23 +12,30 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | C05 | Implementierungswahl kann wissenschaftlich relevante Profile erzeugen | ACCEPTED | Full numerical v0.1 run stützt moderate zweckrelative Fassung | D008 |
 | C06-R | Integrations-/Provenance-Wert des Trias-Audits | ACCEPTED | Starke Neuheitsform im Solverfall verworfen; schwache integrative Fassung bleibt prüfbar | D009 |
 | AFS-DMO | Minimaler ML/AI-for-Science-Provenance-Demonstrator | ACCEPTED | Testdesign eingefroren | D010 |
-| ML-IC | ML Implementation Contract v0.1 | ACCEPTED | technische Vorregistrierung eingefroren | D011 |
-| ML-SKEL | ML Dataset-/Training-Skeleton v0.1 | ACCEPTED | technische Tests/Smoke bestanden | D012 |
-| ML-RUN-v0.1 | Wissenschaftlicher ML-Provenance-Run | COMPLETE / INCONCLUSIVE | Reference gate bestanden; Learner-Resolvability-Gate klar verletzt | — |
-| C07 | ML-Provenance-Claim-Kandidat | NOT ASSESSABLE | Lernfehler ca. fünf Größenordnungen größer als Teacher-Differenz; v0.1 entscheidet den Claim nicht | — |
+| ML-IC-v0.1 | ML Implementation Contract v0.1 | ACCEPTED | technische Vorregistrierung eingefroren | D011 |
+| ML-SKEL-v0.1 | ML Dataset-/Training-Skeleton v0.1 | ACCEPTED | technische Tests/Smoke bestanden | D012 |
+| ML-RUN-v0.1 | Wissenschaftlicher ML-Provenance-Run | COMPLETE / INCONCLUSIVE | Reference gate bestanden; Learner-Resolvability-Gate klar verletzt | D013 |
+| C07 | ML-Provenance-Claim-Kandidat | NOT ASSESSABLE | v0.1 entscheidet den Claim wegen fehlender Signalauflösung nicht | — |
+| ML-v0.2 | Resolvability Repair | DIRECTION ACCEPTED | phase-stratifizierter Blocksplit + gemeinsamer Target-Scaler; Contract zur Review | D013 |
+| ML-IC-v0.2 | Implementation Contract v0.2 | PENDING REVIEW | exakte Vorregistrierung der v0.2-Reparatur | — |
 
 ## Arbeitsregel
 
-Ein Claim erhält den Status `ACCEPTED`, wenn die vorgeschlagene Arbeitsfassung im Forschungsdialog durch `GO` bestätigt wurde. `ACCEPTED` bedeutet **nicht endgültig bewiesen**, sondern als aktuelle Forschungsgrundlage akzeptiert.
+Ein wissenschaftlicher Claim erhält den Status `ACCEPTED`, wenn die vorgeschlagene Arbeitsfassung im Forschungsdialog durch `GO` bestätigt wurde. `ACCEPTED` bedeutet nicht endgültig bewiesen, sondern als aktuelle Forschungsgrundlage akzeptiert.
 
 ## Aktueller Evidenzstand
 
-Der ML Full Run v0.1 erfüllt Reference separation und paired initialization, scheitert aber am vorregistrierten Learner-Resolvability-Gate. Test-`D_teacher` beträgt etwa `1.30e-05`, während die medianen own-teacher Test-RMSEs beider Modellgruppen etwa `0.72` betragen. Die Provenance-Zerlegung ist technisch korrekt, doch der Modellfehler dominiert den Teacher-Beitrag um Milliardenfaktoren in der quadratischen Zerlegung.
+Der numerische Demonstrator stützt C05, nicht aber eine starke Originalitätsbehauptung gegenüber V&V. C06-R beschränkt den derzeit belegbaren Mehrwert auf durchgängige Integrations-/Provenance-Zuordnung.
 
-Daher wird C07 aus v0.1 weder akzeptiert noch verworfen. Ein Follow-up muss separat preregistriert werden; innerhalb v0.1 findet kein Hyperparameter-/Architektur-/Split-Rescue statt.
+ML v0.1 hat das Reference-Gate sehr deutlich bestanden, aber das Learner-Resolvability-Gate verletzt: `D_teacher_test ≈ 1.30e-05`, mediane own-teacher Test-RMSEs ≈ `0.72`. C07 bleibt daher unentschieden.
+
+D013 akzeptiert diesen inconclusive Ausgang und erlaubt einen separat preregistrierten v0.2-Test. v0.2 ändert ausschließlich die Splitgeometrie und die gemeinsame Target-Skalierung, nicht Target, Teacher, Architektur, Seeds oder Optimierung.
 
 ## Abhängigkeitslogik
 
-C01 → C02 → C03 → C04 → D005 → D006 → D007 → numerical full run → C05/D008 → C06-R/D009 → AFS-DMO/D010 → ML-IC/D011 → ML-SKEL/D012 → ML Full Run v0.1 (`INCONCLUSIVE_LEARNER_ERROR`) → v0.1 review → optional preregistered v0.2 → erneuter Originalitätstest → möglicher C07.
+C01 → C02 → C03 → C04 → D005 → D006 → D007 → numerical full run → C05/D008 → C06-R/D009 → AFS-DMO/D010 → ML-IC-v0.1/D011 → ML-SKEL/D012 → ML Full Run v0.1 → D013 → ML-IC-v0.2 review → v0.2 skeleton → v0.2 run → erneuter Originalitätstest → möglicher C07.
 
-Die Reihenfolge kann revidiert werden, wenn die Evidenzprüfung eine frühere Annahme problematisch macht.
+## Dialogkommandos
+
+- `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF erzeugen; siehe `collaboration/PDF_WORKFLOW.md`.

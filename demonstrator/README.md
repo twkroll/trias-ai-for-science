@@ -1,12 +1,15 @@
-# Drei-Körper-Minimaldemonstrator
+# Drei-Körper-Demonstratoren
+
+## Numerischer Minimaldemonstrator
 
 **Scientific scope:** D005  
 **Technical contract:** D006  
-**Code status:** minimal tested skeleton implemented; full v0.1 scientific run not yet interpreted.
+**Code skeleton:** D007  
+**Scientific result:** Full v0.1 complete; C05 accepted as D008; strong C06 form rejected and C06-R accepted as D009.
 
-Der Demonstrator prüft nicht, welcher Solver allgemein „der beste“ ist. Er untersucht, ob dieselbe synthetische Figure-eight-Zielinstanz und dieselbe Newtonsche Theorie unter verschiedenen numerischen Operationalisierungen unterschiedliche wissenschaftlich relevante Bewertungsprofile erzeugen.
+Der numerische Demonstrator prüft nicht, welcher Solver allgemein „der beste“ ist. Er untersucht, ob dieselbe synthetische Figure-eight-Zielinstanz und dieselbe Newtonsche Theorie unter verschiedenen numerischen Operationalisierungen unterschiedliche wissenschaftlich relevante Bewertungsprofile erzeugen.
 
-## Frozen comparison
+### Frozen comparison
 
 - target: planare gleichmassige Figure-eight-Choreographie;
 - reference: DOP853 with primary/tight tolerances;
@@ -16,42 +19,51 @@ Der Demonstrator prüft nicht, welcher Solver allgemein „der beste“ ist. Er 
 - U2: 100 nominal periods, structure-oriented use;
 - refinement: `n = {50, 100, 200, 400, 800}` with `h=T_pub/n`.
 
-Details: [`minimal_spec_v0_1.md`](minimal_spec_v0_1.md) and [`implementation_contract_v0_1.md`](implementation_contract_v0_1.md).
+Details:
 
-## Install and test
+- [`minimal_spec_v0_1.md`](minimal_spec_v0_1.md)
+- [`implementation_contract_v0_1.md`](implementation_contract_v0_1.md)
+- [`full_run_v0_1_results.md`](full_run_v0_1_results.md)
+- [`c06_comparison_v0_1.md`](c06_comparison_v0_1.md)
 
-```bash
-cd demonstrator
-python -m venv .venv
-source .venv/bin/activate
-pip install -e '.[dev]'
-pytest -q
-```
+### Kernergebnis
 
-## Quick smoke run
+RK4 ist im getesteten Bereich trajectory-genauer; Velocity-Verlet zeigt ein anderes Langzeit-Strukturprofil mit deutlich kleinerem fitted secular energy drift und Drehimpulserhaltung nahe Rundungsniveau. Dies stützt einen use-case-relativen C05-Claim, aber keinen globalen Solverwinner.
 
-```bash
-trias-demo --quick --output-dir run_quick
-```
+Der harte C06-Vergleich zeigt zugleich, dass diese numerischen Befunde mit etablierter numerischer Analysis und V&V/Credibility vollständig beschreibbar sind. Die Trias wird deshalb nicht als Ersatz für V&V behandelt; ihr derzeitiger Restmehrwert ist integrativ/provenance-orientiert.
 
-Quick mode is explicitly **not** the frozen scientific experiment: it shortens U2 to five nominal periods, uses `n={50,100,200}`, and performs one timing repeat. Its purpose is only to check the execution pipeline.
+## Minimaler ML / AI-for-Science Provenance Demonstrator
 
-## Frozen v0.1 run
+**Scientific scope:** D010 accepted  
+**ML Implementation Contract:** PENDING REVIEW  
+**ML code/training:** not started by design
 
-```bash
-trias-demo --output-dir run_v0_1
-```
+Der nächste Test führt genau eine zusätzliche Ebene ein:
 
-This produces the contract artifacts under `run_v0_1/results` and `run_v0_1/figures`.
+`Zielsystem/Theorie → numerischer Datengenerator → Trainingsdaten → Residual-MLP → Rollout/wissenschaftlicher Gebrauch`.
 
-## Epistemic guardrails
+Akzeptiert sind:
 
-- The DOP853 reference is never called exact ground truth.
-- Rounded published Figure-eight initial data do not imply exact periodic closure.
-- Long-time position error alone is not a solver-quality ranking.
-- `trias_audit.md` is generated from fixed rules and deliberately does not declare C05/C06 successful.
-- C05 and C06 are evaluated only after the full run passes reference and refinement checks.
+- unverändertes Figure-eight-Zielsystem;
+- DOP853 versus coarse RK4 `h=T_pub/50` als Teacher;
+- identische Inputs, nur unterschiedliche Teacher-Labels;
+- ein Residual-MLP;
+- drei gepaarte Seeds;
+- generatorrelative versus gemeinsame Referenzbewertung;
+- MU1 = 1 Periode, MU2 = 10 Perioden;
+- kein Architektur-/Hyperparameter-Sweep und kein Physics-informed Training.
 
-## Scope exclusions
+Details:
 
-No ML, chaotic case, Sundman-series evaluation, high-precision arithmetic, softening, collision regularization, or expanded parameter sweep is included in v0.1.
+- [`ml_epistemic_spec_v0_1.md`](ml_epistemic_spec_v0_1.md)
+- [`ml_implementation_contract_v0_1.md`](ml_implementation_contract_v0_1.md)
+
+Vor Akzeptanz des ML Implementation Contract wird weder Dataset-/Training-Code geschrieben noch ein Training gestartet.
+
+## Epistemische Guardrails
+
+- DOP853 wird nie als exakte Ground Truth bezeichnet.
+- Gerundete Figure-eight-Anfangsdaten implizieren keine exakte Periodizität.
+- Gute `ML ↔ Teacher`-Metriken dürfen nicht automatisch als `ML ↔ Zielsystem`-Validierung interpretiert werden.
+- Ein positiver ML-Befund wäre noch kein Originalitätsnachweis gegenüber etablierten Dataset-Provenance-/ML-Credibility-Ansätzen.
+- Negative und nichtinformative Ergebnisse sind zulässig und führen nicht automatisch zu Scope- oder Tuning-Erweiterungen.

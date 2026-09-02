@@ -10,8 +10,8 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | C04 | Konvergenz ≠ Machbarkeit ≠ Stabilität ≠ Nutzbarkeit | ACCEPTED | Identifizierbarkeit als querliegende Auditdimension | D004 |
 | DMO | Numerischer Minimaldemonstrator | ACCEPTED / COMPLETE | Figure-eight Full Run abgeschlossen | D005–D007 |
 | C05 | Implementierungswahl erzeugt use-case-relative Profile | ACCEPTED | numerischer Full Run stützt moderate Fassung | D008 |
-| C06-R | Integrations-/Provenance-Wert des Trias-Audits | ACCEPTED / SUPERSEDED CANDIDATE | weiterer Comparator-Audit empfiehlt engere Revision C06-R2 | D009 |
-| C06-R2 | Directed Trias als konzeptionelle Synthese / Audit-Linse | PENDING REVIEW | keine neue Fehler-/V&V-/Provenance-/Identifiability-Kategorie gezeigt; möglicher Restwert = fachübergreifende Synthese | — |
+| C06-R | Integrations-/Provenance-Wert des Trias-Audits | SUPERSEDED | weiterer Comparator-Audit führte zu C06-R2 | D009 |
+| C06-R2 | Directed Trias als konzeptionelle Synthese / Audit-Linse | ACCEPTED | keine neue Fehler-/V&V-/Provenance-/Identifiability-Kategorie gezeigt; Restwert = fachübergreifende Synthese | D021 |
 | AFS-DMO | ML-Provenance-Demonstrator | ACCEPTED | v0.1 ausgeführt; v0.2 technisch vorbereitet | D010 |
 | ML-IC-v0.1 | ML Implementation Contract v0.1 | ACCEPTED | eingefroren | D011 |
 | ML-SKEL-v0.1 | ML Skeleton v0.1 | ACCEPTED | technische Tests/Smoke bestanden | D012 |
@@ -28,12 +28,13 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | INV-SKEL-v0.1 | Inverse-Direction Code Skeleton | ACCEPTED | gezielte Tests 6 passed; Smoke nichtwissenschaftlich | D019 |
 | INV-RUN-v0.1 | Inverse scientific full run | COMPLETE / INFORMATIVE_NEGATIVE | G1–G3 PASS; structural perturbation linear 1/3, cubic 0/3 | D020 |
 | INV-COMP-v0.1 | Comparator audit on inverse negative result | COMPLETE | starke Abdeckung durch System ID, Identifiability, V&V, Provenance und Assurance Cases | D020 follow-up |
+| PAPER-BOUND-v0.1 | Paper Contribution Boundary + Outline | PENDING AUTHOR-INTENT CLARIFICATION | konservative Synthese-Fassung ausgearbeitet; stärkere Autorenintuition muss typisiert werden | D021 follow-up |
 
 ## Aktueller Evidenzstand
 
 Der Figure-eight-Demonstrator stützt C05, aber keine starke Trias-Neuheit gegenüber V&V. ML v0.1 blieb wegen fehlender Learner-Resolvability inconclusive. Der inverse Full Run ist nach D020 ein akzeptiertes `INFORMATIVE_NEGATIVE`: Der interessierende strukturell-andere-aber-dynamisch-ähnliche Effekt tritt im eingefrorenen Minimaldesign nicht seed-robust auf.
 
-Der anschließende Comparator-Audit ist abgeschlossen. Er zeigt, dass die wesentlichen Diagnosefunktionen des Projekts stark durch etablierte Rahmen abgedeckt werden:
+Der Comparator-Audit zeigt starke Abdeckung durch:
 
 ```text
 System Identification / SINDy robustness
@@ -43,7 +44,9 @@ System Identification / SINDy robustness
 + Claims–Arguments–Evidence / assurance cases
 ```
 
-Damit ist derzeit keine neue Fehler-, Validierungs-, Provenance- oder Identifiability-Kategorie der Directed Trias belegt. Als möglicher Restbeitrag bleibt eine kompakte fachübergreifende Synthese, die Forward- und Inverse-Fälle in einer gemeinsamen Sprache ordnet. Dieser Rest ist als C06-R2 zur Entscheidung vorgelegt.
+D021 akzeptiert daher C06-R2: Der derzeit vertretbare Trias-Beitrag ist eine kompakte fachübergreifende Synthese/Audit-Linse, nicht eine neue mathematische oder technische Credibility-Theorie. Die experimentelle Mainline wird vorerst beendet.
+
+Das Paper-Boundary-Dokument zeigt allerdings vier mögliche stärkere Lesarten der ursprünglichen Autorenidee, die durch den bisherigen Comparator-Audit nicht identisch betroffen sind: epistemische Irreduzibilität von Berechnung, Transformationsstruktur, epistemische Typisierung/Evidenztransfer oder Staffelung von Lösung/Wissen/Nutzbarkeit. Vor dem endgültigen Paper-Claim ist daher Autorenklärung erforderlich.
 
 ## Abhängigkeitslogik
 
@@ -58,12 +61,13 @@ C01–C06-R
 -> D019 inverse code skeleton
 -> D020 inverse full run accepted: INFORMATIVE_NEGATIVE
 -> comparator audit COMPLETE
--> C06-R2 review
--> recommended: paper contribution boundary + outline
--> only later decide whether any paused empirical branch deserves independent continuation
+-> D021 C06-R2 accepted + paper pivot
+-> Paper Contribution Boundary v0.1
+-> AUTHOR-INTENT CLARIFICATION
+-> targeted claim audit OR conservative synthesis paper
 ```
 
 ## Dialogkommandos
 
-- `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; C06-R2-Status, Directed Trias, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen, sofern keine Autorenklärung erforderlich ist.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; C06-R2, Paper-Pivot, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

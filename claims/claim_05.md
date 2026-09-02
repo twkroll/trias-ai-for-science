@@ -1,10 +1,11 @@
 # C05 — Implementierungswahl kann wissenschaftlich relevante Profile erzeugen
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED — D008  
+**Akzeptiert durch:** GO  
 **Evidence status:** empirisch durch Full Demonstrator v0.1 gestützt; Interpretation absichtlich moderat  
 **Stand:** 2026-09-02
 
-## Vorgeschlagene Claim-Fassung
+## Akzeptierte Claim-Fassung
 
 > Bei identischem synthetischem Zielsystem, identischer Theorie und identischen Anfangsdaten können unterschiedliche numerische Operationalisierungen verschiedene wissenschaftlich relevante Fehler- und Strukturprofile erzeugen. Welche Operationalisierung für eine wissenschaftliche Aufgabe vorzuziehen ist, kann deshalb vom spezifizierten wissenschaftlichen Gebrauch und den dafür relevanten theoretischen Strukturen abhängen und ist nicht notwendig durch eine einzelne globale Genauigkeitsmetrik bestimmt.
 
@@ -74,8 +75,6 @@ Das Projekt behauptet mit C05 nicht:
 
 C05 muss abgeschwächt werden, falls unabhängige Reproduktion oder weitere Referenzprüfung zeigt, dass der beobachtete Profilkontrast ein Implementierungsfehler oder Referenzartefakt ist. Eine spätere Feststellung, dass Standard-V&V denselben Befund vollständig diagnostiziert, widerlegt C05 selbst nicht, wäre aber zentral gegen einen starken C06-Claim.
 
-## Entscheidungsempfehlung
+## Nächste Abhängigkeit
 
-**ACCEPT in der moderaten, zweckrelativen Form.**
-
-Nach `GO` wird C05 als D008 akzeptiert. Der nächste abhängige Schritt ist C06: ein expliziter Vergleich derselben Resultate unter (a) gewöhnlicher numerischer Analysis/V&V und (b) dem Trias-Audit. Erst dieser Vergleich entscheidet, ob die Trias zusätzlichen diagnostischen Wert besitzt.
+C06 vergleicht dieselben Resultate explizit unter (a) gewöhnlicher numerischer Analysis/V&V und (b) dem Trias-Audit. Erst dieser Vergleich entscheidet, ob die Trias zusätzlichen diagnostischen Wert besitzt.

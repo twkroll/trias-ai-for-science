@@ -15,11 +15,11 @@ Dieses Register dokumentiert, welche Evidenz für die einzelnen Claims benötigt
 
 ### Benötigte interne Evidenz
 
-Der Drei-Körper-Demonstrator muss mindestens einen Fall liefern, in dem die explizite Trennung von Zielsystem, Theorie und Implementierung eine spezifischere Diagnose oder Validierungsanforderung ermöglicht als eine undifferenzierte Beschreibung des Resultats als „numerischer Fehler“.
+Der Drei-Körper-Demonstrator muss prüfen, ob die explizite Trennung von Zielsystem, Theorie und Implementierung eine spezifischere Diagnose oder Rechtfertigungsstruktur ermöglicht als etablierte Alternativen.
 
 ### Aktueller Status
 
-**PARTIAL / UNDER REVISION.** Der Demonstrator stützt C05, aber der harte C06-Vergleich spricht gegen eine starke Neuheitsbehauptung für die Trias im reinen Solverfall.
+**PARTIAL / UNDER TEST.** Der Demonstrator stützt C05, aber der harte C06-Vergleich spricht gegen eine starke Neuheitsbehauptung für die Trias im reinen Solverfall. Der verbleibende Integrations-/Provenance-Claim wird nun an einer zusätzlichen lernbasierten Ebene getestet.
 
 ---
 
@@ -35,7 +35,7 @@ Der Drei-Körper-Demonstrator muss mindestens einen Fall liefern, in dem die exp
 
 ### Projektinterne Setzung
 
-Die Zuordnung des konkret instanziierten Newtonschen Drei-Körper-Systems zum Realitäts-Pol der Trias ist **keine aus der Literatur abzuleitende Tatsache**, sondern eine methodologische Designentscheidung. Ihre Rechtfertigung hängt davon ab, ob sie später diagnostisch produktiv ist.
+Die Zuordnung des konkret instanziierten Newtonschen Drei-Körper-Systems zum Realitäts-Pol der Trias ist **keine aus der Literatur abzuleitende Tatsache**, sondern eine methodologische Designentscheidung. Ihre Rechtfertigung hängt davon ab, ob sie diagnostisch produktiv ist.
 
 ### Aktueller Status
 
@@ -106,23 +106,37 @@ Full Demonstrator v0.1:
 
 ---
 
-## E06 — Evidenz für C06
+## E06 — Evidenz für C06-R
 
-**Frage:** Leistet die Trias gegenüber etablierter numerischer Analysis/V&V/Credibility zusätzliche diagnostische Arbeit?
+**Claim:** Im reinen Solverfall erzeugt die Trias keine eindeutig neuen numerischen Validierungsfragen; ihr derzeit belegbarer Mehrwert ist eine durchgängige Integrations-/Provenance-Zuordnung über Zielsystem, Theorie, Berechnung und wissenschaftlichen Gebrauch.
 
 ### Vergleichsquellen
 
-- **NASA-STD-7009B (2024), Standard for Models and Simulations.** Etabliert uniform practices für Design, Entwicklung und Nutzung von M&S; umfasst credibility, verification, validation, sensitivity/uncertainty und acceptance criteria.
-- **NASA M&S Use / User Guide guidance.** Intended use, assumptions/abstractions, permissible uses, uncertainty, sensitivity, robustness und dokumentierte supporting evidence gehören ausdrücklich zum Credibility-/Use-Assessment.
+- **NASA-STD-7009B (2024), Standard for Models and Simulations.** Umfasst credibility, verification, validation, sensitivity/uncertainty und acceptance criteria.
+- **NASA M&S Use / User Guide guidance.** Intended use, assumptions/abstractions, permissible uses, uncertainty, sensitivity, robustness und supporting evidence gehören zum Credibility-/Use-Assessment.
 - **Stanford Encyclopedia of Philosophy, Computer Simulations in Science, Revision 2026.** Breite Simulation-Study-Perspektive umfasst Modellwahl, Implementierung, Rechner, Interpretation und Rechtfertigung; Verification wird in code und solution verification unterschieden; Validation ist zweckrelativ zur Repräsentation des target system.
 - **Oberkampf/Roy/Trucano-artige V&V/UQ-Literatur.** Numerische Fehler, Modellfehler, Referenz-/Validierungsevidenz, Sensitivität und predictive capability sind etablierte Gegenstände.
 
 ### Ergebnis des harten Vergleichs
 
-Die C05-Diagnostik kann ohne Informationsverlust in Standard-Numerik/V&V/Credibility-Sprache ausgedrückt werden. Daher ist die starke C06-Fassung — neue numerische Validierungsfragen durch die Trias — im aktuellen Solverfall **nicht gestützt**.
+Die C05-Diagnostik kann ohne Informationsverlust in Standard-Numerik/V&V/Credibility-Sprache ausgedrückt werden. Daher ist die starke C06-Fassung — neue numerische Validierungsfragen durch die Trias — im aktuellen Solverfall **nicht gestützt und verworfen**.
 
 Ein möglicher verbleibender Mehrwert liegt in einer expliziten integrativen Zuordnung über Zielsystem–Theorie–Berechnung sowie in der Verbindung von analytischer Traktabilität (Sundman), numerischer Operationalisierung und wissenschaftlichem Gebrauch.
 
 ### Aktueller Status
 
-**PENDING REVIEW — REVISE.** Empfohlen wird C06-R statt der starken Fassung. Ein minimaler AI-for-Science/ML-Fall soll anschließend prüfen, ob der Integrations-/Provenance-Vorteil unter einer zusätzlichen lernbasierten Übersetzung tatsächlich diagnostisch trägt.
+**ACCEPTED IN REVISED FORM — D009.** C06-R ist eine schwache Integrations-/Provenance-Fassung. Ein minimaler AI-for-Science/ML-Fall soll nun prüfen, ob diese Integrationsleistung unter einer zusätzlichen lernbasierten Übersetzung diagnostisch trägt.
+
+---
+
+## E07 — Geplante Evidenz für den AI-for-Science-Provenance-Test
+
+Noch kein wissenschaftlicher Claim. Der geplante Demonstrator soll kontrolliert unterscheiden zwischen:
+
+- Qualität relativ zum numerischen Datengenerator,
+- Qualität relativ zu einer stärkeren numerischen Referenz,
+- Rollout-/Strukturverhalten des gelernten Modells,
+- Herkunft einer Abweichung aus Theorie, Datengenerator, Trainingsdaten oder gelerntem Surrogat,
+- wissenschaftlicher Schlussfolgerung relativ zum intended use.
+
+**Status:** PENDING SPECIFICATION REVIEW.

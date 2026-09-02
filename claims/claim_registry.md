@@ -15,9 +15,10 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | ML-IC-v0.1 | ML Implementation Contract v0.1 | ACCEPTED | technische Vorregistrierung eingefroren | D011 |
 | ML-SKEL-v0.1 | ML Dataset-/Training-Skeleton v0.1 | ACCEPTED | technische Tests/Smoke bestanden | D012 |
 | ML-RUN-v0.1 | Wissenschaftlicher ML-Provenance-Run | COMPLETE / INCONCLUSIVE | Reference gate bestanden; Learner-Resolvability-Gate klar verletzt | D013 |
-| C07 | ML-Provenance-Claim-Kandidat | NOT ASSESSABLE | v0.1 entscheidet den Claim wegen fehlender Signalauflösung nicht | — |
-| ML-v0.2 | Resolvability Repair | DIRECTION ACCEPTED | phase-stratifizierter Blocksplit + gemeinsamer Target-Scaler; Contract zur Review | D013 |
-| ML-IC-v0.2 | Implementation Contract v0.2 | PENDING REVIEW | exakte Vorregistrierung der v0.2-Reparatur | — |
+| C07 | ML-Provenance-Claim-Kandidat | NOT ASSESSABLE | v0.1 entscheidet den Claim wegen fehlender Signalauflösung nicht; v0.2 ausstehend | — |
+| ML-v0.2 | Resolvability Repair | ACCEPTED | nur Splitgeometrie + gemeinsamer Target-Scaler geändert | D013–D014 |
+| ML-IC-v0.2 | Implementation Contract v0.2 | ACCEPTED | v0.2-Reparatur vor Implementierung eingefroren | D014 |
+| ML-SKEL-v0.2 | v0.2 Dataset-/Training-Skeleton | READY FOR REVIEW | technische Tests bestanden; Smoke-Pipeline erfolgreich; noch kein wissenschaftlicher Full Run | — |
 
 ## Arbeitsregel
 
@@ -27,15 +28,15 @@ Ein wissenschaftlicher Claim erhält den Status `ACCEPTED`, wenn die vorgeschlag
 
 Der numerische Demonstrator stützt C05, nicht aber eine starke Originalitätsbehauptung gegenüber V&V. C06-R beschränkt den derzeit belegbaren Mehrwert auf durchgängige Integrations-/Provenance-Zuordnung.
 
-ML v0.1 hat das Reference-Gate sehr deutlich bestanden, aber das Learner-Resolvability-Gate verletzt: `D_teacher_test ≈ 1.30e-05`, mediane own-teacher Test-RMSEs ≈ `0.72`. C07 bleibt daher unentschieden.
+ML v0.1 hat das Reference-Gate sehr deutlich bestanden, aber das Learner-Resolvability-Gate verletzt. D013 akzeptiert diesen inconclusive Ausgang. D014 friert den separat preregistrierten v0.2-Test ein: Teacher, Target, `Delta_t`, Architektur, Seeds und Optimierung bleiben unverändert; geändert werden ausschließlich ein phase-stratifizierter Fünferblock-Split und ein gemeinsamer training-only Target-Scaler.
 
-D013 akzeptiert diesen inconclusive Ausgang und erlaubt einen separat preregistrierten v0.2-Test. v0.2 ändert ausschließlich die Splitgeometrie und die gemeinsame Target-Skalierung, nicht Target, Teacher, Architektur, Seeds oder Optimierung.
+Der v0.2-Skeleton implementiert diese beiden Änderungen und besteht die technischen Split-, Scaler-, Pairing- und Tiny-Training-Tests. Ein nichtwissenschaftlicher Smoke Run ist vollständig durchgelaufen. C07 bleibt bis zum eingefrorenen v0.2-Full-Run und anschließendem Standard-Framework-Vergleich unentschieden.
 
 ## Abhängigkeitslogik
 
-C01 → C02 → C03 → C04 → D005 → D006 → D007 → numerical full run → C05/D008 → C06-R/D009 → AFS-DMO/D010 → ML-IC-v0.1/D011 → ML-SKEL/D012 → ML Full Run v0.1 → D013 → ML-IC-v0.2 review → v0.2 skeleton → v0.2 run → erneuter Originalitätstest → möglicher C07.
+C01 → C02 → C03 → C04 → D005 → D006 → D007 → numerical full run → C05/D008 → C06-R/D009 → AFS-DMO/D010 → ML-IC-v0.1/D011 → ML-SKEL-v0.1/D012 → ML Full Run v0.1 → D013 → ML-IC-v0.2/D014 → ML-SKEL-v0.2 review → v0.2 full run → erneuter Originalitätstest → möglicher C07.
 
 ## Dialogkommandos
 
 - `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF erzeugen; siehe `collaboration/PDF_WORKFLOW.md`.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; siehe `collaboration/PDF_WORKFLOW.md`.

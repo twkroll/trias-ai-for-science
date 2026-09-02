@@ -11,15 +11,15 @@ Dieses Register dokumentiert, welche Evidenz für die einzelnen Claims benötigt
 - Wissenschaftsphilosophie zu Computational Science und Computersimulation.
 - Arbeiten, die Modelle oder Simulationen als vermittelnde bzw. eigenständige epistemische Praxis behandeln.
 - Gegenpositionen gegen einen zu starken Sonderstatus von Simulation.
-- Literatur zu Modellvalidierung, numerischer Fehleranalyse und Reproduzierbarkeit als Vergleichsmaßstab.
+- Literatur zu Modellvalidierung, numerischer Fehleranalyse, System Identification, Identifiability und Reproduzierbarkeit als Vergleichsmaßstab.
 
 ### Benötigte interne Evidenz
 
-Der Drei-Körper-Demonstrator muss prüfen, ob die explizite Trennung von Zielsystem, Theorie und Implementierung eine spezifischere Diagnose oder Rechtfertigungsstruktur ermöglicht als etablierte Alternativen.
+Der Drei-Körper-Demonstrator und mindestens ein inverser AI-for-Science-Fall müssen prüfen, ob die explizite gerichtete Zuordnung von Zielsystem, Theorie, operativer Vermittlung und Zwischenartefakten eine spezifischere Integrations-/Rechtfertigungsstruktur ermöglicht als etablierte Alternativen.
 
 ### Aktueller Status
 
-**PARTIAL / UNDER TEST.** Der Demonstrator stützt C05, aber der harte C06-Vergleich spricht gegen eine starke Neuheitsbehauptung für die Trias im reinen Solverfall. Der verbleibende Integrations-/Provenance-Claim wird nun an einer zusätzlichen lernbasierten Ebene getestet.
+**PARTIAL / UNDER TEST.** Der Solverfall stützt C05, aber nicht eine starke Neuheitsbehauptung. D015 verschiebt den nächsten Test auf eine Directed-Trias-Fassung, die Forward- und Inverse-Transformationen gemeinsam auditiert.
 
 ---
 
@@ -82,7 +82,7 @@ Die Zuordnung des konkret instanziierten Newtonschen Drei-Körper-Systems zum Re
 
 ### Aktueller Status
 
-**ACCEPTED — D004.**
+**ACCEPTED — D004.** Die sechs-stufige Lösungsleiter bleibt erhalten. Identifizierbarkeit wird in D015 konsistent als querliegende Auditdimension behandelt, nicht als zusätzliche Stufe.
 
 ---
 
@@ -114,24 +114,27 @@ Full Demonstrator v0.1:
 
 - **NASA-STD-7009B (2024), Standard for Models and Simulations.** Umfasst credibility, verification, validation, sensitivity/uncertainty und acceptance criteria.
 - **NASA M&S Use / User Guide guidance.** Intended use, assumptions/abstractions, permissible uses, uncertainty, sensitivity, robustness und supporting evidence gehören zum Credibility-/Use-Assessment.
-- **Stanford Encyclopedia of Philosophy, Computer Simulations in Science, Revision 2026.** Breite Simulation-Study-Perspektive umfasst Modellwahl, Implementierung, Rechner, Interpretation und Rechtfertigung; Verification wird in code und solution verification unterschieden; Validation ist zweckrelativ zur Repräsentation des target system.
+- **Stanford Encyclopedia of Philosophy, Computer Simulations in Science.** Breite Simulation-Study-Perspektive umfasst Modellwahl, Implementierung, Rechner, Interpretation und Rechtfertigung; Verification wird in code und solution verification unterschieden; Validation ist zweckrelativ zur Repräsentation des target system.
 - **Oberkampf/Roy/Trucano-artige V&V/UQ-Literatur.** Numerische Fehler, Modellfehler, Referenz-/Validierungsevidenz, Sensitivität und predictive capability sind etablierte Gegenstände.
+- **Jakeman, Barba, Martins & O’Leary-Roseberry (2026), Verification and validation for trustworthy scientific machine learning.** SciML-Credibility umfasst Problemdefinition, Model Purpose, QoIs, Datencharakteristika/-verarbeitung, Verification, Validation, UQ, Sensitivität, Reproduzierbarkeit und Alternativenvergleich.
 
 ### Ergebnis des harten Vergleichs
 
 Die C05-Diagnostik kann ohne Informationsverlust in Standard-Numerik/V&V/Credibility-Sprache ausgedrückt werden. Daher ist die starke C06-Fassung — neue numerische Validierungsfragen durch die Trias — im aktuellen Solverfall **nicht gestützt und verworfen**.
 
-Ein möglicher verbleibender Mehrwert liegt in einer expliziten integrativen Zuordnung über Zielsystem–Theorie–Berechnung sowie in der Verbindung von analytischer Traktabilität (Sundman), numerischer Operationalisierung und wissenschaftlichem Gebrauch.
+D015 prüft nun nur noch die schwächere Hypothese, ob eine gemeinsame richtungssensitive Audit-Grammatik für Forward- und Inverse-Transformationen eine nützliche Integrationsleistung erbringt.
 
 ### Aktueller Status
 
-**ACCEPTED IN REVISED FORM — D009.** C06-R ist eine schwache Integrations-/Provenance-Fassung. Ein minimaler AI-for-Science/ML-Fall soll nun prüfen, ob diese Integrationsleistung unter einer zusätzlichen lernbasierten Übersetzung diagnostisch trägt.
+**ACCEPTED IN REVISED FORM — D009 / UNDER REFINEMENT D015.**
 
 ---
 
-## E07 — Geplante Evidenz für den AI-for-Science-Provenance-Test
+## E07 — Evidenz für den ursprünglichen ML-Provenance-Zweig
 
-Noch kein wissenschaftlicher Claim. Der geplante Demonstrator soll kontrolliert unterscheiden zwischen:
+### Geplanter Claim-Kern
+
+Kontrolliert unterscheiden zwischen:
 
 - Qualität relativ zum numerischen Datengenerator,
 - Qualität relativ zu einer stärkeren numerischen Referenz,
@@ -139,4 +142,57 @@ Noch kein wissenschaftlicher Claim. Der geplante Demonstrator soll kontrolliert 
 - Herkunft einer Abweichung aus Theorie, Datengenerator, Trainingsdaten oder gelerntem Surrogat,
 - wissenschaftlicher Schlussfolgerung relativ zum intended use.
 
-**Status:** PENDING SPECIFICATION REVIEW.
+### Projektinterne Evidenz
+
+ML Full Run v0.1:
+
+- Reference separation klar bestanden;
+- paired initialization bestanden;
+- Learner resolvability klar verletzt;
+- Lernfehler etwa fünf Größenordnungen über der RK4-vs.-DOP853-Teacher-Differenz.
+
+### Aktueller Status
+
+**INCONCLUSIVE — D013.** v0.2 ist nach D014 technisch vorbereitet, der wissenschaftliche Full Run nach D015 strategisch pausiert. C07 bleibt NOT ASSESSABLE.
+
+---
+
+## E08 — Evidenz für C07-L / C07-L-R und Directed Trias
+
+### Primäranker
+
+- **Z.-M. Zhai, V. Lucarini, Y.-C. Lai, _Deficiency of equation-finding approach to data-driven modeling of dynamical systems_, arXiv:2509.03769; aktuelle Fassung 22. März 2026.**
+
+Für chaotische Systeme, insbesondere Lorenz, berichten die Autoren:
+
+- Missingness/gestörte Beobachtung;
+- ML-basierte Rekonstruktion der Zeitreihe;
+- sparse equation discovery;
+- stark unterschiedliche inferierte Gleichungsstrukturen je nach Beobachtungs-/Missingness-Situation;
+- dennoch ähnliche chaotische Attraktoren, Lyapunov-Exponenten und KL-basierte Verteilungsmaße;
+- Übereinstimmung vieler dominanter Koopman-Eigenwerte bei stärkeren Unterschieden in subdominanten Bereichen.
+
+### Starke Comparatoren
+
+1. **Structural identifiability:** eindeutige Parameterbestimmung aus idealisierten Outputs bei vorgegebener Modellstruktur; u. a. Ljung & Glad (1994) sowie neuere Reviews.
+2. **Practical identifiability / estimability:** Datenmenge, Rauschen, Sampling und Messgenauigkeit beeinflussen praktische Parameterbestimmung.
+3. **Observability:** Rekonstruierbarkeit interner Zustände aus Outputs; structural identifiability kann als erweiterte Observability formuliert werden.
+4. **Equifinality / observational equivalence:** mehrere Modelle/Parametrisierungen können mit denselben oder praktisch gleichen Beobachtungen vereinbar sein.
+5. **Structural error / near-identifiability:** ältere System-Identification-Literatur behandelt ausdrücklich near-equivalence zwischen strukturell abweichenden Modellen und Prozessen unter Output-Toleranzen.
+6. **Equation-discovery robustness:** SINDy-artige Verfahren sind bekanntermaßen sensitiv gegenüber Rauschen, Differentiation, Sampling, Library, Sparse Optimizer und Hyperparametern.
+7. **Philosophy of science:** empirical equivalence, underdetermination und model pluralism sind etablierte Debatten.
+8. **Provenance / SciML credibility:** W3C PROV, Scientific-Workflow-Provenance und moderne SciML-V&V verlangen bereits Dokumentation von Datenentstehung/-verarbeitung, Modellstruktur, Zweck, Unsicherheit und Reproduzierbarkeit.
+
+### Ergebnis
+
+**Starke C07-L-Neuheitsfassung nicht haltbar.** Die Aussage `operative/dynamische Äquivalenz impliziert nicht theoretische Identität` ist als allgemeine Grundidee stark etablierter Vorarbeit ausgesetzt.
+
+### Verbleibende moderate Fassung
+
+**C07-L-R / PENDING REVIEW:** Zhai–Lucarini–Lai dient als konkreter inverser Equation-Discovery-Fall. Der mögliche Trias-Anteil ist ausschließlich die projektinterne Integrationshypothese, Forward- und Inverse-Probleme in einer gemeinsamen richtungssensitiven Audit-Grammatik zu lokalisieren und jeweils zu markieren, welches epistemische Objekt tatsächlich validiert oder identifiziert wurde.
+
+### Revisionskriterium
+
+Wenn ein eigener inverser MVP und der anschließende Framework-Vergleich zeigen, dass diese Zuordnung vollständig ohne Rest in einer Kombination aus System Identification, Identifiability/Observability und SciML-V&V/Provenance aufgeht, wird die Directed-Trias-Neuheitsbehauptung weiter abgeschwächt oder aufgegeben.
+
+Details: [`literature/c07_l_comparator_audit.md`](c07_l_comparator_audit.md).

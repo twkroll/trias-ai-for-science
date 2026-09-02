@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Directed Trias / Inverse Scientific Full Run v0.1 Review**
+**Directed Trias / Comparator Audit Complete / C06-R2 Review**
 
-Der numerische Drei-Körper-Demonstrator ist abgeschlossen. C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Die Directed Trias ist als Arbeitsrevision akzeptiert. Der ML-v0.2-Full-Run bleibt strategisch pausiert. Der wissenschaftliche inverse Lorenz/SINDy-Full-Run wurde nun nach dem eingefrorenen D018-Contract ausgeführt.
+Der numerische Drei-Körper-Demonstrator ist abgeschlossen. Der ML-v0.1-Provenance-Zweig blieb `INCONCLUSIVE_LEARNER_ERROR`; ML v0.2 ist technisch vorbereitet, aber pausiert. Der inverse Lorenz/SINDy-Full-Run wurde nach D018/D019 ausgeführt und mit D020 als vorregistrierter wissenschaftlicher Befund `INFORMATIVE_NEGATIVE` akzeptiert. Der verpflichtende Comparator-Audit auf genau diesem negativen Resultat ist nun abgeschlossen.
 
 ## Akzeptierte Entscheidungen
 
@@ -16,7 +16,8 @@ Der numerische Drei-Körper-Demonstrator ist abgeschlossen. C06-R beschränkt de
 - **D016:** starke C07-L-Neuheitsfassung verworfen; C07-L-R als moderate Equation-Discovery-Bridge akzeptiert.
 - **D017:** Minimal Inverse-Direction Demonstrator v0.1 akzeptiert und eingefroren.
 - **D018:** Inverse-Direction Implementation Contract v0.1 akzeptiert und eingefroren.
-- **D019:** Inverse-Direction Code Skeleton v0.1 akzeptiert; wissenschaftlicher Full Run freigegeben.
+- **D019:** Inverse-Direction Code Skeleton v0.1 akzeptiert.
+- **D020:** Inverse Full Run v0.1 als `INFORMATIVE_NEGATIVE` akzeptiert; Seed-2-Einzelfall bleibt explorativ; kein post-hoc Tuning zur Erzeugung eines positiven Effekts.
 
 ## Directed Trias
 
@@ -25,90 +26,86 @@ Forward: T -> C_forward -> R_hat
 Inverse: R -> C_obs -> D -> C_pre -> C_infer -> T_hat
 ```
 
-Die drei Pole bleiben funktionale Rollen; Daten sind Zwischenartefakte. Theoretische Identifizierbarkeit bleibt eine querliegende Auditdimension, keine neue Stufe der sechs-stufigen Lösungsleiter.
+Die drei Pole bleiben funktionale Rollen; Daten sind Zwischenartefakte. Identifizierbarkeit ist eine querliegende Auditdimension, keine neue Stufe der sechs-stufigen Lösungsleiter.
 
-## Wissenschaftlicher inverse Full Run v0.1
+## Inverser Full Run v0.1
 
-**Status:** COMPLETE / PENDING SCIENTIFIC REVIEW  
-**Pre-registered classification:** `INFORMATIVE_NEGATIVE`
+**Status:** COMPLETE / ACCEPTED SCIENTIFIC RESULT — D020  
+**Classification:** `INFORMATIVE_NEGATIVE`
 
-Eingefrorener Full-Contract:
-
-```text
-Lorenz-63, x0=(1,1,1)
-DOP853 primary/tight reference
-dt_obs=0.01
-Discovery [10,50]
-Holdout (50,60]
-P0 complete
-P1 20% paired missingness + linear reconstruction
-P2 same masks + not-a-knot cubic reconstruction
-mask seeds {0,1,2}
-common 5-point derivative estimator
-common quadratic SINDy/STLSQ pipeline
-```
-
-### Gates
+G1–G3 bestehen. P0 rekonstruiert den exakten Lorenz-Support. Unter 20% zufälliger punktweiser Missingness entsteht:
 
 ```text
-G1 reference: PASS
-max normalized primary/tight gap [0,10] = 4.7727891186720604e-12
-
-G2 mask integrity: PASS for seeds {0,1,2}
-
-G3 P0 structural baseline: PASS
-precision = 1.0
-recall = 1.0
-spurious terms = 0
-missing true terms = 0
-max relative true-coefficient error = 5.295715025790404e-04
+linear reconstruction: structural perturbation 1/3 seeds
+cubic reconstruction:  structural perturbation 0/3 seeds
+pre-registered robust threshold: >=2/3
 ```
 
-### Structural result
-
-```text
-linear reconstruction: substantial structural perturbation in 1/3 seeds
-cubic reconstruction:  substantial structural perturbation in 0/3 seeds
-required for seed-consistency: >=2/3
-```
-
-Der einzige Supportwechsel tritt bei linearer Rekonstruktion, Seed 2, auf: ein zusätzlicher konstanter Term in `dz/dt` mit Koeffizient ungefähr `-0.0967611`. Dieses Modell besteht zugleich die eingefrorenen operativen Äquivalenzkriterien, bleibt aber ein 1/3-Einzelfall.
-
-### Dynamical/statistical result
-
-Alle sechs P1/P2-ODEs bleiben im 100-Zeiteinheiten-Test endlich und beschränkt. Fünf von sechs erfüllen sämtliche eingefrorenen operativen Äquivalenztoleranzen. Cubic seed 2 scheitert an finite-window Langzeit-Mittelwert-/Wasserstein-Gates trotz sehr kleinem Gleichungs-/Vector-Field-Fehler.
-
-Da kein Rekonstruktionspfad eine seed-konsistente strukturelle Perturbation in mindestens 2/3 Seeds zeigt, erzwingt D018 die Klassifikation:
-
-```text
-INFORMATIVE_NEGATIVE
-```
+Der lineare Seed-2-Fall mit zusätzlichem konstanten `dz/dt`-Term und bestandener operativer Äquivalenz bleibt explorativ und wird nicht als positiver Haupteffekt gewertet.
 
 Details: [`demonstrator/inverse_full_run_v0_1_results.md`](demonstrator/inverse_full_run_v0_1_results.md).
 
-## Wissenschaftliche Bedeutung
+## Comparator Audit
 
-Der eingefrorene Minimalfall reproduziert **nicht robust** den interessierenden Effekt `structural disagreement + dynamical similarity`. Der einzelne lineare Seed-2-Fall ist diagnostisch interessant, darf nach Vorregistrierung aber nicht als positiver Provenance-Fall gewertet werden.
+**Status:** COMPLETE.
 
-Das Ergebnis widerlegt weder Nichtidentifizierbarkeit noch die Befunde von Zhai–Lucarini–Lai. Es begrenzt ausschließlich die Evidenz des konkreten Minimaldesigns mit 20% zufälliger punktweiser Missingness und linearer/kubischer Rekonstruktion.
+Der negative inverse Befund wurde gegen folgende Rahmen geprüft:
 
-## ML v0.2
+1. System Identification / SINDy robustness / structural error;
+2. structural/practical identifiability und observability;
+3. Modeling & Simulation V&V / Scientific-ML credibility;
+4. Workflow/Data Provenance einschließlich W3C PROV;
+5. Claims–Arguments–Evidence / Assurance Cases als zusätzlicher Stress-Comparator;
+6. Directed Trias.
 
-**TECHNICALLY READY / SCIENTIFIC FULL RUN PAUSED.** D014 und der v0.2-Skeleton bleiben gültig.
+### Ergebnis
+
+Die bisherigen Demonstratoren zeigen **keine eigenständige neue Fehler-, Validierungs-, Provenance- oder Identifiability-Kategorie** der Trias. Praktisch alle wesentlichen Diagnosen lassen sich mit einer Kombination etablierter Frameworks formulieren.
+
+Auch zwei mögliche Restclaims sind stark vorbelastet:
+
+- `gerichtete Provenance` ist Kern bestehender Provenance-Modelle;
+- `welche Evidenz stützt welchen Claim?` ist Kern von Assurance-Case-/CAE-/GSN-Ansätzen.
+
+Der verbleibende mögliche Wert der Directed Trias ist daher enger: eine kompakte fachübergreifende **konzeptionelle Synthese/Audit-Linse**, die Forward- und Inverse-Fälle in derselben Sprache von Zielsystem, Theorie, operativer Vermittlung, Übergang und zweckrelativer Rechtfertigung ordnet.
+
+Details: [`literature/inverse_negative_result_comparator_audit_v0_1.md`](literature/inverse_negative_result_comparator_audit_v0_1.md).
+
+## Aktueller Claim-Kandidat
+
+### C06-R2
+**Status:** PENDING REVIEW
+
+> Die bisherigen Drei-Körper-, ML- und inversen Equation-Discovery-Fälle zeigen keine eigenständige neue Fehler-, Validierungs-, Provenance- oder Identifiability-Kategorie der Trias gegenüber starken etablierten Vergleichsrahmen. Der verbleibende mögliche Beitrag der Directed Trias ist eine kompakte fachübergreifende Synthese, die Forward- und Inverse-Transformationen zwischen Zielsystem, Theorie und operativer Vermittlung in einer gemeinsamen Audit-Sprache ordnet und sichtbar macht, auf welches epistemische Objekt sich eine konkrete Rechtfertigung bezieht. Diese Leistung ist als konzeptionelle Integrations- und Kommunikationsfunktion zu bewerten und nicht als neue mathematische oder technische Credibility-Theorie.
+
+Details: [`claims/claim_06_revised_v2.md`](claims/claim_06_revised_v2.md).
+
+## Strategische Empfehlung
+
+**Paper-Pivot statt weiterer Experiment-Tuning-Schleifen.**
+
+Der Mainline-Pfad sollte vorerst keine neuen Experimente starten. Empfohlen ist ein `Paper Contribution Boundary + Outline v0.1` mit:
+
+```text
+1. exakter Hauptclaim + Non-Claims
+2. Comparator-Coverage-Matrix
+3. Sundman als formal-vs-operational case
+4. Figure-eight als forward operationalization case
+5. inverse Lorenz/SINDy als pre-registered negative inverse case
+6. ML v0.1 als inconclusive provenance/learner-resolvability case
+7. klare Entscheidung, was Haupttext vs Appendix ist
+8. realistisches Paperformat: conceptual/methodological synthesis, nicht neue V&V-Theorie
+```
+
+ML v0.2 und ein möglicher inverse v0.2 bleiben archiviert/pausiert. Sie dürfen später als eigenständige empirische Projekte wieder aufgenommen werden, aber nicht als Rettungsversuch für Trias-Novelty.
 
 ## Nächste Entscheidung
 
-Zu entscheiden ist, ob `INFORMATIVE_NEGATIVE` als wissenschaftlicher Projektbefund akzeptiert wird. Empfehlung: **ACCEPT** und danach zuerst den verpflichtenden Comparator-Audit auf genau diesem negativen Resultat durchführen. Vor diesem Audit keine Änderung von Missingness, SINDy-Thresholds oder ML-v0.2.
+Zu entscheiden ist, ob **C06-R2** akzeptiert und der Mainline-Pfad auf die Paper-Ausarbeitung als konzeptionelle Synthese umgestellt wird.
 
-Erst danach wird entschieden zwischen:
-
-```text
-A. begründete Revision des inversen Demonstrators
-B. Resume des pausierten ML-v0.2-Branches
-C. weitere Abschwächung/Neupositionierung des Directed-Trias-Originalitätsclaims
-```
+Bei `GO` wird C06-R2 eingefroren und als nächster Schritt ausschließlich `Paper Contribution Boundary + Outline v0.1` ausgearbeitet. Noch kein neues Experiment.
 
 ## Projektkommandos
 
 - `GO`: aktuelle Empfehlung akzeptieren, dokumentieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; Directed Trias, C07-L-R, inverser MVP und pausierter ML-v0.2-Zweig werden berücksichtigt.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; Directed Trias, C06-R2-Status, C07-L-R, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

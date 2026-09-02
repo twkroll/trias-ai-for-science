@@ -21,6 +21,7 @@ dev = ["pytest>=8"]
 trias-demo = "trias_demo.experiment:main"
 trias-ml-demo = "trias_demo.ml_experiment:main"
 trias-ml-demo-v02 = "trias_demo.ml_experiment_v0_2:main"
+trias-inverse-demo = "trias_demo.inverse_experiment:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

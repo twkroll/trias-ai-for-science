@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Directed Trias / C07-L-R Claim Review**
+**Directed Trias / Minimal Inverse-Direction Demonstrator v0.1 Specification Review**
 
-Das Claim-and-Scope-Fundament und der numerische Drei-Körper-Demonstrator sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Der ursprüngliche ML-Provenance-Test v0.1 blieb `INCONCLUSIVE_LEARNER_ERROR`; die v0.2-Resolvability-Reparatur ist technisch vorbereitet, ihr wissenschaftlicher Full Run jedoch strategisch pausiert. Der aktuelle Fokus liegt auf der inversen Richtung `target/observation -> data -> inference -> theory`.
+Das Claim-and-Scope-Fundament und der numerische Drei-Körper-Demonstrator sind abgeschlossen. C05 ist akzeptiert; C06-R beschränkt den derzeit belegbaren Trias-Mehrwert auf eine Integrations-/Provenance-Funktion. Der ursprüngliche ML-Provenance-Test v0.1 blieb `INCONCLUSIVE_LEARNER_ERROR`; die v0.2-Resolvability-Reparatur ist technisch vorbereitet, ihr wissenschaftlicher Full Run jedoch strategisch pausiert. Der aktuelle Fokus liegt auf der inversen Richtung `target/observation -> data -> preprocessing -> inference -> theory`.
 
 ## Akzeptierte Entscheidungen
 
@@ -15,69 +15,84 @@ Das Claim-and-Scope-Fundament und der numerische Drei-Körper-Demonstrator sind 
 - **Numerischer Demonstrator / D005–D007:** Figure-eight + DOP853 + RK4 + Velocity-Verlet, implementiert, getestet und vollständig ausgeführt.
 - **C05 / D008:** verschiedene numerische Operationalisierungen erzeugen use-case-relative Fehler-/Strukturprofile.
 - **C06-R / D009:** starke Neuheitsbehauptung gegenüber V&V verworfen; verbleibender Mehrwert ist integrative Provenance/Mapping.
-- **AFS-DMO / D010:** minimaler ML-Provenance-Test akzeptiert.
-- **ML-IC v0.1 / D011:** Dataset-, Netzwerk-, Optimierungs-, Gate-, Rollout- und Scope-Entscheidungen eingefroren.
-- **ML-SKEL v0.1 / D012:** getesteter ML-Skeleton akzeptiert.
-- **ML v0.1 Review + v0.2 Direction / D013:** v0.1 endgültig als `INCONCLUSIVE_LEARNER_ERROR`; C07 unentschieden; v0.2 als Resolvability-Reparatur zugelassen.
-- **ML-IC v0.2 / D014:** phase-stratifizierter Split und gemeinsamer teacher-unabhängiger Target-Scaler eingefroren.
-- **Directed Trias / D015:** gerichtete Trias als Arbeitsrevision für den nächsten Novelty-Test akzeptiert; ML-v0.2-Full-Run pausiert; C07-L muss zuerst gegen starke Comparatoren geprüft werden.
+- **AFS-DMO / D010, ML-IC v0.1 / D011, ML-SKEL v0.1 / D012:** minimaler ML-Provenance-Test vorregistriert und implementiert.
+- **D013:** ML v0.1 endgültig `INCONCLUSIVE_LEARNER_ERROR`; C07 bleibt unentschieden; v0.2 als separate Resolvability-Reparatur erlaubt.
+- **D014:** v0.2 ändert ausschließlich phase-stratifizierten Blocksplit und gemeinsamen teacher-unabhängigen Target-Scaler; übrige wissenschaftliche Einstellungen eingefroren.
+- **D015:** Directed Trias als Arbeitsrevision akzeptiert; ML-v0.2-Full-Run pausiert; C07-L gegen starke Comparatoren geprüft.
+- **D016:** starke C07-L-Neuheitsfassung verworfen; C07-L-R als moderate Arbeitsfassung akzeptiert; inverser MVP ist die nächste Abhängigkeit.
 
-## Directed Trias — aktueller Arbeitsrahmen
+## Directed Trias
 
-Die drei Pole bleiben funktionale Rollen. Methodologisch wird jetzt stärker zwischen gerichteten Transformationen unterschieden:
+Die drei Pole bleiben funktionale Rollen. Der Audit unterscheidet jetzt explizit gerichtete Transformationen:
 
 ```text
 Forward: T -> C_forward -> R_hat
 Inverse: R -> C_obs -> D -> C_pre -> C_infer -> T_hat
 ```
 
-`C` darf für Auditzwecke in Observation/Datafication, Preprocessing/Reconstruction, Inference, Forward-Simulation, ML und Comparison/Credibility zerlegt werden. Daten sind Zwischenartefakte, kein vierter ontologischer Pol.
-
-Die sechs-stufige Lösungsleiter bleibt unverändert. Theoretische Identifizierbarkeit wird als querliegende Auditdimension behandelt.
+Die sechs-stufige Lösungsleiter bleibt unverändert. Theoretische Identifizierbarkeit ist eine querliegende Auditdimension.
 
 Details: [`theory/directed_trias_v0_1.md`](theory/directed_trias_v0_1.md).
 
-## C07-L Comparator Audit
+## C07-L / C07-L-R
 
-**Status:** COMPLETE FOR CLAIM REVIEW.
+Der Comparator-Audit ist abgeschlossen. Nichtidentifizierbarkeit, observational equivalence/equifinality, structural error/near-identifiability, pipelineabhängige Inferenz und allgemeine Provenance sind etablierte Themen. Daher ist die starke C07-L-Fassung als Neuheitsclaim verworfen.
 
-Der Vergleich mit structural/practical identifiability, observability, equifinality/observational equivalence, System Identification mit structural error/near-identifiability, Equation-Discovery-Robustheit, wissenschaftsphilosophischer Underdetermination/Model Pluralism sowie SciML-V&V/Provenance ergibt:
+**C07-L-R ist ACCEPTED AS WORKING CLAIM — D016.**
 
-1. Nichtidentifizierbarkeit, observational equivalence, Near-Equivalence und pipelineabhängige Inferenz sind **keine neuen Trias-Befunde**.
-2. Besonders die ältere Near-Identifiability-/structural-error-Literatur ist ein starker Comparator für die Idee `strukturell verschieden, outputseitig nahe äquivalent`.
-3. Zhai–Lucarini–Lai bleibt als aktueller, klarer chaotischer Equation-Discovery-Fall wissenschaftlich wertvoll: stark verschiedene inferierte ODEs können bei ausgewählten Langzeit-/Koopman-Eigenschaften ähnlich bleiben.
-4. Der verbleibende mögliche Trias-Beitrag ist ausschließlich eine **gemeinsame richtungssensitive Audit-Grammatik**, die etablierte Forward- und Inverse-Probleme zusammenführt und explizit markiert, welches epistemische Objekt an welchem Übergang gerechtfertigt wird.
-5. Auch dieser Integrationsclaim ist noch nicht bewiesen; moderne SciML-V&V- und Provenance-Frameworks sind starke Comparatoren.
+Zhai–Lucarini–Lai dient als externer chaotischer Equation-Discovery-Fall. Der Trias-Anteil bleibt ausschließlich die zu testende Hypothese einer gemeinsamen richtungssensitiven Integrations-/Zuordnungsgrammatik.
 
-Details: [`literature/c07_l_comparator_audit.md`](literature/c07_l_comparator_audit.md).
+Details:
 
-## C07-L-R
-
-**Status:** PENDING REVIEW.
-
-Vorgeschlagene moderate Fassung:
-
-> Bei datengetriebener Equation Discovery ist die Güte eines inferierten Modells mehrdimensional: strukturelle Übereinstimmung der Gleichungen, dynamisch-statistische Adäquanz und physikalische Interpretierbarkeit sind nicht gleichzusetzen. Zhai, Lucarini und Lai liefern einen konkreten chaotischen Fall, in dem unterschiedliche Beobachtungs-/Rekonstruktionsbedingungen zu strukturell verschiedenen inferierten ODEs führen, während ausgewählte Langzeit- und Koopman-Eigenschaften ähnlich bleiben. Für die Trias dient dieser Befund nicht als neue Identifiability-Theorie, sondern als inverser Testfall für die Hypothese, dass wissenschaftliche Rechtfertigung die Provenance und Richtung der Transformation `target/observation -> data -> inference -> theory` explizit auditieren sollte.
-
-Details: [`claims/claim_07_lucarini_bridge_revised.md`](claims/claim_07_lucarini_bridge_revised.md).
+- [`claims/claim_07_lucarini_bridge_revised.md`](claims/claim_07_lucarini_bridge_revised.md)
+- [`literature/c07_l_comparator_audit.md`](literature/c07_l_comparator_audit.md)
 
 ## ML v0.2
 
 **Status:** TECHNICALLY READY / SCIENTIFIC FULL RUN PAUSED.
 
-D014 und der getestete v0.2-Skeleton bleiben gültig. Es findet derzeit kein Full Run statt. Nach dem inversen MVP wird entschieden, ob der Branch fortgesetzt, sekundär gestellt oder ersetzt wird.
+D014 und der getestete v0.2-Skeleton bleiben gültig. Nach dem inversen MVP wird entschieden, ob der Branch fortgesetzt, sekundär gestellt oder ersetzt wird.
+
+## Aktuelle Aufgabe
+
+### Minimal Inverse-Direction Demonstrator v0.1
+**Status:** PENDING REVIEW
+
+Vorgeschlagener Minimalfall:
+
+```text
+Lorenz-63 synthetic target
+-> common high-accuracy latent trajectory
+-> P0 complete observations
+-> P1 20% paired missingness + linear reconstruction
+-> P2 same missingness + cubic-spline reconstruction
+-> same derivative estimator
+-> same quadratic SINDy/STLSQ pipeline
+-> structural equation assessment
+-> autonomous dynamical/statistical assessment
+```
+
+Drei vorregistrierte Missingness-Seeds sollen verhindern, dass der Befund an einer einzelnen Maske hängt. Die vollständige Beobachtung P0 muss zunächst ein Structural-Recovery-Gate bestehen.
+
+Die zentrale Trennung lautet:
+
+```text
+structural equation fidelity
+vs.
+dynamical/statistical adequacy
+```
+
+Ein positiver inverser Provenance-Fall erfordert strukturelle Unterschiede bei gleichzeitig vorregistriert hinreichend ähnlicher Dynamik; triviale `bad model`-Fälle zählen nicht.
+
+Details: [`demonstrator/inverse_direction_spec_v0_1.md`](demonstrator/inverse_direction_spec_v0_1.md).
 
 ## Nächste Entscheidung
 
-Zu entscheiden ist, ob
-
-1. die starke C07-L-Neuheitsfassung verworfen wird;
-2. C07-L-R als moderate Arbeitsfassung akzeptiert wird;
-3. als nächste Abhängigkeit ein **Minimal Inverse-Direction Demonstrator v0.1** spezifiziert wird, zunächst ohne Code.
+Zu entscheiden ist, ob `inverse_direction_spec_v0_1.md` akzeptiert und eingefroren wird. Bei GO wird **nur** ein exakter Inverse-Direction Implementation Contract v0.1 erstellt. Vor dessen weiterem GO wird kein Code geschrieben und kein wissenschaftlicher Run gestartet.
 
 ## Projektkommando `PDF`
 
-`PDF` erzeugt aus dem aktuellen Repository- und Entscheidungsstand ohne Rückfrage ein neues ausführliches Kooperationsbriefing als PDF plus LaTeX-Quelle. Details: `collaboration/PDF_WORKFLOW.md`.
+`PDF` erzeugt aus dem aktuellen Repository- und Entscheidungsstand ohne Rückfrage ein neues ausführliches Kooperationsbriefing als PDF plus LaTeX-Quelle. Directed Trias, C07-L-R, der pausierte ML-v0.2-Zweig und der inverse MVP werden berücksichtigt.
 
 ## Arbeitsregel
 

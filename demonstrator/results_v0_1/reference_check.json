@@ -1,0 +1,18 @@
+{
+  "u1": {
+    "max_position_gap": 8.854009981215089e-12,
+    "final_position_gap": 8.854009981215089e-12,
+    "primary_nfev": 2486,
+    "tight_nfev": 3245,
+    "primary_max_abs_energy_error": 2.3193942333590098e-12,
+    "tight_max_abs_energy_error": 4.302394360726939e-13
+  },
+  "u2": {
+    "max_position_gap": 6.163005719771352e-08,
+    "final_position_gap": 5.8148838320951016e-08,
+    "primary_nfev": 245729,
+    "tight_nfev": 321287,
+    "primary_max_abs_energy_error": 1.23763359319471e-10,
+    "tight_max_abs_energy_error": 1.271535218686693e-11
+  }
+}

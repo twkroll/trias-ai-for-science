@@ -18,6 +18,9 @@
 - own-teacher versus common-reference One-Step-Metriken;
 - quantitative Provenance-Fehlerzerlegung;
 - MU1/MU2-Rollout-Pipeline für den späteren Full Run;
+- Checkpoint-Speicherung für jedes Teacher-/Seed-Modell;
+- maschinenlesbare Config-, Dataset-, Teacher-, Training-, One-Step-, Rollout-, Provenance- und Summary-Artefakte;
+- Full-Run-Figure-Pipeline für Teacher-Differenz, One-Step-Vergleich und MU1/MU2;
 - nichtwissenschaftlicher `--smoke`-Modus.
 
 ## Lokale technische Validierung vor Repository-Write
@@ -52,7 +55,7 @@ python -m trias_demo.ml_experiment --smoke --output-dir smoke
 
 Smoke-Konfiguration verkürzt den Datensatz auf `N=60`, verwendet nur Seed `0` und höchstens 20 Epochen. Diese Einstellungen gehören **nicht** zum eingefrorenen wissenschaftlichen Experiment.
 
-Der Smoke Run lief erfolgreich durch und erzeugte `dataset.npz` und `summary.json`. Technische Checks im Smoke Run:
+Der Smoke Run lief erfolgreich durch. Er erzeugte Checkpoints sowie Config-, Dataset-, Teacher-, Training-, One-Step-, Provenance-, Rollout- und Audit-Artefakte. Technische Checks:
 
 ```text
 status = SMOKE_ONLY
@@ -60,6 +63,7 @@ reference_gate = True
 paired_initialization = True
 D_teacher_test = 1.3045e-05
 D_ref_test = 7.2859e-14
+rollout primary/tight reference max position gap = 6.6867e-10
 provenance identity residual ≈ -3.55e-15
 ```
 
@@ -78,4 +82,4 @@ Die hohen ML-Fehler des absichtlich extrem kurzen Smoke-Trainings werden nicht i
 
 ## Review-Empfehlung
 
-Der Skeleton ist technisch ausreichend, um den eingefrorenen Full Run als nächsten Schritt auszuführen. Vor dem Full Run soll geprüft werden, ob die derzeitige Implementierung alle in D011 verlangten Pflichtartefakte und Checkpoint-/Reproduzierbarkeitsanforderungen vollständig schreibt; fehlende reine Output-/Protokollierungsdetails dürfen ergänzt werden, ohne wissenschaftliche Einstellungen zu ändern.
+Der ML Code Skeleton v0.1 ist technisch ausreichend, um nach Akzeptanz den eingefrorenen wissenschaftlichen Full Run auszuführen. Es werden vor diesem Run keine wissenschaftlichen Einstellungen, Splits, Teacher, Architektur-, Optimierungs- oder Seed-Entscheidungen mehr verändert.

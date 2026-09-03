@@ -50,8 +50,10 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | MS-W3-GATE-v0.1 | W3 Semantic-Load / Notation-Only Evaluation | ACCEPTED / PASS | S3 nicht ausgelöst; Semantik trägt inferentielle Last, bleibt aber Synthese statt Framework-Novelty | D033 |
 | MS-W4-S7-v0.1 | Manuscript Section 7 — Contribution Boundary / Comparator Section | COMPLETE / ACCEPTED | direkter Vergleich mit V&V, Provenance, Assurance, Identifiability/System ID, Philosophy of ML und SciML | D034 |
 | MS-W4-GATE-v0.1 | W4 Residual-Compression Evaluation | ACCEPTED / PASS | S2/S3/S5 nicht ausgelöst; Rest = moderate cross-domain Evidence-Localization-Synthese; keine technische Novelty | D034 |
-| MS-W5-S56-v0.1 | Manuscript Sections 5–6 — Controls + Stress Tests | COMPLETE / PENDING AUTHOR REVIEW | Sundman, Figure-eight, inverse negative run und ML-inconclusive run als near-manuscript prose integriert | D034 follow-up |
-| MS-W5-GATE-v0.1 | W5 Case-Coherence / Evidence-Status Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | case coherence PASS; evidence-status discipline STRONG PASS; spätere Straffung empfohlen | D034 follow-up |
+| MS-W5-S56-v0.1 | Manuscript Sections 5–6 — Controls + Stress Tests | COMPLETE / ACCEPTED | Sundman, Figure-eight, inverse negative run und ML-inconclusive run integriert; Evidenzklassen unverändert | D035 |
+| MS-W5-GATE-v0.1 | W5 Case-Coherence / Evidence-Status Evaluation | ACCEPTED / PASS | case coherence PASS; evidence-status discipline STRONG PASS; spätere Straffung empfohlen | D035 |
+| MS-W6-S8-v0.1 | Manuscript Section 8 — Scientific success without global success | COMPLETE / PENDING AUTHOR REVIEW | deskriptive Discussion: claim-relative success, kein All-three-edges-Imperativ, keine notwendige Trade-off-Geometrie | D035 follow-up |
+| MS-W6-GATE-v0.1 | W6 Descriptive-vs-Normative / Global-Success Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | global-success semantics PASS; trade-off discipline STRONG PASS; practical utility bleibt UNTESTED | D035 follow-up |
 
 ## Aktueller Evidenzstand
 
@@ -69,34 +71,34 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-W1–W4 sind als `PASS` akzeptiert. Der bislang härteste Comparator-Test W4 lässt einen moderaten cross-domain Synthese-/Evidence-Localization-Rest übrig, aber keine neue technische oder methodologische Framework-Novelty.
+W1–W5 sind als `PASS` akzeptiert. Der harte Comparator-Test W4 lässt einen moderaten cross-domain Synthese-/Evidence-Localization-Rest übrig, aber keine neue technische oder methodologische Framework-Novelty. W5 zeigt, dass positive Kontrollen, informative negative Evidenz und inconclusive Evidenz ohne Statusvermischung in derselben Sprache dargestellt werden können.
 
-Writing Goal W5 ist vollständig ausgeführt. Sections 5–6 integrieren vier bewusst unterschiedlich klassifizierte Fälle:
+Writing Goal W6 ist vollständig ausgeführt. Section 8 formuliert die ursprüngliche Projektintuition jetzt als begrenzte deskriptive These:
 
 ```text
-Sundman        -> conceptual control
-Figure-eight   -> positive standard-V&V control
-Lorenz/SINDy   -> INFORMATIVE_NEGATIVE
-ML v0.1        -> INCONCLUSIVE_LEARNER_ERROR
+scientific success is claim-relative and relation-specific
+!= global scalar model quality
+!= obligation to maximize RT, TC and CR
+!= necessary zero-sum trade-off geometry
 ```
 
-Die W5-Evaluation klassifiziert die Integration als **PASS** und die Evidence-Status-Disziplin als **STRONG PASS**. Insbesondere werden negative Evidenz und inconclusive Evidenz nicht vermischt. Der inverse seed-2-Fall bleibt explorativ; ML v0.1 entscheidet C07 weiterhin nicht.
+Ein Black-box-Predictor kann für einen engen Prediction-Claim legitim `T = NONE_CLAIMED` besitzen; `NOT_APPLICABLE` ist kein Defizit. Höherstufige Credibility-/Adequacy-for-purpose-Urteile bleiben zulässig und werden nicht durch die Trias ersetzt. Praktische Kommunikations-/Review-/Decision-Nützlichkeit der Trias ist weiterhin **UNTESTED**.
 
-Der nächste Schritt soll die eigentliche philosophische Discussion formulieren, ohne die deskriptive Trias in eine normative All-three-edges-Regel oder eine notwendige Trade-off-Theorie umzudeuten.
+Die W6-Evaluation klassifiziert den Abschnitt vorläufig als **PASS**; insbesondere ist `trade-off discipline = STRONG PASS`. Die Discussion muss später redaktionell auf ca. 800–1.000 Wörter gestrafft werden, ohne diese Claim-Grenzen zu verändern.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D033 W3 PASS accepted
 -> D034 W4 PASS accepted
--> W5 Sections 5–6 COMPLETE
--> W5 Case-Coherence/Evidence-Status Evaluation = PASS / pending author acceptance
--> recommended next: W6 Section 8 Discussion
--> descriptive-vs-normative + global-success check
+-> D035 W5 PASS accepted
+-> W6 Section 8 COMPLETE
+-> W6 Descriptive/Normative Evaluation = PASS / pending author acceptance
+-> recommended next: W7 Intro + Conclusion + Abstract + provisional title
+-> whole-manuscript claim-consistency / length / repetition audit
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert W5 = PASS und startet Writing Goal W6 (`Section 8 — Discussion: scientific success without global success`).
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D034, W1–W4 PASS, W5 Controls/Stress Tests + Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W6 = PASS und startet Writing Goal W7 (`Introduction + Conclusion + Abstract + provisional final title`).
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D035, W1–W5 PASS, W6 Discussion + Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Descriptive Trias / Profile Test Complete / C08-D-R Review**
+**Descriptive Trias / Edge Semantics + Evidence Ledger v0.1 Review**
 
-Mit D021 wurde C06-R2 akzeptiert und die experimentelle Mainline vorerst beendet. D022 präzisierte die ursprüngliche Autorenintention als primär deskriptive wissenschaftsphilosophische Theorie über `R/T/C` und deren paarweise Adäquanzrelationen. D023 akzeptiert den Literatur-Stress-Test und begrenzt die verbleibende Neuheitsfrage auf die feste relationale Profilstruktur. Der anschließende `Descriptive Trias Profile Test v0.1` ist nun abgeschlossen.
+Mit D024 wurde C08-D-R als Working Claim akzeptiert. Die Mainline prüft damit nicht mehr eine neue V&V-/Provenance-Theorie, sondern eine deskriptive wissenschaftsphilosophische Profilgrammatik über drei relationsspezifische Evidenzbereiche zwischen Zielsystem, Theorie und computational realization.
 
 ## Akzeptierte Entscheidungen
 
@@ -14,126 +14,136 @@ Mit D021 wurde C06-R2 akzeptiert und die experimentelle Mainline vorerst beendet
 - **D010–D014:** ML-Provenance-Zweig v0.1 ausgeführt (`INCONCLUSIVE_LEARNER_ERROR`), v0.2 technisch vorbereitet und pausiert.
 - **D015–D016:** Directed Trias als Arbeitsrevision; starke Lucarini-Neuheitsfassung verworfen, moderate Bridge behalten.
 - **D017–D020:** inverser Lorenz/SINDy-Zweig vorregistriert, implementiert und als `INFORMATIVE_NEGATIVE` akzeptiert.
-- **D021:** C06-R2 akzeptiert; bisheriger Restwert der Trias = konzeptionelle fachübergreifende Synthese/Audit-Linse.
-- **D022:** Autorenintention präzisiert: deskriptive `R/T/C`-Theorie mit drei paarweisen Adäquanzrelationen statt neue V&V-/Provenance-Kategorie.
-- **D023:** Literatur-Stress-Test akzeptiert; starke Einzelneuheitsclaims und notwendige Trade-off-These verworfen; Profile Test freigegeben; C08-D noch nicht automatisch akzeptiert.
+- **D021:** C06-R2 als konservative Fallback-Boundary akzeptiert.
+- **D022:** Autorenintention als deskriptive `R/T/C`-Theorie präzisiert.
+- **D023:** Literatur-Stress-Test akzeptiert; starke Einzelneuheitsclaims/Nullsummen-Tradeoff verworfen; Profile Test freigegeben.
+- **D024:** C08-D-R als Working Claim akzeptiert; Kanten sind claim-/facet-/use-/evidence-/scope-relativ und nicht standardmäßig transitiv.
 
-## Descriptive Trias
+## Aktueller Working Claim C08-D-R
 
-```text
-R = Realität / intendiertes Zielsystem
-T = Theorie / formale, mechanistische oder erklärende Repräsentation
-C = computational realization
-
-A_RT = Evidenzstatus Zielsystem–Theorie
-A_TC = Evidenzstatus Theorie–Berechnung
-A_CR = Evidenzstatus Berechnung–Zielsystem
-```
-
-Die Trias ist zunächst deskriptiv. Es wird weder ein globaler Modellscore noch ein notwendiger Nullsummen-Trade-off behauptet.
-
-Ein Modellprofil ist use-case- und claim-relativ:
-
-```text
-P(M;U) = [A_RT, A_TC, A_CR]
-```
-
-mit qualitativen Statuswerten `ESTABLISHED`, `PARTIAL`, `UNCERTAIN`, `UNTESTED`, `NOT_APPLICABLE`.
-
-## Literatur-Stress-Test
-
-**Status: ACCEPTED — D023.**
-
-Klar etablierte Vorarbeit existiert für:
-
-- computation als dritte wissenschaftliche Praxis;
-- Modelle als Vermittler zwischen Theorie und Welt;
-- Modelltradeoffs und Dreiecksmetaphern;
-- adequacy-for-purpose;
-- Prediction ohne Understanding;
-- sim-to-real/synthetic-to-real gaps;
-- physics-informed / Scientific ML.
-
-Im v0.1-Stress-Test wurde jedoch kein kanonischer Direktanalog identifiziert, der `R/T/C` als Rollen und `R–T`, `T–C`, `C–R` als gemeinsame deskriptive Profilstruktur über Computational Science und AI for Science verwendet. Das bleibt ein Search Result, kein Originalitätsbeweis.
-
-## Descriptive Trias Profile Test v0.1
-
-**Status: COMPLETE / PENDING CLAIM DECISION.**
-
-Sechs Falltypen wurden mit derselben Profilgrammatik analysiert:
-
-```text
-Sundman
-Figure-eight / numerical solvers
-Black-box ML on real data
-ML surrogate on synthetic data
-Physics-informed ML
-Equation Discovery
-```
-
-### Positives Ergebnis
-
-Der Test zeigt analytische Diskriminationsleistung. Insbesondere kann dieselbe Performancemetrik je nach Workflow Evidenz für unterschiedliche Kanten darstellen:
-
-```text
-synthetic teacher accuracy -> primär T-C
-real held-out prediction   -> primär C-R
-physics constraint         -> primär T-C
-mechanistic adequacy       -> primär R-T
-```
-
-Damit unterscheidet das Profil Fälle, die globale Labels wie `accurate`, `validated`, `physics-informed` oder `excellent surrogate` epistemisch zusammenwerfen können.
-
-Weitere positive Tests:
-
-- Target-Wechsel von synthetischem zu realem Zielsystem verändert das Profil, obwohl Modell/Theorie gleich bleiben können.
-- Zwei physics-informed Modelle mit gleicher T-C-Anbindung können sich in C-R-Evidenz unterscheiden.
-- Figure-eight zeigt, dass sogar eine einzelne Kante use-case-/facet-spezifisch ist.
-
-### Zentrale Einschränkung
-
-Die drei Kanten sind selbst multidimensional. Ein Kantenstatus ist nur sinnvoll, wenn er an mindestens
-
-```text
-Use Case
-Claim/Facet
-Evidence
-Scope
-```
-
-gebunden wird. Die Trias ist daher eine einfache Topologie, nicht drei skalare Qualitätsachsen.
-
-Details: [`theory/descriptive_trias_profile_test_v0_1.md`](theory/descriptive_trias_profile_test_v0_1.md).
-
-## Aktueller Claim-Kandidat
-
-### C08-D-R — Descriptive Relational Profile
-
-**Status: PENDING REVIEW.**
-
-> In Computational Science und AI for Science kann der Evidenzstatus eines Modells deskriptiv in drei relationsspezifische Bereiche zerlegt werden: Zielsystem–Theorie (`R–T`), Theorie–computational realization (`T–C`) und computational realization–Zielsystem (`C–R`). Dieselbe globale Erfolgsbezeichnung oder Performancemetrik kann je nach wissenschaftlichem Workflow Evidenz für unterschiedliche dieser Relationen darstellen; Evidenz auf einer Relation etabliert die anderen daher nicht automatisch. Ein relationales Profil macht diese Differenz explizit, sofern jeder Kantenstatus an einen konkreten wissenschaftlichen Claim/Facet, einen Use Case, Evidenz und Scope gebunden wird. Der beanspruchte Beitrag ist diese gemeinsame deskriptive Profilgrammatik, nicht ein neuer Fehlertyp, eine notwendige Trade-off-Theorie oder eine normative Rangordnung von Modellen.
+> In Computational Science und AI for Science kann der Evidenzstatus eines Modells deskriptiv in drei relationsspezifische Bereiche zerlegt werden: Zielsystem–Theorie (`R–T`), Theorie–computational realization (`T–C`) und computational realization–Zielsystem (`C–R`). Dieselbe globale Erfolgsbezeichnung oder Performancemetrik kann je nach wissenschaftlichem Workflow Evidenz für unterschiedliche dieser Relationen darstellen; Evidenz auf einer Relation etabliert die anderen daher nicht automatisch. Ein relationales Profil macht diese Differenz explizit, sofern jeder Kantenstatus an einen konkreten wissenschaftlichen Claim/Facet, einen Use Case, Evidenz und Scope gebunden wird.
 
 Evidenzstatus:
 
 ```text
 analytische Diskriminationsleistung: POSITIVE
 praktische Nutzer-/Entscheidungsnützlichkeit: UNTESTED
-starker Novelty-Nachweis: UNVERIFIED
+starker Literatur-Novelty-Nachweis: UNVERIFIED
 ```
 
-Details: [`claims/claim_08_descriptive_relational_profile.md`](claims/claim_08_descriptive_relational_profile.md).
+## Edge Semantics + Evidence Ledger v0.1
+
+**Status: PENDING REVIEW.**
+
+Das neue Dokument `theory/edge_semantics_evidence_ledger_v0_1.md` präzisiert:
+
+```text
+R = intendiertes Zielsystem, typisiert als REAL / SYNTHETIC / HYBRID
+T = expliziter theoretischer/formaler/mechanistischer Claiminhalt
+C = konkrete computational realization
+```
+
+### R–T Facets
+
+```text
+RT_EMPIRICAL
+RT_MECHANISTIC
+RT_EXPLANATORY
+RT_SCOPE
+RT_STRUCTURAL
+```
+
+### T–C Facets
+
+```text
+TC_TRACTABILITY
+TC_FIDELITY
+TC_CONVERGENCE
+TC_STABILITY
+TC_STRUCTURE
+TC_RESOLVABILITY
+TC_SURROGATE
+```
+
+### C–R Facets
+
+```text
+CR_PREDICTION
+CR_CALIBRATION
+CR_DISTRIBUTION
+CR_EXTERNAL
+CR_SIM2REAL
+CR_ROBUSTNESS
+CR_REPRESENTATION
+```
+
+Jeder Ledger-Eintrag bindet einen Status an `Use Case + Claim/Facet + Evidence + Scope`.
+
+Statussprache:
+
+```text
+ESTABLISHED
+PARTIAL
+UNCERTAIN
+UNTESTED
+NOT_APPLICABLE
+```
+
+## Zentrale neue Präzisierung: keine automatische Transitivität
+
+Default:
+
+```text
+A_RT + A_TC  -/->  A_CR
+A_TC + A_CR  -/->  A_RT
+A_RT + A_CR  -/->  A_TC
+```
+
+Evidenz darf zwischen Kanten nur über einen expliziten **Bridge-Claim** übertragen werden. Dieser muss Source-Edge, Target-Edge, Claim, Evidenz, zusätzliche Prämissen und Scope dokumentieren.
+
+Beispiel Synthetic Surrogate:
+
+```text
+hohe Teacher-Treue -> direkte T-C-Evidenz
+                      nicht automatisch C-R_real-Evidenz
+```
+
+Eine Bridge zu `C-R_real` benötigt mindestens eine separat gestützte Simulator/Theorie-Realitätsbeziehung, kompatiblen Scope und einen kontrollierten Fehlertransfer.
+
+## Minimaler Ledger
+
+Pflichtfelder:
+
+```text
+case_id
+target_id / target_type
+theory_id
+computation_id
+use_case
+edge
+facet
+claim
+evidence
+evidence_mode
+status
+scope
+dependencies
+non_implications
+```
+
+Damit wird die Trias nicht zu drei Scores. Die Dreiecksstruktur ist die Topologie; die konkrete Semantik wird durch claimspezifische Ledger-Einträge getragen.
 
 ## Strategischer Freeze
 
-Keine neue numerische Mainline. ML-v0.2 und inverse v0.2 bleiben pausiert.
+Keine neue numerische Mainline. ML-v0.2 und inverse v0.2 bleiben pausiert. C06-R2 bleibt Fallback, falls die präzisierte Profilgrammatik den letzten Novelty-Test nicht übersteht.
 
 ## Nächste Entscheidung
 
-Empfehlung: **C08-D-R als Working Claim akzeptieren**, aber nicht als finalen Originalitätsclaim.
+Empfehlung: **Edge Semantics + Evidence Ledger v0.1 akzeptieren.**
 
-Bei `GO` wird C08-D-R eingefroren. Danach wird ausschließlich ein `Edge Semantics + Evidence Ledger v0.1` ausgearbeitet, das Claim-/Facet-Typen, zulässige Evidenz, Statusregeln, synthetische vs. reale Targets und use-case-spezifische Mehrfachprofile präzisiert. Erst danach erfolgt ein finaler Paper-/Novelty-Test.
+Bei `GO` wird das Ledger eingefroren. Danach folgt ausschließlich ein `Relational-Profile Novelty Audit v0.1`, der genau die präzisierte Struktur — einschließlich Target-Typen, Facets, Nicht-Transitivität und Bridge-Claims — gegen die stärksten direkten Literaturkandidaten prüft. Erst danach wird der Paper-Hauptclaim finalisiert.
 
 ## Projektkommandos
 
 - `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; Descriptive Trias, C08-D-R, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; Descriptive Trias, C08-D-R, Edge Semantics, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

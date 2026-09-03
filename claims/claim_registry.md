@@ -46,8 +46,10 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | MS-W1-GATE-v0.1 | W1 Survival Evaluation | ACCEPTED / PASS | S2/S3/S6 nicht ausgelöst; Perspective trägt weiter; kein Framework-Novelty-Upgrade | D031 |
 | MS-W2-S2-v0.1 | Manuscript Section 2 — Genealogy | COMPLETE / ACCEPTED | Schlesinger/Sargent-Mapping + moderne V&V/SciML-Fortsetzung + Table 1 | D032 |
 | MS-W2-GATE-v0.1 | W2 Genealogy-Dominance Evaluation | ACCEPTED / PASS | S4 nicht ausgelöst, bleibt aktives Risiko; Genealogie absorbiert Topologie, nicht gesamten AI-Rollenwechsel | D032 |
-| MS-W3-S3-v0.1 | Manuscript Section 3 — Claim-relative epistemic roles | COMPLETE / PENDING AUTHOR REVIEW | minimale R/T/C-, Referenten-, Status-, Nichttransfer- und Bridge-Semantik geschrieben | D032 follow-up |
-| MS-W3-GATE-v0.1 | W3 Semantic-Load / Notation-Only Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S3 nicht ausgelöst; Semantik trägt inferentielle Last, bleibt aber Synthese statt Framework-Novelty | D032 follow-up |
+| MS-W3-S3-v0.1 | Manuscript Section 3 — Claim-relative epistemic roles | COMPLETE / ACCEPTED | minimale R/T/C-, Referenten-, Status-, Nichttransfer- und Bridge-Semantik | D033 |
+| MS-W3-GATE-v0.1 | W3 Semantic-Load / Notation-Only Evaluation | ACCEPTED / PASS | S3 nicht ausgelöst; Semantik trägt inferentielle Last, bleibt aber Synthese statt Framework-Novelty | D033 |
+| MS-W4-S7-v0.1 | Manuscript Section 7 — Contribution Boundary / Comparator Section | COMPLETE / PENDING AUTHOR REVIEW | direkter Vergleich mit V&V, Provenance, Assurance, Identifiability/System ID, Philosophy of ML und SciML geschrieben | D033 follow-up |
+| MS-W4-GATE-v0.1 | W4 Residual-Compression Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S2/S3/S5 nicht ausgelöst; Rest = moderate cross-domain Evidence-Localization-Synthese; keine technische Novelty | D033 follow-up |
 
 ## Aktueller Evidenzstand
 
@@ -65,25 +67,31 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-D031 akzeptiert W1 = `PASS`. Section 4 bleibt das konzeptionelle Zentrum; stärkste Träger sind Equation Discovery und Synthetic Surrogates.
+W1–W3 sind als `PASS` akzeptiert. Section 4 bleibt das konzeptionelle Zentrum; Section 2 hält die historische Novelty-Boundary offen sichtbar; Section 3 trägt genug inferentielle Semantik, um nicht auf reine R/T/C-Notation zu kollabieren.
 
-D032 akzeptiert W2 = `PASS`. Die Genealogie absorbiert die R/T/C-Topologie und große Teile der Edge-Semantik, löst Survival-Kriterium S4 aber nicht aus. Section 2 bleibt hart komprimiert.
-
-Writing Goal W3 ist vollständig ausgeführt. Section 3 präzisiert nur die Semantik, die Section 4 tatsächlich verwendet:
+Writing Goal W4 ist nun vollständig ausgeführt. Section 7 stellt die Trias direkt den stärksten angrenzenden Frameworks gegenüber. Der Vergleich ergibt:
 
 ```text
-R_REAL / R_SYNTHETIC / R_HYBRID
-T = PRESENT / PARTIAL / NONE_CLAIMED / INFERRED
-C als funktionale computational practice
-R-T / T-C / C-R als Claimrelationen
-ESTABLISHED / PARTIAL / UNCERTAIN / UNTESTED / NOT_APPLICABLE
-kein automatischer Evidenztransfer
-explizite Bridge Claims
+V&V/VVUQ            -> technisch tiefere Credibility-Prüfung
+Provenance           -> tiefere Lineage-/Transformationsrepräsentation
+Assurance/CAE        -> tiefere Claim-Argument-Evidence-Struktur
+Identifiability/SID  -> tiefere inverse Recoverability-/Robustheitsanalyse
+Philosophy of ML     -> reichere Typologien epistemischer AI-Funktionen
+SciML/PIML           -> konkrete hybride/surrogate/physics-ML Methodik
 ```
 
-Die W3-Semantic-Load-Evaluation klassifiziert den Abschnitt als **PASS**. S3 `notation only` ist nicht ausgelöst, weil die Semantik reale inferentielle Constraints trägt: ein Referentenwechsel ist ein Claimwechsel; `NONE_CLAIMED` und `NOT_APPLICABLE` sind keine Defizitwerte; `INFERRED` erlaubt `T` als Output von `C`; und cross-edge Evidenztransfer benötigt eine explizite Bridge.
+Die Trias darf nichts davon als neue Kategorie oder Ersatz beanspruchen.
 
-Der PASS ist kein Novelty-Upgrade. Die Einzelbestandteile besitzen starke Vorarbeit in V&V, Credibility, Assurance und Provenance. Der verbleibende Wert ist weiterhin moderate gemeinsame Semantik / Evidence Localization.
+Die W4-Evaluation klassifiziert den verbleibenden Rest dennoch als **PASS** für eine Perspective: dieselbe kleine claimspezifische Rollen-/Evidenzgrammatik erzeugt über Black-box Prediction, Synthetic Surrogates, PIML und Equation Discovery eine moderate cross-domain Kompression. Besonders tragend bleiben `T as output of C` und `R_syn vs R_real`.
+
+```text
+S2 no residual explanatory compression = NOT TRIGGERED
+S3 notation only                       = NOT TRIGGERED
+S5 overclaim pressure                  = NOT TRIGGERED
+framework novelty                      = NO
+residual contribution                  = MODERATE CROSS-DOMAIN SYNTHESIS
+practical superiority                  = UNTESTED
+```
 
 ## Abhängigkeitslogik
 
@@ -91,13 +99,14 @@ Der PASS ist kein Novelty-Upgrade. Die Einzelbestandteile besitzen starke Vorarb
 ...
 -> D031 W1 PASS accepted
 -> D032 W2 PASS accepted
--> W3 Section 3 COMPLETE
--> W3 Semantic-Load Evaluation = PASS / pending author acceptance
--> recommended next: W4 Section 7 comparator/contribution boundary
--> local S2 no-residual-compression + S3 notation-only gate
+-> D033 W3 PASS accepted
+-> W4 Section 7 COMPLETE
+-> W4 Residual-Compression Evaluation = PASS / pending author acceptance
+-> recommended next: W5 Sections 5–6 controls + stress tests
+-> case-coherence + evidence-status-discipline check
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert W3 = PASS und startet Writing Goal W4 (`Section 7 — What the Trias adds, and what adjacent frameworks already do better`).
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D032, W1/W2 PASS, W3 Section 3 + Semantic-Load-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W4 = PASS und startet Writing Goal W5 (`Sections 5–6 — Classical controls and negative/inconclusive stress tests`).
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D033, W1–W3 PASS, W4 Section 7 + Boundary-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

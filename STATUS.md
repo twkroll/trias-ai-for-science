@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Descriptive Trias / Writing Goal W2 Complete / Genealogy-Dominance Review**
+**Descriptive Trias / Writing Goal W3 Complete / Semantic-Load Review**
 
-Mit D031 wurde die W1-Survival-Evaluation als `PASS` akzeptiert und Writing Goal W2 freigegeben. Section 2 — `Genealogy: From model credibility to the present problem` — ist nun als Manuskripttext inklusive Table 1 geschrieben und separat gegen das Survival-Kriterium S4 `genealogy dominates contribution` geprüft.
+Mit D032 wurde die W2-Genealogy-Dominance-Evaluation als `PASS` akzeptiert und Writing Goal W3 freigegeben. Section 3 — `From lifecycle stages to claim-relative epistemic roles` — ist nun als Manuskripttext geschrieben und separat gegen Survival-Kriterium S3 `notation only` geprüft.
 
 ## Akzeptierte Entscheidungen
 
@@ -22,6 +22,7 @@ Mit D031 wurde die W1-Survival-Evaluation als `PASS` akzeptiert und Writing Goal
 - **D029:** `Paper Claim + Outline Freeze v0.3` akzeptiert; `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`.
 - **D030:** `Actual Manuscript Skeleton v0.1` akzeptiert; W1 / Section 4 freigegeben.
 - **D031:** W1 = `PASS` akzeptiert; W2 Genealogie + Table 1 freigegeben.
+- **D032:** W2 = `PASS` akzeptiert; S4 nicht ausgelöst, bleibt aktives Risiko; W3 minimale Rollen-/Evidenzsemantik freigegeben.
 
 ## Manuskriptboundary P3
 
@@ -52,52 +53,19 @@ Stärkste konzeptionelle Träger:
 
 PIML und Black-box Prediction dienen stärker der cross-case Vergleichbarkeit.
 
-## Writing Goal W2 — Section 2 Genealogy
+## W2 — Section 2 Genealogy
 
-**Status: COMPLETE / PENDING AUTHOR DECISION.**
+**Status: ACCEPTED / PASS — D032.**
 
 Manuskripttext:
 
 [`paper/manuscript_section_2_v0_1.md`](paper/manuscript_section_2_v0_1.md)
 
-Section 2 macht nun explizit:
-
-```text
-Reality / Problem Entity
-Conceptual Model
-Computerized Model
-```
-
-sowie die starke strukturelle Entsprechung
-
-```text
-R-T ~ conceptual-model validity
-T-C ~ computerized-model verification
-C-R ~ operational validity / validation
-```
-
-als konstitutive Schlesinger/Sargent-Genealogie. Moderne V&V/VVUQ- und SciML-Credibility-Arbeiten verstärken diese Prior Art.
-
-### Table 1
-
-Die neue `Genealogy and contribution boundary`-Tabelle markiert für jedes Element:
-
-```text
-classical analogue
-modern V&V/SciML status
-novelty status
-role in the paper
-```
-
-Die meisten Einzelbestandteile werden explizit als `not new` oder `strongly preceded` ausgewiesen. Als möglicher Rest bleibt nur die gemeinsame Rollen-/Evidenzsynthese über unterschiedlich gerichtete AI-Workflows.
-
-## W2 Genealogy-Dominance Evaluation
-
-Dokument:
+Genealogy-Dominance-Evaluation:
 
 [`paper/w2_genealogy_dominance_evaluation_v0_1.md`](paper/w2_genealogy_dominance_evaluation_v0_1.md)
 
-**Vorläufige Klassifikation: PASS.**
+Akzeptierter Befund:
 
 ```text
 S4 genealogy dominates contribution = NOT TRIGGERED / ACTIVE RISK
@@ -106,17 +74,58 @@ framework novelty                  = NO
 synthesis contribution             = PLAUSIBLE / MODERATE
 ```
 
+Section 2 bleibt im Endmanuskript auf ca. 750–950 Wörter plus Table 1 begrenzt.
+
+## Writing Goal W3 — Section 3 Semantik
+
+**Status: COMPLETE / PENDING AUTHOR DECISION.**
+
+Manuskripttext:
+
+[`paper/manuscript_section_3_v0_1.md`](paper/manuscript_section_3_v0_1.md)
+
+Section 3 führt nur die Semantik ein, die Section 4 benötigt:
+
+```text
+R_REAL / R_SYNTHETIC / R_HYBRID
+T = PRESENT / PARTIAL / NONE_CLAIMED / INFERRED
+C = solver / predictor / surrogate / reconstruction / inference / hybrid
+R-T / T-C / C-R als relationsspezifische Claimtypen
+minimal evidence ledger
+ESTABLISHED / PARTIAL / UNCERTAIN / UNTESTED / NOT_APPLICABLE
+kein automatischer Evidenztransfer zwischen Relationen
+explizite Bridge Claims
+```
+
+Die zentrale Manuskriptregel lautet nicht, dass Evidenztransfer logisch unmöglich ist, sondern dass ein Transfer ohne expliziten Bridge-Claim nicht stillschweigend vorausgesetzt werden darf.
+
+## W3 Semantic-Load Evaluation
+
+Dokument:
+
+[`paper/w3_semantic_load_evaluation_v0_1.md`](paper/w3_semantic_load_evaluation_v0_1.md)
+
+**Vorläufige Klassifikation: PASS.**
+
+```text
+S3 notation only       = NOT TRIGGERED
+paper mode             = CONTINUE PERSPECTIVE
+framework novelty      = NO
+semantic synthesis     = PLAUSIBLE / MODERATE
+```
+
 Begründung:
 
-- Die Genealogie absorbiert die R/T/C-Topologie und fast alle klassischen Edge-Semantics vollständig.
-- Sie absorbiert aber nicht den gesamten in W1 gezeigten Rollenwechsel.
-- Equation Discovery (`R -> D -> C_infer -> T_hat`) bleibt der stärkste Fall für `epistemic roles rather than fixed lifecycle stages`.
-- Synthetic Surrogate bleibt der stärkste Fall für einen cross-case Referentenwechsel.
-- PIML und Black-box dürfen keine Novelty-Last tragen.
+- `R` trägt semantische Last über expliziten claimspezifischen Referentenwechsel.
+- `T = NONE_CLAIMED` erlaubt Prediction ohne versteckte Defizitannahme.
+- `T = INFERRED` erlaubt Equation Discovery ohne künstliche Lifecycle-Reihenfolge.
+- `UNTESTED`, `UNCERTAIN` und `NOT_APPLICABLE` unterscheiden offene, unentscheidbare und nicht ausgebildete Claims.
+- Default-Nichttransfer markiert konkrete unzulässige Kurzschlüsse wie `teacher fidelity -> real validity` oder `physics residual -> empirical validity`.
+- Bridge Claims markieren die zusätzliche inferentielle Arbeit, ohne als neue Assurance-/V&V-Methode beansprucht zu werden.
 
-### Harte W2-Grenze
+### W3-Längenbegrenzung
 
-Section 2 soll im Endmanuskript kompakt bleiben (`ca. 750–950 Wörter + Table 1`) und darf nicht zu einer ausführlichen Geschichte von V&V wachsen. Die konzeptionelle Hauptlast muss bei Section 4 bleiben.
+Die Endfassung von Section 3 soll ca. 900–1.100 Wörter bleiben. Ausführliche Facet-Kataloge, vollständige Statuskriterien und technische Ledger-Details gehören nicht in den Haupttext.
 
 ## Strategischer Freeze
 
@@ -129,15 +138,15 @@ Section 2 soll im Endmanuskript kompakt bleiben (`ca. 750–950 Wörter + Table 
 
 ## Nächste Entscheidung
 
-Empfehlung: **W2 = PASS akzeptieren und Perspective fortsetzen.**
+Empfehlung: **W3 = PASS akzeptieren und Perspective fortsetzen.**
 
-Bei `GO` wird als nächste Abhängigkeit ausschließlich Writing Goal W3 ausgeführt:
+Bei `GO` wird als nächste Abhängigkeit ausschließlich Writing Goal W4 ausgeführt:
 
-> **Section 3 — From lifecycle stages to claim-relative epistemic roles.**
+> **Section 7 — What the Trias adds, and what adjacent frameworks already do better.**
 
-W3 schreibt nur die minimale Semantik, die Section 4 tatsächlich benötigt, und führt danach einen lokalen `notation-only / semantic-load`-Check gegen Survival-Kriterium S3 durch. Noch keine Introduction und keine neuen Experimente.
+W4 ist der härteste verbleibende Contribution-Boundary-Test. Danach folgt ein lokaler Gate gegen S2 `no residual explanatory compression` und erneut gegen S3 `notation only`. Noch keine Introduction und keine neuen Experimente.
 
 ## Projektkommandos
 
-- `GO`: akzeptiert W2 = PASS und startet W3 Section 3 + S3 semantic-load check.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D031, W1 PASS, W2 Genealogie + Dominance-Evaluation, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W3 = PASS und startet W4 Boundary/Comparator Section.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D032, W1/W2 PASS, W3 Section 3 + Semantic-Load-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

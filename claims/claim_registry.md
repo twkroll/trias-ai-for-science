@@ -31,36 +31,56 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | PAPER-BOUND-v0.1 | Paper Contribution Boundary + Outline | PAUSED / FALLBACK | konservative Synthese-Fassung ausgearbeitet; Descriptive-Trias-Test vorgeschaltet | D021 follow-up |
 | DT-DESCR-v0.1 | Descriptive Trias | WORKING THEORY | drei Rollen R/T/C + drei paarweise Adäquanzrelationen; keine notwendige Trade-off-These | D022 |
 | DT-LIT-v0.1 | Descriptive Trias Literature Stress Test | ACCEPTED | starke Einzelneuheiten verworfen; kein Direktanalog der exakten Kantenprofilstruktur im v0.1-Test gefunden | D023 |
-| DT-PROFILE-v0.1 | Descriptive Trias Profile Test | COMPLETE / PENDING CLAIM DECISION | sechs Falltypen zeigen positive analytische Diskriminationsleistung; Kanten benötigen Facet/Use/Evidence/Scope | D023 follow-up |
-| C08-D | ursprünglicher Descriptive Relational Profile Claim | SUPERSEDED CANDIDATE | durch Profile Test zu C08-D-R präzisiert | — |
-| C08-D-R | Descriptive Relational Profile, revised | PENDING REVIEW | analytische Diskriminationsleistung positiv; praktische Nützlichkeit untested; starke Originalität unverified | — |
+| DT-PROFILE-v0.1 | Descriptive Trias Profile Test | COMPLETE / ACCEPTED EVIDENCE BASIS | sechs Falltypen zeigen positive analytische Diskriminationsleistung; Kanten benötigen Facet/Use/Evidence/Scope | D024 basis |
+| C08-D | ursprünglicher Descriptive Relational Profile Claim | SUPERSEDED | durch Profile Test zu C08-D-R präzisiert | — |
+| C08-D-R | Descriptive Relational Profile, revised | ACCEPTED AS WORKING CLAIM | analytische Diskriminationsleistung positiv; praktische Nützlichkeit untested; starke Originalität unverified | D024 |
+| DT-EDGE-v0.1 | Edge Semantics + Evidence Ledger | PENDING REVIEW | R/T/C-Semantik, Kantenfacetten, Statusregeln, Target-Typen, Nicht-Transitivität und Bridge-Claims ausgearbeitet | D024 follow-up |
 
 ## Aktueller Evidenzstand
 
-Die bisherigen experimentellen und Comparator-Ergebnisse bleiben gültig. D021 setzt eine konservative Fallback-Boundary: Die Trias ist nach bisheriger Evidenz keine neue V&V-, Provenance- oder Identifiability-Theorie.
-
-D022 präzisiert die Autorenintention als primär deskriptive Theorie dreier relationsspezifischer epistemischer Adäquanzen:
+D024 akzeptiert C08-D-R als aktuellen Working Claim. Der Kern ist keine neue V&V-/Provenance-/Identifiability-Kategorie, sondern eine gemeinsame deskriptive Profilgrammatik:
 
 ```text
-A_RT = target/reality <-> theory
-A_TC = theory <-> computation
-A_CR = computation <-> target/reality
+R = target/reality
+T = theory
+C = computational realization
+
+RT = target <-> theory
+TC = theory <-> computation
+CR = computation <-> target
 ```
 
-D023 akzeptiert den Literatur-Stress-Test. Nicht neu sind computation-as-third-pillar, models-as-mediators, Simulationsepistemologie, Modelltradeoff-Dreiecke, adequacy-for-purpose, prediction-vs-understanding, sim-to-real gaps sowie physics-informed/data-theory integration. Im v0.1-Stress-Test wurde jedoch kein klarer Direktanalog gefunden, der die drei R/T/C-Kanten als gemeinsames deskriptives relationales Profil eines konkreten Modells über Computational Science und AI for Science hinweg verwendet.
-
-Der anschließende Profile Test zeigt nun einen positiven analytischen Effekt. Insbesondere kann derselbe Typ von Performancemetrik epistemisch Verschiedenes belegen:
+Der Profile Test zeigt positive analytische Diskriminationsleistung. Insbesondere kann dieselbe Performancemetrik unterschiedliche epistemische Claims stützen:
 
 ```text
-synthetic teacher accuracy -> primär A_TC
-real held-out prediction   -> primär A_CR
-physics constraint         -> primär A_TC
-mechanistic adequacy       -> primär A_RT
+synthetic teacher accuracy -> primär TC
+real held-out prediction   -> primär CR
+physics constraint         -> primär TC
+mechanistic adequacy       -> primär RT
 ```
 
-Außerdem zeigt der Test, dass Target-Wechsel, Use Case und Claim-Facet explizit Teil des Profils sein müssen. Die drei Kanten dürfen deshalb nicht als drei skalare Gütekoordinaten verstanden werden.
+D024 akzeptiert zugleich, dass die Kanten keine skalaren Gütekoordinaten sind. Der neue Edge-Semantics-Entwurf bindet jeden Status an:
 
-C08-D-R liegt nun zur Review vor. Es beansprucht ausschließlich die gemeinsame deskriptive Profilgrammatik und nicht neue Einzelprobleme, notwendige Tradeoffs oder empirische Überlegenheit gegenüber etablierten Frameworks.
+```text
+Use Case
+Claim/Facet
+Evidence
+Scope
+```
+
+und typisiert Targets als `REAL`, `SYNTHETIC` oder `HYBRID`.
+
+Zentrale Default-Regel:
+
+```text
+RT + TC  -/->  CR
+TC + CR  -/->  RT
+RT + CR  -/->  TC
+```
+
+Evidenztransfer ist nur über explizite Bridge-Claims mit zusätzlichen Prämissen und Scope zulässig. Dadurch wird insbesondere verhindert, Teacher-/Simulator-Treue stillschweigend als Realitätsvalidierung zu lesen.
+
+C06-R2 bleibt als konservative Fallback-Boundary gültig. C08-D-R ist noch kein finaler Novelty-Claim.
 
 ## Abhängigkeitslogik
 
@@ -73,13 +93,13 @@ C01–C06-R
 -> D022 Descriptive Trias
 -> D023 literature stress test accepted
 -> Descriptive Trias Profile Test COMPLETE
--> C08-D-R review
--> recommended: Edge Semantics + Evidence Ledger v0.1
--> final literature/novelty test
--> paper contribution boundary revision
+-> D024 C08-D-R accepted as working claim
+-> Edge Semantics + Evidence Ledger v0.1 PENDING REVIEW
+-> recommended: Relational-Profile Novelty Audit v0.1
+-> final paper contribution boundary
 ```
 
 ## Dialogkommandos
 
 - `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; Descriptive Trias, C08-D-R, C06-R2-Fallback, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; Descriptive Trias, C08-D-R, Edge Semantics, C06-R2-Fallback, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

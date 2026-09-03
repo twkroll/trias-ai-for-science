@@ -11,7 +11,7 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | DMO | Numerischer Minimaldemonstrator | ACCEPTED / COMPLETE | Figure-eight Full Run abgeschlossen | D005–D007 |
 | C05 | Implementierungswahl erzeugt use-case-relative Profile | ACCEPTED | numerischer Full Run stützt moderate Fassung | D008 |
 | C06-R | Integrations-/Provenance-Wert des Trias-Audits | SUPERSEDED | weiterer Comparator-Audit führte zu C06-R2 | D009 |
-| C06-R2 | Directed Trias als konzeptionelle Synthese / Audit-Linse | ACCEPTED | keine neue Fehler-/V&V-/Provenance-/Identifiability-Kategorie gezeigt; Restwert = fachübergreifende Synthese | D021 |
+| C06-R2 | Directed Trias als konzeptionelle Synthese / Audit-Linse | ACCEPTED / FALLBACK BOUNDARY | keine neue Fehler-/V&V-/Provenance-/Identifiability-Kategorie gezeigt | D021 |
 | AFS-DMO | ML-Provenance-Demonstrator | ACCEPTED | v0.1 ausgeführt; v0.2 technisch vorbereitet | D010 |
 | ML-IC-v0.1 | ML Implementation Contract v0.1 | ACCEPTED | eingefroren | D011 |
 | ML-SKEL-v0.1 | ML Skeleton v0.1 | ACCEPTED | technische Tests/Smoke bestanden | D012 |
@@ -28,46 +28,55 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | INV-SKEL-v0.1 | Inverse-Direction Code Skeleton | ACCEPTED | gezielte Tests 6 passed; Smoke nichtwissenschaftlich | D019 |
 | INV-RUN-v0.1 | Inverse scientific full run | COMPLETE / INFORMATIVE_NEGATIVE | G1–G3 PASS; structural perturbation linear 1/3, cubic 0/3 | D020 |
 | INV-COMP-v0.1 | Comparator audit on inverse negative result | COMPLETE | starke Abdeckung durch System ID, Identifiability, V&V, Provenance und Assurance Cases | D020 follow-up |
-| PAPER-BOUND-v0.1 | Paper Contribution Boundary + Outline | PENDING AUTHOR-INTENT CLARIFICATION | konservative Synthese-Fassung ausgearbeitet; stärkere Autorenintuition muss typisiert werden | D021 follow-up |
+| PAPER-BOUND-v0.1 | Paper Contribution Boundary + Outline | PAUSED / FALLBACK | konservative Synthese-Fassung ausgearbeitet; durch D022 gezielter Descriptive-Trias-Test vorgeschaltet | D021 follow-up |
+| DT-DESCR-v0.1 | Descriptive Trias | WORKING THEORY | drei Rollen R/T/C + drei paarweise Adäquanzrelationen; keine notwendige Trade-off-These | D022 |
+| DT-LIT-v0.1 | Descriptive Trias Literature Stress Test | COMPLETE / PENDING DECISION | starke Einzelneuheiten verworfen; kein Direktanalog der exakten Kantenprofilstruktur im v0.1-Test gefunden | D022 follow-up |
+| C08-D | Descriptive Relational Profile Claim | PENDING REVIEW | möglicher Eigenbeitrag = feste Profilstruktur A_RT/A_TC/A_CR; analytische Nützlichkeit und Originalität noch unbestätigt | — |
 
 ## Aktueller Evidenzstand
 
-Der Figure-eight-Demonstrator stützt C05, aber keine starke Trias-Neuheit gegenüber V&V. ML v0.1 blieb wegen fehlender Learner-Resolvability inconclusive. Der inverse Full Run ist nach D020 ein akzeptiertes `INFORMATIVE_NEGATIVE`: Der interessierende strukturell-andere-aber-dynamisch-ähnliche Effekt tritt im eingefrorenen Minimaldesign nicht seed-robust auf.
+Die bisherigen experimentellen und Comparator-Ergebnisse bleiben gültig. D021 setzt eine konservative Fallback-Boundary: Die Trias ist nach bisheriger Evidenz keine neue V&V-, Provenance- oder Identifiability-Theorie.
 
-Der Comparator-Audit zeigt starke Abdeckung durch:
+D022 präzisiert jedoch die Autorenintention. Die Mainline testet jetzt eine andere, primär **deskriptive** These: Nicht neue Fehlertypen, sondern die explizite Unterscheidung dreier relationsspezifischer epistemischer Adäquanzen soll der Kern sein:
 
 ```text
-System Identification / SINDy robustness
-+ structural/practical identifiability / structural error
-+ M&S / SciML V&V and credibility
-+ workflow/data provenance
-+ Claims–Arguments–Evidence / assurance cases
+A_RT = target/reality <-> theory
+A_TC = theory <-> computation
+A_CR = computation <-> target/reality
 ```
 
-D021 akzeptiert daher C06-R2: Der derzeit vertretbare Trias-Beitrag ist eine kompakte fachübergreifende Synthese/Audit-Linse, nicht eine neue mathematische oder technische Credibility-Theorie. Die experimentelle Mainline wird vorerst beendet.
+Der Literatur-Stress-Test verwirft als Neuheit:
 
-Das Paper-Boundary-Dokument zeigt allerdings vier mögliche stärkere Lesarten der ursprünglichen Autorenidee, die durch den bisherigen Comparator-Audit nicht identisch betroffen sind: epistemische Irreduzibilität von Berechnung, Transformationsstruktur, epistemische Typisierung/Evidenztransfer oder Staffelung von Lösung/Wissen/Nutzbarkeit. Vor dem endgültigen Paper-Claim ist daher Autorenklärung erforderlich.
+```text
+computation as third pillar
+models as mediators
+simulation epistemology
+model trade-off triangles
+adequacy-for-purpose
+prediction-vs-understanding
+sim-to-real gaps
+physics-informed/data-theory integration
+```
+
+Im v0.1-Stress-Test wurde jedoch kein klarer Direktanalog gefunden, der die drei R/T/C-Kanten als **gemeinsames deskriptives relationales Profil eines konkreten Modells** über Computational Science und AI for Science hinweg verwendet. Das macht C08-D zu einem ernstzunehmenden, aber noch nicht akzeptierten Eigenbeitragskandidaten.
 
 ## Abhängigkeitslogik
 
 ```text
 C01–C06-R
 -> ML v0.1 inconclusive
--> D013/D014 ML v0.2 vorbereitet
--> D015 Directed Trias + ML-v0.2 pause
--> D016 C07-L-R
--> D017 inverse MVP spec
--> D018 inverse implementation contract
--> D019 inverse code skeleton
--> D020 inverse full run accepted: INFORMATIVE_NEGATIVE
--> comparator audit COMPLETE
--> D021 C06-R2 accepted + paper pivot
--> Paper Contribution Boundary v0.1
--> AUTHOR-INTENT CLARIFICATION
--> targeted claim audit OR conservative synthesis paper
+-> D015 Directed Trias
+-> D020 inverse run INFORMATIVE_NEGATIVE
+-> D021 conservative synthesis boundary
+-> author-intent clarification
+-> D022 Descriptive Trias
+-> literature stress test COMPLETE
+-> C08-D review
+-> recommended: Descriptive Trias Profile Test v0.1
+-> only then decide whether C08-D can replace/strengthen the conservative paper claim
 ```
 
 ## Dialogkommandos
 
-- `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen, sofern keine Autorenklärung erforderlich ist.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; C06-R2, Paper-Pivot, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren und als PDF plus LaTeX-Quelle erzeugen; Descriptive Trias, D022/C08-D, C06-R2-Fallback, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

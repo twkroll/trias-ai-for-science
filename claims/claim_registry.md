@@ -40,22 +40,12 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | PAPER-BOUND-v0.2 | From Model-Credibility Triangle to Descriptive Trias for AI for Science | ACCEPTED | genealogischer Paper-Rahmen | D027 |
 | AI4S-DELTA-v0.1 | AI-for-Science Delta Audit | ACCEPTED / COMPLETE | alle vier AI-Rollen-Delta als Einzelneuheiten verworfen; gemeinsamer genealogischer Synthese-Delta bleibt möglich | D028 |
 | C08-D-R3 | Genealogical AI-for-Science synthesis claim | ACCEPTED AS WORKING CLAIM | Einzelrollen-/epistemic-function-Novelty rejected; analytische Diskrimination positiv; moderate Synthese plausibel; praktische Überlegenheit untested | D028 |
-| PAPER-FREEZE-v0.3 | Paper Claim + Outline Freeze | PENDING REVIEW | P3, Abstract-Logik, Sections, Figuren, Comparatoren, Survival-/Stop-Kriterien und WRITE/SHORT/STOP-Entscheidung ausgearbeitet | D028 follow-up |
+| PAPER-FREEZE-v0.3 | Paper Claim + Outline Freeze | ACCEPTED | P3 und Option A `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS` akzeptiert | D029 |
+| MS-SKEL-v0.1 | Actual Manuscript Skeleton | PENDING REVIEW | Absatzfunktionen, Claims, Literaturachsen, Figuren-/Tabellenplan, Schreibreihenfolge und W1-Survival-Gate ausgearbeitet | D029 follow-up |
 
 ## Aktueller Evidenzstand
 
-D028 akzeptiert den `AI-for-Science Delta Audit v0.1`. Damit sind nicht nur die klassische R/T/C-Topologie und Verification-/Validation-Trennung, sondern auch die zuletzt geprüften AI-Rollen als Einzelneuheiten verworfen:
-
-```text
-T = NONE_CLAIMED
-T = INFERRED_BY_C
-layered synthetic surrogate pipelines
-hybrid physics/theory + learned C
-```
-
-Ebenso sind Theory-Availability-Klassifikationen und die Pluralität epistemischer AI-Ziele starke Vorarbeit und kein Trias-Novelty-Claim.
-
-C08-D-R3 ist als Working Claim akzeptiert. Der verbleibende Beitrag ist ausschließlich eine genealogische wissenschaftsphilosophische Synthese:
+D028 akzeptiert C08-D-R3 als Synthese-Working-Claim. Der verbleibende Beitrag ist ausdrücklich keine neue Dreieckstopologie und keine neue AI-/V&V-Einzelidee, sondern eine genealogische wissenschaftsphilosophische Komposition:
 
 ```text
 classical model-credibility genealogy
@@ -69,24 +59,37 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-Der Originalitätsstatus ist `PLAUSIBLE / MODERATE SYNTHESIS`, nicht `new framework/theory`. Praktische Überlegenheit bleibt `UNTESTED`.
+D029 akzeptiert den `Paper Claim + Outline Freeze v0.3` und die Entscheidung:
 
-Mit D028 endet die projektinterne Suche nach immer engeren Novelty-Formulierungen. Neue konkrete Direktanaloge müssen berücksichtigt werden, aber die Contribution wird nicht durch Notationsverengung künstlich gerettet.
+```text
+WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS
+```
 
-`Paper Claim + Outline Freeze v0.3` liegt nun zur Review vor. Die dortige Empfehlung lautet `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`, mit `SHORT PERSPECTIVE` und `STOP STANDALONE PAPER` als expliziten Alternativen.
+Der Principal Claim P3 ist damit aktuelle Manuskriptboundary. Das eigenständige Paper bleibt nur gerechtfertigt, solange die im Freeze definierten Survival-Kriterien tragen.
+
+`Actual Manuscript Skeleton v0.1` ist ausgearbeitet. Es plant das Paper nicht linear, sondern setzt Section 4 mit den vier AI-for-Science-Rollenkonfigurationen als ersten echten Manuskript-Survival-Test:
+
+```text
+black-box prediction
+synthetic surrogate
+physics-informed / hybrid ML
+equation discovery
+```
+
+Erst wenn diese vier Fälle mit derselben claimspezifischen Rollen-/Evidenzsemantik ohne ad-hoc Ausnahmen tatsächlich begriffliche Kompression erzeugen, soll das Manuskript weitergeschrieben werden.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D026 genealogical rebase
--> D027 Paper Boundary v0.2
--> D028 AI-for-Science Delta Audit accepted + C08-D-R3 accepted
--> Paper Claim + Outline Freeze v0.3 PENDING REVIEW
--> next decision: WRITE / SHORT PERSPECTIVE / STOP / REVISE
+-> D028 C08-D-R3 accepted
+-> D029 Paper Freeze v0.3 accepted + WRITE decision
+-> Actual Manuscript Skeleton v0.1 PENDING REVIEW
+-> recommended next: Writing Goal W1 / Section 4 v0.1
+-> PASS / SHORTEN / STOP gate
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert die aktuelle Empfehlung des Freeze-Dokuments (`WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`) und startet die nächste Manuskript-Abhängigkeit.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D028, C08-D-R3, finaler Novelty-Suchstopp, Schlesinger/Sargent-Genealogie, Paper Freeze v0.3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert das Manuskript-Skeleton und startet ausschließlich Writing Goal W1 (`Section 4 — Four AI-for-Science Role Configurations v0.1`).
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D029, P3, Manuskript-Skeleton, Schlesinger/Sargent-Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

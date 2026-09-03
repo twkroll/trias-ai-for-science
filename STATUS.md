@@ -2,15 +2,9 @@
 
 ## Phase
 
-**Descriptive Trias / WRITE decision accepted / Actual Manuscript Skeleton v0.1 Review**
+**Descriptive Trias / Writing Goal W1 Complete / Section-4 Survival Review**
 
-D029 akzeptiert die im `Paper Claim + Outline Freeze v0.3` empfohlene Option A:
-
-```text
-WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS
-```
-
-Damit wird das Projekt als eigenständiges wissenschaftsphilosophisches / AI-for-Science-Synthesepaper weitergeführt. Der Principal Claim P3 ist aktuelle Manuskriptboundary; die starke Novelty-Suche bleibt beendet.
+Mit D030 wurde das `Actual Manuscript Skeleton v0.1` akzeptiert und Writing Goal W1 freigegeben. Section 4 — `Four AI-for-Science Role Configurations` — ist nun als erster echter Manuskripttext geschrieben und separat gegen das vorab definierte PASS/SHORTEN/STOP-Gate geprüft.
 
 ## Akzeptierte Entscheidungen
 
@@ -22,12 +16,13 @@ Damit wird das Projekt als eigenständiges wissenschaftsphilosophisches / AI-for
 - **D017–D020:** inverser Lorenz/SINDy-Zweig vorregistriert und als `INFORMATIVE_NEGATIVE` akzeptiert.
 - **D021:** C06-R2 als konservative Fallback-Boundary akzeptiert.
 - **D022–D025:** Descriptive Trias, Profile Test, C08-D-R, Edge Semantics + Evidence Ledger.
-- **D026:** direkte Topologie-Novelty verworfen; Schlesinger/Sargent als Genealogie akzeptiert; C08-D-R2.
+- **D026:** direkte Topologie-Novelty verworfen; Schlesinger/Sargent als Genealogie akzeptiert.
 - **D027:** `Paper Contribution Boundary v0.2` akzeptiert.
 - **D028:** AI-for-Science Delta Audit akzeptiert; C08-D-R3 als Synthese-Working-Claim; Novelty-Suchstopp.
-- **D029:** `Paper Claim + Outline Freeze v0.3` akzeptiert; Option A `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS` akzeptiert; Manuskript-Skeleton freigegeben.
+- **D029:** `Paper Claim + Outline Freeze v0.3` akzeptiert; `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`.
+- **D030:** `Actual Manuscript Skeleton v0.1` akzeptiert; W1 / Section 4 freigegeben.
 
-## Verbindliche Manuskriptboundary P3
+## Manuskriptboundary P3
 
 Die schreibbare Paperfassung bleibt eine genealogische Role-Profile-Synthese:
 
@@ -39,77 +34,71 @@ C = concrete computational practice, numerical / learned / inferential / hybrid
 
 Evidenz wird danach profiliert, welchen `R-T`, `T-C` oder `C-R` Claim sie im angegebenen Use Case und Scope stützt. Der Beitrag ist eine gemeinsame genealogische Lesart etablierter AI-for-Science-Erfolgsformen, keine neue V&V-, ML-, Identifiability- oder Discovery-Kategorie.
 
-## Publikationspositionierung
+## Writing Goal W1 — Section 4
 
-Aktuelle Positionierung:
+**Status: COMPLETE / PENDING AUTHOR DECISION.**
 
-```text
-Perspective / Conceptual Synthesis
-Philosophy of Science / Philosophy of AI for Science
-ca. 6.000–8.000 Wörter Haupttext
-```
+Manuskripttext:
 
-Short Perspective bleibt Fallback, wenn der zentrale Survival-Test beim Schreiben nicht trägt.
+[`paper/manuscript_section_4_v0_1.md`](paper/manuscript_section_4_v0_1.md)
 
-## Actual Manuscript Skeleton v0.1
-
-**Status: PENDING REVIEW.**
-
-Neues Dokument:
-
-[`paper/actual_manuscript_skeleton_v0_1.md`](paper/actual_manuscript_skeleton_v0_1.md)
-
-Das Skeleton legt pro Abschnitt fest:
+Die vier geschriebenen Archetypen sind:
 
 ```text
-argumentative Funktion
-lokaler Claim
-Literatur-/Evidenzbedarf
-Guardrails
-Figuren-/Tabellenposition
-Übergang
+4.1 predictive black-box
+4.2 synthetic surrogate
+4.3 physics-informed / hybrid ML
+4.4 equation discovery
 ```
 
-### Geplante Architektur
+plus ein cross-case profile table.
+
+Die Section verwendet in allen Fällen dieselbe Minimalgrammatik:
 
 ```text
-1. Introduction — “the model works” is epistemically incomplete
-2. Genealogy — Schlesinger/Sargent and model credibility
-3. From lifecycle stages to claim-relative epistemic roles
-4. Four AI-for-Science role configurations
-5. Classical controls — Sundman + Figure-eight
-6. Stress tests — Lorenz/SINDy negative + ML v0.1 inconclusive
-7. Adjacent frameworks and exact contribution boundary
-8. Discussion — scientific success without global success
-9. Conclusion
+R type / referent
+T status
+C role
+principal evidence
+supported relation
+explicit non-implication
 ```
 
-### Wichtigster Schreibentscheid
+## W1 Survival Evaluation
 
-Das Manuskript soll **nicht linear** geschrieben werden. Zuerst wird Section 4 geschrieben:
+Dokument:
+
+[`paper/w1_section4_survival_evaluation_v0_1.md`](paper/w1_section4_survival_evaluation_v0_1.md)
+
+**Vorläufige Klassifikation: PASS.**
+
+Begründung:
 
 ```text
-black-box prediction
-synthetic surrogate
-physics-informed / hybrid ML
-equation discovery
+- gleiche Grammatik ohne ad-hoc Sonderregeln: PASS
+- pro Fall mindestens ein präziser Evidenzunterschied: PASS
+- weniger Mehrdeutigkeit als globale Labels: PASS
+- Equation Discovery als Rollen-/Richtungswechsel: STRONG PASS
+- S2 no residual compression: nicht ausgelöst, bleibt Hauptrisiko
+- S3 notation-only: nicht ausgelöst
+- S6 case incoherence: nicht ausgelöst
 ```
 
-Diese Section ist der eigentliche Manuskript-Survival-Test.
+Der PASS gilt nur für eine Perspective / Conceptual Synthesis. Er stärkt P3 nicht zu einem Framework-Novelty-Claim.
 
-Nur wenn die vier Fälle mit derselben kleinen Rollen-/Evidenzgrammatik ohne ad-hoc Ausnahmen dargestellt werden können und mindestens einen präzisen epistemischen Unterschied pro Fall sichtbar machen, wird der Rest des Papers weitergeschrieben.
-
-## W1 Gate
-
-Nach `Writing Goal W1 — Section 4 v0.1` erfolgt eine explizite Entscheidung:
+## Gewichtung aus W1
 
 ```text
-PASS    -> Manuskript fortsetzen
-SHORTEN -> Short Perspective
-STOP    -> Standalone Paper beenden
+strongest conceptual carriers:
+1. Equation Discovery — T as output of C
+2. Synthetic surrogate — explicit referent switch R_syn vs R_real
+
+supporting cross-case cases:
+3. PIML — overlapping RT/TC/CR claims
+4. Black-box prediction — T = NONE_CLAIMED, analytically clean but strongly preceded
 ```
 
-Damit wird vermieden, das Manuskript allein aufgrund bereits investierter Projektarbeit fortzuführen.
+Die W1-Fassung sollte im Endmanuskript voraussichtlich gestrafft werden; insbesondere wiederholte Boundary-Sätze können reduziert werden.
 
 ## Strategischer Freeze
 
@@ -122,11 +111,15 @@ Damit wird vermieden, das Manuskript allein aufgrund bereits investierter Projek
 
 ## Nächste Entscheidung
 
-Empfehlung: **Actual Manuscript Skeleton v0.1 akzeptieren.**
+Empfehlung: **W1 = PASS akzeptieren und das Manuskript fortsetzen.**
 
-Bei `GO` wird ausschließlich `Writing Goal W1 — Section 4: Four AI-for-Science Role Configurations v0.1` ausgeführt. Noch keine Introduction und keine neuen Experimente.
+Bei `GO` wird als nächste Abhängigkeit ausschließlich Writing Goal W2 ausgeführt:
+
+> **Section 2 — Genealogy: From model credibility to the present problem + Table 1 genealogy/comparator mapping.**
+
+Nach W2 folgt ein lokaler `genealogy-dominance`-Check gegen Survival-Kriterium S4. Noch keine Introduction und keine neuen Experimente.
 
 ## Projektkommandos
 
-- `GO`: akzeptiert das Manuskript-Skeleton und startet W1.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D029, P3, Manuskript-Skeleton, Schlesinger/Sargent-Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W1 = PASS und startet W2 Genealogy + Table 1.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D030, W1 Section 4, PASS-Evaluation, P3, Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

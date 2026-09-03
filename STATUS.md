@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Descriptive Trias / Edge Semantics + Evidence Ledger v0.1 Review**
+**Descriptive Trias / Direct Novelty Audit Complete / Genealogical Rebase Review**
 
-Mit D024 wurde C08-D-R als Working Claim akzeptiert. Die Mainline prüft damit nicht mehr eine neue V&V-/Provenance-Theorie, sondern eine deskriptive wissenschaftsphilosophische Profilgrammatik über drei relationsspezifische Evidenzbereiche zwischen Zielsystem, Theorie und computational realization.
+Mit D024 wurde C08-D-R als Working Claim akzeptiert. Mit D025 wurde `Edge Semantics + Evidence Ledger v0.1` als präzise Arbeitssemantik akzeptiert und der letzte direkte Novelty-Audit freigegeben. Dieser Audit ist nun abgeschlossen und identifiziert einen entscheidenden historischen Direktvorläufer: die Model-Credibility-/V&V-Triade `Reality / Conceptual Model / Computerized Model` mit den Relationen qualification/conceptual validity, verification und validation.
 
 ## Akzeptierte Entscheidungen
 
@@ -16,134 +16,120 @@ Mit D024 wurde C08-D-R als Working Claim akzeptiert. Die Mainline prüft damit n
 - **D017–D020:** inverser Lorenz/SINDy-Zweig vorregistriert, implementiert und als `INFORMATIVE_NEGATIVE` akzeptiert.
 - **D021:** C06-R2 als konservative Fallback-Boundary akzeptiert.
 - **D022:** Autorenintention als deskriptive `R/T/C`-Theorie präzisiert.
-- **D023:** Literatur-Stress-Test akzeptiert; starke Einzelneuheitsclaims/Nullsummen-Tradeoff verworfen; Profile Test freigegeben.
-- **D024:** C08-D-R als Working Claim akzeptiert; Kanten sind claim-/facet-/use-/evidence-/scope-relativ und nicht standardmäßig transitiv.
+- **D023:** erster Descriptive-Trias-Literatur-Stress-Test akzeptiert; starke Einzelneuheiten/Nullsummen-Tradeoff verworfen.
+- **D024:** C08-D-R als Working Claim akzeptiert; Profile Test zeigt positive analytische Diskriminationsleistung.
+- **D025:** Edge Semantics + Evidence Ledger v0.1 akzeptiert; direkter Relational-Profile Novelty Audit freigegeben.
 
-## Aktueller Working Claim C08-D-R
+## Edge Semantics + Evidence Ledger
 
-> In Computational Science und AI for Science kann der Evidenzstatus eines Modells deskriptiv in drei relationsspezifische Bereiche zerlegt werden: Zielsystem–Theorie (`R–T`), Theorie–computational realization (`T–C`) und computational realization–Zielsystem (`C–R`). Dieselbe globale Erfolgsbezeichnung oder Performancemetrik kann je nach wissenschaftlichem Workflow Evidenz für unterschiedliche dieser Relationen darstellen; Evidenz auf einer Relation etabliert die anderen daher nicht automatisch. Ein relationales Profil macht diese Differenz explizit, sofern jeder Kantenstatus an einen konkreten wissenschaftlichen Claim/Facet, einen Use Case, Evidenz und Scope gebunden wird.
+**Status: ACCEPTED — D025.**
 
-Evidenzstatus:
-
-```text
-analytische Diskriminationsleistung: POSITIVE
-praktische Nutzer-/Entscheidungsnützlichkeit: UNTESTED
-starker Literatur-Novelty-Nachweis: UNVERIFIED
-```
-
-## Edge Semantics + Evidence Ledger v0.1
-
-**Status: PENDING REVIEW.**
-
-Das neue Dokument `theory/edge_semantics_evidence_ledger_v0_1.md` präzisiert:
+Die Arbeitssemantik bleibt:
 
 ```text
-R = intendiertes Zielsystem, typisiert als REAL / SYNTHETIC / HYBRID
+R = intendiertes Zielsystem, REAL / SYNTHETIC / HYBRID
 T = expliziter theoretischer/formaler/mechanistischer Claiminhalt
 C = konkrete computational realization
 ```
 
-### R–T Facets
+Kantenstatus sind gebunden an:
 
 ```text
-RT_EMPIRICAL
-RT_MECHANISTIC
-RT_EXPLANATORY
-RT_SCOPE
-RT_STRUCTURAL
+Use Case + Claim/Facet + Evidence + Scope
 ```
-
-### T–C Facets
-
-```text
-TC_TRACTABILITY
-TC_FIDELITY
-TC_CONVERGENCE
-TC_STABILITY
-TC_STRUCTURE
-TC_RESOLVABILITY
-TC_SURROGATE
-```
-
-### C–R Facets
-
-```text
-CR_PREDICTION
-CR_CALIBRATION
-CR_DISTRIBUTION
-CR_EXTERNAL
-CR_SIM2REAL
-CR_ROBUSTNESS
-CR_REPRESENTATION
-```
-
-Jeder Ledger-Eintrag bindet einen Status an `Use Case + Claim/Facet + Evidence + Scope`.
-
-Statussprache:
-
-```text
-ESTABLISHED
-PARTIAL
-UNCERTAIN
-UNTESTED
-NOT_APPLICABLE
-```
-
-## Zentrale neue Präzisierung: keine automatische Transitivität
 
 Default:
 
 ```text
-A_RT + A_TC  -/->  A_CR
-A_TC + A_CR  -/->  A_RT
-A_RT + A_CR  -/->  A_TC
+RT + TC -/-> CR
+TC + CR -/-> RT
+RT + CR -/-> TC
 ```
 
-Evidenz darf zwischen Kanten nur über einen expliziten **Bridge-Claim** übertragen werden. Dieser muss Source-Edge, Target-Edge, Claim, Evidenz, zusätzliche Prämissen und Scope dokumentieren.
+Evidenztransfer verlangt explizite Bridge-Claims.
 
-Beispiel Synthetic Surrogate:
+Details: [`theory/edge_semantics_evidence_ledger_v0_1.md`](theory/edge_semantics_evidence_ledger_v0_1.md).
+
+## Relational-Profile Novelty Audit v0.1
+
+**Status: COMPLETE / PENDING CLAIM DECISION.**
+
+### Entscheidender Befund
+
+Die präzisierte R/T/C-Topologie besitzt einen sehr starken historischen Direktvorläufer in der Model-Credibility-/V&V-Tradition um Schlesinger/Sargent:
 
 ```text
-hohe Teacher-Treue -> direkte T-C-Evidenz
-                      nicht automatisch C-R_real-Evidenz
+Reality / Problem Entity
+Conceptual Model
+Computerized Model
 ```
 
-Eine Bridge zu `C-R_real` benötigt mindestens eine separat gestützte Simulator/Theorie-Realitätsbeziehung, kompatiblen Scope und einen kontrollierten Fehlertransfer.
-
-## Minimaler Ledger
-
-Pflichtfelder:
+mit:
 
 ```text
-case_id
-target_id / target_type
-theory_id
-computation_id
-use_case
-edge
-facet
-claim
-evidence
-evidence_mode
-status
-scope
-dependencies
-non_implications
+Reality <-> Conceptual Model      = qualification / conceptual model validity
+Conceptual Model <-> Computerized = verification
+Computerized Model <-> Reality    = validation / operational validity
 ```
 
-Damit wird die Trias nicht zu drei Scores. Die Dreiecksstruktur ist die Topologie; die konkrete Semantik wird durch claimspezifische Ledger-Einträge getragen.
+Das ist topologisch und semantisch nahezu isomorph zu:
+
+```text
+R-T
+T-C
+C-R
+```
+
+### Novelty-Folge
+
+Nicht mehr haltbar als originäre Trias-Neuheit sind:
+
+```text
+- die drei R/T/C-Rollen selbst;
+- die drei Paarrelationen als Grundstruktur;
+- T-C vs C-R als verification-vs-validation-artige Trennung;
+- intended-use-/scope-relative Validität;
+- der Grundgedanke, synthetic referent und real target nicht gleichzusetzen.
+```
+
+Neuere ASME/NASA- und Scientific-ML-V&V-Arbeiten übertragen große Teile dieser Semantik zudem bereits auf moderne computational bzw. SciML systems.
+
+Details: [`literature/relational_profile_novelty_audit_v0_1.md`](literature/relational_profile_novelty_audit_v0_1.md).
+
+## Verbleibender möglicher Beitrag
+
+Die Trias sollte daher nicht mehr als neue Dreieckstopologie präsentiert werden. Ein möglicher Restbeitrag liegt in einer **wissenschaftsphilosophischen Generalisierung/Reinterpretation** der klassischen Model-Credibility-Triade für AI for Science:
+
+```text
+- T als expliziter Theorie-/Mechanismus-/Erklärungsclaim, nicht nur simulation conceptual model;
+- T kann fehlen (`NONE_CLAIMED`) oder durch C inferiert werden;
+- C umfasst numerische, gelernte und inferierende computational practices;
+- gleiche Performancemetriken werden danach typisiert, welchen epistemischen Claim sie stützen;
+- Target-Wechsel REAL <-> SYNTHETIC wird als Profilwechsel explizit gemacht;
+- die Struktur wird deskriptiv als Arten wissenschaftlichen Erfolgs gelesen, nicht primär als normatives Credibility-Verfahren.
+```
+
+## Neuer Claim-Kandidat
+
+### C08-D-R2
+
+**Status: PENDING REVIEW.**
+
+> Die Descriptive Trias wird nicht als neue Dreieckstopologie von Realität, Theorie und Berechnung beansprucht; eine strukturell sehr ähnliche Triade aus Reality/Problem Entity, Conceptual Model und Computerized Model mit den Relationen qualification/conceptual validity, verification und validation ist in der klassischen Model-Credibility-Literatur etabliert. Der mögliche Beitrag der Trias liegt in einer wissenschaftsphilosophischen Generalisierung dieser Struktur für Computational Science und AI for Science: `T` wird als expliziter theoretischer, mechanistischer oder erklärender Claim typisiert und kann fehlen oder datengetrieben inferiert werden; `C` umfasst numerische, gelernte und inferierende computational realizations; und Evidenz wird claimspezifisch danach profiliert, welche Relation sie tatsächlich stützt. Diese Generalisierung ist als interpretative Synthese zu positionieren, nicht als neue V&V-Theorie.
+
+Details: [`claims/claim_08_descriptive_relational_profile_v2.md`](claims/claim_08_descriptive_relational_profile_v2.md).
 
 ## Strategischer Freeze
 
-Keine neue numerische Mainline. ML-v0.2 und inverse v0.2 bleiben pausiert. C06-R2 bleibt Fallback, falls die präzisierte Profilgrammatik den letzten Novelty-Test nicht übersteht.
+Keine neue numerische Mainline. ML-v0.2 und inverse v0.2 bleiben pausiert. C06-R2 bleibt konservative Fallback-Boundary.
 
 ## Nächste Entscheidung
 
-Empfehlung: **Edge Semantics + Evidence Ledger v0.1 akzeptieren.**
+Empfehlung: **Novelty-Audit akzeptieren, C08-D-R2 akzeptieren und das Paper genealogisch rebasen.**
 
-Bei `GO` wird das Ledger eingefroren. Danach folgt ausschließlich ein `Relational-Profile Novelty Audit v0.1`, der genau die präzisierte Struktur — einschließlich Target-Typen, Facets, Nicht-Transitivität und Bridge-Claims — gegen die stärksten direkten Literaturkandidaten prüft. Erst danach wird der Paper-Hauptclaim finalisiert.
+Bei `GO` wird C08-D-R2 als Working Claim eingefroren. Danach wird ausschließlich `Paper Contribution Boundary v0.2 — From Model-Credibility Triangle to Descriptive Trias for AI for Science` ausgearbeitet. Dieses Dokument muss Schlesinger/Sargent als zentrale Vorläufer behandeln und den tatsächlichen AI-for-Science-/wissenschaftsphilosophischen Delta isolieren.
 
 ## Projektkommandos
 
 - `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; Descriptive Trias, C08-D-R, Edge Semantics, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; Descriptive Trias, D025, direkter V&V-Vorläufer, C08-D-R2-Status, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

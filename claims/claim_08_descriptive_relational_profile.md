@@ -1,10 +1,10 @@
 # Claim 08 — Descriptive Relational Profile (C08-D-R)
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED AS WORKING CLAIM — D024  
 **Stand:** 2026-09-03  
-**Depends on:** D022, D023, `theory/descriptive_trias_profile_test_v0_1.md`
+**Depends on:** D022, D023, D024, `theory/descriptive_trias_profile_test_v0_1.md`
 
-## Vorgeschlagene Arbeitsfassung
+## Akzeptierte Arbeitsfassung
 
 > **C08-D-R:** In Computational Science und AI for Science kann der Evidenzstatus eines Modells deskriptiv in drei relationsspezifische Bereiche zerlegt werden: Zielsystem–Theorie (`R–T`), Theorie–computational realization (`T–C`) und computational realization–Zielsystem (`C–R`). Dieselbe globale Erfolgsbezeichnung oder Performancemetrik kann je nach wissenschaftlichem Workflow Evidenz für unterschiedliche dieser Relationen darstellen; Evidenz auf einer Relation etabliert die anderen daher nicht automatisch. Ein relationales Profil macht diese Differenz explizit, sofern jeder Kantenstatus an einen konkreten wissenschaftlichen Claim/Facet, einen Use Case, Evidenz und Scope gebunden wird. Der beanspruchte Beitrag ist diese gemeinsame deskriptive Profilgrammatik, nicht ein neuer Fehlertyp, eine notwendige Trade-off-Theorie oder eine normative Rangordnung von Modellen.
 
@@ -43,6 +43,8 @@ gelesen werden.
 
 Die Topologie der Trias ist damit einfach, ihre Semantik aber absichtlich evidenz- und claimspezifisch.
 
+D024 akzeptiert zusätzlich als Guardrail, dass Evidenz **nicht standardmäßig transitiv** von einer Kante auf eine andere übertragen werden darf. Jede solche Übertragung benötigt einen expliziten Bridge-Claim mit dokumentierten Prämissen und Scope.
+
 ## Non-Claims
 
 C08-D-R behauptet nicht:
@@ -65,8 +67,6 @@ praktische Nutzer-/Entscheidungsnützlichkeit: UNTESTED
 vollständiger Literatur-Novelty-Nachweis: UNVERIFIED
 ```
 
-## Entscheidungsempfehlung
+## Nächste Abhängigkeit
 
-**ACCEPT C08-D-R AS WORKING CLAIM.**
-
-Danach `Edge Semantics + Evidence Ledger v0.1` ausarbeiten, bevor der Paper-Hauptclaim endgültig eingefroren wird.
+Das `Edge Semantics + Evidence Ledger v0.1` präzisiert die Kanten in Facets, Evidence-Typen, Statusregeln, Target-Typen und Bridge-Claims. Nach dessen Review folgt ein letzter gezielter Novelty-Audit der präzisierten relationalen Profilgrammatik, bevor der Paper-Hauptclaim eingefroren wird.

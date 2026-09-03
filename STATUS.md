@@ -2,11 +2,25 @@
 
 ## Phase
 
-**Descriptive Trias / Writing Goal W7 Complete / Whole-Manuscript Revision Review**
+**Descriptive Trias / Integrated Manuscript v0.2 Complete / Source-Audit Review**
 
-Mit D036 wurde die W6 Discussion-/Descriptive-vs-Normative-Evaluation als `PASS` akzeptiert und Writing Goal W7 freigegeben. Section 1 Introduction, Section 9 Conclusion sowie provisional final title + Abstract sind nun geschrieben. Anschließend wurde erstmals der gesamte getrennte Manuskriptbogen auf Claim-Konsistenz, Novelty-Boundary, Evidenzdisziplin, Länge und Wiederholung geprüft.
+Mit D037 wurde der W7-Whole-Manuscript-Befund `REVISE_BEFORE_MERGE` akzeptiert. Die Revision war redaktionell, nicht wissenschaftlich negativ. Writing Goal W8 wurde anschließend vollständig ausgeführt: Die getrennten Sections 1–9 wurden in eine einzige komprimierte Manuskriptfassung v0.2 integriert.
 
-## Akzeptierte Entscheidungen
+Aktueller Manuskriptentwurf:
+
+[`paper/manuscript_integrated_v0_2.md`](paper/manuscript_integrated_v0_2.md)
+
+W8-Evaluation:
+
+[`paper/w8_editorial_integration_evaluation_v0_2.md`](paper/w8_editorial_integration_evaluation_v0_2.md)
+
+Vorläufiges W8-Urteil:
+
+```text
+PASS_TO_SOURCE_AUDIT
+```
+
+## Akzeptierte Hauptentscheidungen
 
 - **D001–D004:** Claim-/Scope-Fundament, synthetisches Zielsystem, Sundman, Bewertungsdimensionen.
 - **D005–D008:** Figure-eight-Demonstrator abgeschlossen; C05 akzeptiert.
@@ -15,121 +29,116 @@ Mit D036 wurde die W6 Discussion-/Descriptive-vs-Normative-Evaluation als `PASS`
 - **D015–D016:** Directed Trias als Arbeitsrevision; starke Lucarini-Neuheitsfassung verworfen; moderate Equation-Discovery-Bridge behalten.
 - **D017–D020:** inverser Lorenz/SINDy-Zweig vorregistriert und als `INFORMATIVE_NEGATIVE` akzeptiert.
 - **D021:** C06-R2 als konservative Fallback-Boundary akzeptiert.
-- **D022–D025:** Descriptive Trias, Profile Test, C08-D-R, Edge Semantics + Evidence Ledger.
-- **D026:** direkte Topologie-Novelty verworfen; Schlesinger/Sargent als Genealogie akzeptiert.
+- **D022–D025:** Descriptive Trias, Profile Test, Edge Semantics + Evidence Ledger.
+- **D026:** Topologie-Novelty verworfen; Schlesinger/Sargent als Genealogie akzeptiert.
 - **D027:** `Paper Contribution Boundary v0.2` akzeptiert.
-- **D028:** AI-for-Science Delta Audit akzeptiert; C08-D-R3 als Synthese-Working-Claim; Novelty-Suchstopp.
-- **D029:** `Paper Claim + Outline Freeze v0.3` akzeptiert; `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`.
-- **D030:** `Actual Manuscript Skeleton v0.1` akzeptiert.
-- **D031:** W1 = `PASS` akzeptiert.
-- **D032:** W2 = `PASS` akzeptiert; S4 nicht ausgelöst, bleibt aktives Risiko.
-- **D033:** W3 = `PASS` akzeptiert; S3 `notation only` nicht ausgelöst.
-- **D034:** W4 = `PASS` akzeptiert; S2/S3/S5 nicht ausgelöst.
-- **D035:** W5 = `PASS` akzeptiert; case coherence PASS; evidence-status discipline STRONG PASS.
-- **D036:** W6 = `PASS` akzeptiert; global-success semantics PASS; trade-off discipline STRONG PASS; W7 freigegeben.
+- **D028:** AI-for-Science Delta Audit akzeptiert; C08-D-R3 als Synthese-Working-Claim; freie Novelty-Suche beendet.
+- **D029:** Perspective / Conceptual Synthesis als Paper-Modus akzeptiert.
+- **D030–D035:** Manuskript-Skeleton und W1–W5 als PASS akzeptiert.
+- **D036:** W6 Discussion als PASS akzeptiert; W7 freigegeben.
+- **D037:** W7 `REVISE_BEFORE_MERGE` akzeptiert; W8 Editorial Synthesis freigegeben und ausgeführt.
 
-## Manuskriptboundary P3
+## Verbindliche Manuskriptboundary P3
 
-Die verbindliche Paperfassung bleibt eine genealogische Role-Profile-Synthese:
+Die schreibbare Paperfassung bleibt eine genealogische Role-/Evidence-Synthese:
 
 ```text
 R = claim-relative target/reference, REAL / SYNTHETIC / HYBRID
-T = scientific theory/mechanism/explanation claim, PRESENT / PARTIAL / NONE_CLAIMED / INFERRED
-C = concrete computational practice, numerical / learned / inferential / hybrid
+T = theory/mechanism/structure/explanation-level claim,
+    PRESENT / PARTIAL / NONE_CLAIMED / INFERRED
+C = concrete computational practice,
+    numerical / learned / inferential / hybrid
 ```
 
-Evidenz wird danach profiliert, welchen `R-T`, `T-C` oder `C-R` Claim sie im angegebenen Use Case und Scope stützt. Der Beitrag ist eine gemeinsame genealogische Lesart etablierter AI-for-Science-Erfolgsformen, keine neue V&V-, ML-, Identifiability-, Provenance-, Assurance- oder Discovery-Kategorie.
+Evidenz wird danach lokalisiert, welchen `R-T`, `T-C` oder `C-R` Claim sie im angegebenen Use Case und Scope direkt stützt.
 
-## W1–W6
-
-**Status: ACCEPTED / PASS — D031–D036.**
-
-Zentrale Manuskriptteile:
-
-- [`paper/manuscript_section_2_v0_1.md`](paper/manuscript_section_2_v0_1.md) — Schlesinger/Sargent-Genealogie.
-- [`paper/manuscript_section_3_v0_1.md`](paper/manuscript_section_3_v0_1.md) — claim-relative Rollen-/Evidenzsemantik.
-- [`paper/manuscript_section_4_v0_1.md`](paper/manuscript_section_4_v0_1.md) — vier AI-for-Science-Archetypen; stärkste Träger Equation Discovery und Synthetic Surrogate.
-- [`paper/manuscript_sections_5_6_v0_1.md`](paper/manuscript_sections_5_6_v0_1.md) — Sundman/Figure-eight Controls sowie inverse negative + ML-inconclusive Stress Tests.
-- [`paper/manuscript_section_7_v0_1.md`](paper/manuscript_section_7_v0_1.md) — Comparator-/Contribution-Boundary.
-- [`paper/manuscript_section_8_v0_1.md`](paper/manuscript_section_8_v0_1.md) — Discussion `scientific success without global success`.
-
-Akzeptierter Gesamtbefund bis W6:
+Der Beitrag ist ausdrücklich **keine** neue:
 
 ```text
-framework novelty            = NO
-residual contribution        = MODERATE CROSS-DOMAIN SYNTHESIS
-practical superiority        = UNTESTED
-S2 residual compression      = NOT TRIGGERED
-S3 notation only             = NOT TRIGGERED
-S4 genealogy dominates       = NOT TRIGGERED / ACTIVE RISK
-S5 overclaim pressure        = NOT TRIGGERED
-S6 case incoherence          = NOT TRIGGERED
-trade-off discipline         = STRONG PASS
+V&V-Theorie
+Provenance-Theorie
+Assurance-/Claim-Evidence-Methode
+Identifiability-/System-ID-Theorie
+Scientific-ML-Kategorie
+Dreieckstopologie
+notwendige Trade-off-Theorie
 ```
 
-## Writing Goal W7 — Front/Back Matter
+Der verbleibende Beitrag ist eine **moderate cross-domain synthesis / genealogically grounded evidence-localization vocabulary**.
 
-**Status: COMPLETE.**
+## Integriertes Manuskript v0.2
 
-Neue Manuskriptdateien:
-
-- [`paper/manuscript_section_1_v0_1.md`](paper/manuscript_section_1_v0_1.md)
-- [`paper/manuscript_section_9_v0_1.md`](paper/manuscript_section_9_v0_1.md)
-- [`paper/manuscript_title_abstract_v0_1.md`](paper/manuscript_title_abstract_v0_1.md)
-
-### Empfohlener provisional final title
+Empfohlener Titel:
 
 > **From Model Credibility to AI for Science: Claim-Relative Evidence Across Target, Theory, and Computation**
 
-Der Titel vermeidet einen neuen Framework-Claim und macht Genealogie + Evidence Localization explizit.
-
-Introduction, Abstract und Conclusion führen keinen neuen Claim ein. Praktische Nützlichkeit bleibt `UNTESTED`; die klassische Credibility-Genealogie wird früh anerkannt; der Beitrag bleibt cross-domain Synthese.
-
-## W7 Whole-Manuscript Audit
-
-Dokument:
-
-[`paper/w7_whole_manuscript_audit_v0_1.md`](paper/w7_whole_manuscript_audit_v0_1.md)
-
-**Vorläufige Gesamtklassifikation:**
+Die W7-Home-Section-Regel ist umgesetzt:
 
 ```text
-REVISE_BEFORE_MERGE
+Section 2 -> Genealogie / Novelty Boundary
+Section 3 -> R/T/C-Semantik / Status / Nichttransfer
+Section 4 -> vier AI-for-Science-Rollenkonfigurationen
+Section 6 -> negative vs inconclusive evidence
+Section 7 -> Comparatoren / exakte Contribution Boundary
+Section 8 -> global-success / normative / trade-off Grenzen
 ```
 
-Dies ist ein **editoriales**, kein wissenschaftliches Scheitern.
+Der Text liegt nach der Kompression grob im Zielbereich einer vollwertigen Perspective (`~7k–8.3k` Haupttextwörter, abhängig von Zählweise für Tabellen/Formeln/Referenzanker) statt im W7-Gate-Draft-Bereich von ca. 13k–15k.
 
-### Whole-manuscript Befund
+Section 4 bleibt das konzeptionelle Zentrum. Die stärksten Träger sind weiterhin:
 
 ```text
-scientific claim consistency   = PASS
-novelty boundary               = STRONG PASS
-evidence-status discipline     = STRONG PASS
-descriptive/normative boundary = PASS
-section ordering               = PASS
-terminology                     = PASS WITH REVISION
-length                          = REVISE
-repetition                      = REVISE
+Synthetic surrogate -> R_syn vs R_real / referent-sensitive evidence
+Equation discovery   -> T as output of C / role-order reversal
 ```
 
-Die getrennten Gate-Drafts ergeben grob ca. `13.000–15.000` Wörter Haupttext und sind damit deutlich zu lang. Ziel für v0.2:
+Black-box Prediction und PIML dienen vor allem der cross-case Vergleichbarkeit.
+
+## Evidence-status discipline
+
+Unverändert akzeptiert:
 
 ```text
-ca. 7.000–8.300 Wörter Haupttext
+Sundman        -> conceptual positive control
+Figure-eight   -> positive / use-dependent V&V control
+Lorenz/SINDy   -> INFORMATIVE_NEGATIVE
+ML v0.1        -> INCONCLUSIVE_LEARNER_ERROR
 ```
 
-Die größte Revisionsaufgabe ist systematische Entdopplung. Verbindliche Home-Sections:
+Wichtig:
+
+- inverse `linear / seed 2` bleibt explorativ;
+- kein inverse v0.2 als positiver Rettungsversuch;
+- ML v0.1 unterstützt oder widerlegt C07 nicht;
+- ML v0.2 bleibt pausiert;
+- Sundmans Reihen werden korrekt als konvergent, aber praktisch extrem langsam beschrieben;
+- Figure-eight erzeugt keinen globalen Solverwinner.
+
+## W8 Editorial Integration Evaluation
+
+Vorläufige Klassifikation:
 
 ```text
-triangle/genealogy novelty boundary -> Section 2
-role definitions + non-transfer     -> Section 3
-four AI distinctions                -> Section 4
-negative vs inconclusive            -> Section 6
-adjacent-framework boundary         -> Section 7
-no global score / no trade-off      -> Section 8
+claim consistency       = PASS
+length/proportionality  = PASS
+repetition reduction    = PASS
+terminology             = PASS WITH MINOR CLEANUP
+evidence preservation   = STRONG PASS
+section balance         = PASS
+-------------------------------------
+OVERALL                  = PASS_TO_SOURCE_AUDIT
 ```
 
-Introduction und Conclusion sollen nur ankündigen bzw. zusammenfassen.
+Keines der wissenschaftlichen Survival-Kriterien S1–S6 ist ausgelöst.
+
+Kleine noch offene redaktionelle Punkte für den Source-/Style-Pass:
+
+```text
+Scientific ML / Scientific-ML / SciML vereinheitlichen
+AI for Science / AI-for-Science journalabhängig vereinheitlichen
+R-T / T-C / C-R Typografie vereinheitlichen
+Section-4-Cross-case-Tabelle explizit als Table 2 beschriften
+```
 
 ## Strategischer Freeze
 
@@ -138,20 +147,29 @@ Introduction und Conclusion sollen nur ankündigen bzw. zusammenfassen.
 - inverse v0.2 pausiert;
 - keine weitere freie Novelty-Suche;
 - negative/inconclusive Resultate bleiben unverändert;
-- neue konkrete Direktanaloge müssen berücksichtigt werden;
-- vor Editorial Synthesis kein Merge der v0.1-Gate-Drafts.
+- konkrete neue Direktanaloge müssen berücksichtigt werden;
+- integrierte v0.2-Fassung wird vor dem Quellen-Audit nicht durch neue Claims erweitert.
 
 ## Nächste Entscheidung
 
-Empfehlung: **W7 = `REVISE_BEFORE_MERGE` akzeptieren.**
+Empfehlung: **W8 = `PASS_TO_SOURCE_AUDIT` akzeptieren.**
 
-Bei `GO` wird als nächste Abhängigkeit Writing Goal W8 ausgeführt:
+Bei `GO` wird als nächste Abhängigkeit Writing Goal W9 ausgeführt:
 
-> **Editorial Synthesis v0.2 — compress Sections 1–9 into a single integrated manuscript while preserving P3 and all accepted evidence classes.**
+> **Source & Bibliography Audit v0.1 — verify every externally grounded manuscript claim and build a submission-grade reference ledger.**
 
-W8 enthält keine neuen Experimente und keine neue freie Novelty-Suche. Ziel ist ein integrierter Draft mit ca. `7.000–8.300` Wörtern, konsistenter Terminologie, Table 1–3 und stark reduzierter Wiederholung. Danach folgen finale Quellen-/Bibliographieprüfung und journal-spezifischer Stilpass.
+Priorität:
+
+1. Schlesinger / Sargent / klassische Model-Credibility-Genealogie;
+2. aktuelle V&V / VVUQ / SciML-Credibility;
+3. Naser / Vinuesa / Kramer / Karniadakis;
+4. Zhai–Lucarini–Lai;
+5. Sundman / Belorizky / Henkel / Chenciner;
+6. Provenance / Assurance / Identifiability / System-ID-Comparatoren.
+
+Erst nach W9 folgt ein journal-spezifischer Stil- und Submission-Pass.
 
 ## Projektkommandos
 
-- `GO`: akzeptiert W7 = `REVISE_BEFORE_MERGE` und startet W8 Editorial Synthesis v0.2.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D036, W1–W6 PASS, W7 Front/Back Matter + Whole-Manuscript Audit, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W8 = `PASS_TO_SOURCE_AUDIT` und startet W9 Source & Bibliography Audit.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D037, W8, integriertes Manuskript v0.2, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

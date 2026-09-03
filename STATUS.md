@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Descriptive Trias / Writing Goal W5 Complete / Case-Coherence & Evidence-Status Review**
+**Descriptive Trias / Writing Goal W6 Complete / Discussion Review**
 
-Mit D034 wurde die W4-Contribution-Boundary-Evaluation als `PASS` akzeptiert und Writing Goal W5 freigegeben. Sections 5–6 — `Classical controls` und `Stress tests` — sind nun als Manuskripttext geschrieben und separat auf case coherence, evidence-status discipline und manuscript proportionality geprüft.
+Mit D035 wurde die W5 Case-Coherence-/Evidence-Status-Evaluation als `PASS` akzeptiert und Writing Goal W6 freigegeben. Section 8 — `Discussion: scientific success without global success` — ist nun als Manuskripttext geschrieben und separat auf descriptive-vs-normative discipline, global-success semantics, Trade-off-Overclaim, practical-utility Overclaim und P3-Konsistenz geprüft.
 
 ## Akzeptierte Entscheidungen
 
@@ -20,11 +20,12 @@ Mit D034 wurde die W4-Contribution-Boundary-Evaluation als `PASS` akzeptiert und
 - **D027:** `Paper Contribution Boundary v0.2` akzeptiert.
 - **D028:** AI-for-Science Delta Audit akzeptiert; C08-D-R3 als Synthese-Working-Claim; Novelty-Suchstopp.
 - **D029:** `Paper Claim + Outline Freeze v0.3` akzeptiert; `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`.
-- **D030:** `Actual Manuscript Skeleton v0.1` akzeptiert; W1 / Section 4 freigegeben.
-- **D031:** W1 = `PASS` akzeptiert; W2 Genealogie + Table 1 freigegeben.
-- **D032:** W2 = `PASS` akzeptiert; S4 nicht ausgelöst, bleibt aktives Risiko; W3 Semantik freigegeben.
-- **D033:** W3 = `PASS` akzeptiert; S3 `notation only` nicht ausgelöst; W4 Contribution-Boundary freigegeben.
-- **D034:** W4 = `PASS` akzeptiert; S2/S3/S5 nicht ausgelöst; W5 Controls + Stress Tests freigegeben.
+- **D030:** `Actual Manuscript Skeleton v0.1` akzeptiert.
+- **D031:** W1 = `PASS` akzeptiert.
+- **D032:** W2 = `PASS` akzeptiert; S4 nicht ausgelöst, bleibt aktives Risiko.
+- **D033:** W3 = `PASS` akzeptiert; S3 `notation only` nicht ausgelöst.
+- **D034:** W4 = `PASS` akzeptiert; S2/S3/S5 nicht ausgelöst.
+- **D035:** W5 = `PASS` akzeptiert; case coherence PASS, evidence-status discipline STRONG PASS; W6 Discussion freigegeben.
 
 ## Manuskriptboundary P3
 
@@ -38,118 +39,93 @@ C = concrete computational practice, numerical / learned / inferential / hybrid
 
 Evidenz wird danach profiliert, welchen `R-T`, `T-C` oder `C-R` Claim sie im angegebenen Use Case und Scope stützt. Der Beitrag ist eine gemeinsame genealogische Lesart etablierter AI-for-Science-Erfolgsformen, keine neue V&V-, ML-, Identifiability-, Provenance-, Assurance- oder Discovery-Kategorie.
 
-## W1 — Section 4
+## W1–W4
 
-**Status: ACCEPTED / PASS — D031.**
+**Status: ACCEPTED / PASS — D031–D034.**
 
-[`paper/manuscript_section_4_v0_1.md`](paper/manuscript_section_4_v0_1.md)
+Zentrale Manuskriptteile:
 
-Stärkste konzeptionelle Träger:
+- [`paper/manuscript_section_4_v0_1.md`](paper/manuscript_section_4_v0_1.md) — vier AI-for-Science-Archetypen; stärkste Träger Equation Discovery und Synthetic Surrogate.
+- [`paper/manuscript_section_2_v0_1.md`](paper/manuscript_section_2_v0_1.md) — Schlesinger/Sargent-Genealogie und Table 1.
+- [`paper/manuscript_section_3_v0_1.md`](paper/manuscript_section_3_v0_1.md) — claim-relative Rollen-/Evidenzsemantik.
+- [`paper/manuscript_section_7_v0_1.md`](paper/manuscript_section_7_v0_1.md) — harter Comparator-/Contribution-Boundary-Test.
 
-```text
-1. Equation Discovery — T as output of C
-2. Synthetic Surrogate — explicit referent switch R_syn vs R_real
-```
-
-## W2 — Section 2 Genealogy
-
-**Status: ACCEPTED / PASS — D032.**
-
-[`paper/manuscript_section_2_v0_1.md`](paper/manuscript_section_2_v0_1.md)
+Akzeptierter Gesamtbefund bis W4:
 
 ```text
-S4 genealogy dominates contribution = NOT TRIGGERED / ACTIVE RISK
+framework novelty            = NO
+residual contribution        = MODERATE CROSS-DOMAIN SYNTHESIS
+practical superiority        = UNTESTED
+S2 residual compression      = NOT TRIGGERED
+S3 notation only             = NOT TRIGGERED
+S4 genealogy dominates       = NOT TRIGGERED / ACTIVE RISK
+S5 overclaim pressure        = NOT TRIGGERED
+S6 case incoherence          = NOT TRIGGERED
 ```
 
-Section 2 bleibt im Endmanuskript kompakt.
+## W5 — Sections 5–6 Controls + Stress Tests
 
-## W3 — Section 3 Semantik
-
-**Status: ACCEPTED / PASS — D033.**
-
-[`paper/manuscript_section_3_v0_1.md`](paper/manuscript_section_3_v0_1.md)
-
-```text
-S3 notation only = NOT TRIGGERED
-```
-
-Die Semantik trägt inferentielle Last durch Referentenfixierung, variable T-Status, Statusunterscheidungen und explizite Bridge Claims.
-
-## W4 — Section 7 Contribution Boundary
-
-**Status: ACCEPTED / PASS — D034.**
-
-[`paper/manuscript_section_7_v0_1.md`](paper/manuscript_section_7_v0_1.md)
-
-Evaluation:
-
-[`paper/w4_contribution_boundary_evaluation_v0_1.md`](paper/w4_contribution_boundary_evaluation_v0_1.md)
-
-Akzeptierter Befund:
-
-```text
-S2 no residual explanatory compression = NOT TRIGGERED, residual moderate
-S3 notation only                       = NOT TRIGGERED
-S5 overclaim pressure                  = NOT TRIGGERED
-paper mode                             = CONTINUE PERSPECTIVE
-technical/framework novelty            = NO
-residual contribution                  = MODERATE CROSS-DOMAIN SYNTHESIS
-practical superiority                  = UNTESTED
-```
-
-Der exakte Rest ist eine genealogisch verankerte Evidence-Localization-Sprache. Spezialframeworks bleiben für die fachlich tiefe Prüfung zuständig.
-
-## Writing Goal W5 — Sections 5–6
-
-**Status: COMPLETE / PENDING AUTHOR DECISION.**
+**Status: ACCEPTED / PASS — D035.**
 
 Manuskripttext:
 
 [`paper/manuscript_sections_5_6_v0_1.md`](paper/manuscript_sections_5_6_v0_1.md)
 
-Die vier integrierten Fälle haben bewusst unterschiedliche Funktionen:
+Evaluation:
+
+[`paper/w5_case_coherence_evidence_status_evaluation_v0_1.md`](paper/w5_case_coherence_evidence_status_evaluation_v0_1.md)
+
+Akzeptierte Rollen:
 
 ```text
 Sundman        -> conceptual T-C control
-Figure-eight   -> positive standard-V&V control
-Lorenz/SINDy   -> INFORMATIVE_NEGATIVE inverse stress test
-ML v0.1        -> INCONCLUSIVE_LEARNER_ERROR resolvability stress test
+Figure-eight   -> standard V&V control
+Lorenz/SINDy   -> INFORMATIVE_NEGATIVE
+ML v0.1        -> INCONCLUSIVE_LEARNER_ERROR
 ```
 
-### W5 Case-Coherence / Evidence-Status Evaluation
+`negative`, `inconclusive`, `untested` und `not applicable` bleiben klar getrennt. Kein post-hoc Upgrading der negativen/inconclusive Evidenz.
+
+## Writing Goal W6 — Section 8 Discussion
+
+**Status: COMPLETE / PENDING AUTHOR DECISION.**
+
+Manuskripttext:
+
+[`paper/manuscript_section_8_v0_1.md`](paper/manuscript_section_8_v0_1.md)
+
+Die Discussion formuliert den philosophischen Kern nun defensiv:
+
+> Computational scientific success ist claimspezifisch und relationsbezogen; Evidenz für eine Erfolgsform etabliert nicht automatisch andere. Daraus folgt weder ein globaler Modellgüte-Score noch ein Imperativ, alle drei Relationen zu maximieren, noch eine notwendige Nullsummen-/Trade-off-Geometrie.
+
+Zentrale Grenzen:
+
+```text
+T = NONE_CLAIMED kann für Prediction legitim sein
+NOT_APPLICABLE ist kein Defizit
+R_syn -> R_real ist ein Claimwechsel
+höherstufige globale Credibility-Urteile bleiben zulässig
+praktische Nützlichkeit der Trias ist UNTESTED
+```
+
+### W6 Discussion / Descriptive-vs-Normative Evaluation
 
 Dokument:
 
-[`paper/w5_case_coherence_evidence_status_evaluation_v0_1.md`](paper/w5_case_coherence_evidence_status_evaluation_v0_1.md)
+[`paper/w6_discussion_descriptive_normative_evaluation_v0_1.md`](paper/w6_discussion_descriptive_normative_evaluation_v0_1.md)
 
 **Vorläufige Klassifikation: PASS.**
 
 ```text
-case coherence             = PASS
-evidence-status discipline = STRONG PASS
-manuscript proportionality = PASS / later tighten
-paper mode                 = CONTINUE PERSPECTIVE
-new novelty claim          = NO
+W6 descriptive/normative gate = PASS
+global-success semantics       = PASS
+trade-off discipline           = STRONG PASS
+practical-utility discipline   = PASS
+P3 consistency                 = PASS
+paper mode                     = CONTINUE PERSPECTIVE
 ```
 
-Besonders wichtig:
-
-- Sundman wird korrekt als konvergente, aber praktisch extrem langsam evaluierbare Reihenrepräsentation beschrieben.
-- Figure-eight bleibt Kontrollfall; kein globaler Solverwinner und keine neue V&V-Kategorie.
-- Lorenz/SINDy bleibt exakt `INFORMATIVE_NEGATIVE`; linear seed 2 bleibt explorativ.
-- ML v0.1 bleibt exakt `INCONCLUSIVE_LEARNER_ERROR`; der Teacher-Provenance-Claim wird weder unterstützt noch widerlegt.
-- `negative`, `inconclusive`, `untested` und `not applicable` werden semantisch getrennt.
-
-### W5-Längenhinweis
-
-Endfassung ungefähr:
-
-```text
-Section 5: 600–750 Wörter
-Section 6: 700–900 Wörter
-```
-
-Cross-case evidence table behalten; numerische Detailwerte später etwas straffen.
+Die v0.1-Discussion ist als Gate-Draft zu lang und soll im Endmanuskript auf ca. 800–1.000 Wörter gestrafft werden. Die inhaltlichen Grenzen sollen unverändert bleiben.
 
 ## Strategischer Freeze
 
@@ -162,15 +138,15 @@ Cross-case evidence table behalten; numerische Detailwerte später etwas straffe
 
 ## Nächste Entscheidung
 
-Empfehlung: **W5 = PASS akzeptieren und Perspective fortsetzen.**
+Empfehlung: **W6 = PASS akzeptieren und Perspective fortsetzen.**
 
-Bei `GO` wird als nächste Abhängigkeit Writing Goal W6 ausgeführt:
+Bei `GO` wird als nächste Abhängigkeit Writing Goal W7 ausgeführt:
 
-> **Section 8 — Discussion: scientific success without global success.**
+> **Section 1 Introduction + Section 9 Conclusion + Abstract + provisional final title.**
 
-Danach folgt ein lokaler `descriptive-vs-normative`- und `global-success`-Check. Introduction, Conclusion und Abstract bleiben bis danach zurückgestellt.
+W7 darf ausschließlich aus den akzeptierten Sections 2–8 ableiten und keinen neuen Claim einführen. Danach folgt ein Whole-Manuscript Claim-Consistency / Length / Repetition Audit vor der Zusammenführung und finalen Stilrevision.
 
 ## Projektkommandos
 
-- `GO`: akzeptiert W5 = PASS und startet W6 Discussion.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D034, W1–W4 PASS, W5 Sections 5–6 + Evidence-Status-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W6 = PASS und startet W7 Intro + Conclusion + Abstract + Titel.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D035, W1–W5 PASS, W6 Discussion + Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

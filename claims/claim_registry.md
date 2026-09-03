@@ -44,8 +44,10 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | MS-SKEL-v0.1 | Actual Manuscript Skeleton | ACCEPTED | Absatzfunktionen, Claims, Literaturachsen, Figuren-/Tabellenplan, Schreibreihenfolge und Survival-Gates | D030 |
 | MS-W1-S4-v0.1 | Manuscript Section 4 — Four AI-for-Science role configurations | COMPLETE / ACCEPTED | gemeinsame R/T/C-Grammatik über vier Archetypen; stärkste Träger Equation Discovery + Synthetic Surrogate | D031 |
 | MS-W1-GATE-v0.1 | W1 Survival Evaluation | ACCEPTED / PASS | S2/S3/S6 nicht ausgelöst; Perspective trägt weiter; kein Framework-Novelty-Upgrade | D031 |
-| MS-W2-S2-v0.1 | Manuscript Section 2 — Genealogy | COMPLETE / PENDING AUTHOR REVIEW | Schlesinger/Sargent-Mapping + moderne V&V/SciML-Fortsetzung + Table 1 geschrieben | D031 follow-up |
-| MS-W2-GATE-v0.1 | W2 Genealogy-Dominance Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S4 nicht ausgelöst, bleibt aktives Risiko; Genealogie absorbiert Topologie, nicht den gesamten AI-Rollenwechsel | D031 follow-up |
+| MS-W2-S2-v0.1 | Manuscript Section 2 — Genealogy | COMPLETE / ACCEPTED | Schlesinger/Sargent-Mapping + moderne V&V/SciML-Fortsetzung + Table 1 | D032 |
+| MS-W2-GATE-v0.1 | W2 Genealogy-Dominance Evaluation | ACCEPTED / PASS | S4 nicht ausgelöst, bleibt aktives Risiko; Genealogie absorbiert Topologie, nicht gesamten AI-Rollenwechsel | D032 |
+| MS-W3-S3-v0.1 | Manuscript Section 3 — Claim-relative epistemic roles | COMPLETE / PENDING AUTHOR REVIEW | minimale R/T/C-, Referenten-, Status-, Nichttransfer- und Bridge-Semantik geschrieben | D032 follow-up |
+| MS-W3-GATE-v0.1 | W3 Semantic-Load / Notation-Only Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S3 nicht ausgelöst; Semantik trägt inferentielle Last, bleibt aber Synthese statt Framework-Novelty | D032 follow-up |
 
 ## Aktueller Evidenzstand
 
@@ -63,39 +65,39 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-D031 akzeptiert W1 = `PASS`. Damit ist Section 4 als zentraler Survival-Test bestanden, jedoch nur für eine Perspective / Conceptual Synthesis.
+D031 akzeptiert W1 = `PASS`. Section 4 bleibt das konzeptionelle Zentrum; stärkste Träger sind Equation Discovery und Synthetic Surrogates.
 
-Writing Goal W2 ist nun vollständig ausgeführt. Die Genealogie-Section macht die nahezu isomorphe Prior Art explizit:
+D032 akzeptiert W2 = `PASS`. Die Genealogie absorbiert die R/T/C-Topologie und große Teile der Edge-Semantik, löst Survival-Kriterium S4 aber nicht aus. Section 2 bleibt hart komprimiert.
+
+Writing Goal W3 ist vollständig ausgeführt. Section 3 präzisiert nur die Semantik, die Section 4 tatsächlich verwendet:
 
 ```text
-Reality / Problem Entity
-Conceptual Model
-Computerized Model
-
-R-T ~ conceptual-model validity
-T-C ~ computerized-model verification
-C-R ~ operational validity / validation
+R_REAL / R_SYNTHETIC / R_HYBRID
+T = PRESENT / PARTIAL / NONE_CLAIMED / INFERRED
+C als funktionale computational practice
+R-T / T-C / C-R als Claimrelationen
+ESTABLISHED / PARTIAL / UNCERTAIN / UNTESTED / NOT_APPLICABLE
+kein automatischer Evidenztransfer
+explizite Bridge Claims
 ```
 
-Table 1 kennzeichnet Topologie, Edge-Semantics, intended use, real-vs-synthetic referent und evidence-transfer logic als `not new` oder `strongly preceded`. Als möglicher Rest bleibt nur die gemeinsame Rollen-/Evidenzsynthese über unterschiedliche AI-Workflows.
+Die W3-Semantic-Load-Evaluation klassifiziert den Abschnitt als **PASS**. S3 `notation only` ist nicht ausgelöst, weil die Semantik reale inferentielle Constraints trägt: ein Referentenwechsel ist ein Claimwechsel; `NONE_CLAIMED` und `NOT_APPLICABLE` sind keine Defizitwerte; `INFERRED` erlaubt `T` als Output von `C`; und cross-edge Evidenztransfer benötigt eine explizite Bridge.
 
-Die W2-Genealogy-Dominance-Evaluation klassifiziert den Abschnitt als **PASS**. S4 `genealogy dominates contribution` ist nicht ausgelöst, bleibt aber aktives Risiko. Der PASS beruht darauf, dass insbesondere Equation Discovery (`R -> D -> C_infer -> T_hat`) und Synthetic Surrogate einen cross-case Rollen-/Referentengewinn behalten, der nicht allein in der klassischen Forward-Lifecycle-Lesart aufgeht.
-
-Der nächste lokale Test betrifft S3 `notation only`: Section 3 muss zeigen, dass die minimale R/T/C-/Evidence-Semantik argumentativen Gehalt trägt und nicht bloß neue Labels einführt.
+Der PASS ist kein Novelty-Upgrade. Die Einzelbestandteile besitzen starke Vorarbeit in V&V, Credibility, Assurance und Provenance. Der verbleibende Wert ist weiterhin moderate gemeinsame Semantik / Evidence Localization.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D030 Manuscript Skeleton accepted
 -> D031 W1 PASS accepted
--> W2 Section 2 COMPLETE
--> W2 Genealogy-Dominance Evaluation = PASS / pending author acceptance
--> recommended next: W3 Section 3 minimal semantics
--> local S3 notation-only / semantic-load check
+-> D032 W2 PASS accepted
+-> W3 Section 3 COMPLETE
+-> W3 Semantic-Load Evaluation = PASS / pending author acceptance
+-> recommended next: W4 Section 7 comparator/contribution boundary
+-> local S2 no-residual-compression + S3 notation-only gate
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert W2 = PASS und startet Writing Goal W3 (`Section 3 — From lifecycle stages to claim-relative epistemic roles`) plus S3 semantic-load check.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D031, W1 PASS, W2 Genealogie + Dominance-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W3 = PASS und startet Writing Goal W4 (`Section 7 — What the Trias adds, and what adjacent frameworks already do better`).
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D032, W1/W2 PASS, W3 Section 3 + Semantic-Load-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

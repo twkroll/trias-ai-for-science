@@ -2,11 +2,9 @@
 
 ## Phase
 
-**Genealogically Rebasing the Descriptive Trias / Paper Contribution Boundary v0.2 Review**
+**Descriptive Trias / AI-for-Science Delta Audit Complete / C08-D-R3 Review**
 
-Mit D026 wurde der direkte Relational-Profile Novelty Audit akzeptiert. Die R/T/C-Dreieckstopologie und die drei Paarrelationen werden nicht mehr als originäre Trias-Neuheit beansprucht, weil die klassische Model-Credibility-/V&V-Tradition um Schlesinger/Sargent einen nahezu isomorphen historischen Vorläufer besitzt.
-
-C08-D-R2 ist nun der aktuelle Working Claim. Das Paper wird genealogisch von der klassischen Credibility-Triade ausgehend neu aufgebaut.
+Mit D026 wurde das Projekt genealogisch auf die klassische Model-Credibility-/V&V-Triade um Schlesinger/Sargent rebaset. Mit D027 wurde `Paper Contribution Boundary v0.2` akzeptiert und der letzte eng begrenzte `AI-for-Science Delta Audit v0.1` freigegeben. Dieser Audit ist nun abgeschlossen.
 
 ## Akzeptierte Entscheidungen
 
@@ -17,15 +15,13 @@ C08-D-R2 ist nun der aktuelle Working Claim. Das Paper wird genealogisch von der
 - **D015–D016:** Directed Trias als Arbeitsrevision; starke Lucarini-Neuheitsfassung verworfen; moderate Equation-Discovery-Bridge behalten.
 - **D017–D020:** inverser Lorenz/SINDy-Zweig vorregistriert und als `INFORMATIVE_NEGATIVE` akzeptiert.
 - **D021:** C06-R2 als konservative Fallback-Boundary akzeptiert.
-- **D022:** Autorenintention als deskriptive R/T/C-Theorie präzisiert.
-- **D023:** erster Descriptive-Trias-Literatur-Stress-Test akzeptiert.
-- **D024:** C08-D-R als Working Claim akzeptiert; positive analytische Diskriminationsleistung.
-- **D025:** Edge Semantics + Evidence Ledger akzeptiert; direkter Novelty Audit freigegeben.
-- **D026:** direkter Novelty Audit akzeptiert; R/T/C-Topologie-Novelty verworfen; C08-D-R2 als Working Claim akzeptiert; Paper genealogisch auf Schlesinger/Sargent rebaset.
+- **D022–D025:** Descriptive Trias, Profile Test, C08-D-R, Edge Semantics + Evidence Ledger.
+- **D026:** direkte Topologie-Novelty verworfen; Schlesinger/Sargent als Genealogie akzeptiert; C08-D-R2 Working Claim.
+- **D027:** `Paper Contribution Boundary v0.2` akzeptiert; AI-for-Science Delta Audit freigegeben.
 
-## Historischer Ausgangspunkt
+## Verbindliche Genealogie
 
-Die klassische Model-Credibility-Triade lautet näherungsweise:
+Die klassische Model-Credibility-Struktur bleibt historischer Ausgangspunkt:
 
 ```text
 Reality / Problem Entity
@@ -33,108 +29,91 @@ Conceptual Model
 Computerized Model
 ```
 
-mit:
+mit conceptual model validity/qualification, verification und operational validity/validation.
+
+Die Trias beansprucht weder diese Topologie noch die drei Paarrelationen als neu.
+
+## AI-for-Science Delta Audit v0.1
+
+**Status: COMPLETE / PENDING CLAIM DECISION.**
+
+Der Audit prüfte nur noch:
 
 ```text
-Reality <-> Conceptual Model      = conceptual model validity / qualification
-Conceptual Model <-> Computerized = verification
-Computerized Model <-> Reality    = operational validity / validation
+T = NONE_CLAIMED
+T = INFERRED_BY_C
+layered synthetic surrogate pipelines
+hybrid physics/theory + learned C
 ```
 
-Diese Struktur wird im Projekt nicht mehr als Rand-Comparator, sondern als **Genealogie des eigenen Ansatzes** behandelt.
+### Negative Novelty-Ergebnisse
 
-## Aktueller Working Claim C08-D-R2
+Alle vier Rollenformen besitzen starke etablierte Vorarbeit:
 
-> Die Descriptive Trias wird nicht als neue Dreieckstopologie von Realität, Theorie und Berechnung beansprucht; eine strukturell sehr ähnliche Triade aus Reality/Problem Entity, Conceptual Model und Computerized Model mit den Relationen qualification/conceptual validity, verification und validation ist in der klassischen Model-Credibility-Literatur etabliert. Der mögliche Beitrag der Trias liegt in einer wissenschaftsphilosophischen Generalisierung dieser Struktur für Computational Science und AI for Science: `T` wird als expliziter theoretischer, mechanistischer oder erklärender Claim typisiert und kann fehlen oder datengetrieben inferiert werden; `C` umfasst numerische, gelernte und inferierende computational realizations; und Evidenz wird claimspezifisch danach profiliert, welche Relation sie tatsächlich stützt. Diese Generalisierung ist als interpretative Synthese zu positionieren, nicht als neue V&V-Theorie.
+```text
+prediction without explicit theory -> Philosophy of ML / predictive ML
+T inferred by C                    -> Equation Discovery / automated scientific discovery
+simulator -> synthetic -> surrogate -> SciML / surrogate modeling / V&V
+physics/theory + learned C          -> PIML / SciML
+```
+
+Zwei zusätzliche direkte Comparatoren verschärfen die Grenze:
+
+- **Vinuesa et al. (Communications Physics, 2026):** ML-Rollen werden explizit nach geringer, partieller oder weitgehend vollständiger Kenntnis der governing equations organisiert. Damit ist die Rollenvariation mit Theory Availability keine Trias-Neuheit.
+- **Naser (Technology in Society, 2025):** Prediction, Explanation, Discovery, Understanding und Decision-making werden als verschiedene epistemische ML-Funktionen typisiert. Damit ist auch die Pluralität wissenschaftlicher Erfolgsarten keine Trias-Neuheit.
+
+Details: [`literature/ai_for_science_delta_audit_v0_1.md`](literature/ai_for_science_delta_audit_v0_1.md).
+
+## Verbleibender möglicher Beitrag
+
+Im Audit wurde kein einzelner Direktanalog gefunden, der zugleich
+
+```text
+classical model-credibility genealogy
++
+dynamic role occupation of T/C in AI for Science
++
+claim-relative RT/TC/CR evidence profiling
++
+REAL/SYNTHETIC/HYBRID referent typing
++
+descriptive comparison of scientific-success types
+```
+
+in derselben Semantik kombiniert.
+
+Dies ist kein Beweis starker Originalität. Der verbleibende Beitrag ist höchstens eine **genealogische wissenschaftsphilosophische Synthese**.
+
+## Neuer Claim-Kandidat C08-D-R3
+
+**Status: PENDING REVIEW.**
+
+> Die Descriptive Trias beansprucht weder die klassische Reality–Conceptual Model–Computerized Model-Topologie noch AI-spezifische Rollen wie Prediction ohne Theorie, Equation Discovery, Surrogate Learning oder Physics-informed Hybridisierung als neue Einzelideen. Ihr möglicher Beitrag ist eine genealogische wissenschaftsphilosophische Synthese: Die klassische Model-Credibility-Triade wird als claim-relative Rollenstruktur gelesen, in der `T` vorhanden, partiell, nicht beansprucht oder computational inferiert sein kann und `C` unterschiedliche numerische, gelernte oder inferierende Praktiken besetzen kann. Die zugehörige Evidenz wird danach profiliert, ob sie einen Target–Theory-, Theory–Computation- oder Computation–Target-Claim im angegebenen Use Case und Scope stützt. Dadurch werden etablierte AI-for-Science-Erfolgsarten in einer gemeinsamen Credibility-Genealogie vergleichbar, ohne sie als globale Modellgüte oder neue V&V-Kategorien zu behandeln.
 
 Evidenzstatus:
 
 ```text
-R/T/C topology novelty: REJECTED
-edge distinction novelty: REJECTED
-analytical discrimination across project cases: POSITIVE
-AI-for-Science reinterpretation/generalisation: PLAUSIBLE
-practical utility: UNTESTED
-unique originality of the generalisation: NOT YET ESTABLISHED
+individual AI-role novelty: REJECTED
+plural epistemic-success novelty: REJECTED
+analytical discrimination: POSITIVE
+genealogical synthesis originality: PLAUSIBLE / MODERATE
+single direct analogue: NOT FOUND IN v0.1 AUDIT
+practical utility/superiority: UNTESTED
 ```
 
-Details: [`claims/claim_08_descriptive_relational_profile_v2.md`](claims/claim_08_descriptive_relational_profile_v2.md).
-
-## Akzeptierte Edge Semantics
-
-Das Ledger aus D025 bleibt gültig:
-
-```text
-R = claim-relative target, REAL / SYNTHETIC / HYBRID
-T = theory/mechanism/explanation claim, ggf. NONE_CLAIMED oder inferred
-C = concrete computational realization/practice
-```
-
-Kantenstatus sind gebunden an:
-
-```text
-Use Case + Claim/Facet + Evidence + Scope
-```
-
-und Evidenztransfer benötigt explizite Bridge-Claims.
-
-## Paper Contribution Boundary v0.2
-
-**Status: PENDING REVIEW.**
-
-Neues Dokument: [`paper/paper_contribution_boundary_v0_2.md`](paper/paper_contribution_boundary_v0_2.md).
-
-Leitfrage:
-
-> Was muss an der klassischen Credibility-Triade verändert oder generalisiert werden, wenn computation in AI for Science nicht mehr nur ein gegebenes conceptual model implementiert, sondern selbst vorhersagt, approximiert, rekonstruiert oder Theorie erzeugt?
-
-Vorgeschlagener Delta:
-
-```text
-1. T als expliziter wissenschaftlicher Theorie-/Mechanismus-/Erklärungsclaim;
-2. T kann NONE_CLAIMED sein;
-3. T kann Output von C sein (Equation Discovery);
-4. C umfasst learned/inferential practices, nicht nur Forward-Implementierung;
-5. REAL/SYNTHETIC/HYBRID referent switching wird claimspezifisch profiliert;
-6. primär deskriptive Typisierung von Arten wissenschaftlichen Erfolgs statt neue Credibility-Zertifizierung.
-```
-
-## Rolle der bisherigen Projektfälle im Paper v0.2
-
-```text
-Schlesinger/Sargent: genealogisches Fundament
-Sundman: kompakter T-C-/Tractability-Motivationsfall
-Figure-eight: klassische V&V-Kontrollgruppe; kein Novelty-Beleg
-Black-box prediction: zentraler Fall T = NONE_CLAIMED
-Synthetic surrogate: zentraler Target-/Evidence-Typing-Fall
-Physics-informed ML: Rollenüberlagerung T/R/C
-Equation Discovery: zentraler Inversionsfall T inferred by C
-Lorenz/SINDy: negativer Stress-Test, kein positiver Provenance-Beleg
-ML v0.1: Appendix, Resolvability-Inconclusive
-```
+Details: [`claims/claim_08_descriptive_relational_profile_v3.md`](claims/claim_08_descriptive_relational_profile_v3.md).
 
 ## Strategischer Freeze
 
-Keine neue numerische Mainline. ML-v0.2 und inverse v0.2 bleiben pausiert. C06-R2 bleibt konservative Fallback-Boundary.
+Keine neue numerische Mainline. ML-v0.2 und inverse v0.2 bleiben pausiert. Keine weitere immer enger werdende Novelty-Suche wird empfohlen, falls C08-D-R3 akzeptiert wird.
 
 ## Nächste Entscheidung
 
-`Paper Contribution Boundary v0.2` empfiehlt **Option A: genealogisches Descriptive-Trias-Paper weiterverfolgen**, aber den Principal Claim P2 noch nicht endgültig einfrieren.
+Empfehlung: **AI-for-Science Delta Audit akzeptieren und C08-D-R3 als Working Claim akzeptieren.**
 
-Vor Manuskript-Freeze wird ein letzter eng begrenzter **AI-for-Science Delta Audit v0.1** empfohlen. Er prüft nur noch, ob die vier Rollenveränderungen
-
-```text
-T = NONE_CLAIMED
-T = inferred by C
-layered synthetic surrogate pipelines
-hybrid physics-informed T+C configurations
-```
-
-bereits in einem einzelnen etablierten Credibility-/Philosophy-of-AI-for-Science-Rahmen in praktisch derselben Semantik synthetisiert sind.
-
-Bei `GO` wird die Paper Contribution Boundary v0.2 akzeptiert und dieser Delta Audit als nächste Abhängigkeit ausgeführt. Noch kein Manuskriptschreiben und kein neues Experiment.
+Bei `GO` wird der Claim eingefroren und anschließend ausschließlich ein `Paper Claim + Outline Freeze v0.3` ausgearbeitet. Das Paper wird dann ausdrücklich als genealogische Philosophy-of-Science/AI-for-Science-Synthese bzw. Perspective positioniert, nicht als neues V&V-Framework.
 
 ## Projektkommandos
 
 - `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D026, Schlesinger/Sargent-Genealogie, C08-D-R2, Paper Boundary v0.2, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D027, AI-for-Science Delta Audit, C08-D-R3, Schlesinger/Sargent-Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

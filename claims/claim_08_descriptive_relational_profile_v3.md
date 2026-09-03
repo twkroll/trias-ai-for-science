@@ -1,14 +1,14 @@
 # Claim 08 — Descriptive Relational Profile v3 (C08-D-R3)
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED AS WORKING CLAIM — D028  
 **Stand:** 2026-09-03  
-**Depends on:** D026, D027, `literature/ai_for_science_delta_audit_v0_1.md`
+**Depends on:** D026, D027, D028, `literature/ai_for_science_delta_audit_v0_1.md`
 
-## Vorgeschlagene Arbeitsfassung
+## Akzeptierte Arbeitsfassung
 
 > **C08-D-R3:** Die Descriptive Trias beansprucht weder die klassische Reality–Conceptual Model–Computerized Model-Topologie noch AI-spezifische Rollen wie Prediction ohne Theorie, Equation Discovery, Surrogate Learning oder Physics-informed Hybridisierung als neue Einzelideen. Ihr möglicher Beitrag ist eine genealogische wissenschaftsphilosophische Synthese: Die klassische Model-Credibility-Triade wird als claim-relative Rollenstruktur gelesen, in der `T` vorhanden, partiell, nicht beansprucht oder computational inferiert sein kann und `C` unterschiedliche numerische, gelernte oder inferierende Praktiken besetzen kann. Die zugehörige Evidenz wird danach profiliert, ob sie einen Target–Theory-, Theory–Computation- oder Computation–Target-Claim im angegebenen Use Case und Scope stützt. Dadurch werden etablierte AI-for-Science-Erfolgsarten in einer gemeinsamen Credibility-Genealogie vergleichbar, ohne sie als globale Modellgüte oder neue V&V-Kategorien zu behandeln.
 
-## Warum C08-D-R2 weiter revidiert werden muss
+## Warum C08-D-R2 revidiert wurde
 
 Der `AI-for-Science Delta Audit v0.1` zeigt starke Einzelvorarbeit für alle vier zuvor als möglicher AI-spezifischer Delta behandelten Rollenformen:
 
@@ -21,7 +21,7 @@ hybrid theory + learned C         -> Physics-informed ML / SciML
 
 Zusätzlich existiert starke Vorarbeit dafür, ML-Rollen nach dem Grad theoretischen Vorwissens zu organisieren und Prediction, Explanation, Discovery und Understanding als verschiedene epistemische Funktionen zu behandeln.
 
-Damit darf keine dieser Rollenformen selbst als Trias-Neuheit beansprucht werden.
+Damit wird keine dieser Rollenformen selbst als Trias-Neuheit beansprucht.
 
 ## Verbleibender möglicher Delta
 
@@ -67,8 +67,10 @@ single direct analogue: NOT FOUND IN v0.1 AUDIT
 practical utility/superiority: UNTESTED
 ```
 
-## Entscheidungsempfehlung
+## Novelty-Suchstopp
 
-**ACCEPT C08-D-R3 AS WORKING CLAIM**, ausdrücklich als Synthese-/Perspective-Claim.
+D028 beendet die projektinterne Verengungssuche nach weiteren Neuheitsformulierungen. Neue konkrete Direktanaloge müssen selbstverständlich berücksichtigt werden; die Contribution wird aber nicht durch immer feinere Notationsunterschiede künstlich gerettet.
 
-Danach die Novelty-Suche beenden und einen finalen `Paper Claim + Outline Freeze v0.3` ausarbeiten.
+## Nächste Abhängigkeit
+
+`Paper Claim + Outline Freeze v0.3`. Erst dessen Review entscheidet zwischen `WRITE`, `SHORT PERSPECTIVE` und `STOP STANDALONE PAPER`.

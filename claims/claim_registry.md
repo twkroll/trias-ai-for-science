@@ -48,8 +48,10 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | MS-W2-GATE-v0.1 | W2 Genealogy-Dominance Evaluation | ACCEPTED / PASS | S4 nicht ausgelöst, bleibt aktives Risiko; Genealogie absorbiert Topologie, nicht gesamten AI-Rollenwechsel | D032 |
 | MS-W3-S3-v0.1 | Manuscript Section 3 — Claim-relative epistemic roles | COMPLETE / ACCEPTED | minimale R/T/C-, Referenten-, Status-, Nichttransfer- und Bridge-Semantik | D033 |
 | MS-W3-GATE-v0.1 | W3 Semantic-Load / Notation-Only Evaluation | ACCEPTED / PASS | S3 nicht ausgelöst; Semantik trägt inferentielle Last, bleibt aber Synthese statt Framework-Novelty | D033 |
-| MS-W4-S7-v0.1 | Manuscript Section 7 — Contribution Boundary / Comparator Section | COMPLETE / PENDING AUTHOR REVIEW | direkter Vergleich mit V&V, Provenance, Assurance, Identifiability/System ID, Philosophy of ML und SciML geschrieben | D033 follow-up |
-| MS-W4-GATE-v0.1 | W4 Residual-Compression Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S2/S3/S5 nicht ausgelöst; Rest = moderate cross-domain Evidence-Localization-Synthese; keine technische Novelty | D033 follow-up |
+| MS-W4-S7-v0.1 | Manuscript Section 7 — Contribution Boundary / Comparator Section | COMPLETE / ACCEPTED | direkter Vergleich mit V&V, Provenance, Assurance, Identifiability/System ID, Philosophy of ML und SciML | D034 |
+| MS-W4-GATE-v0.1 | W4 Residual-Compression Evaluation | ACCEPTED / PASS | S2/S3/S5 nicht ausgelöst; Rest = moderate cross-domain Evidence-Localization-Synthese; keine technische Novelty | D034 |
+| MS-W5-S56-v0.1 | Manuscript Sections 5–6 — Controls + Stress Tests | COMPLETE / PENDING AUTHOR REVIEW | Sundman, Figure-eight, inverse negative run und ML-inconclusive run als near-manuscript prose integriert | D034 follow-up |
+| MS-W5-GATE-v0.1 | W5 Case-Coherence / Evidence-Status Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | case coherence PASS; evidence-status discipline STRONG PASS; spätere Straffung empfohlen | D034 follow-up |
 
 ## Aktueller Evidenzstand
 
@@ -67,46 +69,34 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-W1–W3 sind als `PASS` akzeptiert. Section 4 bleibt das konzeptionelle Zentrum; Section 2 hält die historische Novelty-Boundary offen sichtbar; Section 3 trägt genug inferentielle Semantik, um nicht auf reine R/T/C-Notation zu kollabieren.
+W1–W4 sind als `PASS` akzeptiert. Der bislang härteste Comparator-Test W4 lässt einen moderaten cross-domain Synthese-/Evidence-Localization-Rest übrig, aber keine neue technische oder methodologische Framework-Novelty.
 
-Writing Goal W4 ist nun vollständig ausgeführt. Section 7 stellt die Trias direkt den stärksten angrenzenden Frameworks gegenüber. Der Vergleich ergibt:
-
-```text
-V&V/VVUQ            -> technisch tiefere Credibility-Prüfung
-Provenance           -> tiefere Lineage-/Transformationsrepräsentation
-Assurance/CAE        -> tiefere Claim-Argument-Evidence-Struktur
-Identifiability/SID  -> tiefere inverse Recoverability-/Robustheitsanalyse
-Philosophy of ML     -> reichere Typologien epistemischer AI-Funktionen
-SciML/PIML           -> konkrete hybride/surrogate/physics-ML Methodik
-```
-
-Die Trias darf nichts davon als neue Kategorie oder Ersatz beanspruchen.
-
-Die W4-Evaluation klassifiziert den verbleibenden Rest dennoch als **PASS** für eine Perspective: dieselbe kleine claimspezifische Rollen-/Evidenzgrammatik erzeugt über Black-box Prediction, Synthetic Surrogates, PIML und Equation Discovery eine moderate cross-domain Kompression. Besonders tragend bleiben `T as output of C` und `R_syn vs R_real`.
+Writing Goal W5 ist vollständig ausgeführt. Sections 5–6 integrieren vier bewusst unterschiedlich klassifizierte Fälle:
 
 ```text
-S2 no residual explanatory compression = NOT TRIGGERED
-S3 notation only                       = NOT TRIGGERED
-S5 overclaim pressure                  = NOT TRIGGERED
-framework novelty                      = NO
-residual contribution                  = MODERATE CROSS-DOMAIN SYNTHESIS
-practical superiority                  = UNTESTED
+Sundman        -> conceptual control
+Figure-eight   -> positive standard-V&V control
+Lorenz/SINDy   -> INFORMATIVE_NEGATIVE
+ML v0.1        -> INCONCLUSIVE_LEARNER_ERROR
 ```
+
+Die W5-Evaluation klassifiziert die Integration als **PASS** und die Evidence-Status-Disziplin als **STRONG PASS**. Insbesondere werden negative Evidenz und inconclusive Evidenz nicht vermischt. Der inverse seed-2-Fall bleibt explorativ; ML v0.1 entscheidet C07 weiterhin nicht.
+
+Der nächste Schritt soll die eigentliche philosophische Discussion formulieren, ohne die deskriptive Trias in eine normative All-three-edges-Regel oder eine notwendige Trade-off-Theorie umzudeuten.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D031 W1 PASS accepted
--> D032 W2 PASS accepted
 -> D033 W3 PASS accepted
--> W4 Section 7 COMPLETE
--> W4 Residual-Compression Evaluation = PASS / pending author acceptance
--> recommended next: W5 Sections 5–6 controls + stress tests
--> case-coherence + evidence-status-discipline check
+-> D034 W4 PASS accepted
+-> W5 Sections 5–6 COMPLETE
+-> W5 Case-Coherence/Evidence-Status Evaluation = PASS / pending author acceptance
+-> recommended next: W6 Section 8 Discussion
+-> descriptive-vs-normative + global-success check
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert W4 = PASS und startet Writing Goal W5 (`Sections 5–6 — Classical controls and negative/inconclusive stress tests`).
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D033, W1–W3 PASS, W4 Section 7 + Boundary-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W5 = PASS und startet Writing Goal W6 (`Section 8 — Discussion: scientific success without global success`).
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D034, W1–W4 PASS, W5 Controls/Stress Tests + Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

@@ -1,6 +1,6 @@
 # Edge Semantics + Evidence Ledger v0.1
 
-**Status:** PENDING REVIEW  
+**Status:** ACCEPTED — D025  
 **Stand:** 2026-09-03  
 **Depends on:** D024 / C08-D-R
 
@@ -629,8 +629,6 @@ Damit wird der zentrale Satz des Projekts schärfer:
 
 > Nicht jede erfolgreiche wissenschaftliche Berechnung ist auf dieselbe Weise erfolgreich. Die epistemische Bedeutung einer Evidenz hängt davon ab, welche Relation zwischen Zielsystem, Theorie und computational realization sie tatsächlich stützt.
 
-### Empfehlung
+### Akzeptiert mit D025
 
-**ACCEPT Edge Semantics + Evidence Ledger v0.1.**
-
-Danach kein numerisches Experiment, sondern ein letzter gezielter `Relational-Profile Novelty Audit v0.1`, der genau die präzisierte Struktur — einschließlich Facets, Target-Typen und Bridge-Regeln — gegen die stärksten direkten Literaturkandidaten prüft. Erst danach sollte der Paper-Hauptclaim endgültig eingefroren werden.
+Das Ledger ist als Arbeitssemantik akzeptiert. Der nächste Schritt ist der gezielte `Relational-Profile Novelty Audit v0.1`. Erst danach wird der Paper-Hauptclaim endgültig eingefroren.

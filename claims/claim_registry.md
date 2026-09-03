@@ -36,30 +36,29 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | C08-D-R | Descriptive Relational Profile, revised | SUPERSEDED BY C08-D-R2 | Topologie-Novelty verworfen | D024 → D026 |
 | DT-EDGE-v0.1 | Edge Semantics + Evidence Ledger | ACCEPTED | Facets, Statusregeln, Target-Typen, Nicht-Transitivität, Bridge-Claims | D025 |
 | DT-NOVELTY-v0.1 | Relational-Profile Novelty Audit | ACCEPTED / COMPLETE | Schlesinger/Sargent als nahezu isomorpher historischer Vorläufer | D026 |
-| C08-D-R2 | Genealogically rebased Descriptive Trias | ACCEPTED AS WORKING CLAIM / DELTA CHALLENGED | AI-spezifische Rollenformen anschließend einzeln als stark vorbelastet identifiziert | D026 |
-| PAPER-BOUND-v0.2 | From Model-Credibility Triangle to Descriptive Trias for AI for Science | ACCEPTED | genealogischer Paper-Rahmen; P2 noch nicht final | D027 |
-| AI4S-DELTA-v0.1 | AI-for-Science Delta Audit | COMPLETE / PENDING CLAIM DECISION | alle vier AI-Rollen-Delta als Einzelneuheiten verworfen; gemeinsamer genealogischer Synthese-Delta bleibt möglich | D027 follow-up |
-| C08-D-R3 | Genealogical AI-for-Science synthesis claim | PENDING REVIEW | Einzelrollen-/epistemic-function-Novelty rejected; moderate gemeinsame Synthese plausibel; kein Direktanalog im v0.1-Audit | — |
+| C08-D-R2 | Genealogically rebased Descriptive Trias | SUPERSEDED BY C08-D-R3 | AI-spezifische Rollenformen anschließend einzeln als stark vorbelastet identifiziert | D026 → D028 |
+| PAPER-BOUND-v0.2 | From Model-Credibility Triangle to Descriptive Trias for AI for Science | ACCEPTED | genealogischer Paper-Rahmen | D027 |
+| AI4S-DELTA-v0.1 | AI-for-Science Delta Audit | ACCEPTED / COMPLETE | alle vier AI-Rollen-Delta als Einzelneuheiten verworfen; gemeinsamer genealogischer Synthese-Delta bleibt möglich | D028 |
+| C08-D-R3 | Genealogical AI-for-Science synthesis claim | ACCEPTED AS WORKING CLAIM | Einzelrollen-/epistemic-function-Novelty rejected; analytische Diskrimination positiv; moderate Synthese plausibel; praktische Überlegenheit untested | D028 |
+| PAPER-FREEZE-v0.3 | Paper Claim + Outline Freeze | PENDING REVIEW | P3, Abstract-Logik, Sections, Figuren, Comparatoren, Survival-/Stop-Kriterien und WRITE/SHORT/STOP-Entscheidung ausgearbeitet | D028 follow-up |
 
 ## Aktueller Evidenzstand
 
-D026/D027 setzen die klassische Model-Credibility-Triade als verbindliche Genealogie. Die bloße R/T/C-Topologie, ihre Paarrelationen, Verification-vs.-Validation, intended use und synthetic-vs.-real referent distinctions sind keine Trias-Neuheiten.
-
-Der `AI-for-Science Delta Audit v0.1` schwächt auch den zuvor angenommenen AI-spezifischen Delta:
+D028 akzeptiert den `AI-for-Science Delta Audit v0.1`. Damit sind nicht nur die klassische R/T/C-Topologie und Verification-/Validation-Trennung, sondern auch die zuletzt geprüften AI-Rollen als Einzelneuheiten verworfen:
 
 ```text
-T = NONE_CLAIMED                  -> etablierte predictive/black-box ML- und Philosophy-of-ML-Literatur
-T = INFERRED_BY_C                 -> etablierte Equation-Discovery-/Automated-Discovery-Literatur
-layered synthetic surrogate chain -> etablierte SciML-/surrogate-/V&V-Literatur
-hybrid theory + learned C         -> etablierte PIML-/SciML-Literatur
+T = NONE_CLAIMED
+T = INFERRED_BY_C
+layered synthetic surrogate pipelines
+hybrid physics/theory + learned C
 ```
 
-Vinuesa et al. (2026) klassifizieren ML-Rollen bereits nach dem Grad vorhandener governing-equation knowledge; Naser (2025) trennt Prediction, Explanation, Discovery, Understanding und Decision-making als epistemische Funktionen. Daher sind weder Theory Availability noch die Pluralität wissenschaftlicher AI-Erfolgsarten als Einzelidee neu.
+Ebenso sind Theory-Availability-Klassifikationen und die Pluralität epistemischer AI-Ziele starke Vorarbeit und kein Trias-Novelty-Claim.
 
-Als möglicher Rest bleibt ausschließlich eine genealogische **Komposition**:
+C08-D-R3 ist als Working Claim akzeptiert. Der verbleibende Beitrag ist ausschließlich eine genealogische wissenschaftsphilosophische Synthese:
 
 ```text
-classical model-credibility relation topology
+classical model-credibility genealogy
 +
 dynamic occupation of T/C in AI for Science
 +
@@ -70,21 +69,24 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-Ein einzelner Direktanalog für diese gesamte Kombination wurde im v0.1-Audit nicht gefunden. Das stützt höchstens moderate Synthese-Originalität und keinen starken neuen Framework-Claim.
+Der Originalitätsstatus ist `PLAUSIBLE / MODERATE SYNTHESIS`, nicht `new framework/theory`. Praktische Überlegenheit bleibt `UNTESTED`.
+
+Mit D028 endet die projektinterne Suche nach immer engeren Novelty-Formulierungen. Neue konkrete Direktanaloge müssen berücksichtigt werden, aber die Contribution wird nicht durch Notationsverengung künstlich gerettet.
+
+`Paper Claim + Outline Freeze v0.3` liegt nun zur Review vor. Die dortige Empfehlung lautet `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`, mit `SHORT PERSPECTIVE` und `STOP STANDALONE PAPER` als expliziten Alternativen.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D026 genealogical rebase + C08-D-R2
--> D027 Paper Boundary v0.2 accepted
--> AI-for-Science Delta Audit COMPLETE
--> C08-D-R3 review
--> recommended: accept C08-D-R3 as synthesis Working Claim
--> Paper Claim + Outline Freeze v0.3
+-> D026 genealogical rebase
+-> D027 Paper Boundary v0.2
+-> D028 AI-for-Science Delta Audit accepted + C08-D-R3 accepted
+-> Paper Claim + Outline Freeze v0.3 PENDING REVIEW
+-> next decision: WRITE / SHORT PERSPECTIVE / STOP / REVISE
 ```
 
 ## Dialogkommandos
 
-- `GO`: aktuelle Empfehlung akzeptieren und zum nächsten abhängigen Schritt übergehen.
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D027, AI-for-Science Delta Audit, C08-D-R3, Schlesinger/Sargent-Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert die aktuelle Empfehlung des Freeze-Dokuments (`WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`) und startet die nächste Manuskript-Abhängigkeit.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D028, C08-D-R3, finaler Novelty-Suchstopp, Schlesinger/Sargent-Genealogie, Paper Freeze v0.3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

@@ -2,9 +2,9 @@
 
 ## Phase
 
-**Descriptive Trias / Writing Goal W1 Complete / Section-4 Survival Review**
+**Descriptive Trias / Writing Goal W2 Complete / Genealogy-Dominance Review**
 
-Mit D030 wurde das `Actual Manuscript Skeleton v0.1` akzeptiert und Writing Goal W1 freigegeben. Section 4 — `Four AI-for-Science Role Configurations` — ist nun als erster echter Manuskripttext geschrieben und separat gegen das vorab definierte PASS/SHORTEN/STOP-Gate geprüft.
+Mit D031 wurde die W1-Survival-Evaluation als `PASS` akzeptiert und Writing Goal W2 freigegeben. Section 2 — `Genealogy: From model credibility to the present problem` — ist nun als Manuskripttext inklusive Table 1 geschrieben und separat gegen das Survival-Kriterium S4 `genealogy dominates contribution` geprüft.
 
 ## Akzeptierte Entscheidungen
 
@@ -21,6 +21,7 @@ Mit D030 wurde das `Actual Manuscript Skeleton v0.1` akzeptiert und Writing Goal
 - **D028:** AI-for-Science Delta Audit akzeptiert; C08-D-R3 als Synthese-Working-Claim; Novelty-Suchstopp.
 - **D029:** `Paper Claim + Outline Freeze v0.3` akzeptiert; `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS`.
 - **D030:** `Actual Manuscript Skeleton v0.1` akzeptiert; W1 / Section 4 freigegeben.
+- **D031:** W1 = `PASS` akzeptiert; W2 Genealogie + Table 1 freigegeben.
 
 ## Manuskriptboundary P3
 
@@ -34,71 +35,88 @@ C = concrete computational practice, numerical / learned / inferential / hybrid
 
 Evidenz wird danach profiliert, welchen `R-T`, `T-C` oder `C-R` Claim sie im angegebenen Use Case und Scope stützt. Der Beitrag ist eine gemeinsame genealogische Lesart etablierter AI-for-Science-Erfolgsformen, keine neue V&V-, ML-, Identifiability- oder Discovery-Kategorie.
 
-## Writing Goal W1 — Section 4
+## W1 — Section 4
 
-**Status: COMPLETE / PENDING AUTHOR DECISION.**
+**Status: ACCEPTED / PASS — D031.**
 
 Manuskripttext:
 
 [`paper/manuscript_section_4_v0_1.md`](paper/manuscript_section_4_v0_1.md)
 
-Die vier geschriebenen Archetypen sind:
+Stärkste konzeptionelle Träger:
 
 ```text
-4.1 predictive black-box
-4.2 synthetic surrogate
-4.3 physics-informed / hybrid ML
-4.4 equation discovery
+1. Equation Discovery — T as output of C
+2. Synthetic Surrogate — explicit referent switch R_syn vs R_real
 ```
 
-plus ein cross-case profile table.
+PIML und Black-box Prediction dienen stärker der cross-case Vergleichbarkeit.
 
-Die Section verwendet in allen Fällen dieselbe Minimalgrammatik:
+## Writing Goal W2 — Section 2 Genealogy
+
+**Status: COMPLETE / PENDING AUTHOR DECISION.**
+
+Manuskripttext:
+
+[`paper/manuscript_section_2_v0_1.md`](paper/manuscript_section_2_v0_1.md)
+
+Section 2 macht nun explizit:
 
 ```text
-R type / referent
-T status
-C role
-principal evidence
-supported relation
-explicit non-implication
+Reality / Problem Entity
+Conceptual Model
+Computerized Model
 ```
 
-## W1 Survival Evaluation
+sowie die starke strukturelle Entsprechung
+
+```text
+R-T ~ conceptual-model validity
+T-C ~ computerized-model verification
+C-R ~ operational validity / validation
+```
+
+als konstitutive Schlesinger/Sargent-Genealogie. Moderne V&V/VVUQ- und SciML-Credibility-Arbeiten verstärken diese Prior Art.
+
+### Table 1
+
+Die neue `Genealogy and contribution boundary`-Tabelle markiert für jedes Element:
+
+```text
+classical analogue
+modern V&V/SciML status
+novelty status
+role in the paper
+```
+
+Die meisten Einzelbestandteile werden explizit als `not new` oder `strongly preceded` ausgewiesen. Als möglicher Rest bleibt nur die gemeinsame Rollen-/Evidenzsynthese über unterschiedlich gerichtete AI-Workflows.
+
+## W2 Genealogy-Dominance Evaluation
 
 Dokument:
 
-[`paper/w1_section4_survival_evaluation_v0_1.md`](paper/w1_section4_survival_evaluation_v0_1.md)
+[`paper/w2_genealogy_dominance_evaluation_v0_1.md`](paper/w2_genealogy_dominance_evaluation_v0_1.md)
 
 **Vorläufige Klassifikation: PASS.**
 
+```text
+S4 genealogy dominates contribution = NOT TRIGGERED / ACTIVE RISK
+paper mode                         = CONTINUE PERSPECTIVE
+framework novelty                  = NO
+synthesis contribution             = PLAUSIBLE / MODERATE
+```
+
 Begründung:
 
-```text
-- gleiche Grammatik ohne ad-hoc Sonderregeln: PASS
-- pro Fall mindestens ein präziser Evidenzunterschied: PASS
-- weniger Mehrdeutigkeit als globale Labels: PASS
-- Equation Discovery als Rollen-/Richtungswechsel: STRONG PASS
-- S2 no residual compression: nicht ausgelöst, bleibt Hauptrisiko
-- S3 notation-only: nicht ausgelöst
-- S6 case incoherence: nicht ausgelöst
-```
+- Die Genealogie absorbiert die R/T/C-Topologie und fast alle klassischen Edge-Semantics vollständig.
+- Sie absorbiert aber nicht den gesamten in W1 gezeigten Rollenwechsel.
+- Equation Discovery (`R -> D -> C_infer -> T_hat`) bleibt der stärkste Fall für `epistemic roles rather than fixed lifecycle stages`.
+- Synthetic Surrogate bleibt der stärkste Fall für einen cross-case Referentenwechsel.
+- PIML und Black-box dürfen keine Novelty-Last tragen.
 
-Der PASS gilt nur für eine Perspective / Conceptual Synthesis. Er stärkt P3 nicht zu einem Framework-Novelty-Claim.
+### Harte W2-Grenze
 
-## Gewichtung aus W1
-
-```text
-strongest conceptual carriers:
-1. Equation Discovery — T as output of C
-2. Synthetic surrogate — explicit referent switch R_syn vs R_real
-
-supporting cross-case cases:
-3. PIML — overlapping RT/TC/CR claims
-4. Black-box prediction — T = NONE_CLAIMED, analytically clean but strongly preceded
-```
-
-Die W1-Fassung sollte im Endmanuskript voraussichtlich gestrafft werden; insbesondere wiederholte Boundary-Sätze können reduziert werden.
+Section 2 soll im Endmanuskript kompakt bleiben (`ca. 750–950 Wörter + Table 1`) und darf nicht zu einer ausführlichen Geschichte von V&V wachsen. Die konzeptionelle Hauptlast muss bei Section 4 bleiben.
 
 ## Strategischer Freeze
 
@@ -111,15 +129,15 @@ Die W1-Fassung sollte im Endmanuskript voraussichtlich gestrafft werden; insbeso
 
 ## Nächste Entscheidung
 
-Empfehlung: **W1 = PASS akzeptieren und das Manuskript fortsetzen.**
+Empfehlung: **W2 = PASS akzeptieren und Perspective fortsetzen.**
 
-Bei `GO` wird als nächste Abhängigkeit ausschließlich Writing Goal W2 ausgeführt:
+Bei `GO` wird als nächste Abhängigkeit ausschließlich Writing Goal W3 ausgeführt:
 
-> **Section 2 — Genealogy: From model credibility to the present problem + Table 1 genealogy/comparator mapping.**
+> **Section 3 — From lifecycle stages to claim-relative epistemic roles.**
 
-Nach W2 folgt ein lokaler `genealogy-dominance`-Check gegen Survival-Kriterium S4. Noch keine Introduction und keine neuen Experimente.
+W3 schreibt nur die minimale Semantik, die Section 4 tatsächlich benötigt, und führt danach einen lokalen `notation-only / semantic-load`-Check gegen Survival-Kriterium S3 durch. Noch keine Introduction und keine neuen Experimente.
 
 ## Projektkommandos
 
-- `GO`: akzeptiert W1 = PASS und startet W2 Genealogy + Table 1.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D030, W1 Section 4, PASS-Evaluation, P3, Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W2 = PASS und startet W3 Section 3 + S3 semantic-load check.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D031, W1 PASS, W2 Genealogie + Dominance-Evaluation, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

@@ -41,9 +41,11 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | AI4S-DELTA-v0.1 | AI-for-Science Delta Audit | ACCEPTED / COMPLETE | alle vier AI-Rollen-Delta als Einzelneuheiten verworfen; gemeinsamer genealogischer Synthese-Delta bleibt möglich | D028 |
 | C08-D-R3 | Genealogical AI-for-Science synthesis claim | ACCEPTED AS WORKING CLAIM | Einzelrollen-/epistemic-function-Novelty rejected; analytische Diskrimination positiv; moderate Synthese plausibel; praktische Überlegenheit untested | D028 |
 | PAPER-FREEZE-v0.3 | Paper Claim + Outline Freeze | ACCEPTED | P3 und Option A `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS` akzeptiert | D029 |
-| MS-SKEL-v0.1 | Actual Manuscript Skeleton | ACCEPTED | Absatzfunktionen, Claims, Literaturachsen, Figuren-/Tabellenplan, Schreibreihenfolge und W1-Survival-Gate | D030 |
-| MS-W1-S4-v0.1 | Manuscript Section 4 — Four AI-for-Science role configurations | COMPLETE / PENDING AUTHOR REVIEW | gemeinsame R/T/C-Grammatik über vier Archetypen geschrieben; stärkste Träger Equation Discovery + Synthetic Surrogate | D030 follow-up |
-| MS-W1-GATE-v0.1 | W1 Survival Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S2/S3/S6 nicht ausgelöst; Perspective trägt weiter; kein Framework-Novelty-Upgrade | D030 follow-up |
+| MS-SKEL-v0.1 | Actual Manuscript Skeleton | ACCEPTED | Absatzfunktionen, Claims, Literaturachsen, Figuren-/Tabellenplan, Schreibreihenfolge und Survival-Gates | D030 |
+| MS-W1-S4-v0.1 | Manuscript Section 4 — Four AI-for-Science role configurations | COMPLETE / ACCEPTED | gemeinsame R/T/C-Grammatik über vier Archetypen; stärkste Träger Equation Discovery + Synthetic Surrogate | D031 |
+| MS-W1-GATE-v0.1 | W1 Survival Evaluation | ACCEPTED / PASS | S2/S3/S6 nicht ausgelöst; Perspective trägt weiter; kein Framework-Novelty-Upgrade | D031 |
+| MS-W2-S2-v0.1 | Manuscript Section 2 — Genealogy | COMPLETE / PENDING AUTHOR REVIEW | Schlesinger/Sargent-Mapping + moderne V&V/SciML-Fortsetzung + Table 1 geschrieben | D031 follow-up |
+| MS-W2-GATE-v0.1 | W2 Genealogy-Dominance Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S4 nicht ausgelöst, bleibt aktives Risiko; Genealogie absorbiert Topologie, nicht den gesamten AI-Rollenwechsel | D031 follow-up |
 
 ## Aktueller Evidenzstand
 
@@ -61,32 +63,39 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-D030 akzeptiert das `Actual Manuscript Skeleton v0.1`. Writing Goal W1 wurde anschließend vollständig ausgeführt: Section 4 behandelt predictive black-box, synthetic surrogate, PIML/hybrid ML und equation discovery mit derselben Minimalgrammatik aus Referent, T-Status, C-Rolle, Evidenz, gestützter Relation und Nichtimplikation.
+D031 akzeptiert W1 = `PASS`. Damit ist Section 4 als zentraler Survival-Test bestanden, jedoch nur für eine Perspective / Conceptual Synthesis.
 
-Die separat durchgeführte W1-Survival-Evaluation klassifiziert die Section als **PASS** für eine Perspective / Conceptual Synthesis. Besonders tragend sind:
+Writing Goal W2 ist nun vollständig ausgeführt. Die Genealogie-Section macht die nahezu isomorphe Prior Art explizit:
 
 ```text
-Synthetic surrogate -> gleicher Performancewert kann auf R_syn oder R_real unterschiedliche Claims stützen
-Equation Discovery  -> T kann Output von C sein; Rollen sind nicht notwendig Lifecycle-Stufen
+Reality / Problem Entity
+Conceptual Model
+Computerized Model
+
+R-T ~ conceptual-model validity
+T-C ~ computerized-model verification
+C-R ~ operational validity / validation
 ```
 
-PIML und Black-box dienen stärker der cross-case Vergleichbarkeit und dürfen nicht als Einzelneuheiten verkauft werden.
+Table 1 kennzeichnet Topologie, Edge-Semantics, intended use, real-vs-synthetic referent und evidence-transfer logic als `not new` oder `strongly preceded`. Als möglicher Rest bleibt nur die gemeinsame Rollen-/Evidenzsynthese über unterschiedliche AI-Workflows.
 
-Der PASS stärkt den Claim nicht zu einem neuen Framework. S2 `no residual explanatory compression` bleibt das wichtigste fortlaufende Risiko; S4 `genealogy dominates contribution` wird im nächsten Writing Goal lokal geprüft.
+Die W2-Genealogy-Dominance-Evaluation klassifiziert den Abschnitt als **PASS**. S4 `genealogy dominates contribution` ist nicht ausgelöst, bleibt aber aktives Risiko. Der PASS beruht darauf, dass insbesondere Equation Discovery (`R -> D -> C_infer -> T_hat`) und Synthetic Surrogate einen cross-case Rollen-/Referentengewinn behalten, der nicht allein in der klassischen Forward-Lifecycle-Lesart aufgeht.
+
+Der nächste lokale Test betrifft S3 `notation only`: Section 3 muss zeigen, dass die minimale R/T/C-/Evidence-Semantik argumentativen Gehalt trägt und nicht bloß neue Labels einführt.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D029 WRITE decision
 -> D030 Manuscript Skeleton accepted
--> W1 Section 4 COMPLETE
--> W1 Survival Evaluation = PASS / pending author acceptance
--> recommended next: W2 Genealogy + Table 1
--> local S4 genealogy-dominance check
+-> D031 W1 PASS accepted
+-> W2 Section 2 COMPLETE
+-> W2 Genealogy-Dominance Evaluation = PASS / pending author acceptance
+-> recommended next: W3 Section 3 minimal semantics
+-> local S3 notation-only / semantic-load check
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert W1 = PASS und startet Writing Goal W2 (`Section 2 — Genealogy + Table 1`).
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D030, W1 Section 4, PASS-Evaluation, P3, Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W2 = PASS und startet Writing Goal W3 (`Section 3 — From lifecycle stages to claim-relative epistemic roles`) plus S3 semantic-load check.
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D031, W1 PASS, W2 Genealogie + Dominance-Gate, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

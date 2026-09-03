@@ -41,11 +41,13 @@ Das Register enthält die wissenschaftlich relevanten Claims und Demonstratorent
 | AI4S-DELTA-v0.1 | AI-for-Science Delta Audit | ACCEPTED / COMPLETE | alle vier AI-Rollen-Delta als Einzelneuheiten verworfen; gemeinsamer genealogischer Synthese-Delta bleibt möglich | D028 |
 | C08-D-R3 | Genealogical AI-for-Science synthesis claim | ACCEPTED AS WORKING CLAIM | Einzelrollen-/epistemic-function-Novelty rejected; analytische Diskrimination positiv; moderate Synthese plausibel; praktische Überlegenheit untested | D028 |
 | PAPER-FREEZE-v0.3 | Paper Claim + Outline Freeze | ACCEPTED | P3 und Option A `WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS` akzeptiert | D029 |
-| MS-SKEL-v0.1 | Actual Manuscript Skeleton | PENDING REVIEW | Absatzfunktionen, Claims, Literaturachsen, Figuren-/Tabellenplan, Schreibreihenfolge und W1-Survival-Gate ausgearbeitet | D029 follow-up |
+| MS-SKEL-v0.1 | Actual Manuscript Skeleton | ACCEPTED | Absatzfunktionen, Claims, Literaturachsen, Figuren-/Tabellenplan, Schreibreihenfolge und W1-Survival-Gate | D030 |
+| MS-W1-S4-v0.1 | Manuscript Section 4 — Four AI-for-Science role configurations | COMPLETE / PENDING AUTHOR REVIEW | gemeinsame R/T/C-Grammatik über vier Archetypen geschrieben; stärkste Träger Equation Discovery + Synthetic Surrogate | D030 follow-up |
+| MS-W1-GATE-v0.1 | W1 Survival Evaluation | PASS / PENDING AUTHOR ACCEPTANCE | S2/S3/S6 nicht ausgelöst; Perspective trägt weiter; kein Framework-Novelty-Upgrade | D030 follow-up |
 
 ## Aktueller Evidenzstand
 
-D028 akzeptiert C08-D-R3 als Synthese-Working-Claim. Der verbleibende Beitrag ist ausdrücklich keine neue Dreieckstopologie und keine neue AI-/V&V-Einzelidee, sondern eine genealogische wissenschaftsphilosophische Komposition:
+C08-D-R3 / P3 bleibt die verbindliche Manuskriptboundary. Der verbleibende Beitrag ist ausschließlich eine genealogische wissenschaftsphilosophische Synthese:
 
 ```text
 classical model-credibility genealogy
@@ -59,37 +61,32 @@ REAL/SYNTHETIC/HYBRID referent typing
 descriptive comparison of scientific-success types
 ```
 
-D029 akzeptiert den `Paper Claim + Outline Freeze v0.3` und die Entscheidung:
+D030 akzeptiert das `Actual Manuscript Skeleton v0.1`. Writing Goal W1 wurde anschließend vollständig ausgeführt: Section 4 behandelt predictive black-box, synthetic surrogate, PIML/hybrid ML und equation discovery mit derselben Minimalgrammatik aus Referent, T-Status, C-Rolle, Evidenz, gestützter Relation und Nichtimplikation.
+
+Die separat durchgeführte W1-Survival-Evaluation klassifiziert die Section als **PASS** für eine Perspective / Conceptual Synthesis. Besonders tragend sind:
 
 ```text
-WRITE AS PERSPECTIVE / CONCEPTUAL SYNTHESIS
+Synthetic surrogate -> gleicher Performancewert kann auf R_syn oder R_real unterschiedliche Claims stützen
+Equation Discovery  -> T kann Output von C sein; Rollen sind nicht notwendig Lifecycle-Stufen
 ```
 
-Der Principal Claim P3 ist damit aktuelle Manuskriptboundary. Das eigenständige Paper bleibt nur gerechtfertigt, solange die im Freeze definierten Survival-Kriterien tragen.
+PIML und Black-box dienen stärker der cross-case Vergleichbarkeit und dürfen nicht als Einzelneuheiten verkauft werden.
 
-`Actual Manuscript Skeleton v0.1` ist ausgearbeitet. Es plant das Paper nicht linear, sondern setzt Section 4 mit den vier AI-for-Science-Rollenkonfigurationen als ersten echten Manuskript-Survival-Test:
-
-```text
-black-box prediction
-synthetic surrogate
-physics-informed / hybrid ML
-equation discovery
-```
-
-Erst wenn diese vier Fälle mit derselben claimspezifischen Rollen-/Evidenzsemantik ohne ad-hoc Ausnahmen tatsächlich begriffliche Kompression erzeugen, soll das Manuskript weitergeschrieben werden.
+Der PASS stärkt den Claim nicht zu einem neuen Framework. S2 `no residual explanatory compression` bleibt das wichtigste fortlaufende Risiko; S4 `genealogy dominates contribution` wird im nächsten Writing Goal lokal geprüft.
 
 ## Abhängigkeitslogik
 
 ```text
 ...
--> D028 C08-D-R3 accepted
--> D029 Paper Freeze v0.3 accepted + WRITE decision
--> Actual Manuscript Skeleton v0.1 PENDING REVIEW
--> recommended next: Writing Goal W1 / Section 4 v0.1
--> PASS / SHORTEN / STOP gate
+-> D029 WRITE decision
+-> D030 Manuscript Skeleton accepted
+-> W1 Section 4 COMPLETE
+-> W1 Survival Evaluation = PASS / pending author acceptance
+-> recommended next: W2 Genealogy + Table 1
+-> local S4 genealogy-dominance check
 ```
 
 ## Dialogkommandos
 
-- `GO`: akzeptiert das Manuskript-Skeleton und startet ausschließlich Writing Goal W1 (`Section 4 — Four AI-for-Science Role Configurations v0.1`).
-- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D029, P3, Manuskript-Skeleton, Schlesinger/Sargent-Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W1 = PASS und startet Writing Goal W2 (`Section 2 — Genealogy + Table 1`).
+- `PDF`: aktuellen Projektstand als ausführliches Kooperationsbriefing neu synthetisieren; D030, W1 Section 4, PASS-Evaluation, P3, Genealogie, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.

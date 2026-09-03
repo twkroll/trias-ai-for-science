@@ -2,23 +2,23 @@
 
 ## Phase
 
-**Descriptive Trias / W9 Source & Bibliography Audit Complete / Source-Integration Review**
+**Descriptive Trias / Source-Hardened Manuscript v0.3 Complete / Journal-Selection Review**
 
-Mit **D038** wurde W8 als `PASS_TO_SOURCE_AUDIT` akzeptiert. Das integrierte Manuskript v0.2 bleibt die aktuelle Paperbasis:
+Mit **D039** wurde W9 als `PASS_TO_SOURCE_INTEGRATION` akzeptiert. Writing Goal W10 wurde vollständig ausgeführt.
 
-[`paper/manuscript_integrated_v0_2.md`](paper/manuscript_integrated_v0_2.md)
+Aktuelle Paperbasis:
 
-Writing Goal W9 — Source & Bibliography Audit v0.1 — ist vollständig ausgeführt:
+- [`paper/manuscript_source_hardened_v0_3.md`](paper/manuscript_source_hardened_v0_3.md)
+- [`paper/references_v0_3.bib`](paper/references_v0_3.bib)
+- [`paper/w10_source_hardening_evaluation_v0_1.md`](paper/w10_source_hardening_evaluation_v0_1.md)
 
-[`paper/w9_source_bibliography_audit_v0_1.md`](paper/w9_source_bibliography_audit_v0_1.md)
-
-Vorläufiges W9-Urteil:
+Vorläufiges W10-Urteil:
 
 ```text
-PASS_TO_SOURCE_INTEGRATION
+PASS_TO_JOURNAL_SELECTION
 ```
 
-W9 ist **COMPLETE / PENDING AUTHOR DECISION** und damit noch nicht akzeptiert.
+W10 ist **COMPLETE / PENDING AUTHOR DECISION**.
 
 ## Verbindliche Manuskriptboundary P3
 
@@ -34,7 +34,9 @@ C = concrete computational practice,
 
 Evidenz wird lokalisiert danach, welchen `R-T`, `T-C` oder `C-R` Claim sie im angegebenen Use Case und Scope direkt stützt.
 
-Der Beitrag ist ausdrücklich **keine** neue V&V-/VVUQ-, Provenance-, Assurance-, Identifiability-/System-ID- oder Scientific-ML-Theorie, keine neue Dreieckstopologie und keine notwendige Trade-off-Theorie. Der verbleibende Beitrag bleibt:
+Der Beitrag ist ausdrücklich **keine** neue V&V-/VVUQ-, Provenance-, Assurance-, Identifiability-/System-ID- oder Scientific-ML-Theorie, keine neue Dreieckstopologie und keine notwendige Trade-off-Theorie.
+
+Verbleibender Beitrag:
 
 > **moderate cross-domain synthesis / genealogically grounded evidence-localization vocabulary**.
 
@@ -50,18 +52,48 @@ Praktische Nützlichkeit bleibt `UNTESTED`.
 - **D029–D036:** Perspective-/Conceptual-Synthesis-Paper, Manuskript-Skeleton und W1–W6 als `PASS`.
 - **D037:** W7 `REVISE_BEFORE_MERGE` akzeptiert; W8 Editorial Synthesis ausgeführt.
 - **D038:** W8 `PASS_TO_SOURCE_AUDIT` akzeptiert; W9 Quellen-Audit freigegeben.
+- **D039:** W9 `PASS_TO_SOURCE_INTEGRATION` akzeptiert; W10 Source Hardening freigegeben und ausgeführt.
 
-## Integriertes Manuskript v0.2
+## Source-Hardened Manuscript v0.3
 
-Empfohlener Titel:
+Empfohlener Titel bleibt:
 
 > **From Model Credibility to AI for Science: Claim-Relative Evidence Across Target, Theory, and Computation**
 
-Der Draft liegt grob im Zielbereich einer vollwertigen Perspective (`~7k–8.3k` Haupttextwörter). Section 4 bleibt das konzeptionelle Zentrum. Stärkste Träger:
+Die v0.3-Fassung integriert die W9-Regeln vollständig und verwendet journal-neutrale Pandoc-/BibTeX-Citation-Keys.
+
+Verbindlich integriert:
 
 ```text
-Synthetic surrogate -> R_syn vs R_real / referent-sensitive evidence
-Equation discovery   -> T as output of C / role-order reversal
+W9-R1 Schlesinger model qualification vs Sargent conceptual-model validity
+W9-R2 Zhai et al. = 2025 arXiv preprint only
+W9-R3 Sundman = 1912; keine Termzahl-Overclaims
+W9-R4 W3C PROV core terminology korrigiert
+W9-R5 parameter identifiability vs model-form ambiguity getrennt
+W9-R6 Naser als konkretes Framework, nicht Feldkonsens
+W9-R7 ASME V&V 40 als domain-specific medical-device standard
+W9-R8 Abwesenheitsclaim nur audit-relativ
+```
+
+Table 2 ist jetzt explizit nummeriert. Die Source-Hardening-Stufe führt keinen neuen Claim ein.
+
+## Bibliographie
+
+`paper/references_v0_3.bib` enthält die verifizierten Hauptanker für:
+
+```text
+Schlesinger / Sargent
+NASA-STD-7009B / NASA-HDBK-7009B / ASME V&V 40
+Jakeman et al. 2026
+Naser 2025
+Vinuesa et al. 2026
+Karniadakis et al. 2021
+Kramer et al. 2026
+Zhai–Lucarini–Lai 2025 preprint
+Sundman / Belorizky / Henkel / Chenciner / Musielak-Quarles
+W3C PROV / CWLProv
+Assurance Cases / GSN
+Villaverde / Hadaegh-Bekey / SINDy / SINDy-PI
 ```
 
 ## Evidence-status discipline
@@ -77,34 +109,23 @@ ML v0.1        -> INCONCLUSIVE_LEARNER_ERROR
 
 Der inverse `linear / seed 2`-Fall bleibt explorativ. ML v0.1 unterstützt oder widerlegt den Teacher-Provenance-Claim nicht. ML-v0.2 und inverse v0.2 bleiben pausiert.
 
-## W9 Source & Bibliography Audit
+## W10 Source-Hardening Evaluation
 
-Gesamtbefund:
-
-```text
-source coverage              = PASS
-bibliographic resolvability  = PASS
-central claim support        = PASS
-required wording revisions   = YES / TARGETED
-blocking source gap          = NO
---------------------------------------
-OVERALL                      = PASS_TO_SOURCE_INTEGRATION
-```
-
-Kein zentraler Manuskriptclaim fällt durch die Quellenprüfung. Vor Source Integration sind jedoch acht gezielte Regeln verbindlich:
+Vorläufiger Befund:
 
 ```text
-W9-R1  Schlesinger 1979: R-T historisch als model qualification; conceptual-model validity Sargent zuordnen.
-W9-R2  Zhai–Lucarini–Lai ausschließlich als 2025 arXiv preprint (arXiv:2509.03769), nicht als peer-reviewte 2026-Publikation.
-W9-R3  Sundman im Manuskript/Bib konsistent als 1912 führen; keine spektakulären Termzahlclaims.
-W9-R4  W3C PROV: Entity / Activity / Agent + Usage / Generation / Derivation als Kernterminologie; parameters nicht als core class.
-W9-R5  Villaverde et al. nur für parametrische structural identifiability; freie Struktur-/Modellformclaims zusätzlich Hadaegh–Bekey/System-ID/Equation-Discovery stützen.
-W9-R6  Naser als konkretes aktuelles Framework zitieren, nicht als alleinigen Beleg eines Feldkonsenses.
-W9-R7  ASME V&V 40 bei Verwendung als domain-specific medical-device credibility standard kennzeichnen.
-W9-R8  Abwesenheitsclaim nur als `no direct analogue identified in our documented audits`, nie als universelle Nicht-Existenzbehauptung.
+W9-R1…R8 integration          = PASS
+citation consistency          = PASS
+bibliography coverage         = PASS
+publication-status accuracy   = PASS
+project evidence preservation = STRONG PASS
+P3 consistency                = PASS
+blocking bibliographic gap    = NO
+---------------------------------------
+OVERALL                       = PASS_TO_JOURNAL_SELECTION
 ```
 
-Verifizierte Literaturachsen umfassen Schlesinger/Sargent, NASA-STD-7009B/NASA-HDBK-7009B, ASME V&V 40, Jakeman et al. 2026, Naser 2025, Vinuesa et al. 2026, Karniadakis et al. 2021, Kramer et al. 2026, Zhai–Lucarini–Lai 2025 preprint, Sundman/Belorizky/Henkel/Chenciner/Musielak–Quarles, W3C PROV/CWLProv, Assurance Cases/GSN sowie Villaverde/Hadaegh–Bekey/SINDy/SINDy-PI.
+Keine weitere generische Konzept-, Novelty- oder Quellenrunde wird empfohlen.
 
 ## Strategischer Freeze
 
@@ -113,20 +134,26 @@ Verifizierte Literaturachsen umfassen Schlesinger/Sargent, NASA-STD-7009B/NASA-H
 - inverse v0.2 pausiert;
 - keine weitere freie Novelty-Suche;
 - negative/inconclusive Resultate bleiben unverändert;
-- integrierter v0.2-Draft wird nicht durch neue Claims erweitert;
-- W9-Quellenkorrekturen werden erst nach Autorentscheidung in v0.3 integriert.
+- P3 wird durch Journalanpassung nicht gestärkt;
+- journal-spezifische Anpassungen erst nach expliziter Venue-Entscheidung.
 
 ## Nächste Entscheidung
 
-Empfehlung: **W9 = `PASS_TO_SOURCE_INTEGRATION` akzeptieren.**
+Empfehlung: **W10 = `PASS_TO_JOURNAL_SELECTION` akzeptieren.**
 
-Bei `GO` wird als nächste Abhängigkeit W10 ausgeführt:
+Danach Zieljournal auswählen. Realistische Optionen:
 
-> **Source-Hardened Manuscript v0.3 — integrate W9-R1…R8, attach verified citations/BibTeX, standardize citation keys, and produce a source-clean manuscript without changing P3.**
+```text
+A. European Journal for Philosophy of Science
+B. Synthese
+C. Minds and Machines
+D. Studies in History and Philosophy of Science
+E. Philosophy of Science (stretch)
+```
 
-Erst nach W10 sollte ein konkretes Zieljournal festgelegt und der journal-spezifische Stil-/Submission-Pass durchgeführt werden.
+Nach der Venue-Entscheidung folgt ausschließlich ein journal-spezifischer Style-/Submission-Pass.
 
 ## Projektkommandos
 
-- `GO`: akzeptiert W9 = `PASS_TO_SOURCE_INTEGRATION` und startet W10 Source-Hardened Manuscript v0.3.
-- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D038, integriertes Manuskript v0.2, W9-Quellenaudit, P3, negative/inconclusive Resultate und pausierte Branches werden berücksichtigt.
+- `GO`: akzeptiert W10 = `PASS_TO_JOURNAL_SELECTION`; danach muss die Venue-Option entschieden werden, bevor der journal-spezifische Pass startet.
+- `PDF`: aktuellen detaillierten Kooperationsstand als PDF plus LaTeX-Quelle neu synthetisieren; D039, Source-Hardened Manuscript v0.3, verified BibTeX, W10-Gate, P3 und alle negativen/inconclusive Resultate werden berücksichtigt.

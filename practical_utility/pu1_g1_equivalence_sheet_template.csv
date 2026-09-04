@@ -1,0 +1,2 @@
+reviewer_id,vignette_id,canonical_fact_id,present_in_control,present_in_trias,numerical_match,limitation_match,scope_match,word_count_control,word_count_trias,visual_density_comparable,overall_pass,comment
+R01,,,,,,,,,,,,
